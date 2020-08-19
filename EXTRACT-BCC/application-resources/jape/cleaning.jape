@@ -1,0 +1,93 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: Cleaning
+Input:Lookup Lookup2 Address Location Token Person NounChunk Sentence NewLine
+Options: control=appelt
+
+
+
+/*
+ * Deal with diseases that are part of URLs
+ * e.g. www.diabetes-uk.org
+ *
+ */
+
+Rule: url1
+
+(
+  {Lookup.majorType == umls, Lookup within {Address.kind == url}}
+):umls
+
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+
+
+/*
+ * Remove Lookups that are preceded of proceded by a generic healthcare terms i.e. Clinic
+ */
+ 
+Rule: cleanHealthCareTerms
+
+(
+  ({Lookup.STY ==~ "[Ss]ign or [Ss]ymptom"} | {Lookup.STY ==~ "[Dd]isease or [Ss]yndrome"} | {Lookup.STY ==~ "[Dd]isease"}|{Lookup.STY ==~ "[Ii]njury or [Pp]oisoning"})
+  ({Lookup2.majorType == organization} | {Location})
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: cleanHealthCareTerms
+
+(
+   ({Lookup2.majorType == organization} | {Location})
+   ({Lookup.STY ==~ "[Ss]ign or [Ss]ymptom"} | {Lookup.STY ==~ "[Dd]isease or [Ss]yndrome"} | {Lookup.STY ==~ "[Dd]isease"})
+  
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+Rule: cleanHealthCareTermsWithin
+
+(
+   ({Lookup within Lookup2.majorType == organization})
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+Rule: cleanDiagnosis
+
+(
+   ({Lookup.STY ==~ "[Ss]ign or [Ss]ymptom"} | {Lookup.STY ==~ "[Dd]isease or [Ss]yndrome"} | {Lookup.STY ==~ "[Dd]isease"}):umls
+	({Lookup.STY ==~ "[Hh]ealth [Cc]are [Aa]ctivity"} | {Lookup.STY ==~ "[Hh]ealth [Cc]are [Rr]elated [Oo]rganization"})
+):match
+-->
+:umls { 
+ inputAS.removeAll(umlsAnnots);
+}
+
+/* Temporal Concepts need to be removed 
+* - they are fequent, useless, and troublesome when relying on JAPE rules that use Lookup as input
+*/
+
+
+Rule: removeUselessLookups
+
+(
+    ({Lookup.STY ==~ "[Tt]emporal [Cc]oncept"}):umls
+):match
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+

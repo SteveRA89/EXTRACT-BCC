@@ -1,0 +1,22 @@
+Adamantinoid:CUI=C1304295:Differentiation=Adamantinoid
+Granular cell:CUI=C1304301:Differentiation=GranularCell
+Clear cell:CUI=C1516599:Differentiation=ClearCell
+Giant cell:Differentiation=GiantCell
+Signet cell:CUI=C1304303:Differentiation=SignetCell
+Adenoid:CUI=C1304296:Differentiation=Adenoid
+Keratotic:CUI=C1304299:Differentiation=Keratotic
+Pleomorphic:Differentiation=Pleomorphic
+Ductal:Differentiation=Ductal
+Glandular:Differentiation=Glandular
+Adnexal:CUI=C1302446:Differentiation=Adnexal
+Eccrine:CUI=C0346016:Differentiation=Eccrine
+Apocrine:Differentiation=Apocrine
+Sebaceous:CUI=C0334683:Differentiation=Sebaceous
+Infundibulocystic:CUI=C1304297:Differentiation=Infundibulocystic
+Infundibulo-cystic:CUI=C1304297:Differentiation=Infundibulocystic
+Infundibulo cystic:CUI=C1304297:Differentiation=Infundibulocystic
+Follicular:CUI=C1883723:Differentiation=Follicular
+Matricial:Differentiation=Matricial
+Myoepithelial:Differentiation=Myoepithelial
+Neuroendocrine:Differentiation=Neuroendocrine
+Squamous:Differentiation=Squamous

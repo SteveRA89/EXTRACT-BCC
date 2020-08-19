@@ -1,0 +1,6 @@
+Requestor.lst:Person:Requestor::VIP
+Reporter.lst:Person:Reporter::VIP
+Reported_triggers.lst::::Reported_triggers
+Requestor_triggers.lst::::Requestor_triggers
+Excisiondate_trigger.lst::::Excisiondate_trigger
+AccessionNumber.lst::::AccessionNumber_trigger

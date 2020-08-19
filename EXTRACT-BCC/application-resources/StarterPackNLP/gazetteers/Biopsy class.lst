@@ -1,0 +1,8 @@
+Excision biopsy:CUI=C0730339:ExcisionType=ExcisionBiopsy
+Wide local excision:CUI=C2986517:ExcisionType=WideLocalExcision
+WLE:CUI=C2986517:ExcisionType=WideLocalExcision
+Wedge excision:CUI=C0184909:ExcisionType=WedgeExcision
+Incision biopsy:CUI=C0559879:ExcisionType=IncisionBiopsy
+Punch biopsy:CUI=C0191321:ExcisionType=PunchBiopsy
+Shave biopsy:CUI=C0411425:ExcisionType=ShaveBiopsy
+Curettage:CUI=C0010470:ExcisionType=Curettage

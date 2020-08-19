@@ -1,0 +1,11 @@
+MultiPhase:	Pruning
+
+Phases:
+cleaning
+cleaning2
+NegationCleanUp
+NegationCleanup2
+NegationCleanup3
+NegationCleanup4
+NegationBack
+ContextCorrection

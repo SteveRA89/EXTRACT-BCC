@@ -1,0 +1,138 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: Cleaning
+Input:Lookup Lookup3 Address Location Token Person NounChunk Lookup2 MedicalHistory Sentence NewLine
+Options: control=appelt
+
+
+/*
+ * These should address lookup3 that contain comorbidities - stroke, head injury, Deal with diseases that are part of URLs
+ * e.g. www.diabetes-uk.org
+ *
+ */
+
+Rule: url1
+
+(
+  {Lookup3.majorType == umls, Lookup3 within {Address.kind == url}}
+):umls
+
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+/*
+ * Remove Lookups that are preceded of proceded by a generic healthcare terms i.e. Clinic
+ */
+ 
+Rule: cleanHealthCareTerms
+
+(
+  ({Lookup3.STY ==~ "[Ss]ign or [Ss]ymptom"} | {Lookup3.STY ==~ "[Dd]isease or [Ss]yndrome"} | {Lookup3.STY ==~ "[Dd]isease"}|{Lookup3.STY ==~ "[Ii]njury or [Pp]oisoning"})
+  ({Lookup2.majorType == organization} | {Location})
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: cleanHealthCareTerms
+
+(
+   ({Lookup2.majorType == organization} | {Location})
+   ({Lookup3.STY ==~ "[Ss]ign or [Ss]ymptom"} | {Lookup3.STY ==~ "[Dd]isease or [Ss]yndrome"} | {Lookup3.STY ==~ "[Dd]isease"}|{Lookup3.STY ==~ "[Ii]njury or [Pp]oisoning"})
+  
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+Rule: cleanHealthCareTermsWithin
+
+(
+   ({Lookup3 within Lookup.majorType == organization})
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+Rule: cleanDiagnosis
+
+(
+   ({Lookup3.STY ==~ "[Ss]ign or [Ss]ymptom"} | {Lookup3.STY ==~ "[Dd]isease or [Ss]yndrome"} | {Lookup3.STY ==~ "[Dd]isease"}|{Lookup3.STY ==~ "[Ii]njury or [Pp]oisoning"}):umls
+	({Lookup.STY ==~ "[Hh]ealth [Cc]are [Aa]ctivity"} | {Lookup.STY ==~ "[Hh]ealth [Cc]are [Rr]elated [Oo]rganization"})
+):match
+-->
+:umls { 
+ inputAS.removeAll(umlsAnnots);
+}
+
+
+
+/*This removes Lookup2 'history of' if it is contained within MedicalHostory: past history of' that identifies past medical history*/
+Rule: cleanLookup2
+
+(
+   ({Lookup2 within MedicalHistory.majorType == diagnosis})
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+//removes things like age group in Lookup2 if the term is contained in a health term, i.e. Child Health
+Rule: cleanLookup2
+
+(
+   {Lookup2.minorType == time, Lookup2 within {Lookup2.minorType == health_term}}
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+//This rule removes generic seizures in Lookup3 when they are part of epileptic seizure in lookup//
+//e.g., temporal onset lobe seizures - so seizures on theinr own will not be annotated in Lookup3.minorType == generic//
+
+Rule: cleanLookup3gen
+
+(
+   {Lookup3.minorType == generic,  Lookup3 within {Lookup.minorType == Disease}}
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+Rule: cleanHealthCareTerms3
+
+(
+   {Lookup3.minorType == generic,  Lookup3 within {Lookup2.minorType == health_term}}
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: RemoveLookupWithin
+
+(
+   {Lookup3.minorType == generic,  Lookup3 within {Lookup2.minorType == health_condition}}
+):umls
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+
+
+
+
+
+

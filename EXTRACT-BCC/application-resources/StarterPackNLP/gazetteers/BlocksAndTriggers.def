@@ -1,0 +1,11 @@
+PrescriptionContext.lst:context:time::ContextPrescription
+DiagnosisTriggers.lst:diagnosis:::DiagnosisTriggers
+KidsDose.lst::::KidsDose
+onset.lst:historic:symptoms:onset:Lookup2
+cause.lst:diagnosis:causality::Lookup2
+MedicalHistory.lst:diagnosis:past::MedicalHistory
+opinion.lst:diagnosis:opinion::Lookup2
+coincide.lst:coincide:coincide::Coincide
+patient_history.lst:person:history::History
+eventModifiers.lst:modifier:::Lookup2
+Health_Condition.lst:health_condition:symptoms::Lookup2

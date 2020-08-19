@@ -1,0 +1,132 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: ModifyLookup
+Input: OtherPerson Lookup2 Person Lookup3 Lookup Conj Sentence
+Options: control=brill
+
+/*
+ * If "Other person" reports events relating to a family member it assigns these 
+ events to that family member not to a person reporting the events i.e Experiencer = Patient
+*/
+
+
+Rule: ExperiencerReversal1
+
+(
+	{OtherPerson.majorType == family}
+    ({Lookup2})?
+    {Lookup2.language == onset}
+    {Person.kind == firstName}
+	({Lookup.majorType == umls, Lookup.minorType == Disease, 
+    Lookup.Experiencer == Other}|{Lookup3.majorType == umls, Lookup3.minorType == Disease, 
+    Lookup3.Experiencer == Other}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Patient");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal1");
+
+}
+
+
+Rule: ExperiencerReversal2
+
+(
+	{OtherPerson.majorType == family}
+    ({Lookup2})?
+    {Lookup2.language == onset}
+    {Person.kind == firstName}
+    {Lookup}
+    ({Lookup3})?
+    ({Conj})?
+	({Lookup.majorType == umls, Lookup.minorType == Disease, 
+    Lookup.Experiencer == Other}|{Lookup3.majorType == umls, Lookup3.minorType == Disease, 
+    Lookup3.Experiencer == Other}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Patient");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal2");
+}
+
+Rule: ExperiencerReversal3
+
+(
+  {Lookup2.minorType == opinion}
+	{Person.majorType == person, Person.minorType == pronoun}
+  {OtherPerson.majorType == family}
+	({Lookup3.majorType == umls, Lookup3.minorType == OtherDisease, 
+    Lookup3.Experiencer == Other}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Patient");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal3");
+}
+
+/* example: no febrile seizures and no family history of epilepsy - experiencer is a patient but GATE gives "other" so we revers it */
+
+Rule: ExperiencerReversal4
+
+(
+	({Lookup3.majorType == umls, Lookup3.minorType == OtherDisease, 
+    Lookup3.Experiencer == Other}):umls
+    {Conj.majorType == grammar}
+    {OtherPerson.majorType == family}
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Patient");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal4");
+  }
+
+  Rule: ExperiencerReversal5  /*from her father in childchood and she has a history of depression - assignig sufferes to patient not father*/
+
+(
+  {Person.minorType == pronoun}
+  {OtherPerson}
+  ({Lookup2.majorType == person})
+  ({Conj})
+  ({Person})
+  {Lookup2.majorType == historic}
+	({Lookup3.majorType == umls, Lookup3.minorType == OtherDisease, 
+    Lookup3.Experiencer == Other}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Patient");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal5");
+}
+
+Rule: ExperiencerReversal6  /*explain to Patient and his father that the ongoing episodes are non-epileptic*/
+( 
+  ({Person})
+  ({Conj})
+  {Person.minorType == pronoun}
+  {OtherPerson.majorType == family}
+  ({Lookup2.minorType == opinion})
+	({Lookup3.majorType == umls, Lookup3.minorType == OtherDisease, 
+    Lookup3.Experiencer == Other}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Patient");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal6");
+}
+
+Rule: ExperiencerReversal6  /*reversing from patient to other*/
+
+ (
+  {Person.minorType == pronoun}
+  {OtherPerson.majorType == family}
+  {Lookup2.majorType == historic, Lookup2.type == past}
+  ({Lookup2})?
+  ({Lookup2})?
+	({Lookup3.majorType == umls, Lookup3.minorType == OtherDisease, 
+    Lookup3.Experiencer == Patient}):umls
+):match
+-->
+:umls {
+  umlsAnnots.iterator().next().getFeatures().put("Experiencer","Other");
+  umlsAnnots.iterator().next().getFeatures().put("rule","ExperienceReversal6");
+}

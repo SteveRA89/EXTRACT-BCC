@@ -1,0 +1,40 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: ModifyLookup
+Input: Lookup2 Lookup Lookup3 Sentence NegConj
+Options: control=appelt
+
+
+Rule: probdrift1
+Priority: 99
+(
+	({Lookup2.minorType == probability}):prob
+	({Lookup.majorType == umls})
+  {NegConj}
+  ({Lookup3.majorType == umls}):umls
+):match
+-->
+:umls {
+  getOnlyAnn(umlsAnnots).getFeatures().put("Certainty", 
+    getOnlyAnn(bindings.get("prob")).getFeatures().get("Level"));
+    getOnlyAnn(umlsAnnots).getFeatures().put("Rule","probdrift");
+}
+
+Rule: probdrift1
+Priority: 99
+(
+	({Lookup2.minorType == probability}):prob
+  ({NegConj})?
+  ({Lookup3})?
+	({Lookup.majorType == umls})
+  {NegConj}
+  ({Lookup2})?
+  ({NegConj})?
+  ({Lookup3.majorType == umls}):umls
+):match
+-->
+:umls {
+  getOnlyAnn(umlsAnnots).getFeatures().put("Certainty", 
+    getOnlyAnn(bindings.get("prob")).getFeatures().get("Level"));
+    getOnlyAnn(umlsAnnots).getFeatures().put("Rule","probdrift");
+}

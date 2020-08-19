@@ -1,0 +1,50 @@
+Phase: Dimensions
+Input: Numeric Token SpaceToken Measurement
+Options: control=appelt
+
+
+Rule: Dimension3D
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
+
+):match
+-->
+:match.Dimension = { rule = Dimension3D, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+Rule: Dimension2D
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2D, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+
+Rule: Dimension1D
+Priority:100
+(
+  
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1 
+
+):match
+-->
+:match.Dimension = { rule = Dimension1D, N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, NumberOfMeasurements = 1}
