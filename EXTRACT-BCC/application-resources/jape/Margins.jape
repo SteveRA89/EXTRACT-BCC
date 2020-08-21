@@ -1,0 +1,28 @@
+Phase: Margins
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence
+Options: control=appelt
+
+
+Rule: DeepMargin
+Priority:100
+(
+    ({Micro_deep_margin})
+    ({Dimension})
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMargin, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}
+
+Rule: PeripheralMargin
+Priority:100
+(
+    ({Micro_peripheral_margin})
+    ({Dimension})
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMargin, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}

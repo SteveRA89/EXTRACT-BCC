@@ -1,0 +1,28 @@
+Phase: Micro_thickness
+Input: Dimension Micro_thickness Sentence
+Options: control=appelt
+
+
+Rule: Micro_thickness1
+Priority:100
+(
+    ({Micro_thickness.Position != Post})
+    ({Dimension})
+
+):match
+-->
+:match.MicroMeasurements = { rule = Micro_thickness1, MeasurementType = "TumourThickness", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}
+
+Rule: Micro_thickness2
+Priority:100
+(
+    ({Dimension})
+    ({Micro_thickness})
+
+):match
+-->
+:match.MicroMeasurements = { rule = Micro_thickness2, MeasurementType = "TumourThickness", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}
