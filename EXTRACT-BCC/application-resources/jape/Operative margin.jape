@@ -1,0 +1,16 @@
+Phase: Operative_margin
+Input: Dimension ClinicalDetailMargin Sentence
+Options: control=appelt
+
+
+Rule: ClinicalDetailMargin
+Priority:100
+(
+    ({Dimension})
+    ({ClinicalDetailMargin})
+
+):match
+-->
+:match.ClinicalDetails = { rule = ClinicalDetailMargin, 
+PeripheralMarginValue = :match.Dimension.N1, 
+PeripheralMarginUnit = :match.Dimension.units}
