@@ -1,0 +1,12 @@
+Phase: ClockFace
+Input: Numeric Token Split Clock
+Options: control=appelt
+
+Rule: ClockFace
+(
+	({Numeric.value < 13, Numeric.value > 0})
+    ({Clock})
+
+):match
+-->
+:match.ClockFace = { rule = ClockFace, time = :match.Numeric.value}
