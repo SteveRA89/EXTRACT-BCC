@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence MarginWordDistances ClockFace NewLine
 Options: control=appelt
 
 
@@ -7,22 +7,222 @@ Rule: DeepMargin
 Priority:100
 (
     ({Micro_deep_margin})
+    ({ClockFace})?
     ({Dimension})
 
 ):match
 -->
 :match.MicroMeasurements = { rule = DeepMargin, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units}
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMargina
+Priority:100
+(
+    ({Micro_deep_margin})
+    ({Dimension})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMargina, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMargin2
+Priority:100
+(
+    ({Dimension})
+    ({ClockFace})?
+    ({Micro_deep_margin})
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMargin2, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMargin2a
+Priority:100
+(
+    ({Dimension})
+    ({Micro_deep_margin})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMargin2a, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
 
 Rule: PeripheralMargin
 Priority:100
 (
     ({Micro_peripheral_margin})
+    ({ClockFace})?
     ({Dimension})
 
 ):match
 -->
 :match.MicroMeasurements = { rule = PeripheralMargin, MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units}
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMargina
+Priority:100
+(
+    ({Micro_peripheral_margin})
+    ({Dimension})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMargina, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMargin2
+Priority:100
+(
+    ({Dimension})
+    ({ClockFace})?
+    ({Micro_peripheral_margin})
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMargin2, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMargin2a
+Priority:100
+(
+    ({Dimension})
+    ({Micro_peripheral_margin})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMargin2a, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMarginWords1
+Priority:100
+(
+    ({Micro_deep_margin})
+    ({ClockFace})?
+    ({MarginWordDistances})
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMarginWords1, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMarginWords1a
+Priority:100
+(
+    ({Micro_deep_margin})
+    ({MarginWordDistances})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMarginWords1a, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMarginWords2
+Priority:100
+(
+    ({MarginWordDistances})
+    ({ClockFace})?
+    ({Micro_deep_margin})
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMarginWords2, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: DeepMarginWords2a
+Priority:100
+(
+    ({MarginWordDistances})
+    ({Micro_deep_margin})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = DeepMarginWords2a, MeasurementType = "DeepClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMarginWords1
+Priority:100
+(
+    ({Micro_peripheral_margin})
+    ({ClockFace})?
+    ({MarginWordDistances})
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMarginWords1, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMarginWords1a
+Priority:100
+(
+    ({Micro_peripheral_margin})
+    ({MarginWordDistances})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMarginWords1a, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMarginWords2
+Priority:100
+(
+    ({MarginWordDistances})
+    ({ClockFace})?
+    ({Micro_peripheral_margin})
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMarginWords2, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: PeripheralMarginWords2a
+Priority:100
+(
+    ({MarginWordDistances})
+    ({Micro_peripheral_margin})
+    ({ClockFace})?
+
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralMarginWords2, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value, 
+MeasurementUnit = "mm",
+PeripheralClockPosition = :match.ClockFace.time}
