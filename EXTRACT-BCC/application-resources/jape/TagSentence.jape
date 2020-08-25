@@ -1,0 +1,31 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: TagStartOfSentence
+Input: Sentence
+Options: control=all
+
+/*
+ * Sentence Contains a Tag. The Tag must be right at the start of the sentence.
+*/
+
+
+Rule: Sentence
+(
+	({Sentence contains Tag}):Tag
+):match
+-->
+:match {
+    Annotation matchAnn = matchAnnots.iterator().next();
+    Long sentenceStart = matchAnnots.firstNode().getOffset();
+    AnnotationSet tag = gate.Utils.getContainedAnnotations(inputAS, matchAnnots, "Tag");
+    List<Annotation> tagList = gate.Utils.inDocumentOrder(tag);
+    Annotation firstTag = tagList.get(0);
+    Long tagStart = firstTag.getStartNode().getOffset();
+    if (sentenceStart != tagStart) {
+        firstTag.getFeatures().put("remove", "delete");
+        }
+    else {
+        firstTag.getFeatures().put("Keep", "Keep");
+    }
+}
+

@@ -1,0 +1,55 @@
+Phase: Tag
+Input: Token Split SplitToken Numeric
+Options: control=appelt
+
+
+Rule: TagLetters1
+Priority: 100
+//A) or B) not a) or b)
+(
+	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == ")"})
+):match
+-->
+:match.Tag = { rule = TagLetters1, value = :match@string, Tag = :Tag.Token.string}
+
+Rule: TagLetters2
+Priority: 100
+//A. or B.  not a. or b.
+(
+	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == "."})
+):match
+-->
+:match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
+
+Rule: TagLetters3
+Priority: 100
+//A. or B.  not a. or b.
+(
+	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == ":"})
+):match
+-->
+:match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
+
+
+Rule: TagNumber1
+Priority: 100
+//1) or 2)
+(
+	({Token.kind == number, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == ")"})
+):match
+-->
+:match.Tag = { rule = TagLetters1, value = :match@string, Tag = :Tag.Token.string}
+
+Rule: TagNumber2
+Priority: 100
+//1. or 2.
+(
+	({Token.kind == number, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == "."})
+):match
+-->
+:match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}

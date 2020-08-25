@@ -1,0 +1,15 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: TagStartOfSentence
+Input: Tag
+Options: control=all
+
+//Remove Tags when not at start of sentence
+Rule: Sentence
+(
+	({Tag.Keep != Keep}):Tag
+):match
+-->
+:match { 
+  inputAS.removeAll(matchAnnots);
+}

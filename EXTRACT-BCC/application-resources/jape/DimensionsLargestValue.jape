@@ -1,0 +1,56 @@
+Imports: {import static gate.Utils.*;
+          import java.util.*;}
+
+Phase: DimensionLargestMeasurement
+Input: Dimension
+Options: control=all
+
+/*
+ * Get the largest measurement from the Dimension annotation.
+*/
+
+
+Rule: DimensionLargestMeasurement
+(
+	({Dimension})
+):match
+-->
+:match { 
+float lengthArray;
+ArrayList<Float> lengthsArray = new ArrayList<Float>();//Create ArrayList<Float> to later be populated
+Annotation matchAnn = matchAnnots.iterator().next();//get match annotations
+String length1string = matchAnn.getFeatures().get("N1").toString();// get N1 values
+Float length1 = Float.parseFloat(length1string);//convert to a float (float not int due to possible 1.4mm not just 2mm)
+lengthsArray.add(length1);//adding float to the array
+if (matchAnn.getFeatures().containsKey("N2")) {//if Dimention annotation contains key(feature) = N2
+String length2string = matchAnn.getFeatures().get("N2").toString();//get the value
+if (length2string != null) {//could be deleted most likely
+Float length2 = Float.parseFloat(length2string);//converts it to a Float
+    if (length2 != null) {//could also be deleted maybe
+    lengthsArray.add(length2);//adds it too the array
+    }
+}
+}
+if (matchAnn.getFeatures().containsKey("N3")) {//Same as above but for N3 not N2
+String length3string = matchAnn.getFeatures().get("N3").toString();
+if (length3string != null) {
+Float length3 = Float.parseFloat(length3string);
+    if (length3 != null) {
+    lengthsArray.add(length3);
+    }
+}
+}
+Collections.sort(lengthsArray, Collections.reverseOrder());//sort the Floats in the array in descending order(largest first)
+//System.out.println(lengthsArray);//to print it out checking during development
+String longestLengthString = lengthsArray.get(0).toString();//get first value (which is largest)
+String lastTwo = longestLengthString.substring(longestLengthString.length()-2, longestLengthString.length()-0);//get the last two characters of the string
+//System.out.println(lastTwo);//check that the above is correct
+if (lastTwo.contains(".0")) {//contains here to check the correct value of lastTwo - then convert to integer, removing the last two parts characters
+String intoInteger = longestLengthString.substring(0, longestLengthString.length()-2);//get the string from start to minus last two
+Integer lengthInt = Integer.valueOf(intoInteger);//convert string to Integer
+getOnlyAnn(matchAnnots).getFeatures().put("LongestMeasurement", lengthInt);//output value
+}
+else {
+getOnlyAnn(matchAnnots).getFeatures().put("LongestMeasurement", lengthsArray.get(0));//output value as an array
+}
+}
