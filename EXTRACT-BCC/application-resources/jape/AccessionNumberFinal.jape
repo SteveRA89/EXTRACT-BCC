@@ -1,0 +1,19 @@
+Phase: AccessionNumber
+Input: AccessionNumber1 AccessionNumber_trigger
+Options: control=appelt
+
+Rule: AccessionNumFinal
+Priority: 100
+
+(
+        {AccessionNumber_trigger}
+        {AccessionNumber1}
+		
+        
+):match
+-->
+:match.AccessionNumber = {rule = AccessionNumFinal, AccessionNumber= :match.AccessionNumber1.value, 
+location = :match.AccessionNumber1.location,
+site = :match.AccessionNumber1.site,
+year = :match.AccessionNumber1.year,
+suffix = :match.AccessionNumber1.suffix}
