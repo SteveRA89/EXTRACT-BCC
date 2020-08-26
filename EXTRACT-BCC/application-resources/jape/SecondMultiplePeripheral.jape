@@ -1,14 +1,17 @@
 Phase: MultiplePeripheral
-Input: Distance_to Dimension MicroMeasurements ClockFace NewLine
+Input: Distance_to Dimension MicroMeasurements ClockFace NewLine Sepatator
 Options: control=appelt
 
 Rule: SecondMultiplePeripheral
 Priority:100
 (
     ({MicroMeasurements.MeasurementType == DeepClearance})
+    ({Sepatator})?
     ({NewLine})?
+    ({Sepatator})?
     ({NewLine})?
     ({MicroMeasurements.MeasurementType == PeripheralClearance})
+    ({Sepatator})?
     ({NewLine})?
     (({Distance_to})
     ({ClockFace})
@@ -27,9 +30,12 @@ Priority:100
     (({Distance_to})
     ({ClockFace})
     ({Dimension})):match
+    ({Sepatator})?
     ({NewLine})?
     ({MicroMeasurements.MeasurementType == PeripheralClearance})
+    ({Sepatator})?
     ({NewLine})?
+    ({Sepatator})?
     ({NewLine})?
     ({MicroMeasurements.MeasurementType == DeepClearance})
 
