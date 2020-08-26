@@ -71,950 +71,1114 @@
       <docList>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>1.xml_00015</resourceName>
+          <resourceName>1.txt_00084</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/1.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/1.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>10.xml_00016</resourceName>
+          <resourceName>10.txt_00085</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/10.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/10.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>11.xml_00017</resourceName>
+          <resourceName>11.txt_00086</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/11.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/11.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>12.xml_00018</resourceName>
+          <resourceName>12.txt_00087</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/12.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/12.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>13.xml_00019</resourceName>
+          <resourceName>13.txt_00088</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/13.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/13.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>14.xml_0001A</resourceName>
+          <resourceName>14.txt_00089</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/14.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/14.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>15.xml_0001B</resourceName>
+          <resourceName>15.txt_0008A</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/15.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/15.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>15b.xml_0001C</resourceName>
+          <resourceName>15b.txt_0008B</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/15b.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/15b.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>16.xml_0001D</resourceName>
+          <resourceName>16.txt_0008C</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/16.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/16.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>17.xml_0001E</resourceName>
+          <resourceName>17.txt_0008D</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/17.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/17.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>18.xml_0001F</resourceName>
+          <resourceName>18.txt_0008E</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/18.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/18.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>19.xml_00020</resourceName>
+          <resourceName>19.txt_0008F</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/19.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/19.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>2.xml_00021</resourceName>
+          <resourceName>2.txt_00090</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/2.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/2.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>20.xml_00022</resourceName>
+          <resourceName>20.txt_00091</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/20.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/20.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>21.xml_00023</resourceName>
+          <resourceName>21.txt_00092</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/21.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/21.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>22.xml_00024</resourceName>
+          <resourceName>22.txt_00093</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/22.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/22.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>23.xml_00025</resourceName>
+          <resourceName>23.txt_00094</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/23.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/23.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>24.xml_00026</resourceName>
+          <resourceName>24.txt_00095</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/24.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/24.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>25.xml_00027</resourceName>
+          <resourceName>25.txt_00096</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/25.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/25.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>26.xml_00028</resourceName>
+          <resourceName>26.txt_00097</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/26.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/26.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>27.xml_00029</resourceName>
+          <resourceName>27.txt_00098</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/27.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/27.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>28.xml_0002A</resourceName>
+          <resourceName>28.txt_00099</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/28.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/28.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>29a.xml_0002B</resourceName>
+          <resourceName>29a.txt_0009A</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/29a.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/29a.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>29b.xml_0002C</resourceName>
+          <resourceName>29b.txt_0009B</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/29b.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/29b.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>29c.xml_0002D</resourceName>
+          <resourceName>29c.txt_0009C</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/29c.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/29c.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>3.xml_0002E</resourceName>
+          <resourceName>3.txt_0009D</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/3.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/3.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>30.xml_0002F</resourceName>
+          <resourceName>30.txt_0009E</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/30.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/30.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>31.xml_00030</resourceName>
+          <resourceName>31.txt_0009F</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/31.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/31.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>32.xml_00031</resourceName>
+          <resourceName>32.txt_000A0</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/32.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/32.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>33.xml_00032</resourceName>
+          <resourceName>33.txt_000A1</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/33.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/33.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>34.xml_00033</resourceName>
+          <resourceName>34.txt_000A2</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/34.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/34.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>35.xml_00034</resourceName>
+          <resourceName>35.txt_000A3</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/35.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/35.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>36.xml_00035</resourceName>
+          <resourceName>36.txt_000A4</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/36.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/36.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>37.xml_00036</resourceName>
+          <resourceName>37.txt_000A5</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/37.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/37.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>4.xml_00037</resourceName>
+          <resourceName>4.txt_000A6</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/4.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/4.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>4b.xml_00038</resourceName>
+          <resourceName>4b.txt_000A7</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/4b.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/4b.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>5.xml_00039</resourceName>
+          <resourceName>5.txt_000A8</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/5.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/5.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>6.xml_0003A</resourceName>
+          <resourceName>6.txt_000A9</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/6.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/6.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>7.xml_0003B</resourceName>
+          <resourceName>7.txt_000AA</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/7.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/7.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>8.xml_0003C</resourceName>
+          <resourceName>8.txt_000AB</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/8.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/8.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
         <gate.util.persistence.LRPersistence>
           <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>9.xml_0003D</resourceName>
+          <resourceName>9.txt_000AC</resourceName>
           <initParams class="gate.util.persistence.MapPersistence">
             <mapType>gate.util.SimpleFeatureMapImpl</mapType>
             <localMap>
               <entry>
-                <string>encoding</string>
-                <string>windows-1252</string>
-              </entry>
-              <entry>
                 <string>sourceUrl</string>
                 <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Plastics%20NLP/Archive2/Archive/BothGATE/9.xml</urlString>
+                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40/9.txt</urlString>
                 </gate.util.persistence.PersistenceManager-URLHolder>
               </entry>
               <entry>
                 <string>stringContent</string>
                 <string></string>
+              </entry>
+              <entry>
+                <string>mimeType</string>
+                <string>text/x-brat</string>
+              </entry>
+              <entry>
+                <string>encoding</string>
+                <string>UTF-8</string>
               </entry>
             </localMap>
           </initParams>
         </gate.util.persistence.LRPersistence>
       </docList>
       <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>123</resourceName>
+      <resourceName>BCC pathology reports </resourceName>
       <initParams class="gate.util.persistence.MapPersistence">
         <mapType>gate.util.SimpleFeatureMapImpl</mapType>
         <localMap/>
@@ -1456,6 +1620,43 @@
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
+                  <string>annotationSetName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
+            <resourceName>ANNIE Gazetteer Document Details</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>listsURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/gazetteers/Request.def</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+                <entry>
+                  <string>caseSensitive</string>
+                  <boolean>false</boolean>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
                   <string>outputASName</string>
                   <string>Bio</string>
                 </entry>
@@ -1781,6 +1982,43 @@
               </localMap>
             </runtimeParams>
             <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: R&amp;R</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/R&amp;R.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
             <resourceName>JAPE: LongestDistance</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
@@ -1789,6 +2027,191 @@
                   <string>grammarURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
                     <uriString>$relpath$application-resources/jape/DimensionsLargestValue.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: AccessionNumber</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/AccessionMP.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: MultiplePeripheral</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/MultiplePeripheral.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: SecondMultiplePeripheral</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/SecondMultiplePeripheral.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: ThirdMultiplePeripheral</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/ThirdMultiplePeripheral.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: FourthMultiplePeripheral</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/FourthMultiplePeripheral.jape</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
@@ -1827,6 +2250,13 @@
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[21]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[22]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[23]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[24]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[25]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[26]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[27]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[28]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[29]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[30]/pr"/>
       </localList>
       <collectionType>java.util.ArrayList</collectionType>
     </prList>
