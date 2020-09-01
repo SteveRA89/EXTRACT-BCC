@@ -1,0 +1,12 @@
+MultiPhase: DocumentDetails
+Phases:
+
+Requestor
+Reporter
+ExcisionDate
+AccessionNumber
+AccessionNumberFinal
+ParagraphTitles
+Tag
+TagSentence
+RemoveTags
