@@ -1,5 +1,5 @@
-Clinical Details
-Macro Description
-Macroscopy
-Microscopy
-Technical
+Clinical Details:type=ClinicalDetails
+Macro Description:type=MacroDescription
+Macroscopy:type=MacroDescription
+Microscopy:type=Microscopy
+Technical:type=Technical
