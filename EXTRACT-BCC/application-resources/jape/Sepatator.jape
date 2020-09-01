@@ -5,7 +5,7 @@ Options: control=appelt
 
 Rule: TagLetters1
 Priority: 100
-//A) or B) not a) or b)
+//Pick up ',' and ';'.
 (
 	({Token.kind == punctuation, Token.length == 1, Token.string == ","}|{Token.kind == punctuation, Token.length == 1, Token.string == ";"}):Tag
 ):match
