@@ -16,3 +16,7 @@ ClinicalDetailMargin.lst::::ClinicalDetailMargin
 o'clock.lst::::Clock
 MarginWordDistances.lst::::MarginWordDistances
 Distance_to.lst::::Distance_to
+Ulcerated.lst::::Ulcerated
+LVI.lst::::LVI
+PNI.lst::::PNI
+Excision_Completed.lst::::ExcisionComplete
