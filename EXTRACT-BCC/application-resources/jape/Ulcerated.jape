@@ -1,0 +1,22 @@
+Phase: Ulcerated
+Input: Ulcerated Split Sentence
+Options: control=appelt
+
+
+Rule: UlceratedYes
+Priority: 100
+
+(
+	{Ulcerated.Negation == Affirmed}
+):match
+-->
+:match.MicroDetails = { rule = UlceratedYes, Ulcerated = "Yes"}
+
+Rule: UlceratedNo
+Priority: 100
+
+(
+	{Ulcerated.Negation == Negated}
+):match
+-->
+:match.MicroDetails = { rule = UlceratedNo, Ulcerated = "No"}
