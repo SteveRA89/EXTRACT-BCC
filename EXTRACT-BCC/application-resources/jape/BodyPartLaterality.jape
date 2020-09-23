@@ -2,7 +2,77 @@ Phase: BodyPartLaterality
 Input: Lookup2 BodyParts Split Sentence Token LocalisationSkipTerms MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp
 Options: control=appelt
 
-//BodyPart 
+
+Rule: BodyPartOneTerm1
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartOneTerm1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp
+}
+
+
+
+Rule: BodyPartTwoTerms1
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartTwoTerms1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp
+}
+
+
+
+Rule: BodyPartThreeTerms1
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term3
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartThreeTerms1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp
+}
+
+
+
+
+
+/*
+/BodyPart 
 
 Rule: BodyPart
 Priority: 100
@@ -15,7 +85,7 @@ Priority: 100
 -->
 :match.ClinicalDetails = { rule = BodyPart, BodyPart = :match.BodyParts.bodypart}
 
-//2 x bodyPart 
+/2 x bodyPart 
 
 Rule: MultipleBodyParts
 Priority: 100
@@ -30,7 +100,7 @@ Priority: 100
 :match.ClinicalDetails = { rule = MultipleBodyParts, BodyPart = :BP1.BodyParts.bodypart,
 BodyPart2 = :BP2.BodyParts.bodypart}
 
-//Laterality and bodyPart 
+/Laterality and bodyPart 
 
 Rule: BodyPartLaterality1
 Priority: 100
@@ -46,7 +116,7 @@ Priority: 100
 :match.ClinicalDetails = { rule = BodyPartLaterality1, BodyPart = :match.BodyParts.bodypart,
 Lateralization = :match.Lookup2.lateralisation}
 
-//Laterality and bodyPart1/bodypart2 
+/Laterality and bodyPart1/bodypart2 
 
 Rule: TwoBodyPartLaterality1
 Priority: 100
@@ -64,7 +134,7 @@ Priority: 100
 BodyPart2 = :BP2.BodyParts.bodypart,
 Lateralization = :match.Lookup2.lateralisation}
 
-//BodyPart and laterality 
+/BodyPart and laterality 
 
 Rule: BodyPartLaterality2
 Priority: 100
@@ -80,7 +150,7 @@ Priority: 100
 :match.ClinicalDetails = { rule = BodyPartLaterality2, BodyPart = :match.BodyParts.bodypart,
 Lateralization = :match.Lookup2.lateralisation}
 
-//Lateralilty, MedialOrLateral and BodyPart
+/Lateralilty, MedialOrLateral and BodyPart
 
 Rule: BodyPartLateralityMedialOrLateral1
 Priority: 100
@@ -100,7 +170,7 @@ Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
 
 
-//BodyPart, MedialOrLateral, lateralilty
+/BodyPart, MedialOrLateral, lateralilty
 
 
 Rule: BodyPartLateralityMedialOrLateral2
@@ -121,7 +191,7 @@ Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
 
 
-//MedialOrLateral, lateralilty and BodyPart
+/MedialOrLateral, lateralilty and BodyPart
 
 
 Rule: BodyPartLateralityMedialOrLateral3
@@ -141,7 +211,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
 
-//BodyPart, lateralilty and MedialOrLateral
+/BodyPart, lateralilty and MedialOrLateral
 
 Rule: BodyPartLateralityMedialOrLateral4
 Priority: 100
@@ -160,7 +230,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
 
-//MedialOrLateral and BodyPart
+/MedialOrLateral and BodyPart
 
 Rule: BodyPartMedialOrLateral1
 Priority: 100
@@ -177,7 +247,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
 
-//BodyPart and MedialOrLateral
+/BodyPart and MedialOrLateral
 
 Rule: BodyPartMedialOrLateral2
 Priority: 100
@@ -194,7 +264,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
 
-//Lateralilty, UpperOrLower and BodyPart
+/Lateralilty, UpperOrLower and BodyPart
 
 Rule: BodyPartLateralityUpperOrLower1
 Priority: 100
@@ -214,7 +284,7 @@ Lateralization = :match.Lookup2.lateralisation,
 UpperOrLower = :match.UpperOrLower.UpperOrLower}
 
 
-//BodyPart, UpperOrLower, lateralilty
+/BodyPart, UpperOrLower, lateralilty
 
 
 Rule: BodyPartLateralityUpperOrLower2
@@ -235,7 +305,7 @@ Lateralization = :match.Lookup2.lateralisation,
 UpperOrLower = :match.UpperOrLower.UpperOrLower}
 
 
-//UpperOrLower, lateralilty and BodyPart
+/UpperOrLower, lateralilty and BodyPart
 
 
 Rule: BodyPartLateralityUpperOrLower3
@@ -255,7 +325,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 UpperOrLower = :match.UpperOrLower.UpperOrLower}
 
-//BodyPart, lateralilty and UpperOrLower
+/BodyPart, lateralilty and UpperOrLower
 
 Rule: BodyPartLateralityUpperOrLower4
 Priority: 100
@@ -274,7 +344,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 UpperOrLower = :match.UpperOrLower.UpperOrLower}
 
-//UpperOrLower and BodyPart
+/UpperOrLower and BodyPart
 
 Rule: BodyPartUpperOrLower1
 Priority: 100
@@ -291,7 +361,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 UpperOrLower = :match.UpperOrLower.UpperOrLower}
 
-//BodyPart and UpperOrLower
+/BodyPart and UpperOrLower
 
 Rule: BodyPartUpperOrLower2
 Priority: 100
@@ -308,7 +378,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 UpperOrLower = :match.UpperOrLower.UpperOrLower}
 
-//Lateralilty, ProximalOrDistal and BodyPart
+/Lateralilty, ProximalOrDistal and BodyPart
 
 Rule: BodyPartLateralityProximalOrDistal1
 Priority: 100
@@ -328,7 +398,7 @@ Lateralization = :match.Lookup2.lateralisation,
 ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
 
 
-//BodyPart, ProximalOrDistal, lateralilty
+/BodyPart, ProximalOrDistal, lateralilty
 
 
 Rule: BodyPartLateralityProximalOrDistal2
@@ -349,7 +419,7 @@ Lateralization = :match.Lookup2.lateralisation,
 ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
 
 
-//ProximalOrDistal, lateralilty and BodyPart
+/ProximalOrDistal, lateralilty and BodyPart
 
 
 Rule: BodyPartLateralityProximalOrDistal3
@@ -369,7 +439,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
 
-//BodyPart, lateralilty and ProximalOrDistal
+/BodyPart, lateralilty and ProximalOrDistal
 
 Rule: BodyPartLateralityProximalOrDistal4
 Priority: 100
@@ -388,7 +458,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
 
-//ProximalOrDistal and BodyPart
+/ProximalOrDistal and BodyPart
 
 Rule: BodyPartProximalOrDistal1
 Priority: 100
@@ -405,7 +475,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
 
-//BodyPart and ProximalOrDistal
+/BodyPart and ProximalOrDistal
 
 Rule: BodyPartProximalOrDistal2
 Priority: 100
@@ -422,7 +492,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
 
-//Lateralilty, AnteriorOrPosterior and BodyPart
+/Lateralilty, AnteriorOrPosterior and BodyPart
 
 Rule: BodyPartLateralityAnteriorOrPosterior1
 Priority: 100
@@ -442,7 +512,7 @@ Lateralization = :match.Lookup2.lateralisation,
 AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
 
 
-//BodyPart, AnteriorOrPosterior, lateralilty
+/BodyPart, AnteriorOrPosterior, lateralilty
 
 
 Rule: BodyPartLateralityAnteriorOrPosterior2
@@ -463,7 +533,7 @@ Lateralization = :match.Lookup2.lateralisation,
 AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
 
 
-//AnteriorOrPosterior, lateralilty and BodyPart
+/AnteriorOrPosterior, lateralilty and BodyPart
 
 
 Rule: BodyPartLateralityAnteriorOrPosterior3
@@ -483,7 +553,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
 
-//BodyPart, lateralilty and AnteriorOrPosterior
+/BodyPart, lateralilty and AnteriorOrPosterior
 
 Rule: BodyPartLateralityAnteriorOrPosterior4
 Priority: 100
@@ -501,7 +571,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
 
-//AnteriorOrPosterior and BodyPart
+/AnteriorOrPosterior and BodyPart
 
 Rule: BodyPartAnteriorOrPosterior1
 Priority: 100
@@ -518,7 +588,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
 
-//BodyPart and AnteriorOrPosterior
+/BodyPart and AnteriorOrPosterior
 
 Rule: BodyPartAnteriorOrPosterior2
 Priority: 100
@@ -535,7 +605,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
 
-//Lateralilty, MultipleScalp and BodyPart
+/Lateralilty, MultipleScalp and BodyPart
 
 Rule: BodyPartLateralityMultipleScalp1
 Priority: 100
@@ -555,7 +625,7 @@ Lateralization = :match.Lookup2.lateralisation,
 MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
 
-//BodyPart, MultipleScalp, lateralilty
+/BodyPart, MultipleScalp, lateralilty
 
 
 Rule: BodyPartLateralityMultipleScalp2
@@ -576,7 +646,7 @@ Lateralization = :match.Lookup2.lateralisation,
 MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
 
-//MultipleScalp, lateralilty and BodyPart
+/MultipleScalp, lateralilty and BodyPart
 
 
 Rule: BodyPartLateralityMultipleScalp3
@@ -596,7 +666,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
-//BodyPart, lateralilty and MultipleScalp
+/BodyPart, lateralilty and MultipleScalp
 
 Rule: BodyPartLateralityMultipleScalp4
 Priority: 100
@@ -615,7 +685,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
-//MultipleScalp and BodyPart
+/MultipleScalp and BodyPart
 
 Rule: BodyPartMultipleScalp1
 Priority: 100
@@ -632,7 +702,7 @@ Priority: 100
 Lateralization = :match.Lookup2.lateralisation, 
 MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
-//BodyPart and MultipleScalp
+/BodyPart and MultipleScalp
 
 Rule: BodyPartMultipleScalp2
 Priority: 100
@@ -648,3 +718,4 @@ Priority: 100
 :match.ClinicalDetails = { rule = BodyPartMultipleScalp2, BodyPart = :match.BodyParts.bodypart,
 Lateralization = :match.Lookup2.lateralisation, 
 MultipleScalp = :match.MultipleScalp.MultipleScalp}
+*/
