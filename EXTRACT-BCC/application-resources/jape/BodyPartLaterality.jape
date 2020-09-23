@@ -2,14 +2,15 @@ Phase: BodyPartLaterality
 Input: Lookup2 BodyParts Split Sentence Token LocalisationSkipTerms MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp
 Options: control=appelt
 
+//BodyPart and one localisation term - order 1
 
 Rule: BodyPartOneTerm1
 Priority: 100
 
 (
-	{BodyParts}
+	({BodyParts})
     ({LocalisationSkipTerms})?
-    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
 
 ):match
 -->
@@ -18,20 +19,39 @@ Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
 AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
-MultipleScalp = :match.MultipleScalp.MultipleScalp
-}
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and one localisation term - order 2
+
+Rule: BodyPartOneTerm2
+Priority: 100
+
+(
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({BodyParts})
 
 
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartOneTerm2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and two localisation terms - order 1
 
 Rule: BodyPartTwoTerms1
 Priority: 100
 
 (
-	{BodyParts}
+	({BodyParts})
     ({LocalisationSkipTerms})?
-    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
     ({LocalisationSkipTerms})?
-    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
 
 
 ):match
@@ -41,22 +61,64 @@ Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
 AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
-MultipleScalp = :match.MultipleScalp.MultipleScalp
-}
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
+//BodyPart and two localisation terms - order 2 
 
+Rule: BodyPartTwoTerms2
+Priority: 100
+
+(
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({BodyParts})
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartTwoTerms2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and two localisation terms - order 3
+
+Rule: BodyPartTwoTerms3
+Priority: 100
+
+(
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({LocalisationSkipTerms})?
+    ({BodyParts})
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartTwoTerms3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and three localisation terms - order 1
 
 Rule: BodyPartThreeTerms1
 Priority: 100
 
 (
-	{BodyParts}
+	({BodyParts})
     ({LocalisationSkipTerms})?
-    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
     ({LocalisationSkipTerms})?
-    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
     ({LocalisationSkipTerms})?
-    ({MedialOrLateral}}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term3
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term3
+
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartThreeTerms1, BodyPart = :match.BodyParts.bodypart,
@@ -64,11 +126,79 @@ Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
 AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
-MultipleScalp = :match.MultipleScalp.MultipleScalp
-}
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and three localisation terms - order 2
+
+Rule: BodyPartThreeTerms2
+Priority: 100
+
+(
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({BodyParts})
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term3
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartThreeTerms2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and three localisation terms - order 3
+
+Rule: BodyPartThreeTerms3
+Priority: 100
+
+(
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({LocalisationSkipTerms})?
+    ({BodyParts})
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term3
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartThreeTerms3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and three localisation terms - order 4
+
+Rule: BodyPartThreeTerms4
+Priority: 100
+
+(
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term1
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term2
+    ({LocalisationSkipTerms})?
+    ({MedialOrLateral}|{Lookup2.minorType == lateralisation}|{UpperOrLower}|{AnteriorOrPosterior}|{MultipleScalp}):term3
+    ({LocalisationSkipTerms})?
+    ({BodyParts})
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartThreeTerms4, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
+UpperOrLower = :match.UpperOrLower.UpperOrLower,
+AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
 
 
-
+//Old code - consider deleting once above complete
 
 
 /*
