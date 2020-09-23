@@ -1,0 +1,22 @@
+Phase: PNI
+Input: PNI Split Sentence
+Options: control=appelt
+
+
+Rule: PNIYes
+Priority: 100
+
+(
+	{PNI.Negation == Affirmed}
+):match
+-->
+:match.MicroDetails = { rule = PNI, PNI = "Yes"}
+
+Rule: PNINo
+Priority: 100
+
+(
+	{PNI.Negation == Negated}
+):match
+-->
+:match.MicroDetails = { rule = PNI, PNI = "No"}

@@ -1,0 +1,22 @@
+Phase: ExcisionComplete
+Input: ExcisionComplete Split Sentence
+Options: control=appelt
+
+
+Rule: ExcisionCompleteYes
+Priority: 100
+
+(
+	{ExcisionComplete.Negation == Affirmed}
+):match
+-->
+:match.MicroDetails = { rule = ExcisionComplete, ExcisionComplete = "Yes"}
+
+Rule: ExcisionCompleteNo
+Priority: 100
+
+(
+	{ExcisionComplete.Negation == Negated}
+):match
+-->
+:match.MicroDetails = { rule = ExcisionComplete, ExcisionComplete = "No"}

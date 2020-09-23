@@ -1,0 +1,23 @@
+Phase: DeepClearButClose
+Input: ClearButClose Micro_deep_margin Split Sentence
+Options: control=appelt
+
+Rule: DeepClearButClose
+Priority: 100
+
+(
+    {Micro_deep_margin}
+	{ClearButClose.Negation == Affirmed}
+):match
+-->
+:match.MicroMeasurements = { rule = DeepClearButCloseYes, DeepClearButClose = "Yes"}
+
+Rule: PeripheralClearButCloseNo
+Priority: 100
+
+(
+    {Micro_deep_margin}
+	{ClearButClose.Negation == Negated}
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralClearButCloseNo, DeepClearButClose = "No"}

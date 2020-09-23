@@ -1,0 +1,23 @@
+Phase: DeepClear
+Input: Clear Micro_deep_margin Split Sentence
+Options: control=appelt
+
+Rule: DeepClear
+Priority: 100
+
+(
+    {Micro_deep_margin}
+	{Clear.Negation == Affirmed}
+):match
+-->
+:match.MicroMeasurements = { rule = DeepClearYes, DeepClear = "Yes"}
+
+Rule: DeepClearNo
+Priority: 100
+
+(
+    {Micro_deep_margin}
+	{Clear.Negation == Negated}
+):match
+-->
+:match.MicroMeasurements = { rule = DeepClearNo, DeepClear = "No"}

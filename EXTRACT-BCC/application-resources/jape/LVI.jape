@@ -1,0 +1,22 @@
+Phase: LVI
+Input: LVI Split Sentence
+Options: control=appelt
+
+
+Rule: LVIYes
+Priority: 100
+
+(
+	{LVI.Negation == Affirmed}
+):match
+-->
+:match.MicroDetails = { rule = LVI, LVI = "Yes"}
+
+Rule: LVINo
+Priority: 100
+
+(
+	{LVI.Negation == Negated}
+):match
+-->
+:match.MicroDetails = { rule = LVI, LVI = "No"}

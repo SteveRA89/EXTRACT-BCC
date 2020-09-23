@@ -1,0 +1,22 @@
+Phase: Frozen_Section
+Input: Frozen_Section Split Sentence
+Options: control=appelt
+
+
+Rule: Frozen_SectionYes
+Priority: 100
+
+(
+	{Frozen_Section.Negation == Affirmed}
+):match
+-->
+:match.ClinicalDetails = { rule = Frozen_Section, Frozen_Section = "Yes"}
+
+Rule: Frozen_SectionNo
+Priority: 100
+
+(
+	{Frozen_Section.Negation == Negated}
+):match
+-->
+:match.ClinicalDetails = { rule = Frozen_Section, Frozen_Section = "No"}

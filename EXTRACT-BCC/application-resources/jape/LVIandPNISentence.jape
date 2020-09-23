@@ -1,0 +1,23 @@
+Phase: LVIandPNISentence
+Input: LVI PNI Split Sentence LVIorPNI
+Options: control=appelt
+
+Rule: PNISentence
+Priority: 100
+
+(
+    ({LVIorPNI.PNI == "Yes"}):match1
+	{LVI}
+):match
+-->
+:match1.PNI = { rule = PNISentence}
+
+Rule: LVISentence
+Priority: 100
+
+(
+    ({LVIorPNI.LVI == "Yes"}):match1
+	{PNI}
+):match
+-->
+:match1.LVI = { rule = LVISentence}

@@ -1,0 +1,23 @@
+Phase: PeripheralClearButClose
+Input: ClearButClose Micro_peripheral_margin Split Sentence
+Options: control=appelt
+
+Rule: PeripheralClearButClose
+Priority: 100
+
+(
+    {Micro_peripheral_margin}
+	{ClearButClose.Negation == Affirmed}
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralClearButCloseYes, PeripheralClearButClose = "Yes"}
+
+Rule: PeripheralClearButCloseNo
+Priority: 100
+
+(
+    {Micro_peripheral_margin}
+	{ClearButClose.Negation == Negated}
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralClearButCloseNo, PeripheralClearButClose = "No"}

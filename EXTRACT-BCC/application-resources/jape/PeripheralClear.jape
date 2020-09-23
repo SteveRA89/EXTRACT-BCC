@@ -1,0 +1,23 @@
+Phase: PeripheralClear
+Input: Clear Micro_peripheral_margin Split Sentence
+Options: control=appelt
+
+Rule: PeripheralClear
+Priority: 100
+
+(
+    {Micro_peripheral_margin}
+	{Clear.Negation == Affirmed}
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralClearYes, PeripheralClear = "Yes"}
+
+Rule: PeripheralClearNo
+Priority: 100
+
+(
+    {Micro_peripheral_margin}
+	{Clear.Negation == Negated}
+):match
+-->
+:match.MicroMeasurements = { rule = PeripheralClearNo, PeripheralClear = "No"}

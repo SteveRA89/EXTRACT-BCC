@@ -1,0 +1,238 @@
+Face:bodypart=Face
+Facial:bodypart=Face
+
+Ear:bodypart=Ear
+Pinna:bodypart=Ear
+Helix:bodypart=Ear
+Helical:bodypart=Ear
+Helical rim:bodypart=Ear
+Antihelix:bodypart=Ear
+Anti-helix:bodypart=Ear
+Anti helix:bodypart=Ear
+Antihelical rim:bodypart=Ear
+Anti-helical rim:bodypart=Ear
+Anti helical rim:bodypart=Ear
+Conchal bowl:bodypart=Ear
+Concha:bodypart=Ear
+Cymba:bodypart=Ear
+Triangular fossa:bodypart=Ear
+Crus of helix:bodypart=Ear
+Crus:bodypart=Ear
+Crura of anti-helix:bodypart=Ear
+Crura:bodypart=Ear
+Tragus:bodypart=Ear
+External auditory meatus:bodypart=Ear
+Lobe:bodypart=Ear
+Earlobe:bodypart=Ear
+Ear lobe:bodypart=Ear
+Lobule:bodypart=Ear
+Posterior auricular sulcus:bodypart=Ear
+Auricular sulcus:bodypart=Ear
+Pre-auricular:bodypart=Ear
+Pre auricular:bodypart=Ear
+Per-auricular:bodypart=Ear
+Per auricular:bodypart=Ear
+Post-auricular:bodypart=Ear
+Post auricular:bodypart=Ear
+Auricular:bodypart=Ear
+
+Nose:bodypart=Nose
+Nasal:bodypart=Nose
+Lateral nasal wall:bodypart=Nose
+Nasal wall:bodypart=Nose
+Nasal sidewall:bodypart=Nose
+Nasal side wall:bodypart=Nose
+Nasal side-wall:bodypart=Nose
+Lateral wall:bodypart=Nose
+Ala lobule:bodypart=Nose
+Alar lobule:bodypart=Nose
+Soft triangle:bodypart=Nose
+Dorsal nose:bodypart=Nose
+Tip:bodypart=Nose
+Tip of nose:bodypart=Nose
+Supratip:bodypart=Nose
+Supra tip:bodypart=Nose
+Supra-tip:bodypart=Nose
+Columella:bodypart=Nose
+Ala base:bodypart=Nose
+Alar base:bodypart=Nose
+Ala:bodypart=Nose
+Alar:bodypart=Nose
+
+Scalp:bodypart=Scalp
+
+Temple:bodypart=Temple
+
+Cheek:bodypart=Cheek
+Zygoma:bodypart=Cheek
+Malar:bodypart=Cheek
+Tear trough:bodypart=Cheek
+Infra-orbital:bodypart=Cheek
+Naso-labial:bodypart=Cheek
+Melo-labial:bodypart=Cheek
+
+Eyelid:bodypart=Eyelid
+Upper eyelid:bodypart=Eyelid
+lower eyelid:bodypart=Eyelid
+Eye lid:bodypart=Eyelid
+Upper eye lid:bodypart=Eyelid
+lower eye lid:bodypart=Eyelid
+Eye-lid:bodypart=Eyelid
+Upper-eye lid:bodypart=Eyelid
+lower-eye lid:bodypart=Eyelid
+
+Medial canthus:bodypart=Medial canthus
+
+Lateral canthus:bodypart=Lateral canthus
+
+Forehead:bodypart=Forehead
+Eyebrow:bodypart=Forehead
+Glabellar:bodypart=Forehead
+Supra-orbital:bodypart=Forehead
+
+Chin:bodypart=Chin
+Mental:bodypart=Chin
+
+Lip:bodypart=Lip
+Upper lip:bodypart=Lip
+Lower lip:bodypart=Lip
+Dry mucosa:bodypart=Lip
+Wet mucosa:bodypart=Lip
+Vermilion:bodypart=Lip
+Commissure:bodypart=Lip
+Philtrum:bodypart=Lip
+Philtral column:bodypart=Lip
+White roll:bodypart=Lip
+
+Neck:bodypart=Neck
+Level 1 neck:bodypart=Neck
+Level I neck:bodypart=Neck
+Level 2 neck:bodypart=Neck
+Level II neck:bodypart=Neck
+Level 3 neck:bodypart=Neck
+Level III neck:bodypart=Neck
+Level 4 neck:bodypart=Neck
+Level IV neck:bodypart=Neck
+Level 5 neck:bodypart=Neck
+Level V:bodypart=Neck
+Anterior triangle neck:bodypart=Neck
+Posterior triangle neck:bodypart=Neck
+Mastoid:bodypart=Neck
+
+Anterior chest wall:bodypart=Chest
+Chest:bodypart=Chest
+Clavicle:bodypart=Chest
+Sternum:bodypart=Chest
+Nipple:bodypart=Chest
+Areolar:bodypart=Chest
+Nipple-areolar-complex:bodypart=Chest
+Nipple areolar complex:bodypart=Chest
+NAC:bodypart=Chest
+
+Abdomen:bodypart=Abdomen
+Abdomninal:bodypart=Abdomen
+Abdomninal wall:bodypart=Abdomen
+Hypochondriac:bodypart=Abdomen
+Illiac:bodypart=Abdomen
+Epigastric:bodypart=Abdomen
+Umbilical:bodypart=Abdomen
+Umbilicuml:bodypart=Abdomen
+Hypogastric:bodypart=Abdomen
+Pubic:bodypart=Abdomen
+Hypochondrium:bodypart=Abdomen
+Iliac:bodypart=Abdomen
+Iliac fossa:bodypart=Abdomen
+Flank:bodypart=Abdomen
+
+Back:bodypart=Back
+Posterior chest wall:bodypart=Back
+Cervical spine:bodypart=Back
+Thoracic spine:bodypart=Back
+Lumbar spine:bodypart=Back
+Sacral spine:bodypart=Back
+Buttock:bodypart=Back
+Buttocks:bodypart=Back
+Gluteus:bodypart=Back
+
+Arm:bodypart=Arm
+Shoulder:bodypart=Arm
+Deltoid:bodypart=Arm
+Antecubital fossa:bodypart=Arm
+ACF:bodypart=Arm
+Elbow:bodypart=Arm
+Forearm:bodypart=Arm
+
+Leg:bodypart=Leg
+Groin:bodypart=Leg
+Knee:bodypart=Leg
+Popliteal fossa:bodypart=Leg
+Calf:bodypart=Leg
+Pretibial:bodypart=Leg
+Pre-tibia:bodypart=Leg
+Pre tibia:bodypart=Leg
+Shin:bodypart=Leg
+Ankle:bodypart=Leg
+
+Hand:bodypart=Hand
+Wrist:bodypart=Hand
+Finger:bodypart=Hand
+Thumb:bodypart=Hand
+Palm:bodypart=Hand
+DIPJ:bodypart=Hand
+PIPJ:bodypart=Hand
+MCPJ:bodypart=Hand
+DRUJ:bodypart=Hand
+IPJ:bodypart=Hand
+Distal interphalangeal joint:bodypart=Hand
+Proximal interphalangeal joint:bodypart=Hand
+metacarpophalangeal joint:bodypart=Hand
+Distal Radial Ulnar Joint :bodypart=Hand
+Distal-Radial-Ulnar-Joint :bodypart=Hand
+Distal RadialUlnar Joint :bodypart=Hand
+Distal-Radio-Ulnar-Joint :bodypart=Hand
+Distal RadioUlnar Joint :bodypart=Hand
+Interphalangeal joint:bodypart=Hand
+Inter phalangeal joint:bodypart=Hand
+Inter-phalangeal joint:bodypart=Hand
+
+Foot:bodypart=Foot
+Toe:bodypart=Foot
+Toes:bodypart=Foot
+Great toe:bodypart=Foot
+Calcaneum:bodypart=Foot
+Plantar foot:bodypart=Foot
+MTPJ:bodypart=Foot
+Meta tarso phalangeal joint:bodypart=Foot
+Meta-tarso-phalangeal joint:bodypart=Foot
+
+Thigh:bodypart=Thigh
+Hip:bodypart=Thigh
+Trochanter:bodypart=Thigh
+Greater Trochanter:bodypart=Thigh
+Lesser Trochanter:bodypart=Thigh
+
+Nail Complex:bodypart=Nail Complex 
+Nail:bodypart=Nail Complex
+Nail bed:bodypart=Nail Complex
+Eponychium:bodypart=Nail Complex
+Eponychial fold:bodypart=Nail Complex
+Hyponychium:bodypart=Nail Complex
+Hyponychial fold:bodypart=Nail Complex
+Paronychium:bodypart=Nail Complex
+Paronychial fold:bodypart=Nail Complex
+Lateral nail fold:bodypart=Nail Complex
+
+Genito-urinary:bodypart=Genito-urinary
+Penis:bodypart=Genito-urinary
+Penile:bodypart=Genito-urinary
+Scrotal:bodypart=Genito-urinary
+Scrotum:bodypart=Genito-urinary
+Vaginal:bodypart=Genito-urinary
+Vagina:bodypart=Genito-urinary
+Labial:bodypart=Genito-urinary
+Labia:bodypart=Genito-urinary
+Labia minora:bodypart=Genito-urinary
+Labia majora:bodypart=Genito-urinary
+
+  
+
