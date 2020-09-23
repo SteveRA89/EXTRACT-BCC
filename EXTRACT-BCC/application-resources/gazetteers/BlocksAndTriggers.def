@@ -20,3 +20,14 @@ Ulcerated.lst::::Ulcerated
 LVI.lst::::LVI
 PNI.lst::::PNI
 Excision_Completed.lst::::ExcisionComplete
+Frozen_Section.lst::::Frozen_Section
+Clear.lst::::Clear
+ClearButClose.lst::::ClearButClose
+LVIorPNI.lst::::LVIorPNI
+BodyParts.lst::::BodyParts
+ProximalOrDistal.lst::::ProximalOrDistal
+MedialOrLateral.lst::::MedialOrLateral
+MultipleScalp.lst::::MultipleScalp
+LocalisationSkipTerms.lst::::LocalisationSkipTerms
+AnteriorOrPosterior.lst::::AnteriorOrPosterior
+UpperOrLower.lst::::UpperOrLower
