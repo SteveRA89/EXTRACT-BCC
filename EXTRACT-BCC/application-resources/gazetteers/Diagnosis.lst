@@ -1,6 +1,11 @@
 Basal cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
 Rodent ulcer:CUI=C0007117:CancerType=BasalCellCarcinoma
+BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basiloma:CUI=C0007117:BCC=Basal cell carcinoma
+Basilloma:CUI=C0007117:BCC=Basal cell carcinoma
+Basil-oma:CUI=C0007117:BCC=Basal cell carcinoma
+Basill-oma:CUI=C0007117:BCC=Basal cell carcinoma
 Sebaceous adenocarcinoma:CUI=C0206684:CancerType=OtherCancerous
 Apocrine adenocarcinoma:CUI=C0334346:CancerType=OtherCancerous
 Eccrine adenocarcinoma:CUI=C1266066:CancerType=OtherCancerous
@@ -95,6 +100,7 @@ Extramammary paget disease:CUI=C0346032:CancerType=OtherInSitu
 Actinic keratosis:CUI=C0022602:CancerType=ActinicKeratosis
 AK:CUI=C0022602:CancerType=ActinicKeratosis
 Solar keratosis:CUI=C0022602:CancerType=ActinicKeratosis
+SK:CUI=C0022602:CancerType=ActinicKeratosis
 Dabska tumour:CUI=C0346087:CancerType=OtherIntermediate
 Endovascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endo-vascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
