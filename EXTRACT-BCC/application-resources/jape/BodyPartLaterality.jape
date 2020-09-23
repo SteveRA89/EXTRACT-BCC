@@ -1,0 +1,650 @@
+Phase: BodyPartLaterality
+Input: Lookup2 BodyParts Split Sentence Token LocalisationSkipTerms MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp
+Options: control=appelt
+
+//BodyPart 
+
+Rule: BodyPart
+Priority: 100
+
+(
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPart, BodyPart = :match.BodyParts.bodypart}
+
+//2 x bodyPart 
+
+Rule: MultipleBodyParts
+Priority: 100
+
+(
+	({BodyParts}):BP1
+    {Token.string == "/"}
+    ({BodyParts}):BP2
+
+):match
+-->
+:match.ClinicalDetails = { rule = MultipleBodyParts, BodyPart = :BP1.BodyParts.bodypart,
+BodyPart2 = :BP2.BodyParts.bodypart}
+
+//Laterality and bodyPart 
+
+Rule: BodyPartLaterality1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLaterality1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation}
+
+//Laterality and bodyPart1/bodypart2 
+
+Rule: TwoBodyPartLaterality1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	({BodyParts}):BP1
+    {Token.string == "/"}
+    ({BodyParts}):BP2
+
+):match
+-->
+:match.ClinicalDetails = { rule = TwoBodyPartLaterality1, BodyPart = :BP1.BodyParts.bodypart,
+BodyPart2 = :BP2.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation}
+
+//BodyPart and laterality 
+
+Rule: BodyPartLaterality2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLaterality2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation}
+
+//Lateralilty, MedialOrLateral and BodyPart
+
+Rule: BodyPartLateralityMedialOrLateral1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {MedialOrLateral}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMedialOrLateral1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
+
+
+//BodyPart, MedialOrLateral, lateralilty
+
+
+Rule: BodyPartLateralityMedialOrLateral2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {MedialOrLateral}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMedialOrLateral2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
+
+
+//MedialOrLateral, lateralilty and BodyPart
+
+
+Rule: BodyPartLateralityMedialOrLateral3
+Priority: 100
+
+(
+    {MedialOrLateral}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMedialOrLateral3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
+
+//BodyPart, lateralilty and MedialOrLateral
+
+Rule: BodyPartLateralityMedialOrLateral4
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {MedialOrLateral}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMedialOrLateral4, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
+
+//MedialOrLateral and BodyPart
+
+Rule: BodyPartMedialOrLateral1
+Priority: 100
+
+(
+    {MedialOrLateral}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartMedialOrLateral1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
+
+//BodyPart and MedialOrLateral
+
+Rule: BodyPartMedialOrLateral2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {MedialOrLateral}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartMedialOrLateral2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MedialOrLateral = :match.MedialOrLateral.MedialOrLateral}
+
+//Lateralilty, UpperOrLower and BodyPart
+
+Rule: BodyPartLateralityUpperOrLower1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {UpperOrLower}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityUpperOrLower1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+UpperOrLower = :match.UpperOrLower.UpperOrLower}
+
+
+//BodyPart, UpperOrLower, lateralilty
+
+
+Rule: BodyPartLateralityUpperOrLower2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {UpperOrLower}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityUpperOrLower2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+UpperOrLower = :match.UpperOrLower.UpperOrLower}
+
+
+//UpperOrLower, lateralilty and BodyPart
+
+
+Rule: BodyPartLateralityUpperOrLower3
+Priority: 100
+
+(
+    {UpperOrLower}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityUpperOrLower3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+UpperOrLower = :match.UpperOrLower.UpperOrLower}
+
+//BodyPart, lateralilty and UpperOrLower
+
+Rule: BodyPartLateralityUpperOrLower4
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {UpperOrLower}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityUpperOrLower4, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+UpperOrLower = :match.UpperOrLower.UpperOrLower}
+
+//UpperOrLower and BodyPart
+
+Rule: BodyPartUpperOrLower1
+Priority: 100
+
+(
+    {UpperOrLower}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartUpperOrLower1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+UpperOrLower = :match.UpperOrLower.UpperOrLower}
+
+//BodyPart and UpperOrLower
+
+Rule: BodyPartUpperOrLower2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {UpperOrLower}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartUpperOrLower2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+UpperOrLower = :match.UpperOrLower.UpperOrLower}
+
+//Lateralilty, ProximalOrDistal and BodyPart
+
+Rule: BodyPartLateralityProximalOrDistal1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {ProximalOrDistal}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityProximalOrDistal1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
+
+
+//BodyPart, ProximalOrDistal, lateralilty
+
+
+Rule: BodyPartLateralityProximalOrDistal2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {ProximalOrDistal}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityProximalOrDistal2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
+
+
+//ProximalOrDistal, lateralilty and BodyPart
+
+
+Rule: BodyPartLateralityProximalOrDistal3
+Priority: 100
+
+(
+    {ProximalOrDistal}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityProximalOrDistal3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
+
+//BodyPart, lateralilty and ProximalOrDistal
+
+Rule: BodyPartLateralityProximalOrDistal4
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {ProximalOrDistal}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityProximalOrDistal4, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
+
+//ProximalOrDistal and BodyPart
+
+Rule: BodyPartProximalOrDistal1
+Priority: 100
+
+(
+    {ProximalOrDistal}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartProximalOrDistal1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
+
+//BodyPart and ProximalOrDistal
+
+Rule: BodyPartProximalOrDistal2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {ProximalOrDistal}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartProximalOrDistal2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+ProximalOrDistal = :match.ProximalOrDistal.ProximalOrDistal}
+
+//Lateralilty, AnteriorOrPosterior and BodyPart
+
+Rule: BodyPartLateralityAnteriorOrPosterior1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {AnteriorOrPosterior}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityAnteriorOrPosterior1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
+
+
+//BodyPart, AnteriorOrPosterior, lateralilty
+
+
+Rule: BodyPartLateralityAnteriorOrPosterior2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {AnteriorOrPosterior}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityAnteriorOrPosterior2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
+
+
+//AnteriorOrPosterior, lateralilty and BodyPart
+
+
+Rule: BodyPartLateralityAnteriorOrPosterior3
+Priority: 100
+
+(
+    {AnteriorOrPosterior}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityAnteriorOrPosterior3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
+
+//BodyPart, lateralilty and AnteriorOrPosterior
+
+Rule: BodyPartLateralityAnteriorOrPosterior4
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {AnteriorOrPosterior}
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityAnteriorOrPosterior4, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
+
+//AnteriorOrPosterior and BodyPart
+
+Rule: BodyPartAnteriorOrPosterior1
+Priority: 100
+
+(
+    {AnteriorOrPosterior}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartAnteriorOrPosterior1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
+
+//BodyPart and AnteriorOrPosterior
+
+Rule: BodyPartAnteriorOrPosterior2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {AnteriorOrPosterior}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartAnteriorOrPosterior2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+AnteriorOrPosterior = :match.AnteriorOrPosterior.AnteriorOrPosterior}
+
+//Lateralilty, MultipleScalp and BodyPart
+
+Rule: BodyPartLateralityMultipleScalp1
+Priority: 100
+
+(
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {MultipleScalp}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMultipleScalp1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+
+//BodyPart, MultipleScalp, lateralilty
+
+
+Rule: BodyPartLateralityMultipleScalp2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {MultipleScalp}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMultipleScalp2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+
+//MultipleScalp, lateralilty and BodyPart
+
+
+Rule: BodyPartLateralityMultipleScalp3
+Priority: 100
+
+(
+    {MultipleScalp}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMultipleScalp3, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart, lateralilty and MultipleScalp
+
+Rule: BodyPartLateralityMultipleScalp4
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {Lookup2.minorType == lateralisation}
+    ({LocalisationSkipTerms})?
+    {MultipleScalp}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartLateralityMultipleScalp4, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//MultipleScalp and BodyPart
+
+Rule: BodyPartMultipleScalp1
+Priority: 100
+
+(
+    {MultipleScalp}
+    ({LocalisationSkipTerms})?
+	{BodyParts}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartMultipleScalp1, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
+
+//BodyPart and MultipleScalp
+
+Rule: BodyPartMultipleScalp2
+Priority: 100
+
+(
+	{BodyParts}
+    ({LocalisationSkipTerms})?
+    {MultipleScalp}
+
+
+):match
+-->
+:match.ClinicalDetails = { rule = BodyPartMultipleScalp2, BodyPart = :match.BodyParts.bodypart,
+Lateralization = :match.Lookup2.lateralisation, 
+MultipleScalp = :match.MultipleScalp.MultipleScalp}
