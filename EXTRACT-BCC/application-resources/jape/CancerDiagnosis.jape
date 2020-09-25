@@ -1,0 +1,91 @@
+Phase: CancerDiagnosis
+Input: Diagnosis BCCClass Differentiation Split Sentence 
+Options: control=appelt
+
+Rule: CancerDiagnosis1a
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis1a, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :match.Differentiation.Differentiation}
+
+Rule: CancerDiagnosis1b
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass})
+    ({Diagnosis})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis1b, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :match.Differentiation.Differentiation}
+
+Rule: CancerDiagnosis2a
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis2a, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :match.Differentiation.Differentiation}
+
+Rule: CancerDiagnosis2b
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass})
+    ({Diagnosis})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis2b, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :match.Differentiation.Differentiation}
+
+Rule: CancerDiagnosis2c
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass})
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis2c, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :match.Differentiation.Differentiation}

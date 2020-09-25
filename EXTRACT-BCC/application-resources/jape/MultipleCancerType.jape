@@ -1,0 +1,18 @@
+Phase: MultipleDiagnosis
+Input: Diagnosis Split Sentence Token 
+Options: control=appelt
+
+Rule: MultipleDiagnosis
+Priority: 100
+
+(
+	({Diagnosis}):D1
+    ({Token.string == "/"}|{Token.string == ","}|{Token.string == "-"}|{Token.string == "?"})
+	({Diagnosis}):D2
+
+):match
+-->
+:match.Diagnosis = { rule = MultipleDiagnosis, CancerType = :D1.Diagnosis.CancerType,
+CancerType2 = :D2.Diagnosis.CancerType,
+CUI = :D1.Diagnosis.CUI,
+CUI2 = :D2.Diagnosis.CUI}
