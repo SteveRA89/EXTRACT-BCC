@@ -1,0 +1,15 @@
+Nodular:BCCClass=Nodular
+Superficial:BCCClass=Superficial
+Multifocal:BCCClass=Multifocal
+Infiltrative:BCCClass=Infiltrative
+Morphoeic:BCCClass=Morphoeic
+Morphoea:BCCClass=Morphoeic
+Micronodular:BCCClass=Micronodular
+MultiNodular:BCCClass=MultiNodular
+Pigmented:BCCClass=Pigmented
+Cystic:BCCClass=Cystic
+Nodulocystic:BCCClass=Nodulocystic
+Mixed:BCCClass=Mixed
+Fibroepithelial:BCCClass=Fibroepithelial
+Basosquamous:BCCClass=Basosquamous
+
