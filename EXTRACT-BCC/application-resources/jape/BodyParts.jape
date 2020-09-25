@@ -1,0 +1,16 @@
+Phase: BodyPart
+Input: BodyParts Split Sentence Token 
+Options: control=appelt
+
+Rule: BodyPart
+Priority: 100
+
+(
+	({BodyParts}):BP1
+    ({Token.string == "/"}|{Token.string == ","}|{Token.string == "-"})
+    ({BodyParts}):BP2
+
+):match
+-->
+:match.BodyParts = { rule = BodyPart, bodypart = :BP1.BodyParts.bodypart,
+bodypart2 = :BP2.BodyParts.bodypart}
