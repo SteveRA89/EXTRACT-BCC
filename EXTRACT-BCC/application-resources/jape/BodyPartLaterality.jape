@@ -15,6 +15,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartOneTerm1, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -35,6 +36,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartOneTerm2, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -57,6 +59,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartTwoTerms1, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -78,6 +81,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartTwoTerms2, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -99,6 +103,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartTwoTerms3, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -122,6 +127,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartThreeTerms1, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -145,6 +151,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartThreeTerms2, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -168,6 +175,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartThreeTerms3, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -191,6 +199,7 @@ Priority: 100
 ):match
 -->
 :match.ClinicalDetails = { rule = BodyPartThreeTerms4, BodyPart = :match.BodyParts.bodypart,
+BodyPart2 = :match.BodyParts.bodypart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
