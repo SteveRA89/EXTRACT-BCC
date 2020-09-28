@@ -1,0 +1,22 @@
+Phase: ResidualDisease
+Input: ResidualDisease Split Sentence
+Options: control=appelt
+
+
+Rule: ResidualDiseaseYes
+Priority: 100
+
+(
+	{ResidualDisease.Negation == Affirmed}
+):match
+-->
+:match.MicroDetails = { rule = ResidualDisease, ResidualDisease = "Yes"}
+
+Rule: ResidualDiseaseNo
+Priority: 100
+
+(
+	{ResidualDisease.Negation == Negated}
+):match
+-->
+:match.MicroDetails = { rule = ResidualDisease, ResidualDisease = "No"}

@@ -1,0 +1,21 @@
+Phase: RecurrentDisease
+Input: RecurrentDisease Split Sentence
+Options: control=appelt
+
+Rule: RecurrentDiseaseYes
+Priority: 100
+
+(
+	{RecurrentDisease.Negation == Affirmed}
+):match
+-->
+:match.MicroDetails = { rule = RecurrentDisease, RecurrentDisease = "Yes"}
+
+Rule: RecurrentDiseaseNo
+Priority: 100
+
+(
+	{RecurrentDisease.Negation == Negated}
+):match
+-->
+:match.MicroDetails = { rule = RecurrentDisease, RecurrentDisease = "No"}
