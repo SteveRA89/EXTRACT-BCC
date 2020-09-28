@@ -2,12 +2,14 @@ Phase: CancerDiagnosis
 Input: Diagnosis BCCClass Differentiation Split Sentence 
 Options: control=appelt
 
+//BCC nodular
+
 Rule: CancerDiagnosis1a
 Priority: 100
 
 (
     ({Diagnosis})
-    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass}):T1
 
 ):match
 -->
@@ -19,11 +21,13 @@ CUI = :match.Diagnosis.CUI,
 CUI2 = :match.Diagnosis.CUI2,
 Differentiation = :match.Differentiation.Differentiation}
 
+//nodular BCC
+
 Rule: CancerDiagnosis1b
 Priority: 100
 
 (
-    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass}):T1
     ({Diagnosis})
 
 ):match
@@ -36,56 +40,949 @@ CUI = :match.Diagnosis.CUI,
 CUI2 = :match.Diagnosis.CUI2,
 Differentiation = :match.Differentiation.Differentiation}
 
+//BCC nod superficial
+
 Rule: CancerDiagnosis2a
 Priority: 100
 
 (
     ({Diagnosis})
-    ({Differentiation}|{BCCClass})
-    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
 
 ):match
 -->
 :match.CancerDiagnosis = { rule = CancerDiagnosis2a, 
-BCCClass = :match.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
 CancerType = :match.Diagnosis.CancerType,
 CancerType2 = :match.Diagnosis.CancerType2,
 CUI = :match.Diagnosis.CUI,
 CUI2 = :match.Diagnosis.CUI2,
-Differentiation = :match.Differentiation.Differentiation}
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+///nod superficial BCC
 
 Rule: CancerDiagnosis2b
 Priority: 100
 
 (
-    ({Differentiation}|{BCCClass})
-    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
     ({Diagnosis})
 
 ):match
 -->
 :match.CancerDiagnosis = { rule = CancerDiagnosis2b, 
-BCCClass = :match.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
 CancerType = :match.Diagnosis.CancerType,
 CancerType2 = :match.Diagnosis.CancerType2,
 CUI = :match.Diagnosis.CUI,
 CUI2 = :match.Diagnosis.CUI2,
-Differentiation = :match.Differentiation.Differentiation}
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///nod BCC superficial
 
 Rule: CancerDiagnosis2c
 Priority: 100
 
 (
-    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass}):T1
     ({Diagnosis})
-    ({Differentiation}|{BCCClass})
+    ({Differentiation}|{BCCClass}):T2
 
 ):match
 -->
 :match.CancerDiagnosis = { rule = CancerDiagnosis2c, 
-BCCClass = :match.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
 CancerType = :match.Diagnosis.CancerType,
 CancerType2 = :match.Diagnosis.CancerType2,
 CUI = :match.Diagnosis.CUI,
 CUI2 = :match.Diagnosis.CUI2,
-Differentiation = :match.Differentiation.Differentiation}
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///BCC superficial nod multiFocal
+
+Rule: CancerDiagnosis3a
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis3a, 
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+///superficial nod multiFocal BCC
+
+Rule: CancerDiagnosis3b
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Diagnosis})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis3b, 
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+/// superficial BCC nod multiFocal
+
+Rule: CancerDiagnosis3c
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis3c, 
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+/// superficial nod BCC multiFocal
+
+Rule: CancerDiagnosis3d
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T3
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis3d,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///BCC superficial nod multiFocal keratoic 
+
+Rule: CancerDiagnosis4a
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis4a,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+///superficial nod multiFocal BCC
+
+Rule: CancerDiagnosis4b
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Diagnosis})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis4b, 
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+/// superficial BCC nod multiFocal
+
+Rule: CancerDiagnosis4c
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis4c, 
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+/// superficial nod BCC multiFocal
+
+Rule: CancerDiagnosis4d
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T4
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis4d,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+/// superficial nod multiFocal BCC
+
+Rule: CancerDiagnosis4d
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis4d,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///BCC superficial nod multiFocal other keratoic 
+
+Rule: CancerDiagnosis5a
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis5a,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///superficial BCC nod multiFocal other keratoic 
+
+Rule: CancerDiagnosis5b
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis5b,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///superficial nod BCC multiFocal other keratoic 
+
+Rule: CancerDiagnosis5c
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis5c,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///superficial nod multiFocal BCC other keratoic 
+
+Rule: CancerDiagnosis5d
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis5d,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///superficial nod multiFocal other BCC keratoic 
+
+Rule: CancerDiagnosis5e
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T5
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis5e,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///superficial nod multiFocal other keratoic BCC
+
+Rule: CancerDiagnosis5f
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Diagnosis})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis5f,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///BCC superficial nod multiFocal other  keratoic another
+
+Rule: CancerDiagnosis6a
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Differentiation}|{BCCClass}):T6
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6a,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+///superficial BCC nod multiFocal other  keratoic another
+
+Rule: CancerDiagnosis6b
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Differentiation}|{BCCClass}):T6
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6b,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+
+///BCC superficial nod BCC multiFocal other  keratoic another
+
+Rule: CancerDiagnosis6c
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Differentiation}|{BCCClass}):T6
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6c,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+
+///superficial nod multiFocal BCC other  keratoic another
+
+Rule: CancerDiagnosis6d
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Differentiation}|{BCCClass}):T6
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6d,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+
+///superficial nod multiFocal  other BCC keratoic another
+
+Rule: CancerDiagnosis6e
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T5
+    ({Differentiation}|{BCCClass}):T6
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6e,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+
+///superficial nod multiFocal other  keratoic BCC another
+
+Rule: CancerDiagnosis6f
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Diagnosis})
+    ({Differentiation}|{BCCClass}):T6
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6f,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}
+
+
+
+///superficial nod multiFocal other  keratoic another BCC
+
+Rule: CancerDiagnosis6g
+Priority: 100
+
+(
+    ({Differentiation}|{BCCClass}):T1
+    ({Differentiation}|{BCCClass}):T2
+    ({Differentiation}|{BCCClass}):T3
+    ({Differentiation}|{BCCClass}):T4
+    ({Differentiation}|{BCCClass}):T5
+    ({Differentiation}|{BCCClass}):T6
+    ({Diagnosis})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis6g,
+BCCClass = :T3.BCCClass.BCCClass,
+BCCClass = :T2.BCCClass.BCCClass,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T4.BCCClass.BCCClass,
+BCCClass2 = :T3.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+BCCClass3 = :T5.BCCClass.BCCClass,
+BCCClass3 = :T4.BCCClass.BCCClass,
+BCCClass3 = :T3.BCCClass.BCCClass,
+BCCClass4 = :T6.BCCClass.BCCClass,
+BCCClass4 = :T5.BCCClass.BCCClass,
+BCCClass4 = :T4.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2,
+Differentiation = :T5.Differentiation.Differentiation,
+Differentiation = :T4.Differentiation.Differentiation,
+Differentiation = :T3.Differentiation.Differentiation,
+Differentiation = :T2.Differentiation.Differentiation,
+Differentiation = :T1.Differentiation.Differentiation,
+Differentiation2 = :T6.Differentiation.Differentiation,
+Differentiation2 = :T5.Differentiation.Differentiation,
+Differentiation2 = :T4.Differentiation.Differentiation,
+Differentiation2 = :T3.Differentiation.Differentiation,
+Differentiation2 = :T2.Differentiation.Differentiation}

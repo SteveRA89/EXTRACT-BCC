@@ -1,0 +1,75 @@
+Imports: {import static gate.Utils.*;
+          import java.util.*;}
+
+Phase: CancerDiagnosisDeleteRepeats
+Input: CancerDiagnosis
+Options: control=all
+
+/*
+ * Remove Duplicate BCCClasses and Differentiation from CancerDiagnosis
+*/
+
+
+Rule: CancerDiagnosisDeleteRepeats
+(
+	({CancerDiagnosis})
+):match
+-->
+:match { 
+Annotation matchAnn = matchAnnots.iterator().next();//get match (CancerDiagnosis) annotations
+if (matchAnn.getFeatures().containsKey("BCCClass")) {
+    String BCCClass1string = matchAnn.getFeatures().get("BCCClass").toString();// get BCCClass values
+    if (matchAnn.getFeatures().containsKey("BCCClass2")) {//if CancerDiagnosis annotation contains key(feature) = BCCClass2
+        String BCCClass2string = matchAnn.getFeatures().get("BCCClass2").toString();//get the value
+        if (BCCClass2string == BCCClass1string) {//If both BCC Classes are the same
+            matchAnn.getFeatures().remove("BCCClass2");// Deleting BCCClass2
+            if (matchAnn.getFeatures().containsKey("BCCClass3")) {//If contains BCCClass3
+                String BCCClass3string = matchAnn.getFeatures().get("BCCClass3").toString();//Convert to a string
+                getOnlyAnn(matchAnnots).getFeatures().put("BCCClass2", BCCClass3string);//Move BCCClass3 up to BCCClass2
+                matchAnn.getFeatures().remove("BCCClass3");// Deleting BCCClass3
+                if (matchAnn.getFeatures().containsKey("BCCClass4")) {//If contains BCCClass4
+                    String BCCClass4string = matchAnn.getFeatures().get("BCCClass4").toString();//Convert to a string
+                    getOnlyAnn(matchAnnots).getFeatures().put("BCCClass3", BCCClass4string);//Move BCCClass4 up to BCCClass3
+                    matchAnn.getFeatures().remove("BCCClass4");// Deleting BCCClass4
+                }
+            }
+        }
+    }
+}
+//Same as above but comparing 2 and 3
+if (matchAnn.getFeatures().containsKey("BCCClass2")) {
+    String BCCClass2string2 = matchAnn.getFeatures().get("BCCClass2").toString();// get BCCClass2 values
+    if (matchAnn.getFeatures().containsKey("BCCClass3")) {//if CancerDiagnosis annotation contains key(feature) = BCCClass3
+        String BCCClass3string2 = matchAnn.getFeatures().get("BCCClass3").toString();//get the value
+        if (BCCClass3string2 == BCCClass2string2) {//If both BCC Classes are the same
+            matchAnn.getFeatures().remove("BCCClass3");// Deleting BCCClass2
+            if (matchAnn.getFeatures().containsKey("BCCClass4")) {//If contains BCCClass3
+                String BCCClass4string2 = matchAnn.getFeatures().get("BCCClass4").toString();//Convert to a string
+                getOnlyAnn(matchAnnots).getFeatures().put("BCCClass3", BCCClass4string2);//Move BCCClass4 up to BCCClass3
+                matchAnn.getFeatures().remove("BCCClass4");// Deleting BCCClass4
+            }
+        }
+    }
+}
+//Same as above 2 but comparing 3 and 4
+if (matchAnn.getFeatures().containsKey("BCCClass3")) {
+    String BCCClass3string3 = matchAnn.getFeatures().get("BCCClass3").toString();// get BCCClass2 values
+    if (matchAnn.getFeatures().containsKey("BCCClass4")) {//if CancerDiagnosis annotation contains key(feature) = BCCClass4
+        String BCCClass4string3 = matchAnn.getFeatures().get("BCCClass4").toString();//get the value
+        if (BCCClass4string3 == BCCClass3string3) {//If both BCC Classes are the same
+            matchAnn.getFeatures().remove("BCCClass4");// Deleting BCCClass4
+        }
+    }
+}
+
+//Now the same with Differentiation
+if (matchAnn.getFeatures().containsKey("Differentiation")) {
+    String Differentiationstring = matchAnn.getFeatures().get("Differentiation").toString();// get Differentiation values
+    if (matchAnn.getFeatures().containsKey("Differentiation2")) {//if CancerDiagnosis annotation contains key(feature) = Differentiation2
+        String Differentiation2string = matchAnn.getFeatures().get("Differentiation2").toString();//get the value
+        if (Differentiation2string == Differentiationstring) {//If both Differentiations are the same
+            matchAnn.getFeatures().remove("Differentiation2");// Deleting Differentiation2
+        }
+    }
+}
+}
