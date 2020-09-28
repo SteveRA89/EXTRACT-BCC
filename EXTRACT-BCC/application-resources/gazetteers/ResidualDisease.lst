@@ -2,3 +2,5 @@ Residual Disease Present:Negatives=true
 Presence of residual disease:Negatives=true
 Residual component:Negatives=true
 Residual Disease absent:Negatives=false
+Residual disease not Present:Negatives=true
+

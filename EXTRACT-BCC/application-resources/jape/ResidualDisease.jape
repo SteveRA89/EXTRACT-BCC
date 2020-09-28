@@ -3,20 +3,38 @@ Input: ResidualDisease Split Sentence
 Options: control=appelt
 
 
-Rule: ResidualDiseaseYes
+Rule: ResidualDiseaseYes1
 Priority: 100
 
 (
-	{ResidualDisease.Negation == Affirmed}
+	{ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == true}
 ):match
 -->
-:match.MicroDetails = { rule = ResidualDisease, ResidualDisease = "Yes"}
+:match.MicroDetails = { rule = ResidualDiseaseYes1, ResidualDisease = "Yes"}
 
-Rule: ResidualDiseaseNo
+Rule: ResidualDiseaseNo1
 Priority: 100
 
 (
-	{ResidualDisease.Negation == Negated}
+	{ResidualDisease.Negation == Negated, ResidualDisease.Negatives == true}
 ):match
 -->
-:match.MicroDetails = { rule = ResidualDisease, ResidualDisease = "No"}
+:match.MicroDetails = { rule = ResidualDiseaseNo1, ResidualDisease = "No"}
+
+Rule: ResidualDiseaseYes2
+Priority: 100
+
+(
+	{ResidualDisease.Negation == Negated, ResidualDisease.Negatives == false}
+):match
+-->
+:match.MicroDetails = { rule = ResidualDiseaseYes2, ResidualDisease = "Yes"}
+
+Rule: ResidualDiseaseNo2
+Priority: 100
+
+(
+	{ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == false}
+):match
+-->
+:match.MicroDetails = { rule = ResidualDiseaseNo2, ResidualDisease = "No"}
