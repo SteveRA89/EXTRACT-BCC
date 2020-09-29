@@ -1,0 +1,12 @@
+Phase: ClarkLevel
+Input: ClarkLevel Split Sentence
+Options: control=appelt
+
+Rule: ClarkLevel
+Priority: 99
+(
+        {ClarkLevel}
+        
+):match
+-->
+:match.MicroDetails = {rule = ClarkLevel, ClarkLevel = :match.ClarkLevel.string}

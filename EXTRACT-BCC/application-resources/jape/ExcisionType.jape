@@ -1,0 +1,12 @@
+Phase: ExcisionType
+Input: ExcisionType Split Sentence
+Options: control=appelt
+
+Rule: ExcisionType
+Priority: 99
+(
+        {ExcisionType}
+        
+):match
+-->
+:match.ClinicalDetails = {rule = ExcisionType, ExcisionType = :match.ExcisionType.string}

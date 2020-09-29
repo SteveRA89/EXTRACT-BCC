@@ -1,0 +1,12 @@
+Phase: BCCStage
+Input: BCCStage Split Sentence
+Options: control=appelt
+
+Rule: BCCStage
+Priority: 99
+(
+        {BCCStage}
+        
+):match
+-->
+:match.MicroDetails = {rule = BCCStage, BCCStage = :match.BCCStage.string}

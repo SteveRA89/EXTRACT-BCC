@@ -1,0 +1,22 @@
+Phase: BiopsyProven
+Input: BiopsyProven Split Sentence
+Options: control=appelt
+
+
+Rule: BiopsyProvenYes
+Priority: 100
+
+(
+	{BiopsyProven.Negation == Affirmed}
+):match
+-->
+:match.ClinicalDetails = { rule = BiopsyProven, BiopsyProven = "Yes"}
+
+Rule: BiopsyProvenNo
+Priority: 100
+
+(
+	{BiopsyProven.Negation == Negated}
+):match
+-->
+:match.ClinicalDetails = { rule = BiopsyProven, BiopsyProven = "No"}
