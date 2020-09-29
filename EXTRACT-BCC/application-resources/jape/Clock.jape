@@ -10,3 +10,15 @@ Rule: ClockFace
 ):match
 -->
 :match.ClockFace = { rule = ClockFace, time = :match.Numeric.value}
+
+Rule: ClockFaceRange
+(
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Token.string == "to"}|{Token.string == "-"})
+	({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Clock})
+
+):match
+-->
+:match.ClockFace = { rule = ClockFaceRange, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value}
