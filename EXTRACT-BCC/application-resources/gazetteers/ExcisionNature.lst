@@ -1,0 +1,9 @@
+Primary:ExcisionNature=Primary
+Recurrent:ExcisionNature=Recurrent
+Recurrence:ExcisionNature=Recurrent
+Previously Incomplete:ExcisionNature=Previously Incomplete
+Previous Incomplete excision:ExcisionNature=Previously Incomplete
+Previous Incompletely excised:ExcisionNature=Previously Incomplete
+Previously Incompletely excised:ExcisionNature=Previously Incomplete
+Incompletely excised:ExcisionNature=Previously Incomplete
+Incomplete:ExcisionNature=Previously Incomplete

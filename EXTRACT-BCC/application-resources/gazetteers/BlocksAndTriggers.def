@@ -36,3 +36,9 @@ BCCClass.lst::::BCCClass
 Differentiation.lst::::Differentiation
 ResidualDisease.lst::::ResidualDisease
 RecurrentDisease.lst::::RecurrentDisease
+ExcisionType.lst::::ExcisionType
+BiopsyProven.lst::::BiopsyProven
+ExcisionNature.lst::::ExcisionNature
+DeepMargin.lst::::DeepMargin
+ClarkLevel.lst::::ClarkLevel
+BCCStage.lst::::BCCStage
