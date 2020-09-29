@@ -10,7 +10,7 @@ Priority: 100
 	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.MicroMeasurements = { rule = PeripheralClearYes, PeripheralClear = "Yes"}
+:match.MicroDetails = { rule = PeripheralClearYes, PeripheralClear = "Yes"}
 
 Rule: PeripheralClearNo
 Priority: 100
@@ -20,4 +20,4 @@ Priority: 100
 	{Clear.Negation == Negated}
 ):match
 -->
-:match.MicroMeasurements = { rule = PeripheralClearNo, PeripheralClear = "No"}
+:match.MicroDetails = { rule = PeripheralClearNo, PeripheralClear = "No"}

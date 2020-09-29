@@ -10,7 +10,7 @@ Priority: 100
 	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.MicroMeasurements = { rule = DeepClearYes, DeepClear = "Yes"}
+:match.MicroDetails = { rule = DeepClearYes, DeepClear = "Yes"}
 
 Rule: DeepClearNo
 Priority: 100
@@ -20,4 +20,4 @@ Priority: 100
 	{Clear.Negation == Negated}
 ):match
 -->
-:match.MicroMeasurements = { rule = DeepClearNo, DeepClear = "No"}
+:match.MicroDetails = { rule = DeepClearNo, DeepClear = "No"}
