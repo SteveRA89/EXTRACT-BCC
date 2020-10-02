@@ -1,12 +1,16 @@
 Phase: ExcisionType
-Input: ExcisionType Split Sentence
+Input: ExcisionType Split Sentence Token
 Options: control=appelt
 
 Rule: ExcisionType
 Priority: 99
 (
-        {ExcisionType}
+        ({ExcisionType}):ET1 
+        ({Token.string == "/"}|{Token.string == ","}|{Token.string == "-"}|{Token.string == "and"})
+        ({ExcisionType}):ET2
+
         
 ):match
 -->
-:match.ClinicalDetails = {rule = ExcisionType, ExcisionType = :match.ExcisionType.string}
+:match.ClinicalDetails = {rule = ExcisionType, ExcisionType = :ET1.ExcisionType.ExcisionType,
+ExcisionType2 = :ET2.ExcisionType.ExcisionType}
