@@ -1,16 +1,18 @@
-AFX
-BCC
-DFSP
-ES-H
-ES H
-ESH
-MM
-LNM
-NM
-NMM
-PHE
-SCC
-SK
-SSMM
+AFX:CUI=C0346053:CancerType=OtherCancerous
+AK:CUI=C0022602:CancerType=ActinicKeratosis
+BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
+DFSP:CUI=C0392784:CancerType=OtherCancerous
+ES-H:CUI=C3840252:CancerType=OtherIntermediate
+ES H:CUI=C3840252:CancerType=OtherIntermediate
+ESH:CUI=C3840252:CancerType=OtherIntermediate
+MM:CUI=C0151779:CancerType=OtherCancerous
+LMM:CUI=C2739810:CancerType=OtherCancerous
+NM:CUI=C0334424:CancerType=OtherCancerous
+NMM:CUI=C0334424:CancerType=OtherCancerous
+PHE:CUI=C3840252:CancerType=OtherIntermediate
+SCC:CUI=C0553723:CancerType=OtherCancerous
+SK:CUI=C0022602:CancerType=ActinicKeratosis
+SSMM:CUI=C0334438:CancerType=OtherCancerous
+
 
 

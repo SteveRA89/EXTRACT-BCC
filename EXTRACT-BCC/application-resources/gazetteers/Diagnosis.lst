@@ -1,7 +1,6 @@
 Basal cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
 Rodent ulcer:CUI=C0007117:CancerType=BasalCellCarcinoma
-BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basiloma:CUI=C0007117:BCC=Basal cell carcinoma
 Basilloma:CUI=C0007117:BCC=Basal cell carcinoma
 Basil-oma:CUI=C0007117:BCC=Basal cell carcinoma
@@ -46,9 +45,7 @@ Angiosarcoma:CUI=C0346081:CancerType=OtherCancerous
 Kaposi sarcoma:CUI=C0153560:CancerType=OtherCancerous
 Cutaneous leiomyosarcoma:CUI=C0346067:CancerType=OtherCancerous
 Dermatofibrosarcoma protuberans:CUI=C0392784:CancerType=OtherCancerous
-DFSP:CUI=C0392784:CancerType=OtherCancerous
 Atypical fibroxanthoma:CUI=C0346053:CancerType=OtherCancerous
-AFX:CUI=C0346053:CancerType=OtherCancerous
 Cutaneous lymphoma:CUI=C1276146:CancerType=OtherCancerous
 Lymphangioma:CUI=C0024221:CancerType=OtherCancerous
 Lymphangioendothelioma:CUI=C0024217:CancerType=OtherCancerous
@@ -63,12 +60,9 @@ Malignant lymphangiosarcoma:CUI=C0346082:CancerType=OtherCancerous
 Lymphangioendothelial sarcoma:CUI=C0346082:CancerType=OtherCancerous
 Lymphangiosarcoma:CUI=C0346082:CancerType=OtherCancerous
 Malignant melanoma:CUI=C0151779:CancerType=OtherCancerous
-MM:CUI=C0151779:CancerType=OtherCancerous
 Superficial spreading malignant melanoma:CUI=C0334438:CancerType=OtherCancerous
-SSMM:CUI=C0334438:CancerType=OtherCancerous
 Nodular malignant melanoma:CUI=C0334424:CancerType=OtherCancerous
 Lentigo malignant melanoma:CUI=C2739810:CancerType=OtherCancerous
-LMM:CUI=C2739810:CancerType=OtherCancerous
 Acral malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Subungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Sub-ungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
@@ -89,7 +83,6 @@ Amelanotic melanoma:CUI=C0206735:CancerType=OtherCancerous
 Desmoplastic melanoma:CUI=C0334439:CancerType=OtherCancerous
 Spindle cell melanoma:CUI=C0334444:CancerType=OtherCancerous
 Squamous cell carcinoma:CUI=C0553723:CancerType=OtherCancerous
-SCC:CUI=C0553723:CancerType=OtherCancerous
 Verrucous squamous cell carcinoma:CUI=C0206706:CancerType=OtherCancerous
 Carcinoma cuniculatum:CUI=C0206706:CancerType=OtherCancerous
 Lentigo maligna:CUI=C0149722:CancerType=OtherInSitu
@@ -98,9 +91,7 @@ Bowen's disease:CUI=C0006079:Type=OtherInSitu
 Extramammary Paget disease:CUI=C0346032:CancerType=OtherInSitu
 Extramammary paget disease:CUI=C0346032:CancerType=OtherInSitu
 Actinic keratosis:CUI=C0022602:CancerType=ActinicKeratosis
-AK:CUI=C0022602:CancerType=ActinicKeratosis
 Solar keratosis:CUI=C0022602:CancerType=ActinicKeratosis
-SK:CUI=C0022602:CancerType=ActinicKeratosis
 Dabska tumour:CUI=C0346087:CancerType=OtherIntermediate
 Endovascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endo-vascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
@@ -126,11 +117,7 @@ Spindle cell haemangioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell haem-angioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Pseudomyogenic (epithelioid sarcoma-like) haemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
 Pseudomyogenic haemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
-PHE:CUI=C3840252:CancerType=OtherIntermediate:CUI=C3840252:CancerType=OtherIntermediate
 Epithelioid sarcoma-like hemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
-ES-H:CUI=C3840252:CancerType=OtherIntermediate
-ES H:CUI=C3840252:CancerType=OtherIntermediate
-ESH:CUI=C3840252:CancerType=OtherIntermediate
 Retiform haemangioendothelioma:CUI=C1304512:CancerType=OtherIntermediate
 Composite haemangioendothelioma:CUI=C1304513:CancerType=OtherIntermediate
 Haemangioendothelioma:CUI=C0018915:CancerType=OtherIntermediate
