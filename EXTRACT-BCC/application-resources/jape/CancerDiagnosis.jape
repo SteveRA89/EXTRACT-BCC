@@ -2,6 +2,24 @@ Phase: CancerDiagnosis
 Input: Diagnosis BCCClass Differentiation Split Sentence 
 Options: control=appelt
 
+//Diagnosis 
+
+Rule: IndexDiagnosis
+Priority: 100
+
+(
+    ({Diagnosis}):match1
+
+):match
+-->
+:match.CancerDiagnosis = { rule = IndexDiagnosis, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match1.Diagnosis.CancerType,
+CancerType2 = :match1.Diagnosis.CancerType2,
+CUI = :match1.Diagnosis.CUI,
+CUI2 = :match1.Diagnosis.CUI2,
+Differentiation = :match.Differentiation.Differentiation}
+
 //BCC nodular
 
 Rule: CancerDiagnosis1a
