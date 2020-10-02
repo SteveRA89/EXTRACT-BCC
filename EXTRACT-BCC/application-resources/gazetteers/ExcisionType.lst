@@ -1,5 +1,6 @@
 Excision Biopsy:ExcisionType=Excision Biopsy
 Excision Bx:ExcisionType=Excision Biopsy
+Excision:ExcisionType=Excision Biopsy
 Wide Local Excision:ExcisionType=Wide Local Excision
 Wide Excision:ExcisionType=Wide Local Excision
 WLE:ExcisionType=Wide Local Excision
