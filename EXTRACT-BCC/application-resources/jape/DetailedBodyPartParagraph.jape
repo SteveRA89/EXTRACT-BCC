@@ -1,0 +1,73 @@
+Phase: TagStartOfSentence
+Input: DetailedBodyPart GroupedParagraph
+Options: control=all
+
+/*
+ * DetailedBodyPart is within GroupedParagraph
+*/
+
+Rule: DetailedBodyPartParagraph1
+(
+	({DetailedBodyPart within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph1,
+rule = :match.DetailedBodyPart.rule, 
+BCCClass = :match.DetailedBodyPart.BCCClass,
+BCCClass2 = :match.DetailedBodyPart.BCCClass2,
+BCCClass3 = :match.DetailedBodyPart.BCCClass3,
+BCCClass4 = :match.DetailedBodyPart.BCCClass4,
+CancerType = :match.DetailedBodyPart.CancerType,
+CancerType2 = :match.DetailedBodyPart.CancerType2,
+CUI = :match.DetailedBodyPart.CUI,
+CUI2 = :match.DetailedBodyPart.CUI2,
+Differentiation = :match.DetailedBodyPart.Differentiation,
+Differentiation2 = :match.DetailedBodyPart.Differentiation2,
+ParagraphTitle = ClinicalDetails}
+
+Rule: DetailedBodyPartParagraph2
+(
+	({DetailedBodyPart within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph2,
+rule = :match.DetailedBodyPart.rule, 
+BCCClass = :match.DetailedBodyPart.BCCClass,
+BCCClass2 = :match.DetailedBodyPart.BCCClass2,
+BCCClass3 = :match.DetailedBodyPart.BCCClass3,
+BCCClass4 = :match.DetailedBodyPart.BCCClass4,
+CancerType = :match.DetailedBodyPart.CancerType,
+CancerType2 = :match.DetailedBodyPart.CancerType2,
+CUI = :match.DetailedBodyPart.CUI,
+CUI2 = :match.DetailedBodyPart.CUI2,
+Differentiation = :match.DetailedBodyPart.Differentiation,
+Differentiation2 = :match.DetailedBodyPart.Differentiation2,
+ParagraphTitle = MacroDescription}
+
+Rule: DetailedBodyPartParagraph3
+(
+	({DetailedBodyPart within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph3,
+rule = :match.DetailedBodyPart.rule, 
+BCCClass = :match.DetailedBodyPart.BCCClass,
+BCCClass2 = :match.DetailedBodyPart.BCCClass2,
+BCCClass3 = :match.DetailedBodyPart.BCCClass3,
+BCCClass4 = :match.DetailedBodyPart.BCCClass4,
+CancerType = :match.DetailedBodyPart.CancerType,
+CancerType2 = :match.DetailedBodyPart.CancerType2,
+CUI = :match.DetailedBodyPart.CUI,
+CUI2 = :match.DetailedBodyPart.CUI2,
+Differentiation = :match.DetailedBodyPart.Differentiation,
+Differentiation2 = :match.DetailedBodyPart.Differentiation2,
+ParagraphTitle = Microscopy}
