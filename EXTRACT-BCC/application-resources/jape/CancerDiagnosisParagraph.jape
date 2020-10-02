@@ -1,0 +1,73 @@
+Phase: TagStartOfSentence
+Input: CancerDiagnosis GroupedParagraph
+Options: control=all
+
+/*
+ * CancerDiagnosis is within GroupedParagraph
+*/
+
+Rule: CancerDiagnosisParagraph1
+(
+	({CancerDiagnosis within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.CancerDiagnosisParagraph = { rule2 = CancerDiagnosisParagraph1,
+rule = :match.CancerDiagnosis.rule, 
+BCCClass = :match.CancerDiagnosis.BCCClass,
+BCCClass2 = :match.CancerDiagnosis.BCCClass2,
+BCCClass3 = :match.CancerDiagnosis.BCCClass3,
+BCCClass4 = :match.CancerDiagnosis.BCCClass4,
+CancerType = :match.CancerDiagnosis.CancerType,
+CancerType2 = :match.CancerDiagnosis.CancerType2,
+CUI = :match.CancerDiagnosis.CUI,
+CUI2 = :match.CancerDiagnosis.CUI2,
+Differentiation = :match.CancerDiagnosis.Differentiation,
+Differentiation2 = :match.CancerDiagnosis.Differentiation2,
+ParagraphTitle = ClinicalDetails}
+
+Rule: CancerDiagnosisParagraph2
+(
+	({CancerDiagnosis within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.CancerDiagnosisParagraph = { rule2 = CancerDiagnosisParagraph2,
+rule = :match.CancerDiagnosis.rule, 
+BCCClass = :match.CancerDiagnosis.BCCClass,
+BCCClass2 = :match.CancerDiagnosis.BCCClass2,
+BCCClass3 = :match.CancerDiagnosis.BCCClass3,
+BCCClass4 = :match.CancerDiagnosis.BCCClass4,
+CancerType = :match.CancerDiagnosis.CancerType,
+CancerType2 = :match.CancerDiagnosis.CancerType2,
+CUI = :match.CancerDiagnosis.CUI,
+CUI2 = :match.CancerDiagnosis.CUI2,
+Differentiation = :match.CancerDiagnosis.Differentiation,
+Differentiation2 = :match.CancerDiagnosis.Differentiation2,
+ParagraphTitle = MacroDescription}
+
+Rule: CancerDiagnosisParagraph3
+(
+	({CancerDiagnosis within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.CancerDiagnosisParagraph = { rule2 = CancerDiagnosisParagraph3,
+rule = :match.CancerDiagnosis.rule, 
+BCCClass = :match.CancerDiagnosis.BCCClass,
+BCCClass2 = :match.CancerDiagnosis.BCCClass2,
+BCCClass3 = :match.CancerDiagnosis.BCCClass3,
+BCCClass4 = :match.CancerDiagnosis.BCCClass4,
+CancerType = :match.CancerDiagnosis.CancerType,
+CancerType2 = :match.CancerDiagnosis.CancerType2,
+CUI = :match.CancerDiagnosis.CUI,
+CUI2 = :match.CancerDiagnosis.CUI2,
+Differentiation = :match.CancerDiagnosis.Differentiation,
+Differentiation2 = :match.CancerDiagnosis.Differentiation2,
+ParagraphTitle = Microscopy}
