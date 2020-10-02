@@ -6,6 +6,7 @@ WLE:ExcisionType=Wide Local Excision
 Re-excision:ExcisionType=Re-excision
 Re excision:ExcisionType=Re-excision
 Wider Excision:ExcisionType=Re-excision
+Wider local Excision:ExcisionType=Re-excision
 Deeper Excision:ExcisionType=Re-excision
 Mohs:ExcisionType=Mohs
 Mohs surgery:ExcisionType=Mohs
