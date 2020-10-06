@@ -2,7 +2,7 @@ Phase: ExcisionType
 Input: ExcisionType Split Sentence Token
 Options: control=appelt
 
-Rule: ExcisionType
+Rule: ExcisionType2
 Priority: 99
 (
         ({ExcisionType}):ET1 
@@ -12,5 +12,5 @@ Priority: 99
         
 ):match
 -->
-:match.ClinicalDetails = {rule = ExcisionType, ExcisionType = :ET1.ExcisionType.ExcisionType,
+:match.ExcisionType = {rule = ExcisionType, ExcisionType = :ET1.ExcisionType.ExcisionType,
 ExcisionType2 = :ET2.ExcisionType.ExcisionType}
