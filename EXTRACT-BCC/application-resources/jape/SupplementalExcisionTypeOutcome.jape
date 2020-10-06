@@ -1,0 +1,71 @@
+Phase: SupplementalExcisionTypeOutcome
+Input: ExcisionType SpaceToken Split Sentence SupplementalExcisionTypeOutcome ClockFace NewLine
+Options: control=appelt
+
+Rule: ExcisionTypePositiveDeepClock
+Priority: 100
+
+(
+	({ExcisionType})
+	({SpaceToken})?
+	({ClockFace})?
+	({SpaceToken})?
+	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
+):match
+-->
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+DeepClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "Yes"}
+
+Rule: ExcisionTypeNegativeDeepClock
+Priority: 100
+
+(
+	({ExcisionType})
+	({SpaceToken})?
+	({ClockFace})?
+	({SpaceToken})?
+	({SupplementalExcisionTypeOutcome.Negation == Negated})
+):match
+-->
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+DeepClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "Yes"}
+
+Rule: ExcisionTypePositivePeripheralClock
+Priority: 100
+
+(
+	({ExcisionType})
+	({SpaceToken})?
+	({ClockFace})?
+	({SpaceToken})?
+	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
+):match
+-->
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+PeripheralClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "Yes"}
+
+Rule: ExcisionTypeNegativePeripheralClock
+Priority: 100
+
+(
+	({ExcisionType})
+	({SpaceToken})?
+	({ClockFace})?
+	({SpaceToken})?
+	({SupplementalExcisionTypeOutcome.Negation == Negated})
+):match
+-->
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+PeripheralClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "Yes"}
