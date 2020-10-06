@@ -1,0 +1,28 @@
+Phase: MaxMicroDiameter
+Input: Dimension Diameter Sentence
+Options: control=appelt
+
+
+Rule: MaxMicroDiameter1
+Priority:100
+(
+    ({Diameter.Position != Post})
+    ({Dimension})
+
+):match
+-->
+:match.MaxMicroDiameter = { rule = MaxMicroDiameter1, MeasurementType = "MaxDiameter", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}
+
+Rule: MaxMicroDiameter2
+Priority:100
+(
+    ({Dimension})
+    ({Diameter})
+
+):match
+-->
+:match.MaxMicroDiameter = { rule = MaxMicroDiameter2, MeasurementType = "MaxDiameter", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}
