@@ -1,5 +1,5 @@
 Phase: Dimensions
-Input: Numeric Token SpaceToken Measurement
+Input: Numeric Token SpaceToken Measurement 
 Options: control=appelt
 
 
@@ -48,3 +48,4 @@ Priority:100
 ):match
 -->
 :match.Dimension = { rule = Dimension1D, N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, NumberOfMeasurements = 1}
+
