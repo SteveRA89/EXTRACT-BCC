@@ -42,3 +42,8 @@ ExcisionNature.lst::::ExcisionNature
 DeepMargin.lst::::DeepMargin
 ClarkLevel.lst::::ClarkLevel
 BCCStage.lst::::BCCStage
+Dimensions.lst::::Dimensions
+SupplementalExcisionTypeOutcome.lst::::SupplementalExcisionTypeOutcome
+Diameter.lst::::Diameter
+Specimen.lst::::Specimen
+Lesion.lst::::Lesion
