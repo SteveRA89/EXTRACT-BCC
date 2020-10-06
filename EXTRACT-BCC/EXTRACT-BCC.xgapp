@@ -1502,6 +1502,10 @@
                     <uriString>$relpath$application-resources/gazetteers/Blocks.def</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
+                <entry>
+                  <string>caseSensitive</string>
+                  <boolean>false</boolean>
+                </entry>
               </localMap>
             </initParams>
             <features class="gate.util.persistence.MapPersistence">
@@ -1534,6 +1538,10 @@
                   <gate.util.persistence.PersistenceManager-RRPersistence>
                     <uriString>$relpath$application-resources/gazetteers/Triggers.def</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+                <entry>
+                  <string>caseSensitive</string>
+                  <boolean>false</boolean>
                 </entry>
               </localMap>
             </initParams>
