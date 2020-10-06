@@ -1492,19 +1492,48 @@
               </localMap>
             </runtimeParams>
             <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
-            <resourceName>ANNIE Gazetteer: Blocks and Triggers</resourceName>
+            <resourceName>ANNIE Gazetteer: Blocks</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap>
                 <entry>
                   <string>listsURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
-                    <uriString>$relpath$application-resources/gazetteers/BlocksAndTriggers.def</uriString>
+                    <uriString>$relpath$application-resources/gazetteers/Blocks.def</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
                 <entry>
-                  <string>caseSensitive</string>
-                  <boolean>false</boolean>
+                  <string>annotationSetName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.gazetteer.DefaultGazetteer</resourceType>
+            <resourceName>ANNIE Gazetteer: Triggers</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>listsURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/gazetteers/Triggers.def</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
             </initParams>
@@ -2791,6 +2820,43 @@
               </localMap>
             </runtimeParams>
             <resourceType>gate.creole.Transducer</resourceType>
+            <resourceName>JAPE: DeepMargin</resourceName>
+            <initParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>grammarURL</string>
+                  <gate.util.persistence.PersistenceManager-RRPersistence>
+                    <uriString>$relpath$application-resources/jape/DeepMargin.jape</uriString>
+                  </gate.util.persistence.PersistenceManager-RRPersistence>
+                </entry>
+              </localMap>
+            </initParams>
+            <features class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap/>
+            </features>
+          </pr>
+        </gate.util.persistence.AnalyserRunningStrategyPersistence>
+        <gate.util.persistence.AnalyserRunningStrategyPersistence>
+          <runMode>1</runMode>
+          <featureName></featureName>
+          <featureValue></featureValue>
+          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
+            <runtimeParams class="gate.util.persistence.MapPersistence">
+              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
+              <localMap>
+                <entry>
+                  <string>outputASName</string>
+                  <string>Bio</string>
+                </entry>
+                <entry>
+                  <string>inputASName</string>
+                  <string>Bio</string>
+                </entry>
+              </localMap>
+            </runtimeParams>
+            <resourceType>gate.creole.Transducer</resourceType>
             <resourceName>JAPE: BodyPartLaterality</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
@@ -3095,43 +3161,6 @@
                   <string>grammarURL</string>
                   <gate.util.persistence.PersistenceManager-RRPersistence>
                     <uriString>$relpath$application-resources/jape/ExcisionNature.jape</uriString>
-                  </gate.util.persistence.PersistenceManager-RRPersistence>
-                </entry>
-              </localMap>
-            </initParams>
-            <features class="gate.util.persistence.MapPersistence">
-              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-              <localMap/>
-            </features>
-          </pr>
-        </gate.util.persistence.AnalyserRunningStrategyPersistence>
-        <gate.util.persistence.AnalyserRunningStrategyPersistence>
-          <runMode>1</runMode>
-          <featureName></featureName>
-          <featureValue></featureValue>
-          <pr class="gate.util.persistence.LanguageAnalyserPersistence">
-            <runtimeParams class="gate.util.persistence.MapPersistence">
-              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-              <localMap>
-                <entry>
-                  <string>outputASName</string>
-                  <string>Bio</string>
-                </entry>
-                <entry>
-                  <string>inputASName</string>
-                  <string>Bio</string>
-                </entry>
-              </localMap>
-            </runtimeParams>
-            <resourceType>gate.creole.Transducer</resourceType>
-            <resourceName>JAPE: DeepMargin</resourceName>
-            <initParams class="gate.util.persistence.MapPersistence">
-              <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-              <localMap>
-                <entry>
-                  <string>grammarURL</string>
-                  <gate.util.persistence.PersistenceManager-RRPersistence>
-                    <uriString>$relpath$application-resources/jape/DeepMargin.jape</uriString>
                   </gate.util.persistence.PersistenceManager-RRPersistence>
                 </entry>
               </localMap>
@@ -3732,6 +3761,7 @@
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[69]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[70]/pr"/>
         <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[71]/pr"/>
+        <gate.util.persistence.LanguageAnalyserPersistence reference="../../../strategiesList/localList/gate.util.persistence.AnalyserRunningStrategyPersistence[72]/pr"/>
       </localList>
       <collectionType>java.util.ArrayList</collectionType>
     </prList>
