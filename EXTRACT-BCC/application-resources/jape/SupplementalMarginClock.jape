@@ -1,0 +1,36 @@
+Phase: SupplementalMarginClock
+Input: Numeric SpaceToken Token Split Clock ExcisionType
+Options: control=appelt
+
+Rule: SupplementalMarginClockFace
+(
+    ({ExcisionType})
+    ({SpaceToken})?
+    ({Numeric.value < 13, Numeric.value > 0})
+    ({SpaceToken})?
+    ({Clock})
+
+):match
+-->
+:match.SupplementalMarginClockFace = { rule = SupplementalMarginClockFace, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+time = :match.Numeric.value}
+
+Rule: SupplementalMarginClockFaceRange
+(
+    ({ExcisionType})
+    ({SpaceToken})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({SpaceToken})?
+    ({Token.string == "to"}|{Token.string == "-"})
+    ({SpaceToken})?
+	({Numeric.value < 13, Numeric.value > 0}):T2
+    ({SpaceToken})?
+    ({Clock})
+
+):match
+-->
+:match.SupplementalMarginClockFace = { rule = SupplementalMarginClockFaceRange, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+time = :T1.Numeric.value,
+time2 = :T2.Numeric.value}
