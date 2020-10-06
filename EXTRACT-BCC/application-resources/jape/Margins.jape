@@ -15,7 +15,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMargin, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: DeepMargina
 Priority:100
@@ -29,7 +29,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMargina, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: DeepMargin2
 Priority:100
@@ -43,7 +43,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMargin2, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: DeepMargin2a
 Priority:100
@@ -57,7 +57,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMargin2a, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: PeripheralMargin
 Priority:100
@@ -127,7 +127,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMarginWords1, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.MarginWordDistances.Value, 
 MeasurementUnit = "mm",
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: DeepMarginWords1a
 Priority:100
@@ -141,7 +141,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMarginWords1a, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.MarginWordDistances.Value, 
 MeasurementUnit = "mm",
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: DeepMarginWords2
 Priority:100
@@ -155,7 +155,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMarginWords2, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.MarginWordDistances.Value, 
 MeasurementUnit = "mm",
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: DeepMarginWords2a
 Priority:100
@@ -169,7 +169,7 @@ Priority:100
 :match.MicroMeasurements = { rule = DeepMarginWords2a, MeasurementType = "DeepClearance", 
 MeasurementValue = :match.MarginWordDistances.Value, 
 MeasurementUnit = "mm",
-PeripheralClockPosition = :match.ClockFace.time}
+DeepClockPosition = :match.ClockFace.time}
 
 Rule: PeripheralMarginWords1
 Priority:100
