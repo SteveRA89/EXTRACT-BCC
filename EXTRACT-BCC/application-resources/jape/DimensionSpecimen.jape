@@ -1,0 +1,54 @@
+Phase: DimensionSpecimen
+Input: Dimension Token Specimen ExcisionType
+Options: control=appelt
+
+Rule: DimensionSpecimen3D
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Dimension})
+
+):match
+
+-->
+:match.DimensionSpecimen3D = { rule = DimensionSpecimen3D, 
+N1 = :match.Dimension.N1, 
+N2 = :match.Dimension.N2, 
+N3 = :match.Dimension.N3, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
+LongestDistance = :match.Dimension.LongestDistance}
+
+Rule: DimensionSpecimen2D
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Dimension})
+
+):match
+
+-->
+:match.DimensionSpecimen2D = { rule = DimensionSpecimen2D, 
+N1 = :match.Dimension.N1, 
+N2 = :match.Dimension.N2,
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
+LongestDistance = :match.Dimension.LongestDistance}
+
+Rule: DimensionSpecimen1D
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Dimension})
+
+):match
+
+-->
+:match.DimensionSpecimen1D = { rule = DimensionSpecimen1D, 
+N1 = :match.Dimension.N1, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
+LongestDistance = :match.Dimension.LongestDistance}
