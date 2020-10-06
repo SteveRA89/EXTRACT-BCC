@@ -1,71 +1,128 @@
 Phase: SupplementalExcisionTypeOutcome
-Input: ExcisionType SpaceToken Split Sentence SupplementalExcisionTypeOutcome ClockFace NewLine
+Input: ExcisionType Split SupplementalExcisionTypeOutcome ClockFace NewLine
 Options: control=appelt
 
-Rule: ExcisionTypePositiveDeepClock
+Rule: ExcisionTypePositiveDeepClock1a
 Priority: 100
 
 (
-	({ExcisionType})
-	({SpaceToken})?
+	({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
 	({ClockFace})?
-	({SpaceToken})?
 	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
 ):match
 -->
-:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+:match.MicroDetails = { rule = ExcisionTypePositiveDeepClock1a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 DeepClockPosition = :match.ClockFace.time,
 SupplementalExcisionTypeOutcome = "Yes"}
 
-Rule: ExcisionTypeNegativeDeepClock
+Rule: ExcisionTypeNegativeDeepClock1b
 Priority: 100
 
 (
-	({ExcisionType})
-	({SpaceToken})?
+	({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
 	({ClockFace})?
-	({SpaceToken})?
 	({SupplementalExcisionTypeOutcome.Negation == Negated})
 ):match
 -->
-:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+:match.MicroDetails = { rule = ExcisionTypeNegativeDeepClock1b, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+DeepClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "No"}
+
+Rule: ExcisionTypePositivePeripheralClock1a
+Priority: 100
+
+(
+	({ExcisionType.ExcisionType == "Supplemental Peripheral Margin Specimen"})
+	({ClockFace})?
+	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
+):match
+-->
+:match.MicroDetails = { rule = ExcisionTypePositivePeripheralClock1a, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+PeripheralClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "Yes"}
+
+Rule: ExcisionTypeNegativePeripheralClock1b
+Priority: 100
+
+(
+	({ExcisionType.ExcisionType == "Supplemental Peripheral Margin Specimen"})
+	({ClockFace})?
+	({SupplementalExcisionTypeOutcome.Negation == Negated})
+):match
+-->
+:match.MicroDetails = { rule = ExcisionTypeNegativePeripheralClock1b, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+PeripheralClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "No"}
+
+Rule: ExcisionTypePositiveDeepClock2a
+Priority: 100
+
+(
+	({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
+	({ClockFace})?
+	({Split})
+	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
+):match
+-->
+:match.MicroDetails = { rule = ExcisionTypePositiveDeepClock2a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 DeepClockPosition = :match.ClockFace.time,
 SupplementalExcisionTypeOutcome = "Yes"}
 
-Rule: ExcisionTypePositivePeripheralClock
+Rule: ExcisionTypeNegativeDeepClock2b
 Priority: 100
 
 (
-	({ExcisionType})
-	({SpaceToken})?
+	({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
 	({ClockFace})?
-	({SpaceToken})?
-	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
-):match
--->
-:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
-ExcisionType = :match.ExcisionType.ExcisionType,
-ExcisionType2 = :match.ExcisionType.ExcisionType2,
-PeripheralClockPosition = :match.ClockFace.time,
-SupplementalExcisionTypeOutcome = "Yes"}
-
-Rule: ExcisionTypeNegativePeripheralClock
-Priority: 100
-
-(
-	({ExcisionType})
-	({SpaceToken})?
-	({ClockFace})?
-	({SpaceToken})?
+	({Split})
 	({SupplementalExcisionTypeOutcome.Negation == Negated})
 ):match
 -->
-:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome, 
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome2b, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+DeepClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "No"}
+
+Rule: ExcisionTypePositivePeripheralClock2a
+Priority: 100
+
+(
+	({ExcisionType.ExcisionType == "Supplemental Peripheral Margin Specimen"})
+	({ClockFace})?
+	({Split})
+	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
+):match
+-->
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome2a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 PeripheralClockPosition = :match.ClockFace.time,
 SupplementalExcisionTypeOutcome = "Yes"}
+
+Rule: ExcisionTypeNegativePeripheralClock2b
+Priority: 100
+
+(
+	({ExcisionType.ExcisionType == "Supplemental Peripheral Margin Specimen"})
+	({ClockFace})?
+	({Split})
+	({SupplementalExcisionTypeOutcome.Negation == Negated})
+):match
+-->
+:match.MicroDetails = { rule = SupplementalExcisionTypeOutcome2b, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+PeripheralClockPosition = :match.ClockFace.time,
+SupplementalExcisionTypeOutcome = "No"}
+
