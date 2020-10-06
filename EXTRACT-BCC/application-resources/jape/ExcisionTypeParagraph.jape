@@ -1,0 +1,49 @@
+Phase: TagStartOfSentence
+Input: ExcisionType GroupedParagraph
+Options: control=all
+
+/*
+ * ExcisionType is within GroupedParagraph
+*/
+
+Rule: ExcisionTypeParagraph1
+(
+	({ExcisionType within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.ExcisionTypeParagraph = { rule2 = ExcisionTypeParagraph1,
+rule = :match.ExcisionType.rule, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+ParagraphTitle = ClinicalDetails}
+
+Rule: ExcisionTypeParagraph2
+(
+	({ExcisionType within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.ExcisionTypeParagraph = { rule2 = ExcisionTypeParagraph2,
+rule = :match.ExcisionType.rule, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+ParagraphTitle = MacroDescription}
+
+Rule: ExcisionTypeParagraph3
+(
+	({ExcisionType within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.ExcisionTypeParagraph = { rule2 = ExcisionTypeParagraph3,
+rule = :match.ExcisionType.rule, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+ParagraphTitle = Microscopy}

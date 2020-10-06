@@ -1,0 +1,52 @@
+Phase: TagStartOfSentence
+Input: MaxMicroDiameter GroupedParagraph
+Options: control=all
+
+/*
+ * MaxMicroDiameter is within GroupedParagraph
+*/
+
+Rule: MaxMicroDiameterParagraph1
+(
+	({MaxMicroDiameter within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph1,
+rule = :match.MaxMicroDiameter.rule, 
+MeasurementType = "MaxMicroDiameter", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ParagraphTitle = ClinicalDetails}
+
+Rule: MaxMicroDiameterParagraph2
+(
+	({MaxMicroDiameter within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph2,
+rule = :match.MaxMicroDiameter.rule, 
+MeasurementType = "MaxMicroDiameter", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ParagraphTitle = MacroDescription}
+
+Rule: MaxMicroDiameterParagraph3
+(
+	({MaxMicroDiameter within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph3,
+rule = :match.MaxMicroDiameter.rule, 
+MeasurementType = "MaxMicroDiameter", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ParagraphTitle = Microscopy}

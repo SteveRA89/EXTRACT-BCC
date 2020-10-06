@@ -1,0 +1,52 @@
+Phase: TagStartOfSentence
+Input: Micro_thickness GroupedParagraph
+Options: control=all
+
+/*
+ * Micro_thickness is within GroupedParagraph
+*/
+
+Rule: Micro_thicknessParagraph1
+(
+	({Micro_thickness within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph1,
+rule = :match.Micro_thickness.rule, 
+MeasurementType = "TumourThickness", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ParagraphTitle = ClinicalDetails}
+
+Rule: Micro_thicknessParagraph2
+(
+	({Micro_thickness within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph2,
+rule = :match.Micro_thickness.rule, 
+MeasurementType = "TumourThickness", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ParagraphTitle = MacroDescription}
+
+Rule: Micro_thicknessParagraph3
+(
+	({Micro_thickness within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph3,
+rule = :match.Micro_thickness.rule, 
+MeasurementType = "TumourThickness", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ParagraphTitle = Microscopy}
