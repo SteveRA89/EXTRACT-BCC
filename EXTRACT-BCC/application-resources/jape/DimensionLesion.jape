@@ -6,7 +6,7 @@ Rule: DimensionLesion3D
 Priority:100
 (
     ({Lesion})
-    ({Dimension})
+    ({Dimension.NumberOfMeasurements == 3})
 
 ):match
 
@@ -23,7 +23,7 @@ Rule: DimensionLesion2D
 Priority:100
 (
     ({Lesion})
-    ({Dimension})
+    ({Dimension.NumberOfMeasurements == 2})
 
 ):match
 
@@ -39,7 +39,7 @@ Rule: DimensionLesion1D
 Priority:100
 (
     ({Lesion})
-    ({Dimension})
+    ({Dimension.NumberOfMeasurements == 1})
 
 ):match
 
