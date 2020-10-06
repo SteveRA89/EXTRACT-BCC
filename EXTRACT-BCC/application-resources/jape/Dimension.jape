@@ -1,11 +1,13 @@
 Phase: Dimensions
-Input: Numeric Token SpaceToken Measurement
+Input: Numeric Token SpaceToken Measurement Dimensions Sepatator Specimen ExcisionType Lesion
 Options: control=appelt
 
-
-Rule: Dimension3D
+Rule: Dimension3DSpecimen
 Priority:100
 (
+    ({Specimen})
+    ({ExcisionType})?
+    ({ExcisionType})
     ({Numeric}):n1
     ({SpaceToken})?
     ({SpaceToken})?
@@ -22,11 +24,13 @@ Priority:100
 
 ):match
 -->
-:match.Dimension = { rule = Dimension3D, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+:match.Dimension = { rule = Dimension3DSpecimen, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
 
-Rule: Dimension2D
+Rule: Dimension2DSpecimen
 Priority:100
 (
+    ({Specimen})
+    ({ExcisionType})?
     ({Numeric}):n1
     ({SpaceToken})?
     ({SpaceToken})?
@@ -37,14 +41,203 @@ Priority:100
 
 ):match
 -->
-:match.Dimension = { rule = Dimension2D, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+:match.Dimension = { rule = Dimension2DSpecimen, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
 
-Rule: Dimension1D
+Rule: Dimension1DSpecimen
 Priority:100
 (
-  
+    ({Specimen})
+    ({ExcisionType})?
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1 
 
 ):match
 -->
-:match.Dimension = { rule = Dimension1D, N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, NumberOfMeasurements = 1}
+:match.Dimension = { rule = Dimension1DSpecimen, N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, NumberOfMeasurements = 1}
+
+
+Rule: Dimension3DWordsSpecimen
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1     
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({Sepatator})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({Sepatator})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3
+
+):match
+-->
+:match.Dimension = { rule = Dimension3DWordsSpecimen, 
+N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, 
+N2 = :n2.Measurement.quantity, units = :n3.Measurement.units, 
+N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, 
+NumberOfMeasurements = 3}
+
+Rule: Dimension2DWordsSpecimen
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1     
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({Sepatator})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2DWordsSpecimen, 
+N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, 
+N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, 
+NumberOfMeasurements = 2}
+
+Rule: Dimension1DWordsSpecimen
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1     
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+
+):match
+-->
+:match.Dimension = { rule = Dimension1DWordsSpecimen, 
+N1 = :n1.Measurement.quantity, units = :n1.Measurement.units 
+NumberOfMeasurements = 2}
+
+Rule: Dimension3DLesion
+Priority:100
+(
+    ({Lesion})
+    ({ExcisionType})?
+    ({ExcisionType})
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
+
+    
+
+):match
+-->
+:match.Dimension = { rule = Dimension3DLesion, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+Rule: Dimension2DLesion
+Priority:100
+(
+    ({Lesion})
+    ({ExcisionType})?
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2DLesion, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+
+Rule: Dimension1DLesion
+Priority:100
+(
+    ({Lesion})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1 
+
+):match
+-->
+:match.Dimension = { rule = Dimension1DLesion, N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, NumberOfMeasurements = 1}
+
+
+Rule: Dimension3DWordsLesion
+Priority:100
+(
+    ({Lesion})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1     
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({Sepatator})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({Sepatator})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3
+
+):match
+-->
+:match.Dimension = { rule = Dimension3DWordsLesion, 
+N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, 
+N2 = :n2.Measurement.quantity, units = :n3.Measurement.units, 
+N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, 
+NumberOfMeasurements = 3}
+
+Rule: Dimension2DWordsLesion
+Priority:100
+(
+    ({Lesion})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1     
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({Sepatator})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2DWordsLesion, 
+N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, 
+N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, 
+NumberOfMeasurements = 2}
+
+Rule: Dimension1DWordsLesion
+Priority:100
+(
+    ({Lesion})
+    ({ExcisionType})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n1     
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+
+):match
+-->
+:match.Dimension = { rule = Dimension1DWordsLesion, 
+N1 = :n1.Measurement.quantity, units = :n1.Measurement.units 
+NumberOfMeasurements = 2}
