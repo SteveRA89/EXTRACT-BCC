@@ -1,0 +1,16 @@
+MultiPhase: YesNo
+Phases:
+
+Ulcerated
+LVI
+PNI
+LVIandPNISentence
+ExcisionCompleted
+Frozen_Section
+PeripheralClear
+PeripheralClearButClose
+DeepClear
+DeepClearButClose
+ResidualDisease
+RecurrentDisease
+BiopsyProven

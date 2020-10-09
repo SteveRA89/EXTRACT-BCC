@@ -1,0 +1,14 @@
+MultiPhase: SpecificMeasurements
+Phases:
+
+Micro_thickness
+Margins
+Operative_margin
+MaxMicroDiameter
+DetailedDimension
+DimensionLesion
+DimensionSpecimen
+MultiplePeripheral
+SecondMultiplePeripheral
+ThirdMultiplePeripheral
+FourthMultiplePeripheral

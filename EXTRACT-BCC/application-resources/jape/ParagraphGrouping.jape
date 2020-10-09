@@ -1,0 +1,8 @@
+MultiPhase: ParagraphGrouping
+Phases:
+CancerDiagnosisParagraph
+DetailedBodyPartParagraph
+ExcisionTypeParagraph
+MaxMicroDiameterParagraph
+Micro_thicknessParagraph
+UlceratedParagraph

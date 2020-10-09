@@ -1,0 +1,6 @@
+MultiPhase: CancerDiagnosis
+Phases:
+
+MultipleCancerType
+CancerDiagnosis
+CancerDiagnosisJAVA
