@@ -1,5 +1,5 @@
 Phase: Micro_thickness
-Input: Dimension Micro_thickness Sentence
+Input: Dimension Micro_thickness Sentence Separator
 Options: control=appelt
 
 
@@ -11,7 +11,7 @@ Priority:100
 
 ):match
 -->
-:match.Micro_thickness = { rule = Micro_thickness1, MeasurementType = "TumourThickness", 
+:match.Measurements = { rule = Micro_thickness1, MeasurementType = "TumourThickness", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units}
 
@@ -23,6 +23,6 @@ Priority:100
 
 ):match
 -->
-:match.Micro_thickness = { rule = Micro_thickness2, MeasurementType = "TumourThickness", 
+:match.Measurements = { rule = Micro_thickness2, MeasurementType = "TumourThickness", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units}

@@ -1,16 +1,16 @@
 Phase: MultiplePeripheral
-Input: Distance_to Dimension MicroMeasurements ClockFace NewLine Sepatator
+Input: Distance_to Dimension Measurements ClockFace NewLine Sepatator
 Options: control=appelt
 
 Rule: SecondMultiplePeripheral
 Priority:100
 (
-    ({MicroMeasurements.MeasurementType == DeepClearance})
+    ({Measurements.MeasurementType == DeepClearance})
     ({Sepatator})?
     ({NewLine})?
     ({Sepatator})?
     ({NewLine})?
-    ({MicroMeasurements.MeasurementType == PeripheralClearance})
+    ({Measurements.MeasurementType == PeripheralClearance})
     ({Sepatator})?
     ({NewLine})?
     (({Distance_to})
@@ -19,7 +19,7 @@ Priority:100
 
 ):match1
 -->
-:match.MicroMeasurements = { rule = SecondMultiplePeripheral, MeasurementType = "PeripheralClearance", 
+:match.Measurements = { rule = SecondMultiplePeripheral, MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
@@ -32,16 +32,16 @@ Priority:100
     ({Dimension})):match
     ({Sepatator})?
     ({NewLine})?
-    ({MicroMeasurements.MeasurementType == PeripheralClearance})
+    ({Measurements.MeasurementType == PeripheralClearance})
     ({Sepatator})?
     ({NewLine})?
     ({Sepatator})?
     ({NewLine})?
-    ({MicroMeasurements.MeasurementType == DeepClearance})
+    ({Measurements.MeasurementType == DeepClearance})
 
 ):match1
 -->
-:match.MicroMeasurements = { rule = SecondMultiplePeripheral2, MeasurementType = "PeripheralClearance", 
+:match.Measurements = { rule = SecondMultiplePeripheral2, MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
