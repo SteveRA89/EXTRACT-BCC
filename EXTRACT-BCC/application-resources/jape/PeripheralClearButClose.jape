@@ -10,7 +10,7 @@ Priority: 100
 	{ClearButClose.Negation == Affirmed}
 ):match
 -->
-:match.MicroDetails = { rule = PeripheralClearButCloseYes, PeripheralClearButClose = "Yes"}
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseYes, PeripheralClearButClose = "Yes"}
 
 Rule: PeripheralClearButCloseNo
 Priority: 100
@@ -20,4 +20,4 @@ Priority: 100
 	{ClearButClose.Negation == Negated}
 ):match
 -->
-:match.MicroDetails = { rule = PeripheralClearButCloseNo, PeripheralClearButClose = "No"}
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseNo, PeripheralClearButClose = "No"}

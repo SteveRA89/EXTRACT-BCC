@@ -2,6 +2,7 @@ Phase: ExcisionComplete
 Input: ExcisionComplete Split Sentence
 Options: control=appelt
 
+//This rule could be deleted and negation used in another rule at later stage
 
 Rule: ExcisionCompleteYes
 Priority: 100
@@ -10,7 +11,7 @@ Priority: 100
 	{ExcisionComplete.Negation == Affirmed}
 ):match
 -->
-:match.MicroDetails = { rule = ExcisionComplete, ExcisionComplete = "Yes"}
+:match.ExcisionCompleteDetails = { rule = ExcisionComplete, ExcisionComplete = "Yes"}
 
 Rule: ExcisionCompleteNo
 Priority: 100
@@ -19,4 +20,4 @@ Priority: 100
 	{ExcisionComplete.Negation == Negated}
 ):match
 -->
-:match.MicroDetails = { rule = ExcisionComplete, ExcisionComplete = "No"}
+:match.ExcisionCompleteDetails = { rule = ExcisionComplete, ExcisionComplete = "No"}

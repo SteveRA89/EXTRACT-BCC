@@ -9,7 +9,7 @@ Priority: 100
 	{RecurrentDisease.Negation == Affirmed}
 ):match
 -->
-:match.MicroDetails = { rule = RecurrentDisease, RecurrentDisease = "Yes"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "Yes"}
 
 Rule: RecurrentDiseaseNo1
 Priority: 100
@@ -18,7 +18,7 @@ Priority: 100
 	{RecurrentDisease.Negation == Negated}
 ):match
 -->
-:match.MicroDetails = { rule = RecurrentDisease, RecurrentDisease = "No"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "No"}
 
 Rule: RecurrentDiseaseYes2
 Priority: 100
@@ -27,7 +27,7 @@ Priority: 100
 	{RecurrentDisease.Negation == Negated, RecurrentDisease.Negatives == false}
 ):match
 -->
-:match.MicroDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "Yes"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "Yes"}
 
 Rule: RecurrentDiseaseNo2
 Priority: 100
@@ -36,4 +36,4 @@ Priority: 100
 	{RecurrentDisease.Negation == Affirmed, RecurrentDisease.Negatives == false}
 ):match
 -->
-:match.MicroDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "No"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "No"}

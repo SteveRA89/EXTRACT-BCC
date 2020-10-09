@@ -10,7 +10,7 @@ Priority: 100
 	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.MicroDetails = { rule = DeepClearYes, DeepClear = "Yes"}
+:match.DeepClearDetails = { rule = DeepClearYes, DeepClear = "Yes"}
 
 Rule: DeepClearNo
 Priority: 100
@@ -20,4 +20,4 @@ Priority: 100
 	{Clear.Negation == Negated}
 ):match
 -->
-:match.MicroDetails = { rule = DeepClearNo, DeepClear = "No"}
+:match.DeepClearDetails = { rule = DeepClearNo, DeepClear = "No"}

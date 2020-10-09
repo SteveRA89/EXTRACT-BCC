@@ -10,7 +10,7 @@ Priority: 100
 	{LVI.Negation == Affirmed}
 ):match
 -->
-:match.MicroDetails = { rule = LVI, LVI = "Yes"}
+:match.LVIDetails = { rule = LVI, LVI = "Yes"}
 
 Rule: LVINo
 Priority: 100
@@ -19,4 +19,4 @@ Priority: 100
 	{LVI.Negation == Negated}
 ):match
 -->
-:match.MicroDetails = { rule = LVI, LVI = "No"}
+:match.LVIDetails = { rule = LVI, LVI = "No"}
