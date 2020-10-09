@@ -6,8 +6,8 @@ Options: control=all
  * Micro_thickness is within GroupedParagraph
 */
 
-// Now doing nothing as Mirco_thickness now is Just called Measurments
-//Would be good to change to Measurments here also as will work on other things then
+// Now doing nothing as Mirco_thickness now is Just called Measurements
+//Would be good to change to Measurents here also as will work on other things then
 
 Rule: Micro_thicknessParagraph1
 (
