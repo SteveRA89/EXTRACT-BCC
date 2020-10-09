@@ -1,0 +1,13 @@
+Phase: Separator 
+Input: Token 
+Options: control=appelt 
+ 
+ 
+Rule: TagLetters1 
+Priority: 100 
+//Pick up ',' and ';'. 
+( 
+	({Token.kind == punctuation, Token.length == 1, Token.string == ","}|{Token.kind == punctuation, Token.length == 1, Token.string == ";"}):Tag 
+):match 
+--> 
+:match.Separator = { rule = Separator1, value = :match@string, string = :Tag.Token.string}
