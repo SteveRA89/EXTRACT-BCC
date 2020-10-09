@@ -6,6 +6,9 @@ Options: control=all
  * Micro_thickness is within GroupedParagraph
 */
 
+// Now doing nothing as Mirco_thickness now is Just called Measurments
+//Would be good to change to Measurments here also as will work on other things then
+
 Rule: Micro_thicknessParagraph1
 (
 	({Micro_thickness within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag

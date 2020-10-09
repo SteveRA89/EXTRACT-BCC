@@ -2,6 +2,8 @@ Phase: DimensionLesion
 Input: Dimension Token Lesion ExcisionType
 Options: control=appelt
 
+//This will only pick up ExcisionTypes directly from the gazetteer, the jape rule is currently after it in the pipeline
+
 Rule: DimensionLesion3D
 Priority:100
 (
