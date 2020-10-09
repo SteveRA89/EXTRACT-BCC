@@ -10,7 +10,7 @@ Priority: 100
 	{Frozen_Section.Negation == Affirmed}
 ):match
 -->
-:match.ClinicalDetails = { rule = Frozen_Section, Frozen_Section = "Yes"}
+:match.Frozen_SectionDetails = { rule = Frozen_Section, Frozen_Section = "Yes"}
 
 Rule: Frozen_SectionNo
 Priority: 100
@@ -19,4 +19,4 @@ Priority: 100
 	{Frozen_Section.Negation == Negated}
 ):match
 -->
-:match.ClinicalDetails = { rule = Frozen_Section, Frozen_Section = "No"}
+:match.Frozen_SectionDetails = { rule = Frozen_Section, Frozen_Section = "No"}

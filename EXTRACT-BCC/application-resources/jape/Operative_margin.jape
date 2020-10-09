@@ -11,6 +11,6 @@ Priority:100
 
 ):match
 -->
-:match.ClinicalDetails = { rule = ClinicalDetailMargin, 
+:match.Operative_margin = { rule = Operative_margin, 
 PeripheralMarginValue = :match.Dimension.N1, 
 PeripheralMarginUnit = :match.Dimension.units}

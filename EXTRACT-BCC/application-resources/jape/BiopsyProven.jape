@@ -10,7 +10,7 @@ Priority: 100
 	{BiopsyProven.Negation == Affirmed}
 ):match
 -->
-:match.ClinicalDetails = { rule = BiopsyProven, BiopsyProven = "Yes"}
+:match.BiopsyProvenDetails = { rule = BiopsyProvenYes, BiopsyProven = "Yes"}
 
 Rule: BiopsyProvenNo
 Priority: 100
@@ -19,4 +19,4 @@ Priority: 100
 	{BiopsyProven.Negation == Negated}
 ):match
 -->
-:match.ClinicalDetails = { rule = BiopsyProven, BiopsyProven = "No"}
+:match.BiopsyProvenDetails = { rule = BiopsyProvenNo, BiopsyProven = "No"}
