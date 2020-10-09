@@ -1,85 +1,48 @@
 Phase: TagStartOfSentence
-Input: Ulcerated GroupedParagraph
+Input: UlceratedDetails GroupedParagraph
 Options: control=all
 
 /*
  * Ulcerated is within GroupedParagraph
 */
 
-Rule: UlceratedParagraph1a
+Rule: UlceratedParagraph1
 (
-	({Ulcerated within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+	({UlceratedDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
 
 ):match
 
 -->
 
-:match.UlceratedParagraph = { rule2 = UlceratedParagraph1a,
+:match.UlceratedParagraph = { rule2 = UlceratedParagraph1,
 rule = :match.Ulcerated.rule, 
-Ulcerated = "Yes",
+Ulcerated = :match.UlceratedDetails.Ulcerated,
 ParagraphTitle = ClinicalDetails}
 
-Rule: UlceratedParagraph1b
+
+
+Rule: UlceratedParagraph2
 (
-	({Ulcerated within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+	({UlceratedDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
 
 ):match
 
 -->
 
-:match.UlceratedParagraph = { rule2 = UlceratedParagraph1b,
-rule = :match.Ulcerated.rule, 
-Ulcerated = "No",
-ParagraphTitle = ClinicalDetails}
-
-Rule: UlceratedParagraph2a
-(
-	({Ulcerated within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
-
-):match
-
--->
-
-:match.UlceratedParagraph = { rule2 = UlceratedParagraph2a,
-rule = :match.Ulcerated.rule, 
-Ulcerated = "Yes",
+:match.UlceratedParagraph = { rule2 = UlceratedParagraph2,
+rule = :match.UlceratedDetails.rule, 
+Ulcerated = :match.UlceratedDetails.Ulcerated,
 ParagraphTitle = MacroDescription}
 
-Rule: UlceratedParagraph2b
+Rule: UlceratedParagraph3
 (
-	({Ulcerated within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+	({UlceratedDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
 
 ):match
 
 -->
 
-:match.UlceratedParagraph = { rule2 = UlceratedParagraph2b,
+:match.UlceratedParagraph = { rule2 = UlceratedParagraph3,
 rule = :match.Ulcerated.rule, 
-Ulcerated = "No",
-ParagraphTitle = MacroDescription}
-
-Rule: UlceratedParagraph3a
-(
-	({Ulcerated within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
-
-):match
-
--->
-
-:match.UlceratedParagraph = { rule2 = UlceratedParagraph3a,
-rule = :match.Ulcerated.rule, 
-Ulcerated = "Yes",
-ParagraphTitle = Microscopy}
-
-Rule: UlceratedParagraph3b
-(
-	({Ulcerated within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
-
-):match
-
--->
-
-:match.UlceratedParagraph = { rule2 = UlceratedParagraph3b,
-rule = :match.Ulcerated.rule, 
-Ulcerated = "No",
+Ulcerated = :match.UlceratedDetails.Ulcerated,
 ParagraphTitle = Microscopy}
