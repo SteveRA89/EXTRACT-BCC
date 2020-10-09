@@ -1,7 +1,7 @@
 Phase: BCCStage
 Input: BCCStage Split Sentence
 Options: control=appelt
-
+//This rule does nothing
 Rule: BCCStage
 Priority: 99
 (

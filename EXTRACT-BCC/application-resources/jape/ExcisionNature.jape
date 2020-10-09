@@ -2,6 +2,8 @@ Phase: ExcisionNature
 Input: ExcisionNature Split Sentence
 Options: control=appelt
 
+// Does nothing
+
 Rule: ExcisionNature
 Priority: 99
 (
@@ -9,4 +11,4 @@ Priority: 99
         
 ):match
 -->
-:match.ClinicalDetails = {rule = ExcisionNature, ExcisionNature = :match.ExcisionNature.string}
+:match.ExcisionNatureDetails = {rule = ExcisionNature, ExcisionNature = :match.ExcisionNature.string}

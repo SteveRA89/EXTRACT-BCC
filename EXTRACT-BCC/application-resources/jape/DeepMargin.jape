@@ -2,6 +2,8 @@ Phase: DeepMargin
 Input: DeepMargin Split Sentence
 Options: control=appelt
 
+// Does nothing 
+
 Rule: DeepMargin
 Priority: 99
 (
@@ -9,4 +11,4 @@ Priority: 99
         
 ):match
 -->
-:match.ClinicalDetails = {rule = DeepMargin, DeepMargin = :match.DeepMargin.string}
+:match.DeepMarginDetails = {rule = DeepMargin, DeepMargin = :match.DeepMargin.string}

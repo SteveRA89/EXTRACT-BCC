@@ -1,7 +1,7 @@
 Phase: ClarkLevel
 Input: ClarkLevel Split Sentence
 Options: control=appelt
-
+//this rule does nothing
 Rule: ClarkLevel
 Priority: 99
 (
