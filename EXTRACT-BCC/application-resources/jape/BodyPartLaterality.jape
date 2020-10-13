@@ -2,6 +2,19 @@ Phase: BodyPartLaterality
 Input: Lookup2 BodyParts Split Sentence Token LocalisationSkipTerms MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp
 Options: control=appelt
 
+
+Rule: BodyPart
+Priority: 100
+
+(
+	{BodyParts}
+
+
+):match
+-->
+:match.DetailedBodyPart = { rule = BodyPart, BodyPart = :match.BodyParts.bodypart}
+
+
 //BodyPart and one localisation term - order 1
 
 Rule: BodyPartOneTerm1
