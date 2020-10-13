@@ -1,0 +1,43 @@
+Phase: ClinicalDetailsPreParagraph
+Input: ClinicalDetailsPreParagraph GroupedParagraph
+Options: control=all
+
+/*
+ * CancerDiagnosis is within GroupedParagraph
+*/
+
+Rule: ClinicalDetailsPreParagraph
+(
+	({ClinicalDetailsPreParagraph within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+):match
+
+-->
+
+:match.ClinicalDetailsPreTag = { ruleFinal = ClinicalDetails, Pre-opDiagnosis = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosis,
+Pre-opDiagnosis2 = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosis2,
+CUI = :match.ClinicalDetailsPreParagraph.CUI,
+CUI2 = :match.ClinicalDetailsPreParagraph.CUI2,
+Pre-opDiagnosisClass = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosisClass,
+Pre-opDiagnosisClass2 = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosisClass2,
+BiopsyProven = :match.ClinicalDetailsPreParagraph.BiopsyProven,
+ExcisionNature = :match.ClinicalDetailsPreParagraph.ExcisionNature,
+Ulcerated = :match.ClinicalDetailsPreParagraph.Ulcerated,
+FrozenSection = :match.ClinicalDetailsPreParagraph.FrozenSection,
+ExcisionType = :match.ClinicalDetailsPreParagraph.ExcisionType,
+ExcisionType2 = :match.ClinicalDetailsPreParagraph.ExcisionType2,
+BodyPart = :match.ClinicalDetailsPreParagraph.BodyPart,
+BodyPart2 = :match.ClinicalDetailsPreParagraph.BodyPart2,
+UpperOrLower = :match.ClinicalDetailsPreParagraph.UpperOrLower,
+AnteriorOrPosterior = :match.ClinicalDetailsPreParagraph.AnteriorOrPosterior,
+Lateralization = :match.ClinicalDetailsPreParagraph.Lateralization,
+ProximalOrDistal = :match.ClinicalDetailsPreParagraph.ProximalOrDistal,
+MedialOrLateral = :match.ClinicalDetailsPreParagraph.MedialOrLateral,
+MultipleScalp = :match.ClinicalDetailsPreParagraph.MultipleScalp,
+PeripheralMarginValue = :match.ClinicalDetailsPreParagraph.PeripheralMarginValue,
+PeripheralMarginUnit = :match.ClinicalDetailsPreParagraph.PeripheralMarginUnit,
+SupplementalPeripheralMarginClockRange = :match.ClinicalDetailsPreParagraph.SupplementalPeripheralMarginClockRange,
+SupplementalPeripheralMarginClockRange2 = :match.ClinicalDetailsPreParagraph.SupplementalPeripheralMarginClockRange2,
+DeepMargin = :match.ClinicalDetailsPreParagraph.DeepMargin,
+SupplementalDeepMarginClockRange = :match.ClinicalDetailsPreParagraph.SupplementalDeepMarginClockRange,
+SupplementalDeepMarginClockRange2 = :match.ClinicalDetailsPreParagraph.SupplementalDeepMarginClockRange2
+}

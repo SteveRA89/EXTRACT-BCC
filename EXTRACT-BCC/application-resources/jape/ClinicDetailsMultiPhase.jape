@@ -1,0 +1,4 @@
+MultiPhase: ClinicDetailsMultiPhase
+Phases:
+ClinicDetails
+ClinicDetailsGroupedParagraph
