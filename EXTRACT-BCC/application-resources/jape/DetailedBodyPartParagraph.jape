@@ -16,13 +16,13 @@ Rule: DetailedBodyPartParagraph1
 
 :match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph1,
 rule = :match.DetailedBodyPart.rule, 
-BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
-Lateralization = :match.Lookup2.lateralisation, 
-MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
-UpperOrLower = :match.UpperOrLower.UpperOrLower,
-AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
-MultipleScalp = :match.MultipleScalp.MultipleScalp,
+BodyPart = :match.DetailedBodyPart.BodyPart,
+BodyPart2 = :match.DetailedBodyPart.BodyPart2,
+Lateralization = :match.DetailedBodyPart.Lateralization, 
+MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
+UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
+AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
+MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
 ParagraphTitle = ClinicalDetails}
 
 Rule: DetailedBodyPartParagraph2
@@ -35,13 +35,13 @@ Rule: DetailedBodyPartParagraph2
 
 :match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph2,
 rule = :match.DetailedBodyPart.rule, 
-BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
-Lateralization = :match.Lookup2.lateralisation, 
-MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
-UpperOrLower = :match.UpperOrLower.UpperOrLower,
-AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
-MultipleScalp = :match.MultipleScalp.MultipleScalp,
+BodyPart = :match.DetailedBodyPart.BodyPart,
+BodyPart2 = :match.DetailedBodyPart.BodyPart2,
+Lateralization = :match.DetailedBodyPart.Lateralization, 
+MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
+UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
+AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
+MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
 ParagraphTitle = MacroDescription}
 
 Rule: DetailedBodyPartParagraph3
@@ -54,11 +54,11 @@ Rule: DetailedBodyPartParagraph3
 
 :match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph3,
 rule = :match.DetailedBodyPart.rule, 
-BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
-Lateralization = :match.Lookup2.lateralisation, 
-MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
-UpperOrLower = :match.UpperOrLower.UpperOrLower,
-AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,
-MultipleScalp = :match.MultipleScalp.MultipleScalp,
+BodyPart = :match.DetailedBodyPart.BodyPart,
+BodyPart2 = :match.DetailedBodyPart.BodyPart2,
+Lateralization = :match.DetailedBodyPart.Lateralization, 
+MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
+UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
+AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
+MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
 ParagraphTitle = Microscopy}
