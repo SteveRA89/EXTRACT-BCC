@@ -13,4 +13,4 @@ Priority: 99
         
 ):match
 -->
-:match.Requestor1 = {rule = Requestor1, requestor= :match.VIP.Name}
+:match.Requestor = {rule = Requestor1, Requestor= :match.VIP.Name}

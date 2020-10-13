@@ -13,7 +13,7 @@ Priority: 99
         
 ):match
 -->
-:match.ReportDetails = {rule = reporters1, pathologist= :match.VIP.Name}
+:match.ReportDetails = {rule = reporters1, Pathologist= :match.VIP.Name}
 
 Rule: Reporter2
 Priority: 100
@@ -24,7 +24,7 @@ Priority: 100
 		
 ):match
 -->
-:match.ReportDetails = {rule = reporters2, pathologist= :match.VIP.Name,
+:match.ReportDetails = {rule = reporters2, Pathologist= :match.VIP.Name,
 DayDate=:match.DateBio.DayDate,
 MonthDate=:match.DateBio.MonthDate,
 YearDate=:match.DateBio.YearDate,SAILDate=:match.DateBio.Date,string=:match@string}
