@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence MarginWordDistances ClockFace NewLine Separator
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness Token
 Options: control=appelt
 
 //Maybe these should go to DeepMeasurement and PeripheralMeasurements
@@ -227,3 +227,55 @@ Priority:100
 MeasurementValue = :match.MarginWordDistances.Value, 
 MeasurementUnit = "mm",
 PeripheralClockPosition = :match.ClockFace.time}
+
+//Deep first
+
+Rule: ConcatenatedMargins1
+Priority:100
+(
+    ({Dimension}):n1
+    ({Micro_thickness}):n1
+    ({Token})?
+    ({Separator})?
+    ({ClockFace})?:n1
+    ({Dimension}):n2
+    ({Micro_peripheral_margin}):n2
+    ({ClockFace})?:n2
+
+):match
+-->
+:match.Measurements = { rule = ConcatenatedMargins1, 
+MeasurementType1 = "DeepClearance", 
+N1 = :n1.Dimension.N1, 
+MeasurementUnit1 = :n1.Dimension.units,
+DeepClockPosition1 = :n1.ClockFace.time,
+MeasurementType2 = "PeripheralClearance", 
+N2 = :n2.Dimension.N2, 
+MeasurementUnit2 = :n2.Dimension.units,
+PeripheralClockPosition2 = :n2.ClockFace.time}
+
+//Peripheral first
+
+Rule: ConcatenatedMargins2
+Priority:100
+(
+    ({Dimension}):n1
+    ({Micro_peripheral_margin})
+    ({Token})?
+    ({Separator})?
+    ({ClockFace})?:n1
+    ({Dimension}):n2
+    ({Micro_deep_margin})
+    ({ClockFace})?:n2
+
+):match
+-->
+:match.Measurements = { rule = ConcatenatedMargins2, 
+MeasurementType1 = "PeripheralClearance", 
+N1 = :n1.Dimension.N1, 
+MeasurementUnit1 = :n1.Dimension.units,
+PeripheralClockPosition1 = :n1.ClockFace.time,
+MeasurementType2 = "DeepClearance", 
+N2 = :n2.Dimension.N2, 
+MeasurementUnit2 = :n2.Dimension.units,
+DeepClockPosition2 = :n2.ClockFace.time}
