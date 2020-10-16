@@ -1,5 +1,5 @@
 Phase: Micro_thickness
-Input: Dimension Micro_thickness Sentence Separator
+Input: Dimension Micro_thickness Sentence Separator Micro_deep_margin Micro_peripheral_margin Token ClockFace 
 Options: control=appelt
 
 
@@ -8,6 +8,7 @@ Priority:100
 (
     ({Micro_thickness.Position != Post})
     ({Dimension})
+    ({Micro_thickness_block})
 
 ):match
 -->
@@ -20,6 +21,7 @@ Priority:100
 (
     ({Dimension})
     ({Micro_thickness})
+    ({Micro_thickness_block})
 
 ):match
 -->
