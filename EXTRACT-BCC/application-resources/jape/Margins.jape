@@ -241,7 +241,6 @@ Priority:100
     ({Dimension}):n2
     ({Micro_peripheral_margin}):n2
     ({ClockFace})?:n2
-
 ):match
 -->
 :match.Measurements = { rule = ConcatenatedMargins1, 
@@ -259,7 +258,7 @@ PeripheralClockPosition2 = :n2.ClockFace.time}
 Rule: ConcatenatedMargins2
 Priority:100
 (
-    ({Dimension}):n1
+    ({Dimension}):n1 //Because you have used :n1 (and :n2) twice here, its not sure which one to use. 
     ({Micro_peripheral_margin})
     ({Token})?
     ({Separator})?
@@ -279,3 +278,51 @@ MeasurementType2 = "DeepClearance",
 N2 = :n2.Dimension.N2, 
 MeasurementUnit2 = :n2.Dimension.units,
 DeepClockPosition2 = :n2.ClockFace.time}
+
+//here is the error message I sent in Slack.
+//I've added comments below with the numbers being each line of the error. Delete this after you understand it
+/*
+
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Micro_thickness.jape Rule Micro_thickness1 contains unlisted annotation type Micro_thickness_block
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Micro_thickness.jape Rule Micro_thickness2 contains unlisted annotation type Micro_thickness_block
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n1 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n1 already bound
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n1 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n1 already bound
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n2 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n2 already bound
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n2 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n2 already bound
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n1 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n1 already bound
+file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n2 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n2 already bound
+
+*/
+
+// The first two are because in Micro_thickness.jape (for the rules Micro_thickness1 and Micro_thickness2) you haven't added 'Micro_thickness_block' to the input at the top, but it is included in those two rules, it doesn't know what the 'Micro_thickness_block' is.
+// The next 6 lines are about how you've used n1 and n2 mutiple times as a binding (the :n1 / :n2 in the LHS of the rules) - i will comment more in the rules itself.
+
+// Commented here a fix to how to use just one n1(and n2) in the rules
+// Used '[' (not '(') to make it easier to see
+// Created one large n1 (and one large n2) the covers the whole of the measurement
+
+/*    Deep
+
+    [({Dimension})
+    ({Micro_thickness})
+    ({Token})?
+    ({Separator})?
+    ({ClockFace})?]
+    [({Dimension})
+    ({Micro_peripheral_margin})
+    ({ClockFace})?]:n2
+
+*/
+
+/*   Peripheral 
+
+    [({Dimension})
+    ({Micro_peripheral_margin})
+    ({Token})?
+    ({Separator})?
+    ({ClockFace})?]:n1
+    [({Dimension})
+    ({Micro_deep_margin})
+    ({ClockFace})?]:n2
+
+*/
