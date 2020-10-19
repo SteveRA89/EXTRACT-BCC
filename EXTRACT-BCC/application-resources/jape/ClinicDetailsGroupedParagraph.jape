@@ -44,14 +44,14 @@ SupplementalDeepMarginClockRange = :match.ClinicalDetailsPreParagraph.Supplement
 SupplementalDeepMarginClockRange2 = :match.ClinicalDetailsPreParagraph.SupplementalDeepMarginClockRange2
 */
 
-	Annotation matchAnn = matchAnnots.iterator().next();
-	FeatureMap preTagFM = Factory.newFeatureMap();
-	preTagFM.putAll(matchAnn.getFeatures());
-	Long tokenStart = matchAnnots.firstNode().getOffset();
-	Long tokenEnd = matchAnnots.lastNode().getOffset();
-	preTagFM.put("tokenStart", tokenStart);
-	preTagFM.put("tokenEnd", tokenEnd);
-	preTagFM.put("ruleFinal", "ClinicalDetailsPreTag");
-	AnnotationSet defaultSet = doc.getAnnotations("Bio");
-	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetailsPreTag", preTagFM);
+	Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+	FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+	preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+	Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+	Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+	preTagFM.put("tokenStart", tokenStart);//add start as a feature
+	preTagFM.put("tokenEnd", tokenEnd);// add end as a feature - Both these deleted in ClinicDetailWithTag.jape - when Goes into ClinicalDetails
+	preTagFM.put("ruleFinal", "ClinicalDetailsPreTag");//add rule name
+	AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetailsPreTag", preTagFM);//create annotation
 }

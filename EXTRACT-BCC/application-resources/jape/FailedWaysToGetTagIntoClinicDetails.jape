@@ -1,0 +1,61 @@
+/*
+    FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+    for(Annotation ClinicDet :
+            getContainedAnnotations(inputAS,
+                                    matchAnnots, "ClinicalDetailsPreTag")) {
+            FeatureMap fmClinicDetails = (FeatureMap)((SimpleFeatureMapImpl)ClinicDet.getFeatures()).clone(); //clone ClinicalDetailsPreTag features
+            List<Annotation> tagList = gate.Utils.inDocumentOrder(fmClinicDetails);
+            //AnnotationSet setClinicDet = getContained("ClinicalDetailsPreTag");
+            //Long tokenStart = setClinicDet.firstNode().getOffset();//start of annotation
+            //Long tokenEnd = setClinicDet.lastNode().getOffset();//end of annotation
+            newAnnFeatures.putAll(fmClinicDetails);//copy from ClinicalDetailsPreTag
+            String tagString = getOnlyAnn(bindings.get("tag")).getFeatures().get("Tag").toString();//getting Tag from Tag
+            newAnnFeatures.put("Tag", tagString); //Adding tag to feature map
+            }
+    Long tokenStart = matchAnnots.firstNode().getOffset();//start of TagSentence
+    Long tokenEnd = matchAnnots.lastNode().getOffset();//end of TagSentence
+    AnnotationSet defaultSet = doc.getAnnotations("Bio");//Adding to Bio Annotataion Set
+    gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetails", newAnnFeatures);//
+}*/
+
+
+
+
+{ 
+    AnnotationSet ClinicDet = gate.Utils.getContainedAnnotations(inputAS, 
+                                                                 matchAnnots, "ClinicalDetailsPreTag");
+    String tagString = getOnlyAnn(bindings.get("tag")).getFeatures().get("Tag").toString();//getting Tag from Tag
+    List<Annotation> ClinicDetList = gate.Utils.inDocumentOrder(ClinicDet);
+    for (int i=0; i < size(ClinicDetList); i++) {
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+        Annotation firstClinicalDetailsPreTag = ClinicDetList.get(i);// get the i'th annotation from the list
+        FeatureMap fmClinicDetails = (FeatureMap)((SimpleFeatureMapImpl)ClinicDet.getFeatures()).clone(); 
+        FeatureMap fmFirstClinicDetails = firstClinicalDetailsPreTag.getFeatures().clone();
+        Long tokenStart = firstClinicalDetailsPreTag.firstNode().getOffset();//start of TagSentence
+        Long tokenEnd = firstClinicalDetailsPreTag.lastNode().getOffset();//end of TagSentence
+        newAnnFeatures.putAll(fmClinicDetails);//copy from ClinicalDetailsPreTag
+        newAnnFeatures.put("Tag", tagString); //Adding tag to feature map
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");//Adding to Bio Annotataion Set
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetails", newAnnFeatures);//creating the annotation
+    }
+}
+
+
+
+{ 
+    AnnotationSet ClinicDet = gate.Utils.getContainedAnnotations(inputAS, 
+                                                                 matchAnnots, "ClinicalDetailsPreTag");
+    String tagString = getOnlyAnn(bindings.get("tag")).getFeatures().get("Tag").toString();//getting Tag from Tag
+    List<Annotation> ClinicDetList = gate.Utils.inDocumentOrder(ClinicDet);
+    FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+    Annotation firstClinicalDetailsPreTag = ClinicDetList.get(1);// get the i'th annotation from the list
+    FeatureMap fmClinicDetails = (FeatureMap)((SimpleFeatureMapImpl)ClinicDet.getFeatures()).clone(); 
+    FeatureMap fmFirstClinicDetails = firstClinicalDetailsPreTag.getFeatures().clone();
+    Long tokenStart = firstClinicalDetailsPreTag.firstNode().getOffset();//start of TagSentence
+    Long tokenEnd = firstClinicalDetailsPreTag.lastNode().getOffset();//end of TagSentence
+    newAnnFeatures.putAll(fmClinicDetails);//copy from ClinicalDetailsPreTag
+    newAnnFeatures.put("Tag", tagString); //Adding tag to feature map
+    AnnotationSet defaultSet = doc.getAnnotations("Bio");//Adding to Bio Annotataion Set
+    gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetails", newAnnFeatures);//creating the annotation
+}
+
