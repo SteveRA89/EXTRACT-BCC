@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness Token
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness
 Options: control=appelt
 
 //Maybe these should go to DeepMeasurement and PeripheralMeasurements
@@ -228,6 +228,13 @@ MeasurementValue = :match.MarginWordDistances.Value,
 MeasurementUnit = "mm",
 PeripheralClockPosition = :match.ClockFace.time}
 
+// Note on both these Rules, I would add them to a new rule that only picked up either the first (or second) part of the thing
+// So it would kind of be separated into two annotations, a Deep clearance and a Peripheral clearance, this will be easier to use in the future.
+// As you have to do two annotations in markup. - Example from letter 5 = "Completely excised with 1.3mm deep and 3mm lateral margins."
+
+// The problem wasn't with the multiple :n1/:n2 in the end - but I have fixed it here and it is still a good idea to group them
+// Also removed Token as you dont need to be that specific and it now picks up - "The lesion is narrowly excised by 0.2mm at the deep margin" from letter 5
+
 //Deep first
 
 Rule: ConcatenatedMargins1
@@ -249,7 +256,7 @@ N1 = :n1.Dimension.N1,
 MeasurementUnit1 = :n1.Dimension.units,
 DeepClockPosition1 = :n1.ClockFace.time,
 MeasurementType2 = "PeripheralClearance", 
-N2 = :n2.Dimension.N2, 
+N2 = :n2.Dimension.N1, //This has to be N1 as it is the first Measurement of the second dimension - so you are taking N1 (first measurement) into N2 (second) for this mesasurement
 MeasurementUnit2 = :n2.Dimension.units,
 PeripheralClockPosition2 = :n2.ClockFace.time}
 
@@ -275,7 +282,7 @@ N1 = :n1.Dimension.N1,
 MeasurementUnit1 = :n1.Dimension.units,
 PeripheralClockPosition1 = :n1.ClockFace.time,
 MeasurementType2 = "DeepClearance", 
-N2 = :n2.Dimension.N2, 
+N2 = :n2.Dimension.N1, 
 MeasurementUnit2 = :n2.Dimension.units,
 DeepClockPosition2 = :n2.ClockFace.time}
 
