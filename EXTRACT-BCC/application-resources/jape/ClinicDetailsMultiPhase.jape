@@ -2,3 +2,4 @@ MultiPhase: ClinicDetailsMultiPhase
 Phases:
 ClinicDetails
 ClinicDetailsGroupedParagraph
+ClinicDetailsWithTag

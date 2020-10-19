@@ -13,7 +13,9 @@ Rule: ClinicalDetailsPreParagraph
 
 -->
 
-:match.ClinicalDetailsPreTag = { ruleFinal = ClinicalDetails, Pre-opDiagnosis = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosis,
+:match {
+/*
+:match.ClinicalDetailsPreTag = {ruleFinal = ClinicalDetails, Pre-opDiagnosis = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosis,
 Pre-opDiagnosis2 = :match.ClinicalDetailsPreParagraph.Pre-opDiagnosis2,
 CUI = :match.ClinicalDetailsPreParagraph.CUI,
 CUI2 = :match.ClinicalDetailsPreParagraph.CUI2,
@@ -40,4 +42,16 @@ SupplementalPeripheralMarginClockRange2 = :match.ClinicalDetailsPreParagraph.Sup
 DeepMargin = :match.ClinicalDetailsPreParagraph.DeepMargin,
 SupplementalDeepMarginClockRange = :match.ClinicalDetailsPreParagraph.SupplementalDeepMarginClockRange,
 SupplementalDeepMarginClockRange2 = :match.ClinicalDetailsPreParagraph.SupplementalDeepMarginClockRange2
+*/
+
+	Annotation matchAnn = matchAnnots.iterator().next();
+	FeatureMap preTagFM = Factory.newFeatureMap();
+	preTagFM.putAll(matchAnn.getFeatures());
+	Long tokenStart = matchAnnots.firstNode().getOffset();
+	Long tokenEnd = matchAnnots.lastNode().getOffset();
+	preTagFM.put("tokenStart", tokenStart);
+	preTagFM.put("tokenEnd", tokenEnd);
+	preTagFM.put("ruleFinal", "ClinicalDetailsPreTag");
+	AnnotationSet defaultSet = doc.getAnnotations("Bio");
+	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetailsPreTag", preTagFM);
 }
