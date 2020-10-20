@@ -1,7 +1,7 @@
 Phase: Age
 Input: age Numeric YearToMonths timePeriod Lookup2 Person Split timeElapsed Range Sentence YearToMonths Token
 Options: control=appelt
-//Token is her to exclude picking up PostCode and other word-number combinations//
+//Token is here to exclude picking up PostCode and other word-number combinations//
 
 
 
