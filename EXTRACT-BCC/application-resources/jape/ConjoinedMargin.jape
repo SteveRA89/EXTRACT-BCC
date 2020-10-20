@@ -1,14 +1,14 @@
 Phase: ConjoinedMargins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness Measurements
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness Measurements
 Options: control=appelt
 
-//10mm deep and 15mm Peripheral Clearance
+//10mm deep and 15mm peripheral clearance
 
 Rule: ConjoinedMarginsDeep
 Priority:100
 (
     (({Dimension}) //10mm
-    ({Micro_thickness})//Deep, Thick 
+    ({Micro_thickness})//Deep, thick 
     ({Separator})?
     ({ClockFace})?):match1
     ({Measurements.MeasurementType == "PeripheralClearance"})//15mm lateral clearance (12 o'clock?)
@@ -22,34 +22,13 @@ MeasurementUnit = :match1.Dimension.units,
 DeepClockPosition = :match1.Measurements.PeripheralClockPosition,
 DeepClockPosition = :match1.ClockFace.time}
 
-
-//Peripheral first
-// /* 
-// Rule: ConjoinedMarginPeripheral
-// Priority:100
-// (
-//     (({Dimension})
-//     ({Micro_peripheral_margin})
-//     ({Separator})?
-//     ({ClockFace})?):n1
-//     ({Dimension})
-//     ({Micro_deep_margin})
-//     ({ClockFace})?
-
-// ):match
-// -->
-// :match.Measurements = { rule = ConjoinedMarginPeripheral1, 
-// MeasurementType1 = "PeripheralClearance", 
-// N1 = :n1.Dimension.N1, 
-// MeasurementUnit1 = :n1.Dimension.units,
-// PeripheralClockPosition1 = :n1.ClockFace.time}
-//  */
+//10mm peripheral and 15mm deep clearance
 
 Rule: ConjoinedMarginsPeripheral
 Priority:100
 (
     (({Dimension})
-    ({Micro_peripheral_margin}) //Lateral 
+    ({Micro_peripheral_margin_maybe}) //Lateral 
     ({Separator})?
     ({ClockFace})?):match1
     ({Measurements.MeasurementType == "DeepClearance"}) //Deep Margin
@@ -63,6 +42,8 @@ MeasurementUnit = :match1.Dimension.units,
 PeripheralClockPosition = :match1.Measurements.DeepClockPosition,
 PeripheralClockPosition = :match1.ClockFace.time}
 
+//Thickness and conjoined in this rule so that thickness is not picked up as deep margin - priority set so deep clearance longest match to differentiate
+
 //10mm deep (or thick) ONLY!
 
 Rule: Micro_thickness1
@@ -70,7 +51,6 @@ Priority:99
 (
     (({Micro_thickness.Position != Post}) //Deep
     ({Dimension})):match//10mm 
-    ({Micro_thickness_block})?//and, ',' or ';' ...
 
 ):match1
 -->
@@ -82,8 +62,7 @@ Rule: Micro_thickness2
 Priority:99
 (
     (({Dimension}) //10mm
-    ({Micro_thickness})):match // deep 
-    ({Micro_thickness_block})?
+    ({Micro_thickness})):match // Deep 
 
 ):match1
 -->
