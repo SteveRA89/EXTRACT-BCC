@@ -1,9 +1,9 @@
 MultiPhase: SpecificMeasurements
 Phases:
 
-Micro_thickness
 Margins
 ConjoinedMargin
+//Micro_thickness
 Operative_margin
 MaxMicroDiameter
 DetailedDimension

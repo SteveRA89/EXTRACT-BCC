@@ -6,9 +6,9 @@ Options: control=appelt
 Rule: Micro_thickness1
 Priority:100
 (
-    ({Micro_thickness.Position != Post})
-    ({Dimension})
-    ({Micro_thickness_block})
+    ({Micro_thickness.Position != Post}) //Deep
+    ({Dimension})//10mm 
+    ({Micro_thickness_block})?//and, ',' or ';' ...
 
 ):match
 -->
@@ -19,9 +19,9 @@ MeasurementUnit = :match.Dimension.units}
 Rule: Micro_thickness2
 Priority:100
 (
-    ({Dimension})
-    ({Micro_thickness})
-    ({Micro_thickness_block})
+    ({Dimension}) //10mm
+    ({Micro_thickness}) // deep 
+    ({Micro_thickness_block})?
 
 ):match
 -->
