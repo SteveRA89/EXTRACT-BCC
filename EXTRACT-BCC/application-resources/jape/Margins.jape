@@ -228,29 +228,22 @@ MeasurementValue = :match.MarginWordDistances.Value,
 MeasurementUnit = "mm",
 PeripheralClockPosition = :match.ClockFace.time}
 
-// Note on both these Rules, I would add them to a new rule that only picked up either the first (or second) part of the thing
-// So it would kind of be separated into two annotations, a Deep clearance and a Peripheral clearance, this will be easier to use in the future.
-// As you have to do two annotations in markup. - Example from letter 5 = "Completely excised with 1.3mm deep and 3mm lateral margins."
-
-// The problem wasn't with the multiple :n1/:n2 in the end - but I have fixed it here and it is still a good idea to group them
-// Also removed Token as you dont need to be that specific and it now picks up - "The lesion is narrowly excised by 0.2mm at the deep margin" from letter 5
-
 //Deep first
 
-Rule: ConcatenatedMargins1
+Rule: ConcatenatedMarginDeep
 Priority:100
 (
-    ({Dimension}):n1
-    ({Micro_thickness}):n1
-    ({Token})?
+    (({Dimension})
+    ({Micro_thickness})
     ({Separator})?
-    ({ClockFace})?:n1
-    ({Dimension}):n2
-    ({Micro_peripheral_margin}):n2
-    ({ClockFace})?:n2
+    ({ClockFace})?):n1
+    (({Dimension})
+    ({Micro_peripheral_margin})
+    ({ClockFace})?):n2
+
 ):match
 -->
-:match.Measurements = { rule = ConcatenatedMargins1, 
+:match.Measurements = { rule = ConcatenatedMarginDeep, 
 MeasurementType1 = "DeepClearance", 
 N1 = :n1.Dimension.N1, 
 MeasurementUnit1 = :n1.Dimension.units,
@@ -262,21 +255,20 @@ PeripheralClockPosition2 = :n2.ClockFace.time}
 
 //Peripheral first
 
-Rule: ConcatenatedMargins2
+Rule: ConcatenatedMarginPeripheral
 Priority:100
 (
-    ({Dimension}):n1 //Because you have used :n1 (and :n2) twice here, its not sure which one to use. 
+    (({Dimension})
     ({Micro_peripheral_margin})
-    ({Token})?
     ({Separator})?
-    ({ClockFace})?:n1
-    ({Dimension}):n2
+    ({ClockFace})?):n1
+    (({Dimension})
     ({Micro_deep_margin})
-    ({ClockFace})?:n2
+    ({ClockFace})?):n2
 
 ):match
 -->
-:match.Measurements = { rule = ConcatenatedMargins2, 
+:match.Measurements = { rule = ConcatenatedMarginPeripheral, 
 MeasurementType1 = "PeripheralClearance", 
 N1 = :n1.Dimension.N1, 
 MeasurementUnit1 = :n1.Dimension.units,
@@ -286,50 +278,53 @@ N2 = :n2.Dimension.N1,
 MeasurementUnit2 = :n2.Dimension.units,
 DeepClockPosition2 = :n2.ClockFace.time}
 
-//here is the error message I sent in Slack.
-//I've added comments below with the numbers being each line of the error. Delete this after you understand it
 /*
 
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Micro_thickness.jape Rule Micro_thickness1 contains unlisted annotation type Micro_thickness_block
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Micro_thickness.jape Rule Micro_thickness2 contains unlisted annotation type Micro_thickness_block
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n1 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n1 already bound
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n1 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n1 already bound
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n2 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n2 already bound
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n2 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n2 already bound
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n1 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n1 already bound
-file:/C:/Users/huw.strafford/Documents/Work/EXTRACT-BCC/EXTRACT-BCC/application-resources/jape/Margins.jape duplicate binding name n2 - ignoring this binding! exception was: gate.jape.JapeException: LeftHandSide.addBinding: n2 already bound
+//Tried this rule to implement your commment below but not working? Unsure why
 
-*/
+//// Note on both these Rules, I would add them to a new rule that only picked up either the first (or second) part of the thing
+// So it would kind of be separated into two annotations, a Deep clearance and a Peripheral clearance, this will be easier to use in the future.
 
-// The first two are because in Micro_thickness.jape (for the rules Micro_thickness1 and Micro_thickness2) you haven't added 'Micro_thickness_block' to the input at the top, but it is included in those two rules, it doesn't know what the 'Micro_thickness_block' is.
-// The next 6 lines are about how you've used n1 and n2 mutiple times as a binding (the :n1 / :n2 in the LHS of the rules) - i will comment more in the rules itself.
+//Deep first
 
-// Commented here a fix to how to use just one n1(and n2) in the rules
-// Used '[' (not '(') to make it easier to see
-// Created one large n1 (and one large n2) the covers the whole of the measurement
-
-/*    Deep
-
-    [({Dimension})
+Rule: ConcatenatedMarginDeep
+Priority:100
+(
+    (({Dimension})
     ({Micro_thickness})
-    ({Token})?
     ({Separator})?
-    ({ClockFace})?]
-    [({Dimension})
+    ({ClockFace})?):n1
+    (({Dimension})
     ({Micro_peripheral_margin})
-    ({ClockFace})?]:n2
+    ({ClockFace})?):n2
 
-*/
+):match
+-->
+:match.Measurements = { rule = ConcatenatedMarginDeep, 
+MeasurementType1 = "DeepClearance", 
+N1 = :n1.Dimension.N1, 
+MeasurementUnit1 = :n1.Dimension.units,
+DeepClockPosition1 = :n1.ClockFace.time}
 
-/*   Peripheral 
+//Peripheral first
 
-    [({Dimension})
+Rule: ConcatenatedMarginPeripheral
+Priority:100
+(
+    (({Dimension})
     ({Micro_peripheral_margin})
-    ({Token})?
     ({Separator})?
-    ({ClockFace})?]:n1
-    [({Dimension})
+    ({ClockFace})?):n1
+    (({Dimension})
     ({Micro_deep_margin})
-    ({ClockFace})?]:n2
+    ({ClockFace})?):n2
+
+):match
+-->
+:match.Measurements = { rule = ConcatenatedMarginPeripheral, 
+MeasurementType1 = "PeripheralClearance", 
+N1 = :n1.Dimension.N1, 
+MeasurementUnit1 = :n1.Dimension.units,
+PeripheralClockPosition1 = :n1.ClockFace.time}
 
 */
