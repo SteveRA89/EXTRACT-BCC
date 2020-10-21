@@ -1,29 +1,29 @@
 Phase: MarginClockPosition
-Input: Measurements ClockFace Sentence
+Input: DeepClearance PeripheralClearance ClockFace Sentence
 Options: control=appelt
 
 Rule: MarginClockPositionDeep
 (
-	({Measurements.MeasurementType == DeepClearance})
+	({DeepClearance.MeasurementType == DeepClearance})
     ({ClockFace})
 
 ):match
 -->
 :match.ClockFaceDeep = { rule = MarginClockPositionDeep, 
-MeasurementType = :match.Measurements.MeasurementType, 
-MeasurementUnit = :match.Measurements.MeasurementUnit, 
-MeasurementValue = :match.Measurements.MeasurementValue, 
+MeasurementType = :match.DeepClearance.MeasurementType, 
+MeasurementUnit = :match.DeepClearance.MeasurementUnit, 
+MeasurementValue = :match.DeepClearance.MeasurementValue, 
 DeepClockPosition = :match.ClockFace.time}
 
 Rule: MarginClockPositionPeripheral
 (
-	({Measurements.MeasurementType == PeripheralClearance})
+	({PeripheralClearance.MeasurementType == PeripheralClearance})
     ({ClockFace})
 
 ):match
 -->
 :match.ClockFacePeripheral = { rule = MarginClockPositionPeripheral, 
-MeasurementType = :match.Measurements.MeasurementType, 
-MeasurementUnit = :match.Measurements.MeasurementUnit, 
-MeasurementValue = :match.Measurements.MeasurementValue, 
+MeasurementType = :match.PeripheralClearance.MeasurementType, 
+MeasurementUnit = :match.PeripheralClearance.MeasurementUnit, 
+MeasurementValue = :match.PeripheralClearance.MeasurementValue, 
 PeripheralClockPosition = :match.ClockFace.time}
