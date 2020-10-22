@@ -20,4 +20,4 @@ Priority: 100
 	{PNI}
 ):match
 -->
-:match1.LVIDetails = { rule = LVISentence, LVI = :match.PNI.PNI}}
+:match1.LVIDetails = { rule = LVISentence, LVI = :match.PNI.PNI}
