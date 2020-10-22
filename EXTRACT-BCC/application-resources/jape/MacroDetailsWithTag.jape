@@ -1,0 +1,54 @@
+Imports: { import static gate.Utils.*;
+            import java.util.*; }
+
+Phase: MacroDetailsPreTag
+Input: MacroDetailsPreTag Tag TagSentence
+Options: control=all
+
+Rule: MacroDetailsWithTag
+(
+	({TagSentence contains MacroDetailsPreTag}):tag
+):match
+-->
+:match { 
+    AnnotationSet contAnnots = getContainedAnnotations(inputAS, matchAnnots, "MacroDetailsPreTag");//Create the annotation set for MacroDetailsPreTag
+    List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);//Create list of all the possible annotations (some sentences contain two annotations for PreTag)
+    int length = contList.size();//how many items in the list
+    for (int i = 0; i < length; i++) {//loop around the number of items in the list
+        Annotation firstClinDetails = contList.get(i);//get the ith Annotation for the list
+        FeatureMap fmClinicDetails = firstClinDetails.getFeatures();//getFeatures from MacroDetailsPreTag
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+        newAnnFeatures.putAll(fmClinicDetails);//copy from MacroDetailsPreTag
+        String tagString = getOnlyAnn(bindings.get("tag")).getFeatures().get("Tag").toString();//getting Tag from Tag (A, B, 1, 2.....)
+        newAnnFeatures.put("Tag", tagString); //Adding tag to feature map (tag is a string - may cause problems when Tag something like '1)' or '2.')
+        String tokenStartString = newAnnFeatures.get("tokenStart").toString();//start of MacroDetailsPreTag
+        Long tokenStart = Long.parseLong(tokenStartString);//String to Long
+        String tokenEndString = newAnnFeatures.get("tokenEnd").toString();//End of MacroDetailsPreTag
+        Long tokenEnd = Long.parseLong(tokenEndString);//String to Long
+        newAnnFeatures.remove("tokenStart");//remove tokenStart from annotations
+        newAnnFeatures.remove("tokenEnd");//remove tokenEnd from annotations
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");//Adding to Bio Annotataion Set
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "MacroDetails", newAnnFeatures);//Creating annotation outputs for MacroDetails
+    }
+}
+//Where no tag sentence is needed MacroDetailsPreTag notWithin TagSentence -> copy all features.
+
+Rule: MacroDetailsWithoutTag
+(
+	({MacroDetailsPreTag notWithin TagSentence}):tag
+):match
+-->
+:match { 
+    Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+	FeatureMap noTagFM = Factory.newFeatureMap();//create new featuremap
+	noTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+	noTagFM.put("ruleFinal", "MacroDetailsNoTag");//add rule name
+    String tokenStartString = noTagFM.get("tokenStart").toString();//start of MacroDetailsPreTag
+    Long tokenStart = Long.parseLong(tokenStartString);//String to Long
+    String tokenEndString = noTagFM.get("tokenEnd").toString();//End of MacroDetailsPreTag
+    Long tokenEnd = Long.parseLong(tokenEndString);//String to Long
+    noTagFM.remove("tokenStart");//remove tokenStart from annotations
+    noTagFM.remove("tokenEnd");//remove tokenEnd from annotations
+	AnnotationSet defaultSet = doc.getAnnotations("Bio");//select annotaions set to go into
+	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "MacroDetails", noTagFM);//create the annotation
+}

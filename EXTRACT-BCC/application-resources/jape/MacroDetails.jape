@@ -6,15 +6,15 @@ Rule: MacroDetails
 Priority: 100
 
 (
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
 ):match
 -->
 :match.MacroDetailsPreParagraph = { ruleFinal = MacroDetails, 
