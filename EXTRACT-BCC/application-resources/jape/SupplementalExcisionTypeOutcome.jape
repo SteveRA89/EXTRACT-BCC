@@ -11,7 +11,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = ExcisionTypePositiveDeepClock1a, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = ExcisionTypePositiveDeepClock1a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 DeepClockPosition = :match.ClockFace.time,
@@ -26,7 +26,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Negated})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = ExcisionTypeNegativeDeepClock1b, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = ExcisionTypeNegativeDeepClock1b, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 DeepClockPosition = :match.ClockFace.time,
@@ -41,7 +41,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = ExcisionTypePositivePeripheralClock1a, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = ExcisionTypePositivePeripheralClock1a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 PeripheralClockPosition = :match.ClockFace.time,
@@ -56,7 +56,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Negated})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = ExcisionTypeNegativePeripheralClock1b, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = ExcisionTypeNegativePeripheralClock1b, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 PeripheralClockPosition = :match.ClockFace.time,
@@ -72,7 +72,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = ExcisionTypePositiveDeepClock2a, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = ExcisionTypePositiveDeepClock2a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 DeepClockPosition = :match.ClockFace.time,
@@ -88,7 +88,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Negated})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2b, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2b, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 DeepClockPosition = :match.ClockFace.time,
@@ -104,7 +104,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2a, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2a, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 PeripheralClockPosition = :match.ClockFace.time,
@@ -120,7 +120,7 @@ Priority: 100
 	({SupplementalExcisionTypeOutcome.Negation == Negated})
 ):match
 -->
-:match.SuppExcionsTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2b, 
+:match.SuppExcisionTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2b, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 PeripheralClockPosition = :match.ClockFace.time,
