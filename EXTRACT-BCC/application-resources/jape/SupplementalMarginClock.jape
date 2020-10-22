@@ -2,9 +2,9 @@ Phase: SupplementalMarginClock
 Input: Numeric SpaceToken Token Split Clock ExcisionType
 Options: control=appelt
 
-Rule: SupplementalMarginClockFace
+Rule: SupplementalDeepMarginClockFace
 (
-    ({ExcisionType})
+    ({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
     ({SpaceToken})?
     ({Numeric.value < 13, Numeric.value > 0})
     ({SpaceToken})?
@@ -12,13 +12,13 @@ Rule: SupplementalMarginClockFace
 
 ):match
 -->
-:match.SupplementalMarginClockFace = { rule = SupplementalMarginClockFace, 
+:match.SupplementalDeepMarginClockFace = { rule = SupplementalDeepMarginClockFace, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 time = :match.Numeric.value}
 
-Rule: SupplementalMarginClockFaceRange
+Rule: SupplementalDeepMarginClockFaceRange
 (
-    ({ExcisionType})
+    ({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
     ({SpaceToken})?
     ({Numeric.value < 13, Numeric.value > 0}):T1
     ({SpaceToken})?
@@ -30,7 +30,40 @@ Rule: SupplementalMarginClockFaceRange
 
 ):match
 -->
-:match.SupplementalMarginClockFace = { rule = SupplementalMarginClockFaceRange, 
+:match.SupplementalDeepMarginClockFace = { rule = SupplementalDeepMarginClockFaceRange, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+time = :T1.Numeric.value,
+time2 = :T2.Numeric.value}
+
+Rule: SupplementalPeripheralMarginClockFace
+(
+    ({ExcisionType.ExcisionType == "Supplemental Deep Margin Specimen"})
+    ({SpaceToken})?
+    ({Numeric.value < 13, Numeric.value > 0})
+    ({SpaceToken})?
+    ({Clock})
+
+):match
+-->
+:match.SupplementalPeripheralMarginClockFace = { rule = SupplementalPeripheralMarginClockFace, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+time = :match.Numeric.value}
+
+Rule: SupplementalPeripheralMarginClockFace
+(
+    ({ExcisionType.ExcisionType == "Supplemental Peripheral Margin Specimen"})
+    ({SpaceToken})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({SpaceToken})?
+    ({Token.string == "to"}|{Token.string == "-"})
+    ({SpaceToken})?
+	({Numeric.value < 13, Numeric.value > 0}):T2
+    ({SpaceToken})?
+    ({Clock})
+
+):match
+-->
+:match.SupplementalPeripheralMarginClockFace = { rule = SupplementalPeripheralMarginClockFace, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 time = :T1.Numeric.value,
 time2 = :T2.Numeric.value}

@@ -1,53 +1,23 @@
 Phase: DimensionLesion
-Input: Dimension Token Lesion ExcisionType
+Input: Dimension Lesion DimensionSpecimen
 Options: control=appelt
 
 //This will only pick up ExcisionTypes directly from the gazetteer, the jape rule is currently after it in the pipeline
 
-Rule: DimensionLesion3D
+Rule: DimensionLesion
 Priority:100
 (
-    ({Lesion})
-    ({Dimension.NumberOfMeasurements == 3})
+    ({DimensionSpecimen})
+    (({Lesion})
+    ({Dimension})):match
 
-):match
+):match1
 
 -->
-:match.DimensionLesion3D = { rule = DimensionLesion3D, 
+:match.DimensionLesion = { rule = DimensionLesion3D, 
 N1 = :match.Dimension.N1, 
 N2 = :match.Dimension.N2, 
 N3 = :match.Dimension.N3, 
-units = :match.Dimension.units, 
-NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
-LongestDistance = :match.Dimension.LongestDistance}
-
-Rule: DimensionLesion2D
-Priority:100
-(
-    ({Lesion})
-    ({Dimension.NumberOfMeasurements == 2})
-
-):match
-
--->
-:match.DimensionLesion2D = { rule = DimensionLesion2D, 
-N1 = :match.Dimension.N1, 
-N2 = :match.Dimension.N2,
-units = :match.Dimension.units, 
-NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
-LongestDistance = :match.Dimension.LongestDistance}
-
-Rule: DimensionLesion1D
-Priority:100
-(
-    ({Lesion})
-    ({Dimension.NumberOfMeasurements == 1})
-
-):match
-
--->
-:match.DimensionLesion1D = { rule = DimensionLesion1D, 
-N1 = :match.Dimension.N1, 
 units = :match.Dimension.units, 
 NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
 LongestDistance = :match.Dimension.LongestDistance}

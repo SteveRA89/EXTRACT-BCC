@@ -2,15 +2,31 @@ Phase: DetailedDimension
 Input: Dimension Token Dimensions
 Options: control=appelt
 
-Rule: DetailedDimension
+Rule: DetailedDimension1
 Priority:100
 (
-    ({Dimension})
-    ({Dimensions})
+    ({Dimension})//Size
+    ({Dimensions})//Thickness
 
 ):match
 -->
-:match.DetailedDimension = { rule = DetailedDimension, 
+:match.DetailedDimension = { rule = DetailedDimension1, 
+N1 = :match.Dimension.N1, 
+N2 = :match.Dimension.N2, 
+N3 = :match.Dimension.N3, units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
+LongestDistance = :match.Dimension.LongestDistance,
+DimensionDescriptor= :match.Dimensions.Dimension}
+
+Rule: DetailedDimension2
+Priority:100
+(
+    ({Dimensions})//Thickness
+    ({Dimension})//Size
+
+):match
+-->
+:match.DetailedDimension = { rule = DetailedDimension2, 
 N1 = :match.Dimension.N1, 
 N2 = :match.Dimension.N2, 
 N3 = :match.Dimension.N3, units = :match.Dimension.units, 
