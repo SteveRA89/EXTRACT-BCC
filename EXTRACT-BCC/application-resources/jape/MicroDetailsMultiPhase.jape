@@ -1,3 +1,5 @@
 MultiPhase: MicroDetailsMultiPhase
 Phases:
-MacroDetails
+MicroDetails
+MicroDetailsPreTag
+MicroDetailsWithTag
