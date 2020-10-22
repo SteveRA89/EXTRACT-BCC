@@ -1,28 +1,38 @@
-Dermis:DeepMargin=Dermis
-Fat:DeepMargin=Fat
-Subcutaneous fat:DeepMargin=Fat
-Subcutaneous tissue:DeepMargin=Fat
-Hypodermis:DeepMargin=Fat
-Scarpa's fascia:DeepMargin=Fat
-Camper's fascia:DeepMargin=Fat
-Scarpa fascia:DeepMargin=Fat
-Camper fascia:DeepMargin=Fat
-Scarpas fascia:DeepMargin=Fat
-Campers fascia:DeepMargin=Fat
-Fascia:DeepMargin=Fascia
-Superficial Fascia:DeepMargin=Superficial Fascia
-Deep Fascia:DeepMargin=Deep Fascia
-Galea:DeepMargin=Galea
-Periosteum:DeepMargin=Periosteum
-Pericranium:DeepMargin=Periosteum
-Muscle:DeepMargin=Muscle
-Bone:DeepMargin=Bone
-Skull:DeepMargin=Bone
-Calvarium:DeepMargin=Bone
-Outer table:DeepMargin=Bone
-Inner table:DeepMargin=Bone
-Diplopic space:DeepMargin=Bone
-Cortex:DeepMargin=Bone
-Medulla:DeepMargin=Bone 
-Cartilage:DeepMargin=Cartilage
-Perichondrium:DeepMargin=Perichondrium
+Dermis:CUI=C0011646:DeepMargin=Dermis
+Dermal:CUI=C0011646:DeepMargin=Dermis
+Fat:CUI=C0222331:DeepMargin=Fat
+Subcutaneous fat:CUI=C0222331:DeepMargin=Fat
+Subcut fat:CUI=C0222331:DeepMargin=Fat
+Fascia:CUI=C0015641:DeepMargin=Fascia
+Fascial:CUI=C0015641:DeepMargin=Fascia
+Superficial fascia:DeepMargin=SuperficialFascia
+Superficial fascial:DeepMargin=SuperficialFascia
+Subcutaneous tissue:DeepMargin=SuperficialFascia
+Hypodermis:DeepMargin=SuperficialFascia
+Hypodermal:DeepMargin=SuperficialFascia
+Scarpa's fascia:DeepMargin=SuperficialFascia
+Scarpas fascia:DeepMargin=SuperficialFascia
+Camper's fascia:DeepMargin=SuperficialFascia
+Camper fascia:DeepMargin=SuperficialFascia
+Deep fascia:DeepMargin=DeepFascia
+Deep fascial:DeepMargin=DeepFascia
+Galea:CUI=C0225210:DeepMargin=Galea
+Galeal:CUI=C0225210:DeepMargin=Galea
+Galea aponeurotica:CUI=C0225210:DeepMargin=Galea
+Periosteum:CUI=C0031110:DeepMargin=Periosteum
+Periosteal:CUI=C0031110:DeepMargin=Periosteum
+Pericranium:CUI=C0031110:DeepMargin=Periosteum
+Pericranial:CUI=C0031110:DeepMargin=Periosteum
+Muscle:CUI=C0026845:DeepMargin=Muscle
+Striated muscle:CUI=C0026845:DeepMargin=Muscle
+Smooth muscle:CUI=C0026845:DeepMargin=Muscle
+Skeletal muscle:CUI=C0026845:DeepMargin=Muscle
+Bone:CUI=C0262950:DeepMargin=Bone
+Outer table:CUI=C0262950:DeepMargin=Bone
+Diploic space:CUI=C0262950:DeepMargin=Bone
+Inner table:CUI=C0262950:DeepMargin=Bone
+Cortex table:CUI=C0262950:DeepMargin=Bone
+Medulla table:CUI=C0262950:DeepMargin=Bone
+Cartilage:CUI=C0007301:DeepMargin=Cartilage
+Perichondrium:CUI=C0225361:DeepMargin=Perichondrium
+Perichondrial:CUI=C0225361:DeepMargin=Perichondrium

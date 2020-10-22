@@ -47,3 +47,7 @@ Diameter.lst::::Diameter
 Specimen.lst::::Specimen
 Lesion.lst::::Lesion
 Micro_peripheral_margin_maybe.lst::::Micro_peripheral_margin_maybe
+StageTrigger.lst::::StageTrigger
+DeepMarginTrigger.lst::::DeepMarginTrigger
+LevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
+ClarkeLevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
