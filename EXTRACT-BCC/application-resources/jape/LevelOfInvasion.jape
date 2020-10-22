@@ -1,0 +1,13 @@
+Phase: LevelOfInvasion
+Input: DeepMargin Split Sentence LevelOfInvasionTrigger
+Options: control=appelt
+
+Rule: LevelOfInvasion
+Priority: 99
+(
+        ({LevelOfInvasionTrigger.Position != Post})
+        {DeepMargin}
+        
+):match
+-->
+:match.OperativeInvasion = {rule = LevelOfInvasion, LevelOfInvasion = :match.LevelOfInvasion.ClarkLevel}
