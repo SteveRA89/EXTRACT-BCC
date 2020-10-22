@@ -10,4 +10,4 @@ Priority: 99
         
 ):match
 -->
-:match.OperativeInvasion = {rule = LevelOfInvasion, LevelOfInvasion = :match.LevelOfInvasion.ClarkLevel}
+:match.OperativeInvasion = {rule = LevelOfInvasion, LevelOfInvasion = :match.LevelOfInvasion.LevelOfInvasion}
