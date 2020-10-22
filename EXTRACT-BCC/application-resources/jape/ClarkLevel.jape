@@ -1,12 +1,13 @@
 Phase: ClarkLevel
-Input: ClarkLevel Split Sentence
+Input: ClarkLevel Split Sentence LevelOfInvasionTrigger ClarkLevelOfInvasionTrigger
 Options: control=appelt
-//this rule does nothing
+
 Rule: ClarkLevel
 Priority: 99
 (
+        ({ClarkLevelOfInvasionTrigger})?
         {ClarkLevel}
         
 ):match
 -->
-:match.MicroDetails = {rule = ClarkLevel, ClarkLevel = :match.ClarkLevel.string}
+:match.ClarkInvasion = {rule = ClarkLevel, ClarkLevel = :match.ClarkLevel.ClarkLevel}

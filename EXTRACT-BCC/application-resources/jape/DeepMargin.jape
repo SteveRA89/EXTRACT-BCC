@@ -1,14 +1,14 @@
 Phase: DeepMargin
-Input: DeepMargin Split Sentence
+Input: DeepMargin DeepMarginTrigger Split Sentence
 Options: control=appelt
-
-// Does nothing 
 
 Rule: DeepMargin
 Priority: 99
 (
-        {DeepMargin}
+        ({DeepMarginTrigger})
+        ({DeepMargin})
         
 ):match
 -->
-:match.DeepMarginDetails = {rule = DeepMargin, DeepMargin = :match.DeepMargin.string}
+:match.DeepMarginDetails = {rule = DeepMargin, 
+DeepMargin = :match.DeepMargin.DeepMargin}

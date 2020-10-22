@@ -1,12 +1,14 @@
 Phase: BCCStage
-Input: BCCStage Split Sentence
+Input: BCCStage Split Sentence StageTrigger
 Options: control=appelt
-//This rule does nothing
+
 Rule: BCCStage
 Priority: 99
 (
-        {BCCStage}
+        ({StageTrigger})
+        ({BCCStage})
         
 ):match
 -->
-:match.MicroDetails = {rule = BCCStage, BCCStage = :match.BCCStage.string}
+:match.Staging = {rule = BCCStage, 
+BCCStage = :match.BCCStage.BCCStage}
