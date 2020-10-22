@@ -1,0 +1,45 @@
+Phase: MacroDetails
+Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion
+Options: control=appelt
+
+Rule: MacroDetails
+Priority: 100
+
+(
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph.ParagraphTitle == MacroDetails}|{ExcisionNature}|{UlceratedParagraph.ParagraphTitle == MacroDetails}|{ExcisionTypeParagraph.ParagraphTitle == MacroDetails}|{DetailedBodyPartParagraph.ParagraphTitle == MacroDetails}|{DimensionSpecimen}|{DimensionLesion})?
+):match
+-->
+:match.MacroDetailsPreParagraph = { ruleFinal = MacroDetails, 
+Pre-opDiagnosis = :match.CancerDiagnosisParagraph.CancerType,
+Pre-opDiagnosis2 = :match.CancerDiagnosisParagraph.CancerType2,
+CUI = :match.CancerDiagnosisParagraph.CUI,
+CUI2 = :match.CancerDiagnosisParagraph.CUI2,
+Pre-opDiagnosisClass = :match.CancerDiagnosisParagraph.BCCClass,
+Pre-opDiagnosisClass2 = :match.CancerDiagnosisParagraph.BCCClass2,
+Ulcerated = :match.UlceratedParagraph.Ulcerated, 
+ExcisionType = :match.ExcisionTypeParagraph.ExcisionType,
+ExcisionType2 = :match.ExcisionTypeParagraph.ExcisionType2,
+ExcisionNature = :match.ExcisionNatureParagraph.ExcisionType2,
+BodyPart = :match.DetailedBodyPartParagraph.BodyPart,
+BodyPart2 = :match.DetailedBodyPartParagraph.BodyPart2,
+MultipleScalp = :match.DetailedBodyPartParagraph.MultipleScalp,
+Lateralization = :match.DetailedBodyPartParagraph.Lateralization,
+UpperOrLower = :match.DetailedBodyPartParagraph.UpperOrLower,
+AnteriorOrPosterior = :match.DetailedBodyPartParagraph.AnteriorOrPosterior,
+ProximalOrDistal = :match.DetailedBodyPartParagraph.ProximalOrDistal,
+MedialOrLateral = :match.DetailedBodyPartParagraph.MedialOrLateral,
+"3DSpecimenSize" = :match.DimensionSpecimen.N1,
+"3DSpecimenSize2" = :match.DimensionSpecimen.N2,
+"3DSpecimenSize3" = :match.DimensionSpecimen.N3,
+SpecimenMeasurementUnit = :match.DimensionSpecimen.unit,
+MaxMacroTumourDiameter = :match.DimnesionLesion.LongestDistance,
+MaxMacroMeasurementUnit = :match.DimnesionLesion.unit
+}
