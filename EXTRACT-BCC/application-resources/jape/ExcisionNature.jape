@@ -2,12 +2,10 @@ Phase: ExcisionNature
 Input: ExcisionNature Split Sentence
 Options: control=appelt
 
-// Does nothing
-
 Rule: ExcisionNature
 Priority: 99
 (
-        {ExcisionNature}
+        ({ExcisionNature})
         
 ):match
 -->
