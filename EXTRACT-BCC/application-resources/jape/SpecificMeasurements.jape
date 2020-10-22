@@ -7,8 +7,9 @@ ConjoinedMargin
 Operative_margin
 MaxMicroDiameter
 DetailedDimension
-DimensionLesion
 DimensionSpecimen
+DimensionLesion
+DimensionsSpecimenLargestMeasurement
 MultiplePeripheral
 SecondMultiplePeripheral
 ThirdMultiplePeripheral

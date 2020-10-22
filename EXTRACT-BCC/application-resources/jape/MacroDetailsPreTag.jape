@@ -1,0 +1,27 @@
+Phase: MacroDetailsPreParagraph
+Input: MacroDetailsPreParagraph GroupedParagraph
+Options: control=all
+
+/*
+ * CancerDiagnosis is within GroupedParagraph
+*/
+
+Rule: ClinicalDetailsPreParagraph
+(
+	({MacroDetailsPreParagraph within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+):match
+
+-->
+
+:match {
+	Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+	FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+	preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+	Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+	Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+	preTagFM.put("tokenStart", tokenStart);//add start as a feature
+	preTagFM.put("tokenEnd", tokenEnd);// add end as a feature - Both these deleted in MacroDetailsWithTag.jape - when Goes into MacroDetails
+	preTagFM.put("ruleFinal", "MacroDetailsPreTag");//add rule name
+	AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "MacroDetailsPreTag", preTagFM);//create annotation
+}
