@@ -1,5 +1,5 @@
 Phase: MicroDetails
-Input: CancerDiagnosisParagraph Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompleteDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging PeripheralClearDetails PeripheralClearButCloseDetails SuppExcisionTypeOutcomeDetails DeepClearDetails DeepClearButCloseDetails Frozen_SectionDetails
+Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompleteDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging PeripheralClearDetails PeripheralClearButCloseDetails SuppExcisionTypeOutcomeDetails DeepClearDetails DeepClearButCloseDetails Frozen_SectionDetails
 Options: control=appelt
 
 Rule: MicroDetails
@@ -15,6 +15,7 @@ Priority: 100
 ({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompleteDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{SuppExcisionTypeOutcomeDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Frozen_SectionDetails})?
 ({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompleteDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{SuppExcisionTypeOutcomeDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Frozen_SectionDetails})?
 ({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompleteDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{SuppExcisionTypeOutcomeDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Frozen_SectionDetails})?
+):match
 
 -->
 :match.MicroDetailsPreParagraph = { ruleFinal = MicroDetails, 
@@ -31,7 +32,7 @@ LymphovascularInvasion = :match.LVIDetails.LVI,
 PerineuralInvasion = :match.PNIDetails.PNI,
 ExcisionCompleted = :match.ExcisionCompleteDetails.ExcisionNature,
 Re-excisionOutcome = :match.ResidualDiseaseDetails.ResidualDisease,
-RecurrentOutcome = :match.RecurrentDiseaseDetails,RecurrentDisease,
+RecurrentOutcome = :match.RecurrentDiseaseDetails.RecurrentDisease,
 LevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
 ClarkLevel = :match.ClarkInvasion.ClarkLevel,
 Stage = :match.Staging.BCCStage,
