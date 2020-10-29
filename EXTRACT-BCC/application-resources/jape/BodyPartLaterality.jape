@@ -1,5 +1,5 @@
 Phase: BodyPartLaterality
-Input: Lookup2 BodyParts Split Sentence Token LocalisationSkipTerms MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp
+Input: Lookup2 BodyParts Split Sentence Token LocalisationSkipTerms MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal
 Options: control=appelt
 
 
