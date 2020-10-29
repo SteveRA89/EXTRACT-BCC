@@ -1,5 +1,7 @@
 Basal cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
+BCCV:CUI=C0007117:CancerType=BasalCellCarcinoma
+BCCX:CUI=C0007117:CancerType=BasalCellCarcinoma
 Rodent ulcer:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basiloma:CUI=C0007117:BCC=Basal cell carcinoma
 Basilloma:CUI=C0007117:BCC=Basal cell carcinoma

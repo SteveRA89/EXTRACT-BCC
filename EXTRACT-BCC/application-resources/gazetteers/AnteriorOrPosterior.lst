@@ -1,2 +1,5 @@
 Anterior:AnteriorOrPosterior=Anterior
 Posterior:AnteriorOrPosterior=Posterior
+Ventral:AnteriorOrPosterior=Anterior
+Dorsal:AnteriorOrPosterior=Posterior
+

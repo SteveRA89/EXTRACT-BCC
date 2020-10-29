@@ -1,2 +1,7 @@
 Proximal:ProximalOrDistal=Proximal
 Distal:ProximalOrDistal=Distal
+Superior:ProximalOrDistal=Proximal
+Inferior:ProximalOrDistal=Distal
+Cranial:ProximalOrDistal=Proximal
+Caudal:ProximalOrDistal=Distal
+
