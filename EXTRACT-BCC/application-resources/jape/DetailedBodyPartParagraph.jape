@@ -23,6 +23,7 @@ MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
 UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
 AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
 MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
+ProximalOrDistal = :match.DetailedBodyPart.ProximalOrDistal,
 ParagraphTitle = ClinicalDetails}
 
 Rule: DetailedBodyPartParagraph2
@@ -42,6 +43,7 @@ MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
 UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
 AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
 MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
+ProximalOrDistal = :match.DetailedBodyPart.ProximalOrDistal,
 ParagraphTitle = MacroDescription}
 
 Rule: DetailedBodyPartParagraph3
@@ -61,4 +63,5 @@ MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
 UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
 AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
 MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
+ProximalOrDistal = :match.DetailedBodyPart.ProximalOrDistal,
 ParagraphTitle = Microscopy}
