@@ -72,14 +72,8 @@ Naso-labial:bodypart=Cheek
 Melo-labial:bodypart=Cheek
 
 Eyelid:bodypart=Eyelid
-Upper eyelid:bodypart=Eyelid
-lower eyelid:bodypart=Eyelid
 Eye lid:bodypart=Eyelid
-Upper eye lid:bodypart=Eyelid
-lower eye lid:bodypart=Eyelid
 Eye-lid:bodypart=Eyelid
-Upper-eye lid:bodypart=Eyelid
-lower-eye lid:bodypart=Eyelid
 
 Medial canthus:bodypart=Medial canthus
 
@@ -94,8 +88,6 @@ Chin:bodypart=Chin
 Mental:bodypart=Chin
 
 Lip:bodypart=Lip
-Upper lip:bodypart=Lip
-Lower lip:bodypart=Lip
 Dry mucosa:bodypart=Lip
 Wet mucosa:bodypart=Lip
 Vermilion:bodypart=Lip
@@ -127,6 +119,8 @@ Nipple:bodypart=Chest
 Areolar:bodypart=Chest
 Nipple-areolar-complex:bodypart=Chest
 Nipple areolar complex:bodypart=Chest
+Nipple - areolar complex:bodypart=Chest
+Nipple - areolar- complex:bodypart=Chest
 NAC:bodypart=Chest
 
 Abdomen:bodypart=Abdomen
