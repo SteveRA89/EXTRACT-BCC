@@ -51,3 +51,4 @@ StageTrigger.lst::::StageTrigger
 DeepMarginTrigger.lst::::DeepMarginTrigger
 LevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
 ClarkeLevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
+ClinicalDetailCleaningTrigger.lst::::ClinicalDetailCleaningTrigger
