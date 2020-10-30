@@ -1,0 +1,82 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: ClinicalDetailsSentenceBreak
+Input: Split Sentence AdditionalSentenceBreak ClinicalDetailsQuestion ClinicalDetails
+Options: control=appelt
+
+Rule: ClinicalDetailsSentenceBreak
+(
+	
+    ({ClinicalDetails}):match
+    ({ClinicalDetailsQuestion})
+    ({ClinicalDetails}):match1
+
+):match2
+
+-->
+
+:match2.ClinicalDetails = {ruleFinal = ClinicalDetails, 
+Pre-opDiagnosis = :match1.ClinicalDetails.Pre-opDiagnosis,
+Pre-opDiagnosis2 = :match1.ClinicalDetails.Pre-opDiagnosis2,
+CUI = :match1.ClinicalDetails.CUI,
+CUI2 = :match1.ClinicalDetails.CUI2,
+Pre-opDiagnosisClass = :match1.ClinicalDetails.Pre-opDiagnosisClass,
+Pre-opDiagnosisClass2 = :match1.ClinicalDetails.Pre-opDiagnosisClass2,
+BiopsyProven = :match1.ClinicalDetails.BiopsyProven,
+ExcisionNature = :match1.ClinicalDetails.ExcisionNature,
+Ulcerated = :match1.ClinicalDetails.Ulcerated,
+FrozenSection = :match1.ClinicalDetails.FrozenSection,
+ExcisionType = :match1.ClinicalDetails.ExcisionType,
+ExcisionType2 = :match1.ClinicalDetails.ExcisionType2,
+BodyPart = :match1.ClinicalDetails.BodyPart,
+BodyPart2 = :match1.ClinicalDetails.BodyPart2,
+UpperOrLower = :match1.ClinicalDetails.UpperOrLower,
+AnteriorOrPosterior = :match1.ClinicalDetails.AnteriorOrPosterior,
+Lateralization = :match1.ClinicalDetails.Lateralization,
+ProximalOrDistal = :match1.ClinicalDetails.ProximalOrDistal,
+MedialOrLateral = :match1.ClinicalDetails.MedialOrLateral,
+MultipleScalp = :match1.ClinicalDetails.MultipleScalp,
+PeripheralMarginValue = :match1.ClinicalDetails.PeripheralMarginValue,
+PeripheralMarginUnit = :match1.ClinicalDetails.PeripheralMarginUnit,
+SupplementalPeripheralMarginClockRange = :match1.ClinicalDetails.SupplementalPeripheralMarginClockRange,
+SupplementalPeripheralMarginClockRange2 = :match1.ClinicalDetails.SupplementalPeripheralMarginClockRange2,
+DeepMargin = :match1.ClinicalDetails.DeepMargin,
+SupplementalDeepMarginClockRange = :match1.ClinicalDetails.SupplementalDeepMarginClockRange,
+SupplementalDeepMarginClockRange2 = :match1.ClinicalDetails.SupplementalDeepMarginClockRange2,
+Pre-opDiagnosis = :match.ClinicalDetails.Pre-opDiagnosis,
+Pre-opDiagnosis2 = :match.ClinicalDetails.Pre-opDiagnosis2,
+CUI = :match.ClinicalDetails.CUI,
+CUI2 = :match.ClinicalDetails.CUI2,
+Pre-opDiagnosisClass = :match.ClinicalDetails.Pre-opDiagnosisClass,
+Pre-opDiagnosisClass2 = :match.ClinicalDetails.Pre-opDiagnosisClass2,
+BiopsyProven = :match.ClinicalDetails.BiopsyProven,
+ExcisionNature = :match.ClinicalDetails.ExcisionNature,
+Ulcerated = :match.ClinicalDetails.Ulcerated,
+FrozenSection = :match.ClinicalDetails.FrozenSection,
+ExcisionType = :match.ClinicalDetails.ExcisionType,
+ExcisionType2 = :match.ClinicalDetails.ExcisionType2,
+BodyPart = :match.ClinicalDetails.BodyPart,
+BodyPart2 = :match.ClinicalDetails.BodyPart2,
+UpperOrLower = :match.ClinicalDetails.UpperOrLower,
+AnteriorOrPosterior = :match.ClinicalDetails.AnteriorOrPosterior,
+Lateralization = :match.ClinicalDetails.Lateralization,
+ProximalOrDistal = :match.ClinicalDetails.ProximalOrDistal,
+MedialOrLateral = :match.ClinicalDetails.MedialOrLateral,
+MultipleScalp = :match.ClinicalDetails.MultipleScalp,
+PeripheralMarginValue = :match.ClinicalDetails.PeripheralMarginValue,
+PeripheralMarginUnit = :match.ClinicalDetails.PeripheralMarginUnit,
+SupplementalPeripheralMarginClockRange = :match.ClinicalDetails.SupplementalPeripheralMarginClockRange,
+SupplementalPeripheralMarginClockRange2 = :match.ClinicalDetails.SupplementalPeripheralMarginClockRange2,
+DeepMargin = :match.ClinicalDetails.DeepMargin,
+SupplementalDeepMarginClockRange = :match.ClinicalDetails.SupplementalDeepMarginClockRange,
+SupplementalDeepMarginClockRange2 = :match.ClinicalDetails.SupplementalDeepMarginClockRange2
+},
+
+:match1 { 
+  inputAS.removeAll(match1Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+
+:match { 
+  inputAS.removeAll(matchAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+
+}

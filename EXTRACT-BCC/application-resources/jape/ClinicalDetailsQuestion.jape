@@ -1,0 +1,15 @@
+Phase: ClinicalDetailsQuestion
+Input: Split Sentence SpaceToken
+Options: control=appelt
+
+Rule: ClinicalDetailsQuestion
+(
+	({SpaceToken})
+    ({Split@string == "?"})
+	({SpaceToken})?
+
+):match
+
+-->
+
+:match.ClinicalDetailsQuestion = {ruleFinal = ClinicalDetailsQuestion}
