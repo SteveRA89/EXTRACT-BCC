@@ -1,6 +1,5 @@
 Face:bodypart=Face
 Facial:bodypart=Face
-
 Ear:bodypart=Ear
 Pinna:bodypart=Ear
 Helix:bodypart=Ear
@@ -28,14 +27,13 @@ Ear lobe:bodypart=Ear
 Lobule:bodypart=Ear
 Posterior auricular sulcus:bodypart=Ear
 Auricular sulcus:bodypart=Ear
-Pre-auricular:bodypart=Ear
-Pre auricular:bodypart=Ear
-Per-auricular:bodypart=Ear
-Per auricular:bodypart=Ear
-Post-auricular:bodypart=Ear
-Post auricular:bodypart=Ear
 Auricular:bodypart=Ear
-
+Pre-auricular:bodypart=Pre-auricular
+Pre auricular:bodypart=Pre-auricular
+Per-auricular:bodypart=Pre-auricular
+Per auricular:bodypart=Pre-auricular
+Post-auricular:bodypart=Post-auricular
+Post auricular:bodypart=Post-auricular
 Nose:bodypart=Nose
 Nasal:bodypart=Nose
 Lateral nasal wall:bodypart=Nose
@@ -58,11 +56,8 @@ Ala base:bodypart=Nose
 Alar base:bodypart=Nose
 Ala:bodypart=Nose
 Alar:bodypart=Nose
-
 Scalp:bodypart=Scalp
-
 Temple:bodypart=Temple
-
 Cheek:bodypart=Cheek
 Zygoma:bodypart=Cheek
 Malar:bodypart=Cheek
@@ -70,23 +65,17 @@ Tear trough:bodypart=Cheek
 Infra-orbital:bodypart=Cheek
 Naso-labial:bodypart=Cheek
 Melo-labial:bodypart=Cheek
-
 Eyelid:bodypart=Eyelid
 Eye lid:bodypart=Eyelid
 Eye-lid:bodypart=Eyelid
-
 Medial canthus:bodypart=Medial canthus
-
 Lateral canthus:bodypart=Lateral canthus
-
 Forehead:bodypart=Forehead
 Eyebrow:bodypart=Forehead
 Glabellar:bodypart=Forehead
 Supra-orbital:bodypart=Forehead
-
 Chin:bodypart=Chin
 Mental:bodypart=Chin
-
 Lip:bodypart=Lip
 Dry mucosa:bodypart=Lip
 Wet mucosa:bodypart=Lip
@@ -95,7 +84,6 @@ Commissure:bodypart=Lip
 Philtrum:bodypart=Lip
 Philtral column:bodypart=Lip
 White roll:bodypart=Lip
-
 Neck:bodypart=Neck
 Level 1 neck:bodypart=Neck
 Level I neck:bodypart=Neck
@@ -110,7 +98,6 @@ Level V:bodypart=Neck
 Anterior triangle neck:bodypart=Neck
 Posterior triangle neck:bodypart=Neck
 Mastoid:bodypart=Neck
-
 Anterior chest wall:bodypart=Chest
 Chest:bodypart=Chest
 Clavicle:bodypart=Chest
@@ -122,7 +109,6 @@ Nipple areolar complex:bodypart=Chest
 Nipple - areolar complex:bodypart=Chest
 Nipple - areolar- complex:bodypart=Chest
 NAC:bodypart=Chest
-
 Abdomen:bodypart=Abdomen
 Abdomninal:bodypart=Abdomen
 Abdomninal wall:bodypart=Abdomen
@@ -137,7 +123,6 @@ Hypochondrium:bodypart=Abdomen
 Iliac:bodypart=Abdomen
 Iliac fossa:bodypart=Abdomen
 Flank:bodypart=Abdomen
-
 Back:bodypart=Back
 Posterior chest wall:bodypart=Back
 Cervical spine:bodypart=Back
@@ -147,7 +132,6 @@ Sacral spine:bodypart=Back
 Buttock:bodypart=Back
 Buttocks:bodypart=Back
 Gluteus:bodypart=Back
-
 Arm:bodypart=Arm
 Shoulder:bodypart=Arm
 Deltoid:bodypart=Arm
@@ -155,7 +139,6 @@ Antecubital fossa:bodypart=Arm
 ACF:bodypart=Arm
 Elbow:bodypart=Arm
 Forearm:bodypart=Arm
-
 Leg:bodypart=Leg
 Groin:bodypart=Leg
 Knee:bodypart=Leg
@@ -166,7 +149,6 @@ Pre-tibia:bodypart=Leg
 Pre tibia:bodypart=Leg
 Shin:bodypart=Leg
 Ankle:bodypart=Leg
-
 Hand:bodypart=Hand
 Wrist:bodypart=Hand
 Finger:bodypart=Hand
@@ -188,7 +170,6 @@ Distal RadioUlnar Joint :bodypart=Hand
 Interphalangeal joint:bodypart=Hand
 Inter phalangeal joint:bodypart=Hand
 Inter-phalangeal joint:bodypart=Hand
-
 Foot:bodypart=Foot
 Toe:bodypart=Foot
 Toes:bodypart=Foot
@@ -198,24 +179,21 @@ Plantar foot:bodypart=Foot
 MTPJ:bodypart=Foot
 Meta tarso phalangeal joint:bodypart=Foot
 Meta-tarso-phalangeal joint:bodypart=Foot
-
 Thigh:bodypart=Thigh
 Hip:bodypart=Thigh
 Trochanter:bodypart=Thigh
 Greater Trochanter:bodypart=Thigh
 Lesser Trochanter:bodypart=Thigh
-
-Nail Complex:bodypart=Nail Complex 
-Nail:bodypart=Nail Complex
-Nail bed:bodypart=Nail Complex
-Eponychium:bodypart=Nail Complex
-Eponychial fold:bodypart=Nail Complex
-Hyponychium:bodypart=Nail Complex
-Hyponychial fold:bodypart=Nail Complex
-Paronychium:bodypart=Nail Complex
-Paronychial fold:bodypart=Nail Complex
-Lateral nail fold:bodypart=Nail Complex
-
+Nail Complex:bodypart=NailComplex 
+Nail:bodypart=NailComplex
+Nail bed:bodypart=NailComplex
+Eponychium:bodypart=NailComplex
+Eponychial fold:bodypart=NailComplex
+Hyponychium:bodypart=NailComplex
+Hyponychial fold:bodypart=NailComplex
+Paronychium:bodypart=NailComplex
+Paronychial fold:bodypart=NailComplex
+Lateral nail fold:bodypart=NailComplex
 Genito-urinary:bodypart=Genito-urinary
 Penis:bodypart=Genito-urinary
 Penile:bodypart=Genito-urinary
@@ -227,6 +205,3 @@ Labial:bodypart=Genito-urinary
 Labia:bodypart=Genito-urinary
 Labia minora:bodypart=Genito-urinary
 Labia majora:bodypart=Genito-urinary
-
-  
-

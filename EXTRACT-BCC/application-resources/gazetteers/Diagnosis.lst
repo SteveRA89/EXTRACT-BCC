@@ -3,10 +3,10 @@ BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCCV:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCCX:CUI=C0007117:CancerType=BasalCellCarcinoma
 Rodent ulcer:CUI=C0007117:CancerType=BasalCellCarcinoma
-Basiloma:CUI=C0007117:BCC=Basal cell carcinoma
-Basilloma:CUI=C0007117:BCC=Basal cell carcinoma
-Basil-oma:CUI=C0007117:BCC=Basal cell carcinoma
-Basill-oma:CUI=C0007117:BCC=Basal cell carcinoma
+Basiloma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basilloma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basil-oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basill-oma:CUI=C0007117:BCC=BasalCellCarcinoma
 Sebaceous adenocarcinoma:CUI=C0206684:CancerType=OtherCancerous
 Apocrine adenocarcinoma:CUI=C0334346:CancerType=OtherCancerous
 Eccrine adenocarcinoma:CUI=C1266066:CancerType=OtherCancerous
