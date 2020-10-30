@@ -1,5 +1,5 @@
 Phase: ClinicalDetails
-Input: CancerDiagnosisParagraph Split Sentence ExcisionNature BiopsyProvenDetails UlceratedParagraph Frozen_SectionDetails ExcisionTypeParagraph DetailedBodyPartParagraph Measurements DeepMargin DeepClearance PeripheralClearance MaxDiameter TumourThickness SupplementalPeripheralMarginClockFace SupplementalDeepMarginClockFace Operative_margin
+Input: CancerDiagnosisParagraph Split Sentence ExcisionNature BiopsyProvenDetails UlceratedParagraph Frozen_SectionDetails ExcisionTypeParagraph DetailedBodyPartParagraph Measurements DeepMargin DeepClearance PeripheralClearance MaxDiameter TumourThickness SupplementalPeripheralMarginClockFace SupplementalDeepMarginClockFace Operative_margin AdditionalSentenceBreak
 Options: control=appelt
 
 //ExcisionTypeParagraph - This picking up doubles ("re-excision" picked up as Re-excicion and excision biopsy) - This is fine in the output so can be left
