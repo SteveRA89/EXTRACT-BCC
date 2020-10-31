@@ -88,8 +88,14 @@ Squamous cell carcinoma:CUI=C0553723:CancerType=OtherCancerous
 Verrucous squamous cell carcinoma:CUI=C0206706:CancerType=OtherCancerous
 Carcinoma cuniculatum:CUI=C0206706:CancerType=OtherCancerous
 Lentigo maligna:CUI=C0149722:CancerType=OtherInSitu
+Melanoma in situ:CUI=C0854696:CancerType=OtherInSitu
+Superficial spreading melanoma in situ:CUI=C0854696:CancerType=OtherInSitu
 Hutchinson's melanotic freckle:CUI=C0149722:CancerType=OtherInSitu
 Bowen's disease:CUI=C0006079:Type=OtherInSitu
+Squamous cell carcinoma in situ:CUI=C0006079:Type=OtherInSitu
+Squamous cell carcinoma in-situ:CUI=C0006079:Type=OtherInSitu
+SCC in situ:CUI=C0006079:Type=OtherInSitu
+SCC in-situ:CUI=C0006079:Type=OtherInSitu
 Extramammary Paget disease:CUI=C0346032:CancerType=OtherInSitu
 Extramammary paget disease:CUI=C0346032:CancerType=OtherInSitu
 Actinic keratosis:CUI=C0022602:CancerType=ActinicKeratosis

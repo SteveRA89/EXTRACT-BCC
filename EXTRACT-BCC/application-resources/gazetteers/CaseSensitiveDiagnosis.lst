@@ -13,6 +13,8 @@ PHE:CUI=C3840252:CancerType=OtherIntermediate
 SCC:CUI=C0553723:CancerType=OtherCancerous
 SK:CUI=C0022602:CancerType=ActinicKeratosis
 SSMM:CUI=C0334438:CancerType=OtherCancerous
-
+SSM:CUI=C0334438:CancerType=OtherCancerous
+SSM in situ:CUI=C0854696:CancerType=OtherInSitu
+SSMM in situ:CUI=C0854696:CancerType=OtherInSitu
 
 
