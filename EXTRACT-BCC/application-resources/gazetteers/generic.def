@@ -34,3 +34,4 @@ personAge.lst:person:time::Lookup2
 lateralisation.lst:diagnosis:lateralisation:MOVE:Lookup2
 DrugPointInTime.lst::::DrugPointInTime
 Pronouns.lst::grammer::Pronouns
+InterchangeableWordsTag.lst::::InterchangeableWordsTag
