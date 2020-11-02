@@ -3,3 +3,5 @@ Phases:
 ClinicDetails
 ClinicDetailsGroupedParagraph
 ClinicDetailsWithTag
+ClinicalDetailsQuestion
+ClinicalDetailsSentenceBreak
