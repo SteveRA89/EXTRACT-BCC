@@ -69,7 +69,8 @@ SupplementalPeripheralMarginClockRange = :match.ClinicalDetails.SupplementalPeri
 SupplementalPeripheralMarginClockRange2 = :match.ClinicalDetails.SupplementalPeripheralMarginClockRange2,
 DeepMargin = :match.ClinicalDetails.DeepMargin,
 SupplementalDeepMarginClockRange = :match.ClinicalDetails.SupplementalDeepMarginClockRange,
-SupplementalDeepMarginClockRange2 = :match.ClinicalDetails.SupplementalDeepMarginClockRange2
+SupplementalDeepMarginClockRange2 = :match.ClinicalDetails.SupplementalDeepMarginClockRange2,
+Tag = :match.ClinicalDetails.Tag
 },
 
 :match1 { 
