@@ -1,0 +1,30 @@
+Phase: Tag
+Input: Split InterchangeableWordsTag Diagnosis Token Lesion
+Options: control=appelt
+
+
+Rule: TagInterchangeableWords1
+Priority: 100
+//Superior or Inferior
+(
+    ({Diagnosis})
+	({InterchangeableWordsTag}):Tag
+):match
+-->
+:Tag.Tag = { rule = InterchangeablewordsTag1, 
+value = :Tag.InterchangeableWordsTag@string,
+Tag = :Tag.InterchangeableWordsTag.InterchangeableTag} 
+
+Rule: TagInterchangeableWords2
+Priority: 100
+
+//Superior or Inferior
+(
+	({InterchangeableWordsTag}):Tag
+    ({Lesion})
+
+):match
+-->
+:Tag.Tag = { rule = InterchangeablewordsTag2, 
+value = :Tag.InterchangeableWordsTag@string,
+Tag = :Tag.InterchangeableWordsTag.InterchangeableTag} 

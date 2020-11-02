@@ -8,7 +8,7 @@ Rule: TagSentences
 Priority: 100
 (
 	(({Tag})
-    ({NewLine})+):Tag
+    ({NewLine})*):Tag
     ({Tag}|{Reported_triggers}|{ParagraphTitles})
 ):match
 -->
