@@ -25,14 +25,25 @@ Priority: 100
 
 Rule: TagLetters3
 Priority: 100
-//A. or B.  not a. or b.
+//A: or B:  not a: or b:
 (
 	({Token.orth == upperInitial, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == ":"})
 ):match
 -->
-:match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
+:match.Tag = { rule = TagLetters3, value = :match@string, Tag = :Tag.Token.string}
 
+Rule: TagLetters4
+Priority: 100
+//A). or B).  not a). or b).
+(
+	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == ")"})
+    ({Token.kind == punctuation, Token.string == "."})
+
+):match
+-->
+:match.Tag = { rule = TagLetters4, value = :match@string, Tag = :Tag.Token.string}
 
 Rule: TagNumber1
 Priority: 100
