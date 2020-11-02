@@ -3,7 +3,7 @@ Input: Dimension ClinicalDetailMargin Sentence
 Options: control=appelt
 
 
-Rule: ClinicalDetailMargin
+Rule: Operative_margin
 Priority:100
 (
     ({Dimension})
