@@ -6,7 +6,7 @@ Options: control=all
  * CancerDiagnosis is within GroupedParagraph
 */
 
-Rule: ClinicalDetailsPreParagraph
+Rule: MacroDetailsPreParagraph
 (
 	({MacroDetailsPreParagraph within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
 ):match
