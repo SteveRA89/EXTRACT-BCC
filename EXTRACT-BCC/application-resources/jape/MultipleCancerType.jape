@@ -1,8 +1,8 @@
 Phase: MultipleDiagnosis
-Input: Diagnosis Split Sentence Token 
+Input: Diagnosis Split Sentence Token CaseSensitiveDiagnosis
 Options: control=appelt
 
-Rule: MultipleDiagnosis
+Rule: MultipleDiagnosis1
 Priority: 100
 
 (
@@ -12,7 +12,7 @@ Priority: 100
 
 ):match
 -->
-:match.Diagnosis = { rule = MultipleDiagnosis, CancerType = :D1.Diagnosis.CancerType,
+:match.Diagnosis = { rule = MultipleDiagnosis1, CancerType = :D1.Diagnosis.CancerType,
 CancerType2 = :D2.Diagnosis.CancerType,
 CUI = :D1.Diagnosis.CUI,
 CUI2 = :D2.Diagnosis.CUI}
