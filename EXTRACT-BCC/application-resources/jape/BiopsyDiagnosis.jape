@@ -16,7 +16,7 @@ Priority: 100
 -->
 :D2.Diagnosis = { rule = BiopsyDiagnosis1,
 CancerType2 = :D2.Diagnosis.CancerType,
-CUI2 = :D2.Diagnosis.CUI}
+CUI2 = :D2.Diagnosis.CUI},
 
 :D2 { 
   inputAS.removeAll(D2Annots);//This deletes the match1 annotation. So would remove the annotation for excision
