@@ -1,0 +1,42 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: BiopsyDiagnosis
+Input: Diagnosis NewLine CaseSensitiveDiagnosis ExcisionType
+Options: control=appelt
+
+Rule: BiopsyDiagnosis1
+Priority: 100
+
+(
+	({Diagnosis}):D1
+	({ExcisionType.ExcisionType == "PunchBiopsy"}|{ExcisionType.ExcisionType == "IncisionBiopsy"}|{ExcisionType.ExcisionType == "ShaveBiopsy"}|{ExcisionType.ExcisionType == "Curettage"})
+    ({Diagnosis}):D2
+
+):match
+-->
+:D2.Diagnosis = { rule = BiopsyDiagnosis1,
+CancerType2 = :D2.Diagnosis.CancerType,
+CUI2 = :D2.Diagnosis.CUI}
+
+:D2 { 
+  inputAS.removeAll(D2Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+}
+
+Rule: BiopsyDiagnosis2
+Priority: 100
+
+(
+	({Diagnosis}):D1
+    ({ExcisionType})?
+    ({Diagnosis}):D2
+	({ExcisionType.ExcisionType == "PunchBiopsy"}|{ExcisionType.ExcisionType == "IncisionBiopsy"}|{ExcisionType.ExcisionType == "ShaveBiopsy"}|{ExcisionType.ExcisionType == "Curettage"})
+
+):match
+-->
+:D2.Diagnosis = { rule = BiopsyDiagnosis2,
+CancerType2 = :D2.Diagnosis.CancerType,
+CUI2 = :D2.Diagnosis.CUI},
+
+:D2 { 
+  inputAS.removeAll(D2Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+}
