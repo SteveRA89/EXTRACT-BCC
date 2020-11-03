@@ -45,9 +45,9 @@ MedialOrLateral = :match.DetailedBodyPartParagraph.MedialOrLateral,
 MultipleScalp = :match.DetailedBodyPartParagraph.MultipleScalp,
 PeripheralMarginValue = :match.Operative_margin.PeripheralMarginValue,
 PeripheralMarginUnit = :match.Operative_margin.PeripheralMarginUnit,
-SupplementalPeripheralMarginClockFace = :match.SupplementalPeripheralMarginClockFace.time,
-SupplementalPeripheralMarginClockFace2 = :match.SupplementalPeripheralMarginClockFace.time2,
+SupplementalPeripheralMarginClockRange = :match.SupplementalPeripheralMarginClockFace.time,
+SupplementalPeripheralMarginClockRange2 = :match.SupplementalPeripheralMarginClockFace.time2,
 DeepMargin = :match.DeepMargin.DeepMargin,
-SupplementalDeepMarginClockFace = :match.SupplementalDeepMarginClockFace.time,
-SupplementalDeepMarginClockFace2 = :match.SupplementalDeepMarginClockFace.time2
+SupplementalDeepMarginClockRange = :match.SupplementalDeepMarginClockFace.time,
+SupplementalDeepMarginClockRange2 = :match.SupplementalDeepMarginClockFace.time2
 }
