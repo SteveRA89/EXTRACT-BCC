@@ -1,0 +1,32 @@
+Phase: Tag
+Input: Split Tag Diagnosis Token Lesion NewLine SpaceToken
+Options: control=appelt
+
+
+Rule: TagSentences3a
+Priority: 100
+//Superior or Inferior
+(
+    ({SpaceToken})
+    ({Diagnosis})
+    ({SpaceToken})
+	({Tag.SentenceStart == "False"}):Tag
+    ({SpaceToken})
+):match
+-->
+:match.TagSentence = { rule = TagSentences3a, Tag = :Tag.Tag.Tag} 
+
+Rule: TagSentences3b
+Priority: 100
+
+//Superior or Inferior
+(
+    ({SpaceToken})
+	({Tag.SentenceStart == "False"}):Tag
+    ({SpaceToken})
+    ({Lesion})
+    ({SpaceToken})
+
+):match
+-->
+:match.Tag = { rule = TagSentences3b, Tag = :Tag.Tag.Tag}

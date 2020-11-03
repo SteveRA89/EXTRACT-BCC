@@ -7,9 +7,9 @@ Options: control=all
 Rule: TagSentences
 Priority: 100
 (
-	(({Tag})
+	(({Tag, !Tag.SentenceStart == "False"})
     ({NewLine})*):Tag
     ({Tag}|{Reported_triggers}|{ParagraphTitles})
 ):match
 -->
-:Tag.TagSentence = { rule = TagSentences, Tag = :Tag.Tag.Tag}
+:Tag.TagSentence = {rule = TagSentences, Tag = :Tag.Tag.Tag}

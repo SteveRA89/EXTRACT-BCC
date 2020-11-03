@@ -13,7 +13,8 @@ Priority: 100
 -->
 :Tag.Tag = { rule = InterchangeablewordsTag1, 
 value = :Tag.InterchangeableWordsTag@string,
-Tag = :Tag.InterchangeableWordsTag.InterchangeableTag} 
+Tag = :Tag.InterchangeableWordsTag.InterchangeableTag,
+SentenceStart = False} 
 
 Rule: TagInterchangeableWords2
 Priority: 100
@@ -27,4 +28,5 @@ Priority: 100
 -->
 :Tag.Tag = { rule = InterchangeablewordsTag2, 
 value = :Tag.InterchangeableWordsTag@string,
-Tag = :Tag.InterchangeableWordsTag.InterchangeableTag} 
+Tag = :Tag.InterchangeableWordsTag.InterchangeableTag,
+SentenceStart = False}

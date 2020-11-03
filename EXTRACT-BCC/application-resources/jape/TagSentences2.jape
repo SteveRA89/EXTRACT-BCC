@@ -1,0 +1,15 @@
+Phase: TagSentences2
+Input: Tag ParagraphTitles Reported_triggers NewLine
+Options: control=all
+
+//Make the tag useful for other rules
+
+Rule: TagSentences2
+Priority: 100
+(
+    (({Tag.SentenceStart == "False", Tag notWithin TagSentence})
+    ({NewLine})*):Tag
+    ({Tag}|{Reported_triggers}|{ParagraphTitles})
+):match
+-->
+:Tag.TagSentence = {rule = TagSentences2, Tag = :Tag.Tag.Tag, TagMidSentence = "True"}
