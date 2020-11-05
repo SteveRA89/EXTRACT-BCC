@@ -15,7 +15,7 @@ Rule: UlceratedParagraph1
 -->
 
 :match.UlceratedParagraph = { rule2 = UlceratedParagraph1,
-rule = :match.Ulcerated.rule, 
+rule = :match.UlceratedDetails.rule, 
 Ulcerated = :match.UlceratedDetails.Ulcerated,
 ParagraphTitle = ClinicalDetails}
 
