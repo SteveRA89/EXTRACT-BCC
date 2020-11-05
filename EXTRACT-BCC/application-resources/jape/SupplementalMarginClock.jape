@@ -1,10 +1,10 @@
 Imports: {import static gate.Utils.*; }
 
-Phase: SupplementalDeepMarginClockFace
+Phase: SupplementalMarginClockFace
 Input: SpaceToken Clock ClockFace ExcisionType Numeric Token
 Options: control=appelt
 
-Rule: SupplementalDeepMarginClockRange
+Rule: SupplementalDeepMarginClock
 (
     ({ExcisionType.ExcisionType == "SupplementalDeepMarginSpecimen"}):ET
     ({SpaceToken})?
@@ -12,7 +12,7 @@ Rule: SupplementalDeepMarginClockRange
 
 ):match
 -->
-:match.SupplementalDeepMarginClockRange = { rule = SupplementalDeepMarginClockRange, 
+:match.SupplementalDeepMarginClockFace = { rule = SupplementalDeepMarginClock, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 time = :match.ClockFace.time},
 
@@ -20,7 +20,7 @@ time = :match.ClockFace.time},
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
 }
 
-Rule: SupplementalDeepMarginClockange2
+Rule: SupplementalDeepMarginClock2
 (
     ({ExcisionType.ExcisionType == "SupplementalDeepMarginSpecimen"}):ET
     ({SpaceToken})?
@@ -28,13 +28,13 @@ Rule: SupplementalDeepMarginClockange2
     ({SpaceToken})?
     ({Token.string == "to"}|{Token.string == "-"})
     ({SpaceToken})?
-	({Numeric.value < 13, Numeric.value > 0}):T2
+  	({Numeric.value < 13, Numeric.value > 0}):T2
     ({SpaceToken})?
     ({ClockFace})
 
 ):match
 -->
-:match.SupplementalDeepMarginClockRange2 = { rule = SupplementalDeepMarginClockRange2, 
+:match.SupplementalDeepMarginClockFace = { rule = SupplementalDeepMarginClock2, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 time = :T1.Numeric.value,
 time2 = :T2.Numeric.value},
@@ -43,7 +43,7 @@ time2 = :T2.Numeric.value},
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
 }
 
-Rule: SupplementalPeripheralMarginClockRange
+Rule: SupplementalPeripheralMarginClock
 (
     ({ExcisionType.ExcisionType == "SupplementalPeripheralMarginSpecimen"}):ET
     ({SpaceToken})?
@@ -51,7 +51,7 @@ Rule: SupplementalPeripheralMarginClockRange
 
 ):match
 -->
-:match.SupplementalPeripheralMarginClockRange = { rule = SupplementalPeripheralMarginClockRange, 
+:match.SupplementalPeripheralMarginClockFace = { rule = SupplementalPeripheralMarginClock, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 time = :match.ClockFace.time},
 
@@ -59,7 +59,7 @@ time = :match.ClockFace.time},
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
 }
 
-Rule: SupplementalPeripheralMarginClockRange2
+Rule: SupplementalPeripheralMarginClock2
 (
     ({ExcisionType.ExcisionType == "SupplementalPeripheralMarginSpecimen"}):ET
     ({SpaceToken})?
@@ -73,7 +73,7 @@ Rule: SupplementalPeripheralMarginClockRange2
 
 ):match
 -->
-:match.SupplementalPeripheralMarginClockRange2 = { rule = SupplementalPeripheralMarginClockRange2, 
+:match.SupplementalPeripheralMarginClockFace = { rule = SupplementalPeripheralMarginClock2, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 time = :T1.Numeric.value,
 time2 = :T2.Numeric.value},
