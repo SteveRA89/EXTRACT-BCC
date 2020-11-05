@@ -1,5 +1,5 @@
 Phase: CancerDiagnosis
-Input: Diagnosis BCCClass Differentiation Split Sentence 
+Input: Diagnosis BCCClass Differentiation Split Sentence Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal
 Options: control=appelt
 
 //Diagnosis 
