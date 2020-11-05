@@ -54,3 +54,13 @@ Priority: 100
 ):match
 -->
 :match.Tag = { rule = TagLetters1, value = :match@string, Tag = :Tag.Token.string}
+
+Rule: TagNumber2
+Priority: 100
+//1. or 2.
+(
+	({Token.kind == number, Token.length == 1}):Tag
+    ({Token.kind == punctuation, Token.string == "."})
+):match
+-->
+:match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
