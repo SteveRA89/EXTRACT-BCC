@@ -13,3 +13,15 @@ Rule: ClinicalDetailsQuestion
 -->
 
 :match.ClinicalDetailsQuestion = {ruleFinal = ClinicalDetailsQuestion}
+
+Rule: ClinicalDetailsQuestion2
+(
+	({SpaceToken})?
+    ({Split@string == "?"})
+	({SpaceToken})
+
+):match
+
+-->
+
+:match.ClinicalDetailsQuestion = {ruleFinal = ClinicalDetailsQuestion2}

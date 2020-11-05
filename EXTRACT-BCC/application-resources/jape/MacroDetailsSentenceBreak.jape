@@ -1,0 +1,80 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: MacroDetailsSentenceBreak
+Input: Split Sentence AdditionalSentenceBreak ClinicalDetailsQuestion MacroDetails
+Options: control=appelt
+
+Rule: MacroDetailsSentenceBreak
+(
+	
+    ({MacroDetails}):match
+    ({ClinicalDetailsQuestion})
+    ({MacroDetails}):match1
+
+):match2
+
+-->
+
+:match2.MacroDetails = { ruleFinal = MacroDetails, 
+Pre-opDiagnosis = :match1.MacroDetails.Pre-opDiagnosis,
+Pre-opDiagnosis2 = :match1.MacroDetails.Pre-opDiagnosis2,
+CUI = :match1.MacroDetails.CUI,
+CUI2 = :match1.MacroDetails.CUI2,
+Pre-opDiagnosisClass = :match1.MacroDetails.BCCClass,
+Pre-opDiagnosisClass2 = :match1.MacroDetails.BCCClass2,
+Ulcerated = :match1.MacroDetails.Ulcerated, 
+ExcisionType = :match1.MacroDetails.ExcisionType,
+ExcisionType2 = :match1.MacroDetails.ExcisionType2,
+ExcisionNature = :match1.MacroDetails.ExcisionType2,
+BodyPart = :match1.MacroDetails.BodyPart,
+BodyPart2 = :match1.MacroDetails.BodyPart2,
+MultipleScalp = :match1.MacroDetails.MultipleScalp,
+Lateralization = :match1.MacroDetails.Lateralization,
+UpperOrLower = :match1.MacroDetails.UpperOrLower,
+AnteriorOrPosterior = :match1.MacroDetails.AnteriorOrPosterior,
+ProximalOrDistal = :match1.MacroDetails.ProximalOrDistal,
+MedialOrLateral = :match1.MacroDetails.MedialOrLateral,
+"3DSpecimenSize" = :match1.MacroDetails."3DSpecimenSize",
+"3DSpecimenSize2" = :match1.MacroDetails."3DSpecimenSize2",
+"3DSpecimenSize3" = :match1.MacroDetails."3DSpecimenSize3",
+SpecimenMeasurementUnit = :match1.MacroDetails.SpecimenMeasurementUnit,
+MaxMacroTumourDiameter = :match1.MacroDetails.MaxMacroTumourDiameter,
+MaxMacroMeasurementUnit = :match1.MacroDetails.MaxMacroMeasurementUnit,
+Tag = :match1.MacroDetails.Tag
+
+Pre-opDiagnosis = :match.MacroDetails.Pre-opDiagnosis,
+Pre-opDiagnosis2 = :match.MacroDetails.Pre-opDiagnosis2,
+CUI = :match.MacroDetails.CUI,
+CUI2 = :match.MacroDetails.CUI2,
+Pre-opDiagnosisClass = :match.MacroDetails.BCCClass,
+Pre-opDiagnosisClass2 = :match.MacroDetails.BCCClass2,
+Ulcerated = :match.MacroDetails.Ulcerated, 
+ExcisionType = :match.MacroDetails.ExcisionType,
+ExcisionType2 = :match.MacroDetails.ExcisionType2,
+ExcisionNature = :match.MacroDetails.ExcisionType2,
+BodyPart = :match.MacroDetails.BodyPart,
+BodyPart2 = :match.MacroDetails.BodyPart2,
+MultipleScalp = :match.MacroDetails.MultipleScalp,
+Lateralization = :match.MacroDetails.Lateralization,
+UpperOrLower = :match.MacroDetails.UpperOrLower,
+AnteriorOrPosterior = :match.MacroDetails.AnteriorOrPosterior,
+ProximalOrDistal = :match.MacroDetails.ProximalOrDistal,
+MedialOrLateral = :match.MacroDetails.MedialOrLateral,
+"3DSpecimenSize" = :match.MacroDetails."3DSpecimenSize",
+"3DSpecimenSize2" = :match.MacroDetails."3DSpecimenSize2",
+"3DSpecimenSize3" = :match.MacroDetails."3DSpecimenSize3",
+SpecimenMeasurementUnit = :match.MacroDetails.SpecimenMeasurementUnit,
+MaxMacroTumourDiameter = :match.MacroDetails.MaxMacroTumourDiameter,
+MaxMacroMeasurementUnit = :match.MacroDetails.MaxMacroMeasurementUnit
+Tag = :match.MacroDetails.Tag
+
+},
+
+:match1 { 
+  inputAS.removeAll(match1Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+
+:match { 
+  inputAS.removeAll(matchAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+
+}
