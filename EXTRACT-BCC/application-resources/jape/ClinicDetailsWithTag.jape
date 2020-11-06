@@ -36,6 +36,7 @@ Rule: ClinicalDetailsWithTag
     }
 }
 //TO DO rule where no tag sentence is needed ClinicalDetailsPreTag notWithin TagSentence -> copy all features.
+//Done below
 
 
 Rule: ClinicalDetailsWithoutTag
