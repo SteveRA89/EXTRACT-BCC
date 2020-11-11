@@ -74,10 +74,10 @@ Tag = :match.ClinicalDetails.Tag
 },
 
 :match1 { 
-  inputAS.removeAll(match1Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+  inputAS.removeAll(match1Annots);//This deletes the match1 annotation. So would remove the annotation for first ClinicalDetails
 },
 
 :match { 
-  inputAS.removeAll(matchAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+  inputAS.removeAll(matchAnnots);//This deletes the match1 annotation. So would remove the annotation for second ClinicalDetails
 
 }
