@@ -1,5 +1,5 @@
 Phase: MacroDetails
-Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion
+Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion AdditionalSentenceBreak
 Options: control=appelt
 
 Rule: MacroDetails
@@ -39,7 +39,8 @@ MedialOrLateral = :match.DetailedBodyPartParagraph.MedialOrLateral,
 "3DSpecimenSize" = :match.DimensionSpecimen.N1,
 "3DSpecimenSize2" = :match.DimensionSpecimen.N2,
 "3DSpecimenSize3" = :match.DimensionSpecimen.N3,
-SpecimenMeasurementUnit = :match.DimensionSpecimen.unit,
+"3DSpecimenSize4" = :match.DimensionSpecimen.N4,
+SpecimenMeasurementUnit = :match.DimensionSpecimen.units,
 MaxMacroTumourDiameter = :match.DimnesionLesion.LongestDistance,
 MaxMacroMeasurementUnit = :match.DimnesionLesion.unit
 }
