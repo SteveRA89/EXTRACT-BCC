@@ -1,0 +1,34 @@
+Phase: AdditionalSentenceBreak
+Input:  Token
+Options: control=all
+
+
+Rule: AdditionalSentenceBreak1
+Priority:100
+(
+    ({Token.kind == punctuation, Token.string == ":"})
+    
+):match
+
+-->
+:match.AdditionalSentenceBreak = { rule = AdditionalSentenceBreak1}
+
+Rule: AdditionalSentenceBreak2
+Priority:100
+(
+    ({Token.kind == punctuation, Token.string == "\""})
+    
+):match
+
+-->
+:match.AdditionalSentenceBreak = { rule = AdditionalSentenceBreak2}
+
+Rule: AdditionalSentenceBreak3
+Priority:100
+(
+    ({Token.kind == punctuation, Token.string == "\'"})
+    
+):match
+
+-->
+:match.AdditionalSentenceBreak = { rule = AdditionalSentenceBreak3}
