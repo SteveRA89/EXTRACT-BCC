@@ -1,7 +1,11 @@
 Width:Dimension=Width
 Wide:Dimension=Width
+Width (lower half):Dimension=Width
+Width (upper half):Dimension=Width
+Diameter:Dimension=Width
 Length:Dimension=Length
 Long:Dimension=Length
 Thickness:Dimension=Thickness
 Thick:Dimension=Thickness
 Deep:Dimension=Thickness
+Underlying tissue:Dimension=Thickness

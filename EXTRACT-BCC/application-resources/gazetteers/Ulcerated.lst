@@ -23,7 +23,7 @@ Ulcerated Irregular area:Negatives=true
 Ulcerated Irregular areas:Negatives=true
 Ulcerated Area:Negatives=true
 Ulcerated Areas:Negatives=true
-Ulcerated Nodule :Negatives=true
+Ulcerated Nodule:Negatives=false
 Ulcerated Nodules:Negatives=true
 Ulcerated Lesion:Negatives=true
 Ulcerated Lesions:Negatives=true
@@ -45,3 +45,4 @@ Ulcerated Plaques:Negatives=true
 Ulcerated Irregular surface:Negatives=true
 Ulcerated Surface :Negatives=true
 Ulcerated Surfaces:Negatives=true
+
