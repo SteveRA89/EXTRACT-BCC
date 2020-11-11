@@ -2,6 +2,8 @@ Phase: MacroDetails
 Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion AdditionalSentenceBreak
 Options: control=appelt
 
+// Youll have to describe to me what 3D specimen Size 4 is
+
 Rule: MacroDetails
 Priority: 100
 

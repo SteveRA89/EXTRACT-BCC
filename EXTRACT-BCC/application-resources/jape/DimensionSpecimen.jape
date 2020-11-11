@@ -23,6 +23,9 @@ units = :match.Dimension.units,
 NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
 LongestDistance = :match.Dimension.LongestDistance}
 
+//With the changes to Dimension.jape (which includes all the token X/by/x/... stuff) why are they needed again?
+//Examples would be useful
+
 Rule: DimensionSpecimenWords4Da
 Priority:100
 (
