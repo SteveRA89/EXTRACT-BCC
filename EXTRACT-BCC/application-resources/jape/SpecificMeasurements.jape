@@ -8,8 +8,8 @@ Operative_margin
 MaxMicroDiameter
 DetailedDimension
 DimensionSpecimen
+DimensionSpecimenLargestMeasurement
 DimensionLesion
-DimensionsSpecimenLargestMeasurement
 MultiplePeripheral
 SecondMultiplePeripheral
 ThirdMultiplePeripheral
