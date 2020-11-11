@@ -1,43 +1,206 @@
 Phase: Dimensions
-Input: Numeric Token SpaceToken Measurement 
+Input: Numeric Token SpaceToken Measurement Dimensions
 Options: control=appelt
 
-
-Rule: Dimension3D
+Rule: Dimension4Da
 Priority:100
 (
     ({Numeric}):n1
     ({SpaceToken})?
     ({SpaceToken})?
-    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
     ({SpaceToken})?
     ({SpaceToken})?
     ({Numeric}):n2
     ({SpaceToken})?
     ({SpaceToken})?
-    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n3
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n4
+
+):match
+-->
+:match.Dimension = { rule = Dimension4Da, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Numeric.value, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
+
+Rule: Dimension4Db
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n4
+
+):match
+-->
+:match.Dimension = { rule = Dimension4Db, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
+
+Rule: Dimension4Dc
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n4
+
+):match
+-->
+:match.Dimension = { rule = Dimension4Dc, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
+
+
+Rule: Dimension3Da
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
     ({SpaceToken})?
     ({SpaceToken})?
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
 
 ):match
 -->
-:match.Dimension = { rule = Dimension3D, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+:match.Dimension = { rule = Dimension3Da, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
 
-Rule: Dimension2D
+Rule: Dimension3Db
 Priority:100
 (
     ({Numeric}):n1
     ({SpaceToken})?
     ({SpaceToken})?
-    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
+
+):match
+-->
+:match.Dimension = { rule = Dimension3Db, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+Rule: Dimension3Dc
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
+
+):match
+-->
+:match.Dimension = { rule = Dimension3Dc, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+Rule: Dimension2Da
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
     ({SpaceToken})?
     ({SpaceToken})?
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
 
 ):match
 -->
-:match.Dimension = { rule = Dimension2D, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+:match.Dimension = { rule = Dimension2Da, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+
+Rule: Dimension2Db
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2Db, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+
+Rule: Dimension2Dc
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2Dc, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
+
 
 Rule: Dimension1D
 Priority:100
@@ -48,4 +211,3 @@ Priority:100
 ):match
 -->
 :match.Dimension = { rule = Dimension1D, N1 = :n1.Measurement.quantity, units = :n1.Measurement.units, NumberOfMeasurements = 1}
-
