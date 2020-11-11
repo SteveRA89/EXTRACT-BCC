@@ -2,6 +2,8 @@ Phase: Dimensions
 Input: Numeric Token SpaceToken Measurement Dimensions
 Options: control=appelt
 
+//Please add some example sentences above each of these
+
 Rule: Dimension4Da
 Priority:100
 (
