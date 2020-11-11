@@ -1,10 +1,10 @@
 Phase: DimensionSpecimen
-Input: Dimension Token Specimen ExcisionType DetailedDimension
+Input: Dimension Token Specimen ExcisionType DetailedDimension Lesion
 Options: control=appelt
 
 //This will only pick up ExcisionTypes directly from the gazetteer, the jape rule is currently after it in the pipeline
 
-Rule: DimensionSpecimen
+Rule: DimensionSpecimen1
 Priority:100
 (
     ({Specimen})
@@ -14,27 +14,83 @@ Priority:100
 ):match
 
 -->
-:match.DimensionSpecimen = { rule = DimensionSpecimen, 
+:match.DimensionSpecimen = { rule = DimensionSpecimen1, 
 N1 = :match.Dimension.N1, 
 N2 = :match.Dimension.N2, 
 N3 = :match.Dimension.N3, 
+N4 = :match.Dimension.N4, 
 units = :match.Dimension.units, 
 NumberOfMeasurements = :match.Dimension.NumberOfMeasurements, 
 LongestDistance = :match.Dimension.LongestDistance}
 
-Rule: DimensionSpecimenWords
+Rule: DimensionSpecimenWords4Da
 Priority:100
 (
+    ({Specimen})
+    ({ExcisionType})?
     ({DetailedDimension}):n1
-    ({Token.kind == punctuation})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
     ({DetailedDimension}):n2
-    ({Token.kind == punctuation})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({DetailedDimension}):n3
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({Dimensions})?
+    ({DetailedDimension}):n4
+
+):match
+
+-->
+:match.DimensionSpecimen = { rule = DimensionSpecimenWords4Da, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.DetailedDimension.N1, 
+N3 = :n3.DetailedDimension.N1, 
+N4 = :n4.DetailedDimension.N1, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
+LongestDistance = :match.Dimension.LongestDistance}
+
+Rule: DimensionSpecimenWords4Db
+Priority:100
+(
+    ({Specimen})?
+    ({ExcisionType})
+    ({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({DetailedDimension}):n2
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({DetailedDimension}):n3
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({Dimensions})?
+    ({DetailedDimension}):n4
+
+):match
+
+-->
+:match.DimensionSpecimen = { rule = DimensionSpecimenWords4Db, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.DetailedDimension.N1, 
+N3 = :n3.DetailedDimension.N1, 
+N4 = :n4.DetailedDimension.N1, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
+LongestDistance = :match.Dimension.LongestDistance}
+
+Rule: DimensionSpecimenWords3Da
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({DetailedDimension}):n2
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({Dimensions})?
     ({DetailedDimension}):n3
 
 ):match
 
 -->
-:match.DimensionSpecimen = { rule = DimensionSpecimenWords, 
+:match.DimensionSpecimen = { rule = DimensionSpecimenWords3Da, 
 N1 = :n1.DetailedDimension.N1, 
 N2 = :n2.DetailedDimension.N1, 
 N3 = :n3.DetailedDimension.N1, 
@@ -42,4 +98,65 @@ units = :match.Dimension.units,
 NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
 LongestDistance = :match.Dimension.LongestDistance}
 
+Rule: DimensionSpecimenWords3Db
+Priority:100
+(
+    ({Specimen})?
+    ({ExcisionType})
+    ({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({DetailedDimension}):n2
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({Dimensions})?
+    ({DetailedDimension}):n3
 
+):match
+
+-->
+:match.DimensionSpecimen = { rule = DimensionSpecimenWords3Db, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.DetailedDimension.N1, 
+N3 = :n3.DetailedDimension.N1, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
+LongestDistance = :match.Dimension.LongestDistance}
+
+Rule: DimensionSpecimenWords2Da
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({Dimensions})?
+    ({DetailedDimension}):n2
+
+):match
+
+-->
+:match.DimensionSpecimen = { rule = DimensionSpecimenWords2Da, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.DetailedDimension.N1, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
+LongestDistance = :match.Dimension.LongestDistance}
+
+Rule: DimensionSpecimenWords2Db
+Priority:100
+(
+    ({ExcisionType})
+    ({Specimen})?
+    ({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ";"})
+    ({Dimensions})?
+    ({DetailedDimension}):n2
+
+):match
+
+-->
+:match.DimensionSpecimen = { rule = DimensionSpecimenWords2Db, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.DetailedDimension.N1, 
+units = :match.Dimension.units, 
+NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
+LongestDistance = :match.Dimension.LongestDistance}
