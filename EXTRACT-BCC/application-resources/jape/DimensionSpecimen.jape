@@ -32,6 +32,7 @@ Priority:100
 (
     ({Specimen})
     ({ExcisionType})?
+    ({Lesion})?
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})?
     (({DetailedDimension}):n1
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})
@@ -87,6 +88,7 @@ Priority:100
 (
     ({Specimen})
     ({ExcisionType})?
+    ({Lesion})?
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})?
     (({DetailedDimension}):n1
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})
@@ -137,6 +139,7 @@ Priority:100
 (
     ({Specimen})
     ({ExcisionType})?
+    ({Lesion})?
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})?
     (({DetailedDimension}):n1
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})

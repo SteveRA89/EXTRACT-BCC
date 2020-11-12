@@ -4,6 +4,8 @@ Options: control=appelt
 
 //Please add some example sentences above each of these
 
+//1 x 1 x 1 x 1mm
+
 Rule: Dimension4Da
 Priority:100
 (
@@ -88,6 +90,33 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension4Dc, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
 
+Rule: Dimension4Dd
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n3
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n4
+
+):match
+-->
+:match.Dimension = { rule = Dimension4Dd, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Numeric.value, N4 = :n4.Numeric.value, NumberOfMeasurements = 4}
+
 
 Rule: Dimension3Da
 Priority:100
@@ -154,6 +183,27 @@ Priority:100
 ):match
 -->
 :match.Dimension = { rule = Dimension3Dc, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+Rule: Dimension3Dd
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n3
+
+):match
+-->
+:match.Dimension = { rule = Dimension3Dd, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Numeric.value, NumberOfMeasurements = 3}
 
 Rule: Dimension2Da
 Priority:100
