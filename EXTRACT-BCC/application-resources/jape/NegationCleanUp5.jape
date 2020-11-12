@@ -1,0 +1,25 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: NegationReversal
+Input: Ulcerated Split Sentence Specimen Lesion Trigger
+Options: control=appelt
+
+//Without ... ellipise of skin ... ulcerated nodule 
+
+Rule: NegationReversal
+Priority: 100
+
+(
+    ({Trigger.majorType == negation})
+    ({Specimen}|{Lesion})
+	({Ulcerated.Negation == Negated}):umls
+
+
+):match
+
+-->
+:umls{
+umlsAnnots.iterator().next().getFeatures().put("Negation","Affirmed");
+umlsAnnots.iterator().next().getFeatures().put("rule","NegationReversal");
+}
+
