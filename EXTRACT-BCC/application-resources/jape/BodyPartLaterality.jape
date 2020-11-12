@@ -29,7 +29,7 @@ Priority: 100
 -->
 :match.DetailedBodyPart = { rule = BodyPartOneTerm1, BodyPart = :match.BodyParts.bodypart,
 BodyPart2 = :match.BodyParts.bodypart2,
-Lateralization = :match.Lookup2.lateralisation, 
+Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
 AnteriorOrPosterior =:match.AnteriorOrPosterior.AnteriorOrPosterior,

@@ -1,0 +1,29 @@
+Phase: BodyPartContainsLat
+Input: Lookup2 DetailedBodyPart
+Options: control=appelt
+
+Rule: BodyPartContainsLatLeft
+Priority: 100
+
+(
+	({DetailedBodyPart contains Lookup2.lateralisation == Left}):body
+
+):match
+-->
+:body{
+bodyAnnots.iterator().next().getFeatures().put("Lateralization","Left");
+bodyAnnots.iterator().next().getFeatures().put("rule","BodyPartContainsLat");
+}
+
+Rule: BodyPartContainsLatRight
+Priority: 100
+
+(
+	({DetailedBodyPart contains Lookup2.lateralisation == Right}):body
+
+):match
+-->
+:body{
+bodyAnnots.iterator().next().getFeatures().put("Lateralization","Right");
+bodyAnnots.iterator().next().getFeatures().put("rule","BodyPartContainsLat");
+}
