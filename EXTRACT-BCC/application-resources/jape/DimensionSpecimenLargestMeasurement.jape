@@ -58,8 +58,8 @@ String lastTwo = longestLengthString.substring(longestLengthString.length()-2, l
 //System.out.println(lastTwo);//check that the above is correct
 if (lastTwo.contains(".0")) {//contains here to check the correct value of lastTwo - then convert to integer, removing the last two parts characters
 String intoInteger = longestLengthString.substring(0, longestLengthString.length()-2);//get the string from start to minus last two
-Integer lengthInt = Integer.valueOf(intoInteger);//convert string to Integer
-getOnlyAnn(matchAnnots).getFeatures().put("LongestMeasurement", lengthInt);//output value
+Integer lengthInt = Integer.valueOf(intoInteger);//convert string to Integer - KEEP AS A STRING SO IT MATCHES
+getOnlyAnn(matchAnnots).getFeatures().put("LongestMeasurement", intoInteger);//output value
 }
 else {
 getOnlyAnn(matchAnnots).getFeatures().put("LongestMeasurement", lengthsArray.get(0));//output value as an array
