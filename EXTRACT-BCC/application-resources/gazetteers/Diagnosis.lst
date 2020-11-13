@@ -65,7 +65,7 @@ Lymphangiosarcoma:CUI=C0346082:CancerType=OtherCancerous
 Malignant melanoma:CUI=C0151779:CancerType=OtherCancerous
 Superficial spreading malignant melanoma:CUI=C0334438:CancerType=OtherCancerous
 Nodular malignant melanoma:CUI=C0334424:CancerType=OtherCancerous
-Lentigo malignant melanoma:CUI=C2739810:CancerType=OtherCancerous
+Lentigo malignan melanoma:CUI=C2739810:CancerType=OtherCancerous
 Acral malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Subungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Sub-ungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
@@ -431,6 +431,7 @@ Neurofibroma:CUI=C0027830:CancerType=OtherBenign
 Schwannoma:CUI=C0027809:CancerType=OtherBenign
 Neurilemmoma:CUI=C0027809:CancerType=OtherBenign
 Sebaceous hyperplasia:CUI=C0406484:CancerType=OtherBenign
+Sebaceous gland hyperplasia:CUI=C0406484:CancerType=OtherBenign
 Lentigo simplex:CUI=C0302255:CancerType=OtherBenign
 Lentigo senilis:CUI=C0036651:CancerType=OtherBenign
 Lentigo senile: CUI=C0036651:CancerType=OtherBenign
