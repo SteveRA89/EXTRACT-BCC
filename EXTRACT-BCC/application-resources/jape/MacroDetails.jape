@@ -44,5 +44,5 @@ MedialOrLateral = :match.DetailedBodyPartParagraph.MedialOrLateral,
 "3DSpecimenSize4" = :match.DimensionSpecimen.N4,
 SpecimenMeasurementUnit = :match.DimensionSpecimen.units,
 MaxMacroTumourDiameter = :match.DimensionLesion.LongestDistance,
-MaxMacroMeasurementUnit = :match.DimensionLesion.unit
+MaxMacroMeasurementUnit = :match.DimensionLesion.units
 }
