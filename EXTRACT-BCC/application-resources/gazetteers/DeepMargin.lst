@@ -3,6 +3,7 @@ Dermal:CUI=C0011646:DeepMargin=Dermis
 Fat:CUI=C0222331:DeepMargin=Fat
 Subcutaneous fat:CUI=C0222331:DeepMargin=Fat
 Subcut fat:CUI=C0222331:DeepMargin=Fat
+Subcutaneous adipose tissue:CUI=C0222331:DeepMargin=Fat
 Fascia:CUI=C0015641:DeepMargin=Fascia
 Fascial:CUI=C0015641:DeepMargin=Fascia
 Superficial fascia:DeepMargin=SuperficialFascia
