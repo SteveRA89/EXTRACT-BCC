@@ -33,6 +33,8 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension4Da, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Numeric.value, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
 
+//1 x 1 x 1mm x underlying tissue 1mm
+
 Rule: Dimension4Db
 Priority:100
 (
@@ -63,6 +65,8 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension4Db, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
 
+//1 x 1 x 1mm underlying tissue 1mm
+
 Rule: Dimension4Dc
 Priority:100
 (
@@ -89,6 +93,8 @@ Priority:100
 ):match
 -->
 :match.Dimension = { rule = Dimension4Dc, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, N4 = :n4.Measurement.quantity, units = :n4.Measurement.units, NumberOfMeasurements = 4}
+
+// 1 x 1 x 1 x 1
 
 Rule: Dimension4Dd
 Priority:100
@@ -117,6 +123,7 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension4Dd, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Numeric.value, N4 = :n4.Numeric.value, NumberOfMeasurements = 4}
 
+//1 x 1 x 1mm
 
 Rule: Dimension3Da
 Priority:100
@@ -138,6 +145,8 @@ Priority:100
 ):match
 -->
 :match.Dimension = { rule = Dimension3Da, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+//1 x 1 x underlying tissue 1mm
 
 Rule: Dimension3Db
 Priority:100
@@ -163,6 +172,8 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension3Db, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
 
+//1 x 1 underlying tissue 1mm
+
 Rule: Dimension3Dc
 Priority:100
 (
@@ -175,7 +186,7 @@ Priority:100
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
     ({SpaceToken})?
     ({SpaceToken})?
-    ({Dimensions})
+    ({Dimensions})?
     ({SpaceToken})?
     ({SpaceToken})?
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n3 
@@ -183,6 +194,8 @@ Priority:100
 ):match
 -->
 :match.Dimension = { rule = Dimension3Dc, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, N3 = :n3.Measurement.quantity, units = :n3.Measurement.units, NumberOfMeasurements = 3}
+
+//1 x 1 x 1
 
 Rule: Dimension3Dd
 Priority:100
@@ -205,6 +218,8 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension3Dd, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, N3 = :n3.Numeric.value, NumberOfMeasurements = 3}
 
+//1 x 1mm
+
 Rule: Dimension2Da
 Priority:100
 (
@@ -220,6 +235,8 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension2Da, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
 
+//1 x underlying tissue 1mm
+
 Rule: Dimension2Db
 Priority:100
 (
@@ -229,7 +246,7 @@ Priority:100
     ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.string == ";"}|{Token.string == ","})
     ({SpaceToken})?
     ({SpaceToken})?
-    ({Dimensions})
+    ({Dimensions})?
     ({SpaceToken})?
     ({SpaceToken})?
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
@@ -238,13 +255,15 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension2Db, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
 
+//1 underlying tissue 1mm
+
 Rule: Dimension2Dc
 Priority:100
 (
     ({Numeric}):n1
     ({SpaceToken})?
     ({SpaceToken})?
-    ({Dimensions})
+    ({Dimensions})?
     ({SpaceToken})?
     ({SpaceToken})?
     ({Measurement.units == "mm"} | {Measurement.units == "cm"}):n2
@@ -253,6 +272,42 @@ Priority:100
 -->
 :match.Dimension = { rule = Dimension2Dc, N1 = :n1.Numeric.value, N2 = :n2.Measurement.quantity, units = :n2.Measurement.units, NumberOfMeasurements = 2}
 
+//1 underlying tissue 1
+
+Rule: Dimension2Dd
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Dimensions})?
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2d, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, NumberOfMeasurements = 2}
+
+//1 x 1 
+
+Rule: Dimension2De
+Priority:100
+(
+    ({Numeric}):n1
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"})
+    ({SpaceToken})?
+    ({SpaceToken})?
+    ({Numeric}):n2
+
+):match
+-->
+:match.Dimension = { rule = Dimension2e, N1 = :n1.Numeric.value, N2 = :n2.Numeric.value, NumberOfMeasurements = 2}
+
+
+//1mm
 
 Rule: Dimension1D
 Priority:100
