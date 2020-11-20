@@ -8,8 +8,12 @@ Rule: DimensionLesion
 Priority:100
 (
     ({DimensionSpecimen})
+    ({Lesion})?
+    ({Lesion})?
+    ({Lesion})?
     ({Lesion})
     (({Dimension})):match
+
 ):match1
 -->
 :match.DimensionLesion = { rule = DimensionLesion3D, 
