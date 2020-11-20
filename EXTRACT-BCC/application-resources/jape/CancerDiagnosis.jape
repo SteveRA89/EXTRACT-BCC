@@ -1,5 +1,5 @@
 Phase: CancerDiagnosis
-Input: Diagnosis BCCClass Differentiation Split Sentence Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal
+Input: Diagnosis BCCClass Differentiation Split Sentence Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms
 Options: control=appelt
 
 //Diagnosis 
@@ -20,6 +20,25 @@ CUI = :match1.Diagnosis.CUI,
 CUI2 = :match1.Diagnosis.CUI2,
 Differentiation = :match.Differentiation.Differentiation}
 
+// 2 diagnoses
+
+Rule: IndexDiagnosis2
+Priority: 100
+
+(
+    ({Diagnosis}):match1
+    ({Diagnosis}):match2
+
+
+):match
+-->
+:match.CancerDiagnosis = { rule = IndexClassorDiff, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match1.Diagnosis.CancerType,
+CancerType2 = :match2.Diagnosis.CancerType,
+CUI = :match1.Diagnosis.CUI,
+CUI2 = :match2.Diagnosis.CUI,
+Differentiation = :match.Differentiation.Differentiation}
 
 //BBC Class or Differentiation 
 
@@ -47,6 +66,7 @@ Priority: 100
 
 (
     ({Diagnosis})
+    ({BCCClassLinkTerms})?
     ({Differentiation}|{BCCClass}):T1
 
 ):match
@@ -85,6 +105,7 @@ Priority: 100
 
 (
     ({Diagnosis})
+    ({BCCClassLinkTerms})?
     ({Differentiation}|{BCCClass}):T1
     ({Differentiation}|{BCCClass}):T2
 
@@ -151,7 +172,6 @@ Differentiation = :T2.Differentiation.Differentiation,
 Differentiation = :T1.Differentiation.Differentiation,
 Differentiation2 = :T2.Differentiation.Differentiation}
 
-
 ///BCC superficial nod multiFocal
 
 Rule: CancerDiagnosis3a
@@ -159,6 +179,7 @@ Priority: 100
 
 (
     ({Diagnosis})
+    ({BCCClassLinkTerms})?
     ({Differentiation}|{BCCClass}):T1
     ({Differentiation}|{BCCClass}):T2
     ({Differentiation}|{BCCClass}):T3
@@ -280,6 +301,7 @@ Priority: 100
 
 (
     ({Diagnosis})
+    ({BCCClassLinkTerms})?
     ({Differentiation}|{BCCClass}):T1
     ({Differentiation}|{BCCClass}):T2
     ({Differentiation}|{BCCClass}):T3
@@ -461,6 +483,7 @@ Priority: 100
 
 (
     ({Diagnosis})
+    ({BCCClassLinkTerms})?
     ({Differentiation}|{BCCClass}):T1
     ({Differentiation}|{BCCClass}):T2
     ({Differentiation}|{BCCClass}):T3
@@ -713,6 +736,7 @@ Priority: 100
 
 (
     ({Diagnosis})
+    ({BCCClassLinkTerms})?
     ({Differentiation}|{BCCClass}):T1
     ({Differentiation}|{BCCClass}):T2
     ({Differentiation}|{BCCClass}):T3
