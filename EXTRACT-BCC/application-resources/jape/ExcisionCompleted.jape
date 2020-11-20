@@ -1,23 +1,23 @@
-Phase: ExcisionComplete
-Input: ExcisionComplete Split Sentence
+Phase: ExcisionCompleted
+Input: ExcisionCompleted Split Sentence
 Options: control=appelt
 
 //This rule could be deleted and negation used in another rule at later stage
 
-Rule: ExcisionCompleteYes
+Rule: ExcisionCompletedYes
 Priority: 100
 
 (
-	{ExcisionComplete.Negation == Affirmed}
+	{ExcisionCompleted.Negation == Affirmed}
 ):match
 -->
-:match.ExcisionCompleteDetails = { rule = ExcisionComplete, ExcisionComplete = "Yes"}
+:match.ExcisionCompletedDetails = { rule = ExcisionCompleted, ExcisionComplete = "Yes"}
 
-Rule: ExcisionCompleteNo
+Rule: ExcisionCompletedNo
 Priority: 100
 
 (
-	{ExcisionComplete.Negation == Negated}
+	{ExcisionCompleted.Negation == Negated}
 ):match
 -->
-:match.ExcisionCompleteDetails = { rule = ExcisionComplete, ExcisionComplete = "No"}
+:match.ExcisionCompletedDetails = { rule = ExcisionCompleted, ExcisionComplete = "No"}
