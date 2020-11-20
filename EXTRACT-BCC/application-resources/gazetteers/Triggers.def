@@ -19,7 +19,7 @@ Distance_to.lst::::Distance_to
 Ulcerated.lst::::Ulcerated
 LVI.lst::::LVI
 PNI.lst::::PNI
-Excision_Completed.lst::::ExcisionComplete
+ExcisionCompleted.lst::::ExcisionCompleted
 Frozen_Section.lst::::Frozen_Section
 Clear.lst::::Clear
 ClearButClose.lst::::ClearButClose
@@ -52,3 +52,4 @@ DeepMarginTrigger.lst::::DeepMarginTrigger
 LevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
 ClarkLevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
 ClinicalDetailCleaningTrigger.lst::::ClinicalDetailCleaningTrigger
+BCCClassLinkTerms.lst::::BCCClassLinkTerms
