@@ -9,7 +9,7 @@ Options: control=all
  * CancerDiagnosis is within GroupedParagraph
 */
 
-Rule: MacroDetailsWithTag
+Rule: MicroDetailsWithTag
 (
 	({TagSentence contains MicroDetailsPreTag}):tag
 ):match
@@ -37,7 +37,7 @@ Rule: MacroDetailsWithTag
 }
 //Where no tag sentence is needed MicroDetailsPreTag notWithin TagSentence -> copy all features.
 
-Rule: MacroDetailsWithoutTag
+Rule: MicroDetailsWithoutTag
 (
 	({MicroDetailsPreTag notWithin TagSentence}):tag
 ):match
