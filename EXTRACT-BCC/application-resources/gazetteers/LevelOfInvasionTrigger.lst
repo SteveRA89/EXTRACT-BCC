@@ -1,12 +1,25 @@
-Invading
-Invading into 
-Invasion
-Invasion into
-Involving 
-Involved 
-Involved with
-Extending into
-Extension 
-Extension into
-Tethered to 
-Abutting 
+Invading:Negatives=true
+Invading into:Negatives=true 
+Invasion:Negatives=true
+Invasion into:Negatives=true
+Invades:Negatives=true
+Invades into:Negatives=true
+Involving:Negatives=true
+Involved:Negatives=true
+Involved with:Negatives=true
+Extending into:Negatives=true
+Extension:Negatives=true
+Extension into:Negatives=true
+Tethered to:Negatives=true
+Abutting:Negatives=true
+Abuting:Negatives=true
+Abuts:Negatives=true
+Abutts:Negatives=true
+Abuttment:Negatives=true
+Reaching:Negatives=true
+Focally reaching:Negatives=true
+Infiltrating underlying:Negatives=true
+Abuts but does not invade:Negatives=false
+Abuts but not invading:Negatives=false
+Abutts but does not invade:Negatives=false
+Abutts but not invading:Negatives=false
