@@ -1,7 +1,7 @@
 Imports: {import static gate.Utils.*; }
 
 Phase: NegationReversal
-Input: Ulcerated Split Sentence Specimen Lesion Trigger
+Input: Ulcerated Split Sentence Specimen Lesion Trigger LevelOfInvasionTrigger
 Options: control=appelt
 
 //Without ... ellipise of skin ... ulcerated nodule 
@@ -23,3 +23,12 @@ umlsAnnots.iterator().next().getFeatures().put("Negation","Affirmed");
 umlsAnnots.iterator().next().getFeatures().put("rule","NegationReversal");
 }
 
+Rule: LevelOfInvasionCleanUp
+(
+({LevelOfInvasionTrigger contains Trigger@string=~"[Nn]ot"}):umls
+):match
+-->
+:umls {
+umlsAnnots.iterator().next().getFeatures().put("Negation","Affirmed");
+umlsAnnots.iterator().next().getFeatures().put("rule","removenon-asnegation");
+}
