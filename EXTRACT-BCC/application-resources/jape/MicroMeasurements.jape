@@ -1,0 +1,42 @@
+Phase: MicroMeasurements
+Input: Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph 
+Options: control=appelt
+
+//Output being listed as 1 long annotation in GATE ? RHS is wrong here and not sure how to divide up?
+
+Rule: MicroMeasurements
+Priority: 100
+
+(
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+):match
+
+-->
+:match.MicroMeasurementsPreParagraph = { ruleFinal = MicroMeasurements, 
+MeasurementType = :match.Micro_thicknessParagraph.MeasurementType,
+MeasurementValue = :match.Micro_thicknessParagraph.MeasurementValue,
+MeasurementUnit = :match.Micro_thicknessParagraph.MeasurementUnit,
+MeasurementType = :match.DeepClearance.MeasurementType,
+MeasurementValue = :match.DeepClearance.MeasurementValue,
+MeasurementUnit = :match.DeepClearance.MeasurementUnit,
+MeasurementType = :match.PeripheralClearance.PeripheralClearance,
+PeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
+PeripheralClockPosition2 = :match.PeripheralClearance.SecondMultiplePeripheral,
+PeripheralClockPosition3 = :match.PeripheralClearance.ThirdMultiplePeripheral,
+PeripheralClockPosition4 = :match.PeripheralClearance.FourthMultiplePeripheral,
+DeepClockPosition = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition2 = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition3 = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition4 = :match.DeepClearance.DeepClockPosition,
+MeasurementType = :match.MaxMicroDiameterParagraph.MeasurementType,
+MeasurementValue = :match.MaxMicroDiameterParagraph.MeasurementValue,
+MeasurementUnit = :match.MaxMicroDiameterParagraph.MeasurementUnit,
+}
