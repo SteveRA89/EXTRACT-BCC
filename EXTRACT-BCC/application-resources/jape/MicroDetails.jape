@@ -1,5 +1,5 @@
 Phase: MicroDetails
-Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging PeripheralClearDetails PeripheralClearButCloseDetails SuppExcisionTypeOutcomeDetails DeepClearDetails DeepClearButCloseDetails Frozen_SectionDetails
+Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging PeripheralClearDetails PeripheralClearButCloseDetails SuppExcisionTypeOutcomeDetails SupplementalExcisionTypeOutcome DeepClearDetails DeepClearButCloseDetails Frozen_SectionDetails
 Options: control=appelt
 
 Rule: MicroDetails
@@ -30,7 +30,7 @@ Differentiation2 = :match.CancerDiagnosis.Differentiation2,
 Ulcerated = :match.UlceratedParagraph.Ulcerated,
 LymphovascularInvasion = :match.LVIDetails.LVI,
 PerineuralInvasion = :match.PNIDetails.PNI,
-ExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionCompleted,
+ExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionComplete,
 Re-excisionOutcome = :match.ResidualDiseaseDetails.ResidualDisease,
 RecurrentOutcome = :match.RecurrentDiseaseDetails.RecurrentDisease,
 LevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
