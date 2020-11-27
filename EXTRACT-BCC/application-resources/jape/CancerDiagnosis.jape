@@ -1,5 +1,5 @@
 Phase: CancerDiagnosis
-Input: Diagnosis BCCClass Differentiation Split Sentence Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms
+Input: Diagnosis BCCClass Differentiation Split Sentence Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms LevelOfInvasionTrigger
 Options: control=appelt
 
 //Diagnosis 
@@ -20,26 +20,6 @@ CUI = :match1.Diagnosis.CUI,
 CUI2 = :match1.Diagnosis.CUI2,
 Differentiation = :match.Differentiation.Differentiation}
 
-// 2 diagnoses
-
-Rule: IndexDiagnosis2
-Priority: 100
-
-(
-    ({Diagnosis}):match1
-    ({Diagnosis}):match2
-
-
-):match
--->
-:match.CancerDiagnosis = { rule = IndexClassorDiff, 
-BCCClass = :match.BCCClass.BCCClass,
-CancerType = :match1.Diagnosis.CancerType,
-CancerType2 = :match2.Diagnosis.CancerType,
-CUI = :match1.Diagnosis.CUI,
-CUI2 = :match2.Diagnosis.CUI,
-Differentiation = :match.Differentiation.Differentiation}
-
 //BBC Class or Differentiation 
 
 Rule: IndexClassorDiff
@@ -58,6 +38,22 @@ CUI = :match1.Diagnosis.CUI,
 CUI2 = :match1.Diagnosis.CUI2,
 Differentiation = :match.Differentiation.Differentiation}
 
+// 2 BCC Class - this will pick up features of other tumours that are not BCC e.g. nodular MM
+
+Rule: IndexClass
+Priority: 100
+
+(
+    ({BCCClass}):T1
+    ({BCCClass}):T2
+
+):match
+-->
+:match.CancerDiagnosis = { rule = IndexClassorDiff,
+BCCClass = :T1.BCCClass.BCCClass,
+BCCClass2 = :T2.BCCClass.BCCClass,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2}
 
 //BCC nodular
 
