@@ -1,5 +1,6 @@
 MultiPhase: MicroDetailsMultiPhase
 Phases:
+LevelOfInvasion
 MicroDetails
 MicroDetailsPreTag
 MicroDetailsWithTag
