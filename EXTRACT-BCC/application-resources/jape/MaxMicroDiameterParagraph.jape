@@ -17,8 +17,8 @@ Rule: MaxMicroDiameterParagraph1
 :match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph1,
 rule = :match.MaxMicroDiameter.rule, 
 MeasurementType = "MaxMicroDiameter", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
+MeasurementValue = :match.MaxMicroDiameter.MeasurementValue, 
+MeasurementUnit = :match.MaxMicroDiameter.MeasurementUnit,
 ParagraphTitle = ClinicalDetails}
 
 Rule: MaxMicroDiameterParagraph2
@@ -32,8 +32,8 @@ Rule: MaxMicroDiameterParagraph2
 :match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph2,
 rule = :match.MaxMicroDiameter.rule, 
 MeasurementType = "MaxMicroDiameter", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
+MeasurementValue = :match.MaxMicroDiameter.MeasurementValue, 
+MeasurementUnit = :match.MaxMicroDiameter.MeasurementUnit,
 ParagraphTitle = MacroDescription}
 
 Rule: MaxMicroDiameterParagraph3
@@ -47,6 +47,6 @@ Rule: MaxMicroDiameterParagraph3
 :match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph3,
 rule = :match.MaxMicroDiameter.rule, 
 MeasurementType = "MaxMicroDiameter", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
+MeasurementValue = :match.MaxMicroDiameter.MeasurementValue, 
+MeasurementUnit = :match.MaxMicroDiameter.MeasurementUnit,
 ParagraphTitle = Microscopy}
