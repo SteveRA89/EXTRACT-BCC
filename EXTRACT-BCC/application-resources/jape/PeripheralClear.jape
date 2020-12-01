@@ -1,8 +1,8 @@
 Phase: PeripheralClear
-Input: Clear Micro_peripheral_margin Split Sentence
+Input: Clear Micro_peripheral_margin Dimensions
 Options: control=appelt
 
-Rule: PeripheralClear
+Rule: PeripheralClearYes1
 Priority: 100
 
 (
@@ -10,14 +10,36 @@ Priority: 100
 	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.PeripheralClearDetails = { rule = PeripheralClearYes, PeripheralClear = "Yes"}
+:match.PeripheralClearDetails = { rule = PeripheralClearYes1, PeripheralClear = "Yes"}
 
-Rule: PeripheralClearNo
+Rule: PeripheralClearYes2
+Priority: 100
+
+(
+	{Clear.Negation == Affirmed}
+    {Micro_peripheral_margin}
+):match
+-->
+:match.PeripheralClearDetails = { rule = PeripheralClearYes2, PeripheralClear = "Yes"}
+
+Rule: PeripheralClearNo2
 Priority: 100
 
 (
     {Micro_peripheral_margin}
-	{Clear.Negation == Negated}
+    {Clear.Negation == Affirmed}
+
 ):match
 -->
-:match.PeripheralClearDetails = { rule = PeripheralClearNo, PeripheralClear = "No"}
+:match.PeripheralClearDetails = { rule = PeripheralClearNo2, PeripheralClear = "No"}
+
+Rule: PeripheralClearNo1
+Priority: 100
+
+(
+	{Clear.Negation == Negated}
+    {Micro_peripheral_margin}
+
+):match
+-->
+:match.PeripheralClearDetails = { rule = PeripheralClearNo1, PeripheralClear = "No"}
