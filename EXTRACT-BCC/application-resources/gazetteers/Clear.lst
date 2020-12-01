@@ -1,1 +1,3 @@
-Clear
+Clear:Negatives=true
+Clear of the:Negatives=true
+Involved:Negatives=false
