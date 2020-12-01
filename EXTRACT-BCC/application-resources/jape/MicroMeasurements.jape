@@ -1,10 +1,9 @@
 Phase: MicroMeasurements
-Input: Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph 
-Options: control=appelt
+Input: Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph PeripheralClearDetails PeripheralClearButCloseDetails DeepClearDetails DeepClearButCloseDetails
+Options: control=all
 
 //Output being listed as 1 long annotation in GATE ? RHS is wrong here and not sure how to divide up?
 // All is fine, need some more inputs to control the length. In the other three examples we used 'Split' and 'Sentence'
-
 
 // Due to having the same names for Stuff in the RHS (Measurement Type/Value/Unit) I think this rule will need to be different from the others. 
 // We can chat about it next time - I've made a card for it
@@ -14,25 +13,16 @@ Rule: MicroMeasurements
 Priority: 100
 // Mirco_thicknessParagraph has no info about length in it. Its more or less a trigger. 
 // DeepClearence is fine (compare this to Mirco_thicknessParagraph to get a better understanding of the above)
-// PeripheralClearance is doubled up, but fine as an input
-// MaxMicroDiameterParagraph should be fine but is missing the Units and Value for some reason. Looking into this
+
 (
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})?	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})	
 ):match
 
 -->
-:match.MicroMeasurementsPreParagraph = { ruleFinal = MicroMeasurements, 
+:match.MicroMeasurementsPreParagraph = { ruleFinal = MicroMeasurements,
 MeasurementType = :match.Micro_thicknessParagraph.MeasurementType,
-MeasurementValue = :match.Micro_thicknessParagraph.MeasurementValue,// Doesn't exist in Micro_thicknessParagraph 
-MeasurementUnit = :match.Micro_thicknessParagraph.MeasurementUnit,// Doesn't exist in Micro_thicknessParagraph
+MeasurementValue = :match.Micro_thicknessParagraph.MeasurementValue,
+MeasurementUnit = :match.Micro_thicknessParagraph.MeasurementUnit,
 MeasurementType = :match.DeepClearance.MeasurementType,
 MeasurementValue = :match.DeepClearance.MeasurementValue,
 MeasurementUnit = :match.DeepClearance.MeasurementUnit,
@@ -48,4 +38,8 @@ DeepClockPosition4 = :match.DeepClearance.DeepClockPosition,
 MeasurementType = :match.MaxMicroDiameterParagraph.MeasurementType,
 MeasurementValue = :match.MaxMicroDiameterParagraph.MeasurementValue,
 MeasurementUnit = :match.MaxMicroDiameterParagraph.MeasurementUnit,
+PeripheralClearButClose = :match.PeripheralClearButCloseDetails.PeripheralClearButClose,
+SupplementalPeripheral = :match.SuppExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
+DeepClear = :match.DeepClearDetails.DeepClear,
+DeepClearButClose = :match.DeepClearButCloseDetails.DeepClearButClose
 }
