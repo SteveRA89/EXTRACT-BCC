@@ -1,9 +1,9 @@
 Phase: TagStartOfSentence
-Input: Micro_thickness GroupedParagraph
+Input: TumourThickness GroupedParagraph
 Options: control=all
 
 /*
- * Micro_thickness is within GroupedParagraph
+ * TumourThickness is within GroupedParagraph
 */
 
 // Now doing nothing as Mirco_thickness now is Just called Measurements
@@ -11,45 +11,45 @@ Options: control=all
 
 Rule: Micro_thicknessParagraph1
 (
-	({Micro_thickness within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+	({TumourThickness within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
 
 ):match
 
 -->
 
 :match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph1,
-rule = :match.Micro_thickness.rule, 
+rule = :match.TumourThickness.rule, 
 MeasurementType = "TumourThickness", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
+MeasurementValue = :match.TumourThickness.MeasurementValue, 
+MeasurementUnit = :match.TumourThickness.MeasurementUnit,
 ParagraphTitle = ClinicalDetails}
 
 Rule: Micro_thicknessParagraph2
 (
-	({Micro_thickness within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+	({TumourThickness within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
 
 ):match
 
 -->
 
 :match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph2,
-rule = :match.Micro_thickness.rule, 
+rule = :match.TumourThickness.rule, 
 MeasurementType = "TumourThickness", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
+MeasurementValue = :match.TumourThickness.MeasurementValue, 
+MeasurementUnit = :match.TumourThickness.MeasurementUnit,
 ParagraphTitle = MacroDescription}
 
 Rule: Micro_thicknessParagraph3
 (
-	({Micro_thickness within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+	({TumourThickness within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
 
 ):match
 
 -->
 
 :match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph3,
-rule = :match.Micro_thickness.rule, 
+rule = :match.TumourThickness.rule, 
 MeasurementType = "TumourThickness", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
+MeasurementValue = :match.TumourThickness.MeasurementValue, 
+MeasurementUnit = :match.TumourThickness.MeasurementUnit,
 ParagraphTitle = Microscopy}
