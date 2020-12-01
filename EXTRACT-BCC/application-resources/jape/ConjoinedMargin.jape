@@ -1,5 +1,5 @@
 Phase: ConjoinedMargins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness TumourThickness DeepClearance PeripheralClearance
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness TumourThickness DeepClearance PeripheralClearance Dimensions
 Options: control=appelt
 
 //10mm deep and 15mm peripheral clearance
@@ -50,22 +50,23 @@ Rule: Micro_thickness1
 Priority:99
 (
     (({Micro_thickness.Position != Post}) //Deep
-    ({Dimension})):match//10mm 
+    ({Dimension})):match //10mm 
 
 ):match1
 -->
 :match.TumourThickness = { rule = Micro_thickness1, MeasurementType = "TumourThickness", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units}
+MeasurementValue = :match.TumourThickness.MeasurementValue, 
+MeasurementUnit = :match.TumourThickness.MeasurementUnit}
 
 Rule: Micro_thickness2
 Priority:99
 (
+
     (({Dimension}) //10mm
     ({Micro_thickness})):match // Deep 
 
 ):match1
 -->
 :match.TumourThickness = { rule = Micro_thickness2, MeasurementType = "TumourThickness", 
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units}
+MeasurementValue = :match.TumourThickness.MeasurementValue, 
+MeasurementUnit = :match.TumourThickness.MeasurementUnit}
