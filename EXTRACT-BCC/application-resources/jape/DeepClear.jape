@@ -2,7 +2,7 @@ Phase: DeepClear
 Input: Clear Micro_deep_margin Split Sentence
 Options: control=appelt
 
-Rule: DeepClear
+Rule: DeepClearYes1
 Priority: 100
 
 (
@@ -10,9 +10,19 @@ Priority: 100
 	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.DeepClearDetails = { rule = DeepClearYes, DeepClear = "Yes"}
+:match.DeepClearDetails = { rule = DeepClearYes1, DeepClear = "Yes"}
 
-Rule: DeepClearNo
+Rule: DeepClearYes2
+Priority: 100
+
+(
+	{Clear.Negation == Affirmed}
+    {Micro_deep_margin}
+):match
+-->
+:match.DeepClearDetails = { rule = DeepClearYes2, DeepClear = "Yes"}
+
+Rule: DeepClearNo1
 Priority: 100
 
 (
@@ -20,4 +30,14 @@ Priority: 100
 	{Clear.Negation == Negated}
 ):match
 -->
-:match.DeepClearDetails = { rule = DeepClearNo, DeepClear = "No"}
+:match.DeepClearDetails = { rule = DeepClearNo1, DeepClear = "No"}
+
+Rule: DeepClearNo2
+Priority: 100
+
+(
+	{Clear.Negation == Negated}
+    {Micro_deep_margin}
+):match
+-->
+:match.DeepClearDetails = { rule = DeepClearNo2, DeepClear = "No"}
