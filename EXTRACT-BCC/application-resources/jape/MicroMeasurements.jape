@@ -2,13 +2,6 @@ Phase: MicroMeasurements
 Input: Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph PeripheralClearDetails PeripheralClearButCloseDetails DeepClearDetails DeepClearButCloseDetails
 Options: control=all
 
-//Output being listed as 1 long annotation in GATE ? RHS is wrong here and not sure how to divide up?
-// All is fine, need some more inputs to control the length. In the other three examples we used 'Split' and 'Sentence'
-
-// Due to having the same names for Stuff in the RHS (Measurement Type/Value/Unit) I think this rule will need to be different from the others. 
-// We can chat about it next time - I've made a card for it
-
-
 Rule: MicroMeasurements
 Priority: 100
 // Mirco_thicknessParagraph has no info about length in it. Its more or less a trigger. 
@@ -26,21 +19,24 @@ MeasurementUnit = :match.Micro_thicknessParagraph.MeasurementUnit,
 MeasurementType = :match.DeepClearance.MeasurementType,
 MeasurementValue = :match.DeepClearance.MeasurementValue,
 MeasurementUnit = :match.DeepClearance.MeasurementUnit,
-MeasurementType = :match.PeripheralClearance.PeripheralClearance,
+MeasurementType = :match.PeripheralClearance.MeasurementType,
+MeasurementValue = :match.PeripheralClearance.MeasurementValue,
+MeasurementUnit = :match.PeripheralClearance.MeasurementUnit,
 PeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
-PeripheralClockPosition2 = :match.PeripheralClearance.SecondMultiplePeripheral,
-PeripheralClockPosition3 = :match.PeripheralClearance.ThirdMultiplePeripheral,
-PeripheralClockPosition4 = :match.PeripheralClearance.FourthMultiplePeripheral,
+PeripheralClockPosition2 = :match.PeripheralClearance.PeripheralClockPosition2,
+PeripheralClockPosition3 = :match.PeripheralClearance.PeripheralClockPosition3,
+PeripheralClockPosition4 = :match.PeripheralClearance.PeripheralClockPosition4,
 DeepClockPosition = :match.DeepClearance.DeepClockPosition,
-DeepClockPosition2 = :match.DeepClearance.DeepClockPosition,
-DeepClockPosition3 = :match.DeepClearance.DeepClockPosition,
-DeepClockPosition4 = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition2 = :match.DeepClearance.DeepClockPosition2,
+DeepClockPosition3 = :match.DeepClearance.DeepClockPosition3,
+DeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
 MeasurementType = :match.MaxMicroDiameterParagraph.MeasurementType,
 MeasurementValue = :match.MaxMicroDiameterParagraph.MeasurementValue,
 MeasurementUnit = :match.MaxMicroDiameterParagraph.MeasurementUnit,
 PeripheralClear = :match.PeripheralClearDetails.PeripheralClear,
 PeripheralClearButClose = :match.PeripheralClearButCloseDetails.PeripheralClearButClose,
-SupplementalPeripheral = :match.SuppExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
 DeepClear = :match.DeepClearDetails.DeepClear,
 DeepClearButClose = :match.DeepClearButCloseDetails.DeepClearButClose
 }
+
+//need to add in multiple peripheral... 
