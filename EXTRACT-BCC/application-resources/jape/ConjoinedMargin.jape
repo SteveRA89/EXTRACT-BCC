@@ -55,8 +55,8 @@ Priority:99
 ):match1
 -->
 :match.TumourThickness = { rule = Micro_thickness1, MeasurementType = "TumourThickness", 
-MeasurementValue = :match.TumourThickness.MeasurementValue, 
-MeasurementUnit = :match.TumourThickness.MeasurementUnit}
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units}
 
 Rule: Micro_thickness2
 Priority:99
@@ -68,5 +68,5 @@ Priority:99
 ):match1
 -->
 :match.TumourThickness = { rule = Micro_thickness2, MeasurementType = "TumourThickness", 
-MeasurementValue = :match.TumourThickness.MeasurementValue, 
-MeasurementUnit = :match.TumourThickness.MeasurementUnit}
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units}
