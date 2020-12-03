@@ -1,11 +1,13 @@
 Phase: ClockFace
-Input: Numeric Token Split Clock
+Input: Numeric Token Split Sentence Clock Micro_peripheral_margin Micro_deep_margin Dimension MarginWordDistances NewLine
 Options: control=appelt
 
 Rule: ClockFace
 (
+    ({Token.string == "("})?
 	({Numeric.value < 13, Numeric.value > 0})
     ({Clock})
+    ({Token.string == ")"})?
 
 ):match
 -->
@@ -13,12 +15,130 @@ Rule: ClockFace
 
 Rule: ClockFaceRange
 (
+    ({Token.string == "("})?
     ({Numeric.value < 13, Numeric.value > 0}):T1
     ({Token.string == "to"}|{Token.string == "-"})
 	({Numeric.value < 13, Numeric.value > 0}):T2
     ({Clock})
+    ({Token.string == ")"})?
 
 ):match
 -->
 :match.ClockFace = { rule = ClockFaceRange, time = :T1.Numeric.value,
 time2 = :T2.Numeric.value}
+
+Rule: SecondClockFace1
+(
+    ({Token.string == "("})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"})
+    ({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Clock})
+    ({Token.string == ")"})?
+
+):match
+-->
+:match.ClockFace = { rule = SecondClockFace1, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value}
+
+Rule: SecondClockFace2
+(
+    ({Token.string == "("})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Clock})
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"})
+    ({Clock})?
+    ({Micro_peripheral_margin}|{Micro_deep_margin})?
+    ({Dimension}|{MarginWordDistances})?
+    ({NewLine})?
+    ({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Clock})
+    ({Token.string == ")"})?
+
+):match
+-->
+:match.ClockFace = { rule = SecondClockFace2, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value}
+
+Rule: ThirdClockFace1
+(
+    ({Token.string == "("})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T3
+    ({Clock})
+    ({Token.string == ")"})?
+
+):match
+-->
+:match.ClockFace = { rule = ThirdClockFace1, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value,
+time3 = :T3.Numeric.value}
+
+//Current problem
+
+Rule: ThirdClockFace2
+(
+    ({Token.string == "("})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Clock})?
+    ({Micro_peripheral_margin}|{Micro_deep_margin})?
+    ({Dimension}|{MarginWordDistances})?
+    ({NewLine})?
+    ({Numeric.value < 13, Numeric.value > 0}):T3
+    ({Clock})
+    ({Token.string == ")"})?
+
+):match
+-->
+:match.ClockFace = { rule = ThirdClockFace2, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value,
+time3 = :T3.Numeric.value}
+
+Rule: FourthClockFace1
+(
+    ({Token.string == "("})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T3
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T4
+    ({Clock})
+    ({Token.string == ")"})?
+
+):match
+-->
+:match.ClockFace = { rule = FourthClockFace1, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value,
+time3 = :T3.Numeric.value,
+time4 = :T4.Numeric.value}
+
+Rule: FourthClockFace2
+(
+    ({Token.string == "("})?
+    ({Numeric.value < 13, Numeric.value > 0}):T1
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T2
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T3
+    ({Token.string == "+"}|{Token.string == "&"}|{Token.string == "and"}|{Token.string == ","})
+    ({Numeric.value < 13, Numeric.value > 0}):T4
+    ({Clock})?
+    ({Micro_peripheral_margin}|{Micro_deep_margin})?
+    ({Dimension}|{MarginWordDistances})?
+    ({NewLine})?
+    ({Clock})
+    ({Token.string == ")"})?
+
+):match
+-->
+:match.ClockFace = { rule = FourthClockFace2, time = :T1.Numeric.value,
+time2 = :T2.Numeric.value,
+time3 = :T3.Numeric.value,
+time4 = :T4.Numeric.value}
