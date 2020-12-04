@@ -1,0 +1,35 @@
+Phase: Clearance
+Input: Dimension Split Sentence ClockFace DeepClearance PeripheralClearance Dimensions
+Options: control=appelt
+
+Rule: PeripheralClearance
+Priority:100
+(
+    ({Clearance.MeasurementType == "PeripheralClearance"})
+
+):match
+-->
+:match.PeripheralClearance = { rule = PeripheralClearance, 
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time,
+PeripheralClockPosition2 = :match.ClockFace.time2,
+PeripheralClockPosition3 = :match.ClockFace.time3,
+PeripheralClockPosition4 = :match.ClockFace.time4}
+
+Rule: DeepClearance
+Priority:100
+(
+    ({Clearance.MeasurementType == "PeripheralClearance"})
+
+):match
+-->
+:match.DeepClearance = { rule = DeepClearance, 
+MeasurementType = "DeepClearance", 
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units,
+DeepClockPosition = :match.ClockFace.time,
+DeepClockPosition2 = :match.ClockFace.time2,
+DeepClockPosition3 = :match.ClockFace.time3,
+DeepClockPosition4 = :match.ClockFace.time4}

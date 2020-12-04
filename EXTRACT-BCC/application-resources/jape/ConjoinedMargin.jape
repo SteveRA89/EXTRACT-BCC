@@ -11,15 +11,15 @@ Priority:100
     ({Micro_thickness})//Deep, thick 
     ({Separator})?
     ({ClockFace})?):match1
-    ({PeripheralClearance.MeasurementType == "PeripheralClearance"})//15mm lateral clearance (12 o'clock?)
+    ({Clearance.MeasurementType == "PeripheralClearance"})//15mm lateral clearance (12 o'clock?)
 
 ):match
 -->
-:match1.DeepClearance = { rule = ConjoinedMarginsDeep, 
+:match1.Clearance = { rule = ConjoinedMarginsDeep, 
 MeasurementType = "DeepClearance", 
 MeasurementValue = :match1.Dimension.N1, 
 MeasurementUnit = :match1.Dimension.units,
-DeepClockPosition = :match1.PeripheralClearance.PeripheralClockPosition,
+DeepClockPosition = :match1.Clearance.PeripheralClockPosition,
 DeepClockPosition = :match1.ClockFace.time}
 
 //10mm peripheral and 15mm deep clearance
@@ -31,15 +31,15 @@ Priority:100
     ({Micro_peripheral_margin_maybe}) //Lateral 
     ({Separator})?
     ({ClockFace})?):match1
-    ({DeepClearance.MeasurementType == "DeepClearance"}) //Deep Margin
+    ({Clearance.MeasurementType == "DeepClearance"}) //Deep Margin
 
 ):match
 -->
-:match1.PeripheralClearance = { rule = ConjoinedMarginsPeripheral, 
+:match1.Clearance = { rule = ConjoinedMarginsPeripheral, 
 MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match1.Dimension.N1, 
 MeasurementUnit = :match1.Dimension.units,
-PeripheralClockPosition = :match1.DeepClearance.DeepClockPosition,
+PeripheralClockPosition = :match1.Clearance.DeepClockPosition,
 PeripheralClockPosition = :match1.ClockFace.time}
 
 //Thickness and conjoined in this rule so that thickness is not picked up as deep margin - priority set so deep clearance longest match to differentiate
