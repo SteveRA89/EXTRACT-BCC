@@ -1,0 +1,56 @@
+Imports: { import static gate.Utils.*;
+            import java.util.*; }
+
+Phase: ClockFaceContainsClearance
+Input: ClockFace Clearance Tag TagSentence
+Options: control=all
+
+Rule: ClockFaceContainsClearanceWithTag
+(
+	({ClockFace contains Clearance}):tag
+):match
+-->
+:match { 
+    AnnotationSet contAnnots = getContainedAnnotations(inputAS, matchAnnots, "Clearance");//Create the annotation set for Clearance
+    List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);//Create list of all the possible annotations (some sentences contain two annotations for PreTag)
+    int length = contList.size();//how many items in the list
+    for (int i = 0; i < length; i++) {//loop around the number of items in the list
+        Annotation firstMicroMeasurements = contList.get(i);//get the ith Annotation for the list
+        FeatureMap fmMicroMeasurements = firstMicroMeasurements.getFeatures();//getFeatures from Clearance
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+        newAnnFeatures.putAll(fmMicroMeasurements);//copy from Clearance
+        String tagString = getOnlyAnn(bindings.get("tag")).getFeatures().get("Tag").toString();//getting Tag from Tag
+        newAnnFeatures.put("Tag", tagString); //Adding tag to feature map (tag is a string - may cause problems when Tag something like '1)' or '2.')
+        String tokenStartString = newAnnFeatures.get("tokenStart").toString();//start of Clearance
+        Long tokenStart = Long.parseLong(tokenStartString);//String to Long
+        String tokenEndString = newAnnFeatures.get("tokenEnd").toString();//End of Clearance
+        Long tokenEnd = Long.parseLong(tokenEndString);//String to Long
+        newAnnFeatures.remove("tokenStart");//remove tokenStart from annotations
+        newAnnFeatures.remove("tokenEnd");//remove tokenEnd from annotations
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");//Adding to Bio Annotataion Set
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "MicroMeasurements", newAnnFeatures);//Creating annotation outputs for ClinicalDetails
+    }
+}
+//TO DO rule where no tag sentence is needed Clearance notWithin TagSentence -> copy all features.
+//Done below
+
+
+Rule: ClockFaceContainsClearanceWithoutTag
+(
+	({ClockFace contains Clearance}):tag
+):match
+-->
+:match { 
+    Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+	FeatureMap noTagFM = Factory.newFeatureMap();//create new featuremap
+	noTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+	noTagFM.put("ruleFinal", "MicroMeasurementsNoTag");//add rule name
+    String tokenStartString = noTagFM.get("tokenStart").toString();//start of Clearance
+    Long tokenStart = Long.parseLong(tokenStartString);//String to Long
+    String tokenEndString = noTagFM.get("tokenEnd").toString();//End of Clearance
+    Long tokenEnd = Long.parseLong(tokenEndString);//String to Long
+    noTagFM.remove("tokenStart");//remove tokenStart from annotations
+    noTagFM.remove("tokenEnd");//remove tokenEnd from annotations
+	AnnotationSet defaultSet = doc.getAnnotations("Bio");//select annotaions set to go into
+	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "MicroMeasurements", noTagFM);//create the annotation
+}
