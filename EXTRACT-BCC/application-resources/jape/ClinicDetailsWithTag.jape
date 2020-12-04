@@ -19,7 +19,7 @@ Rule: ClinicalDetailsWithTag
     List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);//Create list of all the possible annotations (some sentences contain two annotations for PreTag)
     int length = contList.size();//how many items in the list
     for (int i = 0; i < length; i++) {//loop around the number of items in the list
-        Annotation firstClinicDetails = contList.get(i);//get the ith Annotation for the list
+        Annotation firstClinDetails = contList.get(i);//get the ith Annotation for the list
         FeatureMap fmClinicDetails = firstClinDetails.getFeatures();//getFeatures from ClinicalDetailsPreTag
         FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
         newAnnFeatures.putAll(fmClinicDetails);//copy from ClinicalDetailsPreTag
