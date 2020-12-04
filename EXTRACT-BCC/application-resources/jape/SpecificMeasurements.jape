@@ -3,6 +3,9 @@ Phases:
 
 Margins
 ConjoinedMargin
+ClockFaceContainsClearance
+CleanUpClearance
+Clearance
 //Micro_thickness
 Operative_margin
 MaxMicroDiameter
