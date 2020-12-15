@@ -1,5 +1,5 @@
 Phase: Tag
-Input: Split Tag Diagnosis Token Lesion NewLine SpaceToken
+Input: Split Tag Diagnosis Token Lesion NewLine SpaceToken Ulcerated
 Options: control=appelt
 
 
@@ -24,7 +24,7 @@ Priority: 100
     ({SpaceToken})
 	({Tag.SentenceStart == "False"}):Tag
     ({SpaceToken})
-    ({Lesion})
+    ({Lesion}|{Ulcerated})?
     ({SpaceToken})
 
 ):match

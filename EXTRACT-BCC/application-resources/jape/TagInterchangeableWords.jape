@@ -1,5 +1,5 @@
 Phase: Tag
-Input: Split InterchangeableWordsTag Diagnosis Token Lesion
+Input: Split InterchangeableWordsTag Diagnosis Token Lesion Ulcerated
 Options: control=appelt
 
 
@@ -22,7 +22,7 @@ Priority: 100
 //Superior or Inferior
 (
 	({InterchangeableWordsTag}):Tag
-    ({Lesion})
+    ({Lesion}|{Ulcerated})?
 
 ):match
 -->
