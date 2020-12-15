@@ -1,3 +1,5 @@
-Clear:Negatives=true
-Clear of the:Negatives=true
-Involved:Negatives=false
+Clear:Negatives=false
+Clear of the:Negatives=false
+Negative:Negatives=true
+Involved:Negatives=true
+Positive:Negatives=true

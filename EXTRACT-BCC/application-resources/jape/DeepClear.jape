@@ -10,7 +10,7 @@ Priority: 100
 	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.DeepClearDetails = { rule = DeepClearYes1, DeepClear = "Yes"}
+:match.DeepClearDetails = { rule = DeepClearYes1, DeepClear = "No"}
 
 Rule: DeepClearYes2
 Priority: 100
@@ -20,7 +20,7 @@ Priority: 100
     {Micro_deep_margin}
 ):match
 -->
-:match.DeepClearDetails = { rule = DeepClearYes2, DeepClear = "Yes"}
+:match.DeepClearDetails = { rule = DeepClearYes2, DeepClear = "No"}
 
 Rule: DeepClearNo1
 Priority: 100
@@ -30,7 +30,7 @@ Priority: 100
 	{Clear.Negation == Negated}
 ):match
 -->
-:match.DeepClearDetails = { rule = DeepClearNo1, DeepClear = "No"}
+:match.DeepClearDetails = { rule = DeepClearNo1, DeepClear = "Yes"}
 
 Rule: DeepClearNo2
 Priority: 100
@@ -40,4 +40,4 @@ Priority: 100
     {Micro_deep_margin}
 ):match
 -->
-:match.DeepClearDetails = { rule = DeepClearNo2, DeepClear = "No"}
+:match.DeepClearDetails = { rule = DeepClearNo2, DeepClear = "Yes"}
