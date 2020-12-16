@@ -1,7 +1,6 @@
 Phase: Tag
-Input: Token Split SplitToken Numeric InterchangeableWordsTag CancerDiagnosis
+Input: Split SplitToken Numeric InterchangeableWordsTag CancerDiagnosis Diagnosis Token Lesion Ulcerated 
 Options: control=appelt
-
 
 Rule: TagLetters1
 Priority: 100
@@ -64,3 +63,32 @@ Priority: 100
 ):match
 -->
 :match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
+
+Rule: TagInterchangeableWords1
+Priority: 90
+
+//Superior or Inferior
+(
+    ({Diagnosis})
+	({InterchangeableWordsTag}):Tag
+):match
+-->
+:Tag.Tag = { rule = InterchangeablewordsTag1, 
+value = :Tag.InterchangeableWordsTag@string,
+Tag = :Tag.InterchangeableWordsTag.InterchangeableTag,
+SentenceStart = False} 
+
+Rule: TagInterchangeableWords2
+Priority: 90
+
+//Superior or Inferior
+(
+	({InterchangeableWordsTag}):Tag
+    ({Lesion}|{Ulcerated})?
+
+):match
+-->
+:Tag.Tag = { rule = InterchangeablewordsTag2, 
+value = :Tag.InterchangeableWordsTag@string,
+Tag = :Tag.InterchangeableWordsTag.InterchangeableTag,
+SentenceStart = False}

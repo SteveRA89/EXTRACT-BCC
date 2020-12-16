@@ -1,10 +1,10 @@
 Phase: TagSentences
-Input: Tag  ParagraphTitles Reported_triggers NewLine
+Input: Tag ParagraphTitles Reported_triggers NewLine
 Options: control=all
 
 //Make the tag useful for other rules
 
-Rule: TagSentences
+Rule: TagSentences1
 Priority: 100
 (
 	(({Tag, !Tag.SentenceStart == "False"})
@@ -12,4 +12,13 @@ Priority: 100
     ({Tag}|{Reported_triggers}|{ParagraphTitles})
 ):match
 -->
-:Tag.TagSentence = {rule = TagSentences, Tag = :Tag.Tag.Tag}
+:Tag.TagSentence = {rule = TagSentences1, Tag = :Tag.Tag.Tag}
+
+Rule: TagSentences2
+Priority: 100
+(
+	(({Tag, !Tag.SentenceStart == "False"})
+    ({Tag}|{Reported_triggers}|{ParagraphTitles})*):Tag
+):match
+-->
+:Tag.TagSentence = {rule = TagSentences2, Tag = :Tag.Tag.Tag}
