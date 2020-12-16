@@ -1,5 +1,5 @@
 Phase: MicroDetails
-Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging SuppExcisionTypeOutcomeDetails SupplementalExcisionTypeOutcome Frozen_SectionDetails
+Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging SuppExcisionTypeOutcomeDetails Frozen_SectionDetails
 Options: control=appelt
 
 Rule: MicroDetails
