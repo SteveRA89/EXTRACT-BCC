@@ -1,21 +1,23 @@
 Phase: ConjoinedMargins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator Micro_thickness TumourThickness Clearance Dimensions
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator Micro_thickness TumourThickness Clearance Dimensions NewLine ClinicalDetailMargin
 Options: control=appelt
 
 //10mm deep and 15mm peripheral clearance
 
-Rule: ConjoinedMarginsDeep
+Rule: ConjoinedMarginsDeep1
 Priority:100
 (
     (({Dimension}) //10mm
     ({Micro_thickness})//Deep, thick 
+    ({Separator})?
+    ({NewLine})?
     ({Separator})?
     ({ClockFace})?):match1
     ({Clearance.MeasurementType == "PeripheralClearance"})//15mm lateral clearance (12 o'clock?)
 
 ):match
 -->
-:match1.Clearance = { rule = ConjoinedMarginsDeep, 
+:match1.Clearance = { rule = ConjoinedMarginsDeep1, 
 MeasurementType = "DeepClearance", 
 MeasurementValue = :match1.Dimension.N1, 
 MeasurementUnit = :match1.Dimension.units,
@@ -24,18 +26,20 @@ DeepClockPosition = :match1.ClockFace.time}
 
 //10mm peripheral and 15mm deep clearance
 
-Rule: ConjoinedMarginsPeripheral
+Rule: ConjoinedMarginsPeripheral1
 Priority:100
 (
     (({Dimension})
     ({Micro_peripheral_margin_maybe}) //Lateral 
+    ({Separator})?
+    ({NewLine})?
     ({Separator})?
     ({ClockFace})?):match1
     ({Clearance.MeasurementType == "DeepClearance"}) //Deep Margin
 
 ):match
 -->
-:match1.Clearance = { rule = ConjoinedMarginsPeripheral, 
+:match1.Clearance = { rule = ConjoinedMarginsPeripheral1, 
 MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match1.Dimension.N1, 
 MeasurementUnit = :match1.Dimension.units,

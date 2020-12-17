@@ -1,0 +1,77 @@
+Phase: ConjoinedMargins
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator TumourThickness Clearance Dimensions NewLine ClinicalDetailMargin
+Options: control=all
+
+//Margins. Deep 5mm. Peripheral 6mm. Picking up deep 5mm.
+
+Rule: ConjoinedMarginsDeep2
+Priority:100
+(
+    ({ClinicalDetailMargin})//Margins
+    ({Separator})?//:
+    (({Micro_deep_margin})//Deep, thick 
+    ({Dimension})):match1 //5mm
+    ({Micro_peripheral_margin_maybe}) //Lateral 
+
+):match
+-->
+:match1.Clearance = { rule = ConjoinedMarginsDeep2, 
+MeasurementType = "DeepClearance", 
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units}
+
+//Margins. Deep 5mm. Peripheral 6mm. Picking up peripheral 6mm.
+
+Rule: ConjoinedMarginsDeep2
+Priority:100
+(
+    ({ClinicalDetailMargin})//Margins
+    ({Separator})?//:
+    ({Micro_deep_margin})//Deep, thick
+    (({Dimension})//5mm
+    ({Micro_peripheral_margin_maybe})):match1 //Peripheral 
+
+):match
+-->
+:match1.Clearance = { rule = ConjoinedMarginsPeripheral2, 
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units}
+
+//Margins. Peripheral 6mm. Deep 5mm. Picking up peripheral 6mm.
+
+Rule: ConjoinedMarginsPeripheral2
+Priority:100
+(
+    ({ClinicalDetailMargin})//Margins
+    ({Separator})?//:
+    (({Micro_peripheral_margin_maybe})//Peripheral 
+    ({Dimension})):match1 //5mm
+    ({Micro_deep_margin})//Deep, thick
+    
+):match
+-->
+:match1.Clearance = { rule = ConjoinedMarginsPeripheral2, 
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units}
+
+//Margins. Peripheral 6mm. Deep 5mm. Picking up deep 5mm.
+
+Rule: ConjoinedMarginsDeep3
+Priority:100
+(
+    ({ClinicalDetailMargin})//Margins
+    ({Separator})?//:
+    ({Micro_peripheral_margin_maybe})//Peripheral 
+    ({Dimension})//6mm
+    (({Micro_deep_margin})//Deep, thick
+    ({Dimension})):match1 //5mm
+
+):match
+-->
+:match1.Clearance = { rule = ConjoinedMarginsDeep3, 
+MeasurementType = "DeepClearance", 
+MeasurementValue = :match1.Dimension.N1, 
+MeasurementUnit = :match1.Dimension.units}
+

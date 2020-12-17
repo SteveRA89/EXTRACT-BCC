@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension Sentence MarginWordDistances ClockFace NewLine Separator Micro_thickness Micro_deep_margin Micro_peripheral_margin
+Input: Dimension Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_deep_margin Micro_peripheral_margin
 Options: control=appelt
 
 //Need to change conjoined margin and MicroMeasurements with same changes 

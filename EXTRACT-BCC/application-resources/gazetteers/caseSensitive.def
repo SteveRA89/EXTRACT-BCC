@@ -1,2 +1,4 @@
 charities.lst:organization:charity::Lookup2
 CaseSensitiveDiagnosis.lst::::Diagnosis
+Thickness.lst::::Micro_thickness
+Micro deep margin.lst:DeepClearance:::Micro_deep_margin

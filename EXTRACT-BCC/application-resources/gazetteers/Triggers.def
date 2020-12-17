@@ -9,9 +9,7 @@ coincide.lst:coincide:coincide::Coincide
 patient_history.lst:person:history::History
 eventModifiers.lst:modifier:::Lookup2
 Health_Condition.lst:health_condition:symptoms::Lookup2
-Micro deep margin.lst:DeepClearance:::Micro_deep_margin
 Micro peripheral margin.lst:PeripheralClearance:::Micro_peripheral_margin
-Thickness.lst::::Micro_thickness
 ClinicalDetailMargin.lst::::ClinicalDetailMargin
 o'clock.lst::::Clock
 MarginWordDistances.lst::::MarginWordDistances
