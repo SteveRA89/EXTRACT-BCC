@@ -2,7 +2,8 @@ MultiPhase: SpecificMeasurements
 Phases:
 
 Margins
-ConjoinedMargin
+ConjoinedMargin //Contains micro thickness
+MatrixConjoinedMargins
 ClockFaceContainsClearance
 CleanUpClearance
 Clearance
