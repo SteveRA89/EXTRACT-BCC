@@ -11,7 +11,7 @@ Priority:100
 
 ):match
 -->
-:match.MaxMicroDiameter = { rule = MaxMicroDiameter1, MeasurementType = "MaxDiameter", 
+:match.MaxMicroDiameter = { rule = MaxMicroDiameter1, MeasurementType = "Diameter", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units}
 
@@ -23,6 +23,6 @@ Priority:100
 
 ):match
 -->
-:match.MaxMicroDiameter = { rule = MaxMicroDiameter2, MeasurementType = "MaxDiameter", 
+:match.MaxMicroDiameter = { rule = MaxMicroDiameter2, MeasurementType = "Diameter", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units}
