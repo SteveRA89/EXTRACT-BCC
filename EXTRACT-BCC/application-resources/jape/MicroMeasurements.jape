@@ -1,5 +1,5 @@
 Phase: MicroMeasurements
-Input: Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph PeripheralClearDetails PeripheralClearButCloseDetails DeepClearDetails DeepClearButCloseDetails
+Input: Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph
 Options: control=all
 
 Rule: MicroMeasurements
@@ -8,7 +8,7 @@ Priority: 100
 // DeepClearence is fine (compare this to Mirco_thicknessParagraph to get a better understanding of the above)
 
 (
-({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})	
+({Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph})
 ):match
 
 -->
@@ -33,10 +33,6 @@ DeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
 MeasurementType = :match.MaxMicroDiameterParagraph.MeasurementType,
 MeasurementValue = :match.MaxMicroDiameterParagraph.MeasurementValue,
 MeasurementUnit = :match.MaxMicroDiameterParagraph.MeasurementUnit,
-PeripheralClear = :match.PeripheralClearDetails.PeripheralClear,
-PeripheralClearButClose = :match.PeripheralClearButCloseDetails.PeripheralClearButClose,
-DeepClear = :match.DeepClearDetails.DeepClear,
-DeepClearButClose = :match.DeepClearButCloseDetails.DeepClearButClose
 }
 
 //need to add in multiple peripheral... 

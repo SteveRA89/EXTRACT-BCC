@@ -1,20 +1,20 @@
 Phase: MicroDetails
-Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging SuppDeepExcisionTypeOutcomeDetails SuppPeripheralExcisionTypeOutcomeDetails Frozen_SectionDetails
+Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion Staging SuppDeepExcisionTypeOutcomeDetails SuppPeripheralExcisionTypeOutcomeDetails Frozen_SectionDetails PeripheralClearDetails PeripheralClearButCloseDetails DeepClearDetails DeepClearButCloseDetails
 Options: control=appelt
 
 Rule: MicroDetails
 Priority: 100
 
 (
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
-({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{Staging}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails})?	
 ):match
 
 -->
@@ -38,5 +38,9 @@ ClarkLevel = :match.ClarkInvasion.ClarkLevel,
 Stage = :match.Staging.BCCStage,
 SupplementalPeripheral = :match.SuppPeripheralExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
 SupplementalDeep = :match.SuppDeepExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
-FrozenSectionOutcome = :match.Frozen_SectionDetails.Frozen_Section
+FrozenSectionOutcome = :match.Frozen_SectionDetails.Frozen_Section,
+PeripheralClear = :match.PeripheralClearDetails.PeripheralClear,
+PeripheralClearButClose = :match.PeripheralClearButCloseDetails.PeripheralClearButClose,
+DeepClear = :match.DeepClearDetails.DeepClear,
+DeepClearButClose = :match.DeepClearButCloseDetails.DeepClearButClose
 }
