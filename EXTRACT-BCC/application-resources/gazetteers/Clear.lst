@@ -2,4 +2,5 @@ Clear:Negatives=false
 Clear of the:Negatives=false
 Negative:Negatives=true
 Involved:Negatives=true
+Involves:Negatives=true
 Positive:Negatives=true
