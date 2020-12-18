@@ -8,7 +8,7 @@ Rule: ConjoinedMarginsDeep1
 Priority:100
 (
     (({Dimension}) //10mm
-    ({Micro_thickness})//Deep, thick 
+    ({Micro_deep_margin})//Deep, thick 
     ({Separator})?
     ({NewLine})?
     ({Separator})?
