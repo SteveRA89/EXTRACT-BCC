@@ -51,3 +51,5 @@ LevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
 ClarkLevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
 ClinicalDetailCleaningTrigger.lst::::ClinicalDetailCleaningTrigger
 BCCClassLinkTerms.lst::::BCCClassLinkTerms
+Thickness.lst::::Micro_thickness
+Micro deep margin.lst:DeepClearance:::Micro_deep_margin
