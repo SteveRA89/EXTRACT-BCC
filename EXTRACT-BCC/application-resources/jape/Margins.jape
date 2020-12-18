@@ -2,8 +2,6 @@ Phase: Margins
 Input: Dimension Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_deep_margin Micro_peripheral_margin
 Options: control=appelt
 
-//Need to change conjoined margin and MicroMeasurements with same changes 
-
 Rule: Margin1
 Priority:100
 (
@@ -114,6 +112,30 @@ Priority:100
 ):match
 -->
 :match.Clearance = { rule = Margin6, MeasurementType = :match.Micro_peripheral_margin.majorType,
+MeasurementType = :match.Micro_deep_margin.majorType, 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ClockPosition = :match.ClockFace.time,
+ClockPosition2 = :match.ClockFace.time2,
+ClockPosition3 = :match.ClockFace.time3,
+ClockPosition4 = :match.ClockFace.time4}
+
+//Lateral margin is at 9 o'clock (blue inked) by 4mm
+
+Rule: Margin7
+Priority:100
+(
+    ({ClockFace})? //  9 o'clock
+    ({Separator})? // (
+    (({Micro_deep_margin})|({Micro_peripheral_margin})) // blue inked
+    ({Separator})? // )
+    (({Dimension})|({MarginWordDistances}))// 4mm
+
+):match
+-->
+:match.Clearance = { rule = Margin7, MeasurementType = :match.Micro_peripheral_margin.majorType,
 MeasurementType = :match.Micro_deep_margin.majorType, 
 MeasurementValue = :match.MarginWordDistances.Value,
 MeasurementUnit = "mm",
