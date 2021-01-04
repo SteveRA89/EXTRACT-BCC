@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_deep_margin Micro_peripheral_margin
+Input: Dimension Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_deep_margin Micro_peripheral_margin NewLine
 Options: control=appelt
 
 Rule: Margin1

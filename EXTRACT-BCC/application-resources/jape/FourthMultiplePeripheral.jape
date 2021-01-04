@@ -1,26 +1,34 @@
-Phase: MultiplePeripheral
-Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Sepatator
+Phase: FourthMultiplePeripheral
+Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator
 Options: control=appelt
+
+//Distance to 12 o'clock   > 2mm.
+//3 o'clock     3mm.
+//6 o'clock   > 2mm.
+//9 o'clock     0mm.
 
 Rule: FourthMultiplePeripheral
 Priority:100
 (
     ({DeepClearance.MeasurementType == DeepClearance})
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
-    ({PeripheralClearance.MeasurementType == PeripheralClearance})
-    ({Sepatator})?
-    ({NewLine})?
-    ({PeripheralClearance.MeasurementType == PeripheralClearance})
-    ({Sepatator})?
-    ({NewLine})?
-    ({PeripheralClearance.MeasurementType == PeripheralClearance})
-    ({Sepatator})?
-    ({NewLine})?
-    (({Distance_to})
+    ({Distance_to})
     ({ClockFace})
+    ({Dimension}) 
+    ({Separator})?
+    ({NewLine})?
+    ({ClockFace})
+    ({Dimension}) 
+    ({Separator})?
+    ({NewLine})?
+    ({ClockFace})
+    ({Dimension}) 
+    ({Separator})?
+    ({NewLine})?
+    (({ClockFace})
     ({Dimension})):match
 
 ):match1
@@ -33,27 +41,78 @@ PeripheralClockPosition = :match.ClockFace.time}
 Rule: FourthMultiplePeripheral2
 Priority:100
 (
-    (({Distance_to})
+    ({Distance_to})
     ({ClockFace})
+    ({Dimension})
+    ({Separator})?
+    ({NewLine})?
+    ({ClockFace})
+    ({Dimension})
+    ({Separator})?
+    ({NewLine})?
+    ({ClockFace})
+    ({Dimension})
+    ({Separator})?
+    ({NewLine})?
+    (({ClockFace})
     ({Dimension})):match
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
-    ({PeripheralClearance.MeasurementType == PeripheralClearance})
-    ({Sepatator})?
-    ({NewLine})?
-    ({PeripheralClearance.MeasurementType == PeripheralClearance})
-    ({Sepatator})?
-    ({NewLine})?
-    ({PeripheralClearance.MeasurementType == PeripheralClearance})
-    ({Sepatator})?
-    ({NewLine})?
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
     ({DeepClearance.MeasurementType == DeepClearance})
 
 ):match1
 -->
 :match.PeripheralClearance = { rule = FourthMultiplePeripheral2, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: FourthMultiplePeripheral3
+Priority:100
+(
+    ({PeripheralClearance})
+    ({Separator})?
+    ({ClockFace})
+    ({Dimension})
+    ({Separator})?
+    ({ClockFace})
+    ({Dimension})
+    ({Separator})?
+    ({ClockFace})
+    ({Dimension})
+    ({Separator})?
+    (({ClockFace})
+    ({Dimension})):match
+
+):match1
+-->
+:match.PeripheralClearance = { rule = FourthMultiplePeripheral3, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: FourthMultiplePeripheral4
+Priority:100
+(
+    ({PeripheralClearance})
+    ({Separator})?
+    ({Dimension})
+    ({ClockFace})
+    ({Separator})?
+    ({Dimension})
+    ({ClockFace})
+    ({Separator})?
+    ({Dimension})
+    ({ClockFace})
+    ({Separator})?
+    (({Dimension})
+    ({ClockFace})):match
+
+):match1
+-->
+:match.PeripheralClearance = { rule = FourthMultiplePeripheral4 MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}

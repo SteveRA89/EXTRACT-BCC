@@ -1,5 +1,5 @@
 Phase: MultiplePeripheral
-Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Sepatator
+Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator
 Options: control=appelt
 
 
@@ -7,9 +7,9 @@ Rule: MultiplePeripheral
 Priority:100
 (
     ({DeepClearance.MeasurementType == DeepClearance})
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
     (({Distance_to})
     ({ClockFace})
@@ -28,9 +28,9 @@ Priority:100
     (({Distance_to})
     ({ClockFace})
     ({Dimension})):match
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
-    ({Sepatator})?
+    ({Separator})?
     ({NewLine})?
     ({DeepClearance.MeasurementType == DeepClearance})
 
