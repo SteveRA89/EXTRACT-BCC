@@ -32,8 +32,8 @@ Bone:CUI=C0262950:DeepMargin=Bone
 Outer table:CUI=C0262950:DeepMargin=Bone
 Diploic space:CUI=C0262950:DeepMargin=Bone
 Inner table:CUI=C0262950:DeepMargin=Bone
-Cortex table:CUI=C0262950:DeepMargin=Bone
-Medulla table:CUI=C0262950:DeepMargin=Bone
+Cortex:CUI=C0262950:DeepMargin=Bone
+Medulla:CUI=C0262950:DeepMargin=Bone
 Cartilage:CUI=C0007301:DeepMargin=Cartilage
 Perichondrium:CUI=C0225361:DeepMargin=Perichondrium
 Perichondrial:CUI=C0225361:DeepMargin=Perichondrium

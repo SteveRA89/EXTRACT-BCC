@@ -8,6 +8,7 @@ Involving:Negatives=true
 Involved:Negatives=true
 Involved with:Negatives=true
 Extending into:Negatives=true
+Extending to:Negatives=true
 Extension:Negatives=true
 Extension into:Negatives=true
 Tethered to:Negatives=true
@@ -23,3 +24,5 @@ Abuts but does not invade:Negatives=false
 Abuts but not invading:Negatives=false
 Abutts but does not invade:Negatives=false
 Abutts but not invading:Negatives=false
+Within:Negatives=true
+
