@@ -2,6 +2,9 @@ Phase: Margins
 Input: Dimension Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_deep_margin Micro_peripheral_margin NewLine
 Options: control=appelt
 
+// Currently when there are multiple ClockFaces - will only be read when "and" used. If a "separator" is used this will block the next part of the sentence 
+//e.g. Deep margin 0mm 3 o'clock and 4 o'clock will be picked up but Deep margin 0mm 3 o'clock, 4 o'clock will not
+
 Rule: Margin1
 Priority:100
 (

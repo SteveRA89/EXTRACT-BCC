@@ -2,6 +2,8 @@ Phase: MultiplePeripheral
 Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator
 Options: control=appelt
 
+//There is currently not deep margin equvialent of this rule as not examples seen in training set and unlikely (IMO) to come up, but may need to add in version 2.0 if instances +++
+
 
 Rule: MultiplePeripheral
 Priority:100

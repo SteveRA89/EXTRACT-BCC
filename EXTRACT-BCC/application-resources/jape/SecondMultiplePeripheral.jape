@@ -6,6 +6,13 @@ Options: control=appelt
 //Distance to 12 o'clock   > 2mm.
 //3 o'clock     3mm.
 
+//OR
+
+//Deep margin = 4mm
+//Distance to 12 o'clock = 10mm
+//Distance to 3 o'clock = >2mm
+//Distance to 6 o'clock = 8mm
+
 Rule: SecondMultiplePeripheral
 Priority:100
 (
@@ -14,11 +21,12 @@ Priority:100
     ({NewLine})?
     ({Separator})?
     ({NewLine})?
-    ({Distance_to})
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension}) 
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     (({ClockFace})
     ({Dimension})):match
 
@@ -32,11 +40,12 @@ PeripheralClockPosition = :match.ClockFace.time}
 Rule: SecondMultiplePeripheral2
 Priority:100
 (
-    ({Distance_to})
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension})
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     (({ClockFace})
     ({Dimension})):match
     ({Separator})?

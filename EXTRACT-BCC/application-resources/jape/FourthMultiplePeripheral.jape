@@ -7,6 +7,14 @@ Options: control=appelt
 //6 o'clock   > 2mm.
 //9 o'clock     0mm.
 
+//OR
+
+ //Deep margin = 4mm
+ //Distance to 12 o'clock = 10mm
+ //Distance to 3 o'clock = >2mm
+ //Distance to 6 o'clock = 8mm
+ //Distance to 9 o'clock = >2mm
+
 Rule: FourthMultiplePeripheral
 Priority:100
 (
@@ -15,19 +23,22 @@ Priority:100
     ({NewLine})?
     ({Separator})?
     ({NewLine})?
-    ({Distance_to})
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension}) 
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension}) 
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension}) 
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     (({ClockFace})
     ({Dimension})):match
 
@@ -41,23 +52,27 @@ PeripheralClockPosition = :match.ClockFace.time}
 Rule: FourthMultiplePeripheral2
 Priority:100
 (
-    ({Distance_to})
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension})
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension})
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     ({ClockFace})
     ({Dimension})
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     (({ClockFace})
     ({Dimension})):match
     ({Separator})?
     ({NewLine})?
+    ({Distance_to})?
     ({Separator})?
     ({NewLine})?
     ({DeepClearance.MeasurementType == DeepClearance})
