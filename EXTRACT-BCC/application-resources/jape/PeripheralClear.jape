@@ -1,5 +1,5 @@
 Phase: PeripheralClear
-Input: Clear Micro_peripheral_margin Dimensions
+Input: Clear Micro_peripheral_margin Dimensions Split Sentence Token
 Options: control=appelt
 
 Rule: PeripheralClearYes1

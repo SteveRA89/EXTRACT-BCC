@@ -1,5 +1,5 @@
 Phase: DeepClear
-Input: Clear Micro_deep_margin Split Sentence
+Input: Clear Micro_deep_margin Split Sentence Token
 Options: control=appelt
 
 Rule: DeepClearYes1

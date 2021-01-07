@@ -1,5 +1,5 @@
 Phase: PeripheralClearButClose
-Input: ClearButClose Micro_peripheral_margin Split Sentence
+Input: ClearButClose Micro_peripheral_margin Split Sentence Token
 Options: control=appelt
 
 Rule: PeripheralClearButClose
