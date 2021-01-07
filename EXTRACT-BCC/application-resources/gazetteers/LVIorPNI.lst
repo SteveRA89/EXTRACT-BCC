@@ -1,8 +1,10 @@
 Lymphovascular:LVI=Yes
-Lympho vascular:LVI=Yes 
-Lympho-vascular:LVI=Yes 
+Lympho vascular:LVI=Yes
+Lympho-vascular:LVI=Yes
 LV:LVI=Yes
 Perineural:PNI=Yes
 Peri neural:PNI=Yes
-Peri-neural:PNI=Yes 
+Peri-neural:PNI=Yes
+Peri- neural:PNI=Yes
+Peri -neural:PNI=Yes
 PN:PNI=Yes

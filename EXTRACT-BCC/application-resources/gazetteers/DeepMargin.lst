@@ -9,14 +9,31 @@ Fascial:CUI=C0015641:DeepMargin=Fascia
 Superficial fascia:DeepMargin=SuperficialFascia
 Superficial fascial:DeepMargin=SuperficialFascia
 Subcutaneous tissue:DeepMargin=SuperficialFascia
+Superficial temporal fascia:DeepMargin=SuperficialFascia
 Hypodermis:DeepMargin=SuperficialFascia
 Hypodermal:DeepMargin=SuperficialFascia
 Scarpa's fascia:DeepMargin=SuperficialFascia
 Scarpas fascia:DeepMargin=SuperficialFascia
 Camper's fascia:DeepMargin=SuperficialFascia
 Camper fascia:DeepMargin=SuperficialFascia
+Superficial investing layer:DeepMargin=SuperficialFascia
+Superficial investing layer of cervical fascia:DeepMargin=SuperficialFascia
+Superficial investing layer cervical fascia:DeepMargin=SuperficialFascia
+Superficial layer of cervical fascia:DeepMargin=SuperficialFascia
+Superficial cervical fascia:DeepMargin=SuperficialFascia
 Deep fascia:DeepMargin=DeepFascia
 Deep fascial:DeepMargin=DeepFascia
+Deep temporal fascia:DeepMargin=DeepFascia
+Deep investing layer:DeepMargin=DeepFascia
+Deep investing layer cervical fascia:DeepMargin=DeepFascia
+Deep investing layer of cervical fascia:DeepMargin=DeepFascia
+Deep investing cervical fascia:DeepMargin=DeepFascia
+Deep cervical fascia:DeepMargin=DeepFascia
+Parotido-masseteric fascia:DeepMargin=DeepFascia
+Parotido masseteric fascia:DeepMargin=DeepFascia
+Parotido- masseteric fascia:DeepMargin=DeepFascia
+Parotido -masseteric fascia:DeepMargin=DeepFascia
+Parotid fascia:DeepMargin=DeepFascia
 Galea:CUI=C0225210:DeepMargin=Galea
 Galeal:CUI=C0225210:DeepMargin=Galea
 Galea aponeurotica:CUI=C0225210:DeepMargin=Galea
@@ -24,6 +41,12 @@ Periosteum:CUI=C0031110:DeepMargin=Periosteum
 Periosteal:CUI=C0031110:DeepMargin=Periosteum
 Pericranium:CUI=C0031110:DeepMargin=Periosteum
 Pericranial:CUI=C0031110:DeepMargin=Periosteum
+SMAS:CUI=C1831580:DeepMargin=SMAS
+Superficial musculoaponeurotic system:CUI=C1831580:DeepMargin=SMAS
+Superficial musculo aponeurotic system:CUI=C1831580:DeepMargin=SMAS
+Superficial musculo - aponeurotic system:CUI=C1831580:DeepMargin=SMAS
+Superficial musculo- aponeurotic system:CUI=C1831580:DeepMargin=SMAS
+Superficial musculo -aponeurotic system:CUI=C1831580:DeepMargin=SMAS
 Muscle:CUI=C0026845:DeepMargin=Muscle
 Striated muscle:CUI=C0026845:DeepMargin=Muscle
 Smooth muscle:CUI=C0026845:DeepMargin=Muscle
@@ -31,6 +54,7 @@ Skeletal muscle:CUI=C0026845:DeepMargin=Muscle
 Bone:CUI=C0262950:DeepMargin=Bone
 Outer table:CUI=C0262950:DeepMargin=Bone
 Diploic space:CUI=C0262950:DeepMargin=Bone
+Diploae:CUI=C0262950:DeepMargin=Bone
 Inner table:CUI=C0262950:DeepMargin=Bone
 Cortex:CUI=C0262950:DeepMargin=Bone
 Medulla:CUI=C0262950:DeepMargin=Bone

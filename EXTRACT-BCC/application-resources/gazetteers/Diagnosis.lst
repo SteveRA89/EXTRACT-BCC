@@ -6,13 +6,17 @@ Adenoid cystic carcinoma:CUI=C0346017:CancerType=OtherCancerous
 Adenoid cystic eccrine carcinoma:CUI=C0346017:CancerType=OtherCancerous
 Amelanotic malignant melanoma:CUI=C0206735:CancerType=OtherCancerous
 Amelanotic melanoma:CUI=C0206735:CancerType=OtherCancerous
+Angiofibr -oma:CUI=C0206731:CancerType=OtherBenign
 Angiofibr oma:CUI=C0206731:CancerType=OtherBenign
+Angiofibr- oma:CUI=C0206731:CancerType=OtherBenign
 Angiofibr-oma:CUI=C0206731:CancerType=OtherBenign
 Angiofibroma:CUI=C0206731:CancerType=OtherBenign
 Angiokeratoma:CUI=C0002985:CancerType=OtherBenign
 Angiosarcoma:CUI=C0018923:CancerType=OtherCancerous
 Angiosarcoma:CUI=C0346081:CancerType=OtherCancerous
+Apocrine aden -oma:CUI=C0334345:CancerType=OtherBenign
 Apocrine aden oma:CUI=C0334345:CancerType=OtherBenign
+Apocrine aden- oma:CUI=C0334345:CancerType=OtherBenign
 Apocrine aden-oma:CUI=C0334345:CancerType=OtherBenign
 Apocrine adenocarcinoma:CUI=C0334346:CancerType=OtherCancerous
 Apocrine adenoma:CUI=C0334345:CancerType=OtherBenign
@@ -23,16 +27,24 @@ Balloon cell naevus:CUI=C0334425:CancerType=OtherBenign
 Balloon cell naevus:CUI=C0346097:CancerType=OtherBenign
 Balloon cell nevus:CUI=C0334425:CancerType=OtherBenign
 Balloon cell nevus:CUI=C0346097:CancerType=OtherBenign
+Basal -squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
-Basil-oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basill-oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basilloma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basiloma:CUI=C0007117:BCC=BasalCellCarcinoma
 Basal squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basal- squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal-squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal/squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basalsquamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basil -oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basil- oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basil-oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basill -oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basill- oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basill-oma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basilloma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basiloma:CUI=C0007117:BCC=BasalCellCarcinoma
+Baso -squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Baso squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Baso- squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Baso-squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basosquamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
@@ -42,8 +54,12 @@ Becker naevus:CUI=C0263579:CancerType=OtherBenign
 Becker nevus:CUI=C0263579:CancerType=OtherBenign
 Becker's naevus:CUI=C0263579:CancerType=OtherBenign
 Becker's nevus:CUI=C0263579:CancerType=OtherBenign
+Benign haem -angio -pericyt -oma:CUI=C0334541:CancerType=OtherIntermediate
+Benign haem -angio -pericytoma:CUI=C0334541:CancerType=OtherIntermediate
 Benign haem angio pericyt oma:CUI=C0334541:CancerType=OtherIntermediate
 Benign haem angio pericytoma:CUI=C0334541:CancerType=OtherIntermediate
+Benign haem- angio- pericyt- oma:CUI=C0334541:CancerType=OtherIntermediate
+Benign haem- angio- pericytoma:CUI=C0334541:CancerType=OtherIntermediate
 Benign haem-angio-pericyt-oma:CUI=C0334541:CancerType=OtherIntermediate
 Benign haem-angio-pericytoma:CUI=C0334541:CancerType=OtherIntermediate
 Benign haemangiopericytoma:CUI=C0334541:CancerType=OtherIntermediate
@@ -52,64 +68,94 @@ Benign melanocytic nevus:CUI=C0027962:CancerType=OtherBenign
 Blue naevus:CUI=C0206736:CancerType=OtherBenign
 Blue nevus:CUI=C0206736:CancerType=OtherBenign
 Bowen's disease:CUI=C0006079:Type=OtherInSitu
+Cafe -au -lait patch:CUI=C0221263:CancerType=OtherBenign
+Café -au -lait patch:CUI=C0221263:CancerType=OtherBenign
 Cafe au lait patch:CUI=C0221263:CancerType=OtherBenign
+Cafe- au- lait patch:CUI=C0221263:CancerType=OtherBenign
+Café- au- lait patch:CUI=C0221263:CancerType=OtherBenign
 Cafe-au-lait patch:CUI=C0221263:CancerType=OtherBenign
 Café-au-lait patch:CUI=C0221263:CancerType=OtherBenign
 Cafeaulait patch:CUI=C0221263:CancerType=OtherBenign
+Campbell -de -Morgan spot:CUI=C0343082:CancerType=OtherBenign
 Campbell de Morgan spot:CUI=C0343082:CancerType=OtherBenign
+Campbell- de- Morgan spot:CUI=C0343082:CancerType=OtherBenign
 Campbell-de-Morgan spot:CUI=C0343082:CancerType=OtherBenign
+Capillary haemangi -oma:CUI=C4317089:CancerType=OtherBenign
 Capillary haemangi oma:CUI=C4317089:CancerType=OtherBenign
+Capillary haemangi- oma:CUI=C4317089:CancerType=OtherBenign
 Capillary haemangi-oma:CUI=C4317089:CancerType=OtherBenign
 Capillary haemangioma:CUI=C4317089:CancerType=OtherBenign
 Capillary lymphangioma:CUI=C0334543:CancerType=OtherCancerous
 Carcinoma cuniculatum:CUI=C0206706:CancerType=OtherCancerous
 Cavernous lymphangioma:CUI=C0346080:CancerType=OtherCancerous
+Cellular angiofibr -oma:CUI=C1367534:CancerType=OtherBenign
 Cellular angiofibr oma:CUI=C1367534:CancerType=OtherBenign
+Cellular angiofibr- oma:CUI=C1367534:CancerType=OtherBenign
 Cellular angiofibr-oma:CUI=C1367534:CancerType=OtherBenign
 Cellular angiofibroma:CUI=C1367534:CancerType=OtherBenign
+Ceruminous aden -oma:CUI=C0334352:CancerType=OtherBenign
 Ceruminous aden oma:CUI=C0334352:CancerType=OtherBenign
+Ceruminous aden- oma:CUI=C0334352:CancerType=OtherBenign
 Ceruminous aden-oma:CUI=C0334352:CancerType=OtherBenign
 Ceruminous adenocarcinoma:CUI=C0334353:CancerType=OtherCancerous
 Ceruminous adenoma:CUI=C0334352:CancerType=OtherBenign
+Chorist -oma:CUI=C0011649:CancerType=OtherBenign
 Chorist oma:CUI=C0011649:CancerType=OtherBenign
+Chorist- oma:CUI=C0011649:CancerType=OtherBenign
 Chorist-oma:CUI=C0011649:CancerType=OtherBenign
 Choristoma:CUI=C0011649:CancerType=OtherBenign
 Clear cell acanthoma:CUI=C0333992:CancerType=OtherBenign
+Clear cell hidraden -oma:CUI=C1370701:CancerType=OtherBenign
 Clear cell hidraden oma:CUI=C1370701:CancerType=OtherBenign
+Clear cell hidraden- oma:CUI=C1370701:CancerType=OtherBenign
 Clear cell hidraden-oma:CUI=C1370701:CancerType=OtherBenign
 Clear cell hidradenoma:CUI=C1370701:CancerType=OtherBenign
 CMN:CUI=C1318558:CancerType=OtherBenign
 Common wart:CUI=C0043037:CancerType=OtherBenign
+Composite haem -angio -endotheli -oma:CUI=C1304513:CancerType=OtherIntermediate
+Composite haem -angio -endothelioma:CUI=C1304513:CancerType=OtherIntermediate
 Composite haem angio endotheli oma:CUI=C1304513:CancerType=OtherIntermediate
 Composite haem angio endothelioma:CUI=C1304513:CancerType=OtherIntermediate
+Composite haem- angio- endotheli- oma:CUI=C1304513:CancerType=OtherIntermediate
+Composite haem- angio- endothelioma:CUI=C1304513:CancerType=OtherIntermediate
 Composite haem-angio-endotheli-oma:CUI=C1304513:CancerType=OtherIntermediate
 Composite haem-angio-endothelioma:CUI=C1304513:CancerType=OtherIntermediate
 Composite haemangioendothelioma:CUI=C1304513:CancerType=OtherIntermediate
 Compound naevus:CUI=C0259781:CancerType=OtherBenign
 Compound nevus:CUI=C0259781:CancerType=OtherBenign
+Congenital haemangi -oma:CUI=C0235753:CancerType=OtherBenign
 Congenital haemangi oma:CUI=C0235753:CancerType=OtherBenign
+Congenital haemangi- oma:CUI=C0235753:CancerType=OtherBenign
 Congenital haemangi-oma:CUI=C0235753:CancerType=OtherBenign
 Congenital haemangioma:CUI=C0235753:CancerType=OtherBenign
 Congenital melanocytic naevus:CUI=C1318558:CancerType=OtherBenign
 Congenital melanocytic nevus:CUI=C1318558:CancerType=OtherBenign
 Cutaneous adenoid cystic carcinoma:CUI=C0346017:CancerType=OtherCancerous
+Cutaneous fibrous histiocyt -oma:CUI=C0002991:CancerType=OtherBenign
 Cutaneous fibrous histiocyt oma:CUI=C0002991:CancerType=OtherBenign
+Cutaneous fibrous histiocyt- oma:CUI=C0002991:CancerType=OtherBenign
 Cutaneous fibrous histiocyt-oma:CUI=C0002991:CancerType=OtherBenign
 Cutaneous fibrous histiocytoma:CUI=C0002991:CancerType=OtherBenign
 Cutaneous horn:CUI=C0085664:CancerType=OtherBenign
 Cutaneous leiomyosarcoma:CUI=C0346067:CancerType=OtherCancerous
 Cutaneous lymphoma:CUI=C1276146:CancerType=OtherCancerous
 Cutaneous mucinous carcinoma:CUI=C1879641:CancerType=OtherCancerous
+Cylindr -oma:CUI=C1305968:CancerType=OtherBenign
 Cylindr oma:CUI=C1305968:CancerType=OtherBenign
+Cylindr- oma:CUI=C1305968:CancerType=OtherBenign
 Cylindr-oma:CUI=C1305968:CancerType=OtherBenign
 Cylindroma:CUI=C1305968:CancerType=OtherBenign
 Cystic hygroma:CUI=C0206620:CancerType=OtherCancerous
 Cystic lymphangioma:CUI=C0206620:CancerType=OtherCancerous
+Cystic tricho -blastoma:CUI=C1299879:CancerType=OtherBenign
 Cystic tricho blastoma:CUI=C1299879:CancerType=OtherBenign
+Cystic tricho- blastoma:CUI=C1299879:CancerType=OtherBenign
 Cystic tricho-blastoma:CUI=C1299879:CancerType=OtherBenign
 Cystic trichoblastoma:CUI=C1299879:CancerType=OtherBenign
 Dabska tumour:CUI=C0346087:CancerType=OtherIntermediate
+Dermatofibr -oma:CUI=C0002991:CancerType=OtherBenign
 Dermatofibr oma:CUI=C0002991:CancerType=OtherBenign
+Dermatofibr- oma:CUI=C0002991:CancerType=OtherBenign
 Dermatofibr-oma:CUI=C0002991:CancerType=OtherBenign
 Dermatofibroma:CUI=C0002991:CancerType=OtherBenign
 Dermatofibrosarcoma protuberans:CUI=C0392784:CancerType=OtherCancerous
@@ -124,27 +170,43 @@ Digital papillary eccrine carcinoma:CUI=C1367789:CancerType=OtherCancerous
 Dysplastic naevus:CUI=C0205748:CancerType=OtherBenign
 Dysplastic nevus:CUI=C0205748:CancerType=OtherBenign
 ECC:CUI=C0007117:CancerType=BasalCellCarcinoma
+Eccrine acro -spir -oma:CUI=C0206671:CancerType=OtherBenign
+Eccrine acro -spiroma:CUI=C0206671:CancerType=OtherBenign
 Eccrine acro spir oma:CUI=C0206671:CancerType=OtherBenign
 Eccrine acro spiroma:CUI=C0206671:CancerType=OtherBenign
+Eccrine acro- spir- oma:CUI=C0206671:CancerType=OtherBenign
+Eccrine acro- spiroma:CUI=C0206671:CancerType=OtherBenign
 Eccrine acro-spir-oma:CUI=C0206671:CancerType=OtherBenign
 Eccrine acro-spiroma:CUI=C0206671:CancerType=OtherBenign
 Eccrine acrospiroma:CUI=C0206671:CancerType=OtherBenign
 Eccrine adenocarcinoma:CUI=C1266066:CancerType=OtherCancerous
+Eccrine dermal cylindr -oma:CUI=C1305968:CancerType=OtherBenign
 Eccrine dermal cylindr oma:CUI=C1305968:CancerType=OtherBenign
+Eccrine dermal cylindr- oma:CUI=C1305968:CancerType=OtherBenign
 Eccrine dermal cylindr-oma:CUI=C1305968:CancerType=OtherBenign
 Eccrine dermal cylindroma:CUI=C1305968:CancerType=OtherBenign
 Eccrine papillary adenocarcinoma:CUI=C2211427:CancerType=OtherCancerous
 Eccrine papillary adenoma:CUI=C0334350:CancerType=OtherBenign
 Eccrine porocarcinoma:CUI=C1266065:CancerType=OtherCancerous
 Eccrine poroma:CUI=C1533161:CancerType=OtherBenign
+Eccrine spira -denoma:CUI=C0334347:CancerType=OtherBenign
 Eccrine spira denoma:CUI=C0334347:CancerType=OtherBenign
+Eccrine spira- denoma:CUI=C0334347:CancerType=OtherBenign
 Eccrine spira-denoma:CUI=C0334347:CancerType=OtherBenign
+Eccrine spiraden -oma:CUI=C0334347:CancerType=OtherBenign
 Eccrine spiraden oma:CUI=C0334347:CancerType=OtherBenign
+Eccrine spiraden- oma:CUI=C0334347:CancerType=OtherBenign
 Eccrine spiraden-oma:CUI=C0334347:CancerType=OtherBenign
 Eccrine spiradenoma:CUI=C0334347:CancerType=OtherBenign
+Endo -vascular papillary angio endothelioma:CUI=C0346087:CancerType=OtherIntermediate
+Endo -vascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endo vascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
+Endo- vascular papillary angio endothelioma:CUI=C0346087:CancerType=OtherIntermediate
+Endo- vascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endo-vascular papillary angio endothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endo-vascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
+Endovascular papillary angio -endothelioma:CUI=C0346087:CancerType=OtherIntermediate
+Endovascular papillary angio- endothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endovascular papillary angio-endothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Endovascular papillary angioendothelioma:CUI=C0346087:CancerType=OtherIntermediate
 Ephelis:CUI=C1055787:CancerType=OtherBenign
@@ -154,32 +216,68 @@ Epithelial inclusion cyst:CUI=C0259770:CancerType=OtherBenign
 Epithelioid and spindle cell naevus:CUI=C0206739:CancerType=OtherBenign
 Epithelioid and spindle cell nevus:CUI=C0206739:CancerType=OtherBenign
 Epithelioid cell nevus:CUI=C0259820:CancerType=OtherBenign
+Epithelioid haemangi -oma:CUI=C0002989:CancerType=OtherBenign
 Epithelioid haemangi oma:CUI=C0002989:CancerType=OtherBenign
+Epithelioid haemangi- oma:CUI=C0002989:CancerType=OtherBenign
 Epithelioid haemangi-oma:CUI=C0002989:CancerType=OtherBenign
 Epithelioid haemangioendothelioma:CUI=C0206732:CancerType=OtherCancerous
 Epithelioid haemangioma:CUI=C0002989:CancerType=OtherBenign
+Epithelioid sarcoma -like hemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
+Epithelioid sarcoma- like hemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
 Epithelioid sarcoma-like hemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
 Extramammary Paget disease:CUI=C0346032:CancerType=OtherInSitu
 Fibroepithelial polyp:CUI=C0037293:CancerType=OtherBenign
+Fibrous histiocyt -oma:CUI=C0002991:CancerType=OtherBenign
 Fibrous histiocyt oma:CUI=C0002991:CancerType=OtherBenign
+Fibrous histiocyt- oma:CUI=C0002991:CancerType=OtherBenign
 Fibrous histiocyt-oma:CUI=C0002991:CancerType=OtherBenign
 Fibrous histiocytoma:CUI=C0002991:CancerType=OtherBenign
+Follicular fibr -oma:CUI=C0346011:CancerType=OtherBenign
 Follicular fibr oma:CUI=C0346011:CancerType=OtherBenign
+Follicular fibr- oma:CUI=C0346011:CancerType=OtherBenign
 Follicular fibr-oma:CUI=C0346011:CancerType=OtherBenign
 Follicular fibroma:CUI=C0346011:CancerType=OtherBenign
 Freckle:CUI=C1055787:CancerType=OtherBenign
+Giant cell angiofibr -oma:CUI=C1367539:CancerType=OtherBenign
 Giant cell angiofibr oma:CUI=C1367539:CancerType=OtherBenign
+Giant cell angiofibr- oma:CUI=C1367539:CancerType=OtherBenign
 Giant cell angiofibr-oma:CUI=C1367539:CancerType=OtherBenign
 Giant cell angiofibroma:CUI=C1367539:CancerType=OtherBenign
 Giant congenital melanocytic naevus:CUI=C1318558:CancerType=OtherBenign
 Giant congenital melanocytic nevus:CUI=C1318558:CancerType=OtherBenign
 Glomus tumour:CUI=C0017653:CancerType=OtherBenign
+Haem -angio -blast -oma:CUI=C0206734:CancerType=OtherIntermediate
+Haem -angio -blastoma:CUI=C0206734:CancerType=OtherIntermediate
+Haem -angio -endo -theli -oma:CUI=C0018915:CancerType=OtherIntermediate
+Haem -angio -endo -thelioma:CUI=C0018915:CancerType=OtherIntermediate
+Haem -angio -endotheli -oma:CUI=C0018915:CancerType=OtherBenign
+Haem -angio -endothelioma:CUI=C0018915:CancerType=OtherBenign
+Haem -angio -pericyt -oma:CUI=C0018922:CancerType=OtherBenign
+Haem -angio -pericytoma:CUI=C0018922:CancerType=OtherBenign
+Haem -angioendotheli -oma:CUI=C0018915:CancerType=OtherBenign
+Haem -angioendotheli oma:CUI=C0018915:CancerType=OtherBenign
+Haem -angioma:CUI=C0018916:CancerType=OtherBenign
+Haem -angiopericyt -oma:CUI=C0018922:CancerType=OtherBenign
+Haem -angiopericyt oma:CUI=C0018922:CancerType=OtherBenign
 Haem angio blast oma:CUI=C0206734:CancerType=OtherIntermediate
 Haem angio blastoma:CUI=C0206734:CancerType=OtherIntermediate
 Haem angio endo theli oma:CUI=C0018915:CancerType=OtherIntermediate
 Haem angio endo thelioma:CUI=C0018915:CancerType=OtherIntermediate
 Haem angioendothelioma:CUI=C0018915:CancerType=OtherBenign
 Haem angiopericytoma:CUI=C0018922:CancerType=OtherBenign
+Haem- angio- blast- oma:CUI=C0206734:CancerType=OtherIntermediate
+Haem- angio- blastoma:CUI=C0206734:CancerType=OtherIntermediate
+Haem- angio- endo- theli- oma:CUI=C0018915:CancerType=OtherIntermediate
+Haem- angio- endo- thelioma:CUI=C0018915:CancerType=OtherIntermediate
+Haem- angio- endotheli- oma:CUI=C0018915:CancerType=OtherBenign
+Haem- angio- endothelioma:CUI=C0018915:CancerType=OtherBenign
+Haem- angio- pericyt- oma:CUI=C0018922:CancerType=OtherBenign
+Haem- angio- pericytoma:CUI=C0018922:CancerType=OtherBenign
+Haem- angioendotheli oma:CUI=C0018915:CancerType=OtherBenign
+Haem- angioendotheli- oma:CUI=C0018915:CancerType=OtherBenign
+Haem- angioma:CUI=C0018916:CancerType=OtherBenign
+Haem- angiopericyt oma:CUI=C0018922:CancerType=OtherBenign
+Haem- angiopericyt- oma:CUI=C0018922:CancerType=OtherBenign
 Haem-angio-blast-oma:CUI=C0206734:CancerType=OtherIntermediate
 Haem-angio-blastoma:CUI=C0206734:CancerType=OtherIntermediate
 Haem-angio-endo-theli-oma:CUI=C0018915:CancerType=OtherIntermediate
@@ -193,12 +291,18 @@ Haem-angioendotheli-oma:CUI=C0018915:CancerType=OtherBenign
 Haem-angioma:CUI=C0018916:CancerType=OtherBenign
 Haem-angiopericyt oma:CUI=C0018922:CancerType=OtherBenign
 Haem-angiopericyt-oma:CUI=C0018922:CancerType=OtherBenign
+Haemangi -oma simplex:CUI=C4317089:CancerType=OtherBenign
+Haemangi -oma:CUI=C0018916:CancerType=OtherBenign
 Haemangi oma simplex:CUI=C4317089:CancerType=OtherBenign
 Haemangi oma:CUI=C0018916:CancerType=OtherBenign
+Haemangi- oma simplex:CUI=C4317089:CancerType=OtherBenign
+Haemangi- oma:CUI=C0018916:CancerType=OtherBenign
 Haemangi-oma simplex:CUI=C4317089:CancerType=OtherBenign
 Haemangi-oma:CUI=C0018916:CancerType=OtherBenign
 Haemangioblastoma:CUI=C0206734:CancerType=OtherIntermediate
+Haemangioendotheli -oma:CUI=C0018915:CancerType=OtherBenign
 Haemangioendotheli oma:CUI=C0018915:CancerType=OtherBenign
+Haemangioendotheli- oma:CUI=C0018915:CancerType=OtherBenign
 Haemangioendotheli-oma:CUI=C0018915:CancerType=OtherBenign
 Haemangioendothelial sarcoma:CUI=C0018915:CancerType=OtherCancerous
 Haemangioendothelioma:CUI=C0018915:CancerType=OtherBenign
@@ -206,7 +310,9 @@ Haemangioendothelioma:CUI=C0018915:CancerType=OtherCancerous
 Haemangioendothelioma:CUI=C0018915:CancerType=OtherIntermediate
 Haemangioma simplex:CUI=C4317089:CancerType=OtherBenign
 Haemangioma:CUI=C0018916:CancerType=OtherBenign
+Haemangiopericyt -oma:CUI=C0018922:CancerType=OtherBenign
 Haemangiopericyt oma:CUI=C0018922:CancerType=OtherBenign
+Haemangiopericyt- oma:CUI=C0018922:CancerType=OtherBenign
 Haemangiopericyt-oma:CUI=C0018922:CancerType=OtherBenign
 Haemangiopericytoma:CUI=C0018922:CancerType=OtherBenign
 Haemangiosarcoma:CUI=C0018923:CancerType=OtherCancerous
@@ -216,27 +322,57 @@ Hairy nevus:CUI=C0018508:CancerType=OtherBenign
 Halo naevus:CUI=C0474824:CancerType=OtherBenign
 Halo nevus:CUI=C0474824:CancerType=OtherBenign
 Hidradenoma papilliferum:CUI=C0334348:CancerType=OtherBenign
+Hidro -cystoma:CUI=C0206672:CancerType=OtherBenign
+Hidro cyst -oma:CUI=C0206672:CancerType=OtherBenign
 Hidro cyst oma:CUI=C0206672:CancerType=OtherBenign
+Hidro cyst- oma:CUI=C0206672:CancerType=OtherBenign
 Hidro cyst-oma:CUI=C0206672:CancerType=OtherBenign
 Hidro cystoma:CUI=C0206672:CancerType=OtherBenign
+Hidro- cystoma:CUI=C0206672:CancerType=OtherBenign
 Hidro-cystoma:CUI=C0206672:CancerType=OtherBenign
 Hidrocyst oma:CUI=C0206672:CancerType=OtherBenign
 Hidrocystoma:CUI=C0206672:CancerType=OtherBenign
+Histiocytoid haemangi -oma:CUI=C0205788:CancerType=OtherBenign
 Histiocytoid haemangi oma:CUI=C0205788:CancerType=OtherBenign
+Histiocytoid haemangi- oma:CUI=C0205788:CancerType=OtherBenign
 Histiocytoid haemangi-oma:CUI=C0205788:CancerType=OtherBenign
 Histiocytoid haemangioma:CUI=C0205788:CancerType=OtherBenign
 Hutchinson's melanotic freckle:CUI=C0149722:CancerType=OtherInSitu
+In -situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
+In -situ melanoma:CUI=C0854696:CancerType=OtherInSitu
+In situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
+In situ melanoma:CUI=C0854696:CancerType=OtherInSitu
+In- situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
+In- situ melanoma:CUI=C0854696:CancerType=OtherInSitu
+In-situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
+In-situ melanoma:CUI=C0854696:CancerType=OtherInSitu
 Inclusion cyst:CUI=C0259770:CancerType=OtherBenign
+Infantile haemangi -oma:CUI=C4317089:CancerType=OtherBenign
 Infantile haemangi oma:CUI=C4317089:CancerType=OtherBenign
+Infantile haemangi- oma:CUI=C4317089:CancerType=OtherBenign
 Infantile haemangi-oma:CUI=C4317089:CancerType=OtherBenign
 Infantile haemangioma:CUI=C4317089:CancerType=OtherBenign
 Intimal sarcoma:CUI=C1708550:CancerType=OtherCancerous
+Intra -dermal naevus:CUI=C0206737:CancerType=OtherBenign
+Intra -dermal nevus:CUI=C0206737:CancerType=OtherBenign
+Intra -muscular haem angi -oma:CUI=C0205789:CancerType=OtherBenign
+Intra -muscular haem angi oma:CUI=C0205789:CancerType=OtherBenign
+Intra -muscular haem angioma:CUI=C0205789:CancerType=OtherBenign
+Intra -muscular haemangioma:CUI=C0205789:CancerType=OtherBenign
 Intra dermal naevus:CUI=C0206737:CancerType=OtherBenign
 Intra dermal nevus:CUI=C0206737:CancerType=OtherBenign
+Intra muscular haem angi -oma:CUI=C0205789:CancerType=OtherBenign
 Intra muscular haem angi oma:CUI=C0205789:CancerType=OtherBenign
+Intra muscular haem angi- oma:CUI=C0205789:CancerType=OtherBenign
 Intra muscular haem angi-oma:CUI=C0205789:CancerType=OtherBenign
 Intra muscular haem angioma:CUI=C0205789:CancerType=OtherBenign
 Intra muscular haemangioma:CUI=C0205789:CancerType=OtherBenign
+Intra- dermal naevus:CUI=C0206737:CancerType=OtherBenign
+Intra- dermal nevus:CUI=C0206737:CancerType=OtherBenign
+Intra- muscular haem angi oma:CUI=C0205789:CancerType=OtherBenign
+Intra- muscular haem angi- oma:CUI=C0205789:CancerType=OtherBenign
+Intra- muscular haem angioma:CUI=C0205789:CancerType=OtherBenign
+Intra- muscular haemangioma:CUI=C0205789:CancerType=OtherBenign
 Intra-dermal naevus:CUI=C0206737:CancerType=OtherBenign
 Intra-dermal nevus:CUI=C0206737:CancerType=OtherBenign
 Intra-muscular haem angi oma:CUI=C0205789:CancerType=OtherBenign
@@ -248,18 +384,26 @@ Intradermal nevus:CUI=C0206737:CancerType=OtherBenign
 Intramuscular haemangioma:CUI=C0205789:CancerType=OtherBenign
 Junctional naevus:CUI=C0334433:CancerType=OtherBenign
 Junctional nevus:CUI=C0334433:CancerType=OtherBenign
+Juvenile haemangi -oma:CUI=C4317089:CancerType=OtherBenign
 Juvenile haemangi oma:CUI=C4317089:CancerType=OtherBenign
+Juvenile haemangi- oma:CUI=C4317089:CancerType=OtherBenign
 Juvenile haemangi-oma:CUI=C4317089:CancerType=OtherBenign
 Juvenile haemangioma:CUI=C4317089:CancerType=OtherBenign
 Kaposi sarcoma:CUI=C0153560:CancerType=OtherCancerous
+Kaposiform haem -angio -endothelioma:CUI=C1367420:CancerType=OtherIntermediate
+Kaposiform haem -angioendothelioma:CUI=C1367420:CancerType=OtherIntermediate
 Kaposiform haem angio endothelioma:CUI=C1367420:CancerType=OtherIntermediate
 Kaposiform haem angioendothelioma:CUI=C1367420:CancerType=OtherIntermediate
+Kaposiform haem- angio- endothelioma:CUI=C1367420:CancerType=OtherIntermediate
+Kaposiform haem- angioendothelioma:CUI=C1367420:CancerType=OtherIntermediate
 Kaposiform haem-angio-endothelioma:CUI=C1367420:CancerType=OtherIntermediate
 Kaposiform haem-angioendothelioma:CUI=C1367420:CancerType=OtherIntermediate
 Kaposiform haemangioendothelioma:CUI=C1367420:CancerType=OtherBenign
 Kaposiform haemangioendothelioma:CUI=C1367420:CancerType=OtherIntermediate
 Keratin horn:CUI=C0085664:CancerType=OtherBenign
+Kerato -acanthoma:CUI=C0022572:CancerType=OtherBenign
 Kerato acanthoma:CUI=C0022572:CancerType=OtherBenign
+Kerato- acanthoma:CUI=C0022572:CancerType=OtherBenign
 Kerato-acanthoma:CUI=C0022572:CancerType=OtherBenign
 Keratoacanthoma:CUI=C0022572:CancerType=OtherBenign
 Kupffer cell sarcoma:CUI=C0334534:CancerType=OtherCancerous
@@ -269,10 +413,14 @@ Lentigo melanoma:CUI=C2739810:CancerType=OtherCancerous
 Lentigo senile: CUI=C0036651:CancerType=OtherBenign
 Lentigo senilis:CUI=C0036651:CancerType=OtherBenign
 Lentigo simplex:CUI=C0302255:CancerType=OtherBenign
+Lobular capillary haemangi -oma:CUI=C0085653:CancerType=OtherBenign
 Lobular capillary haemangi oma:CUI=C0085653:CancerType=OtherBenign
+Lobular capillary haemangi- oma:CUI=C0085653:CancerType=OtherBenign
 Lobular capillary haemangi-oma:CUI=C0085653:CancerType=OtherBenign
 Lobular capillary haemangioma:CUI=C0085653:CancerType=OtherBenign
+Lymph -angio -myo -matosis:CUI=C0751674:CancerType=OtherIntermediate
 Lymph angio myo matosis:CUI=C0751674:CancerType=OtherIntermediate
+Lymph- angio- myo- matosis:CUI=C0751674:CancerType=OtherIntermediate
 Lymph-angio-myo-matosis:CUI=C0751674:CancerType=OtherIntermediate
 Lymphangioendothelial sarcoma:CUI=C0346082:CancerType=OtherCancerous
 Lymphangioendothelioma:CUI=C0024217:CancerType=OtherCancerous
@@ -290,17 +438,15 @@ Malignant syringoma:CUI=C0346027:CancerType=OtherCancerous
 Melanocytic naevus:CUI=C0027962:CancerType=OtherBenign
 Melanocytic nevus:CUI=C0027962:CancerType=OtherBenign
 Melanoma in situ:CUI=C0854696:CancerType=OtherInSitu
-In situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
-In-situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
-In situ melanoma:CUI=C0854696:CancerType=OtherInSitu
-In-situ melanoma:CUI=C0854696:CancerType=OtherInSitu
 Melanoma:CUI=C0151779:CancerType=OtherCancerous
 Merkel cell carcinoma:CUI=C0007129 :CancerType=OtherCancerous
 Milia:CUI=C0345996:CancerType=OtherBenign
 Milium cyst:CUI=C0345996:CancerType=OtherBenign
 Mongolian blue spot:CUI=C0265985:CancerType=OtherBenign
 Mucinous carcinoma:CUI=C1879641:CancerType=OtherCancerous
+Myointim -oma:CUI=:CancerType=OtherBenign
 Myointim oma:CUI=:CancerType=OtherBenign
+Myointim- oma:CUI=:CancerType=OtherBenign
 Myointim-oma:CUI=:CancerType=OtherBenign
 Myointimoma:CUI=:CancerType=OtherBenign
 Naevus of Ito:CUI=:CancerType=OtherBenign
@@ -311,25 +457,45 @@ Neuronaevus:CUI=C0334430:CancerType=OtherBenign
 Neuronevus:CUI=C0334430:CancerType=OtherBenign
 nevus of Ito:CUI=:CancerType=OtherBenign
 nevus of Ota:CUI=C0027961:CancerType=OtherBenign
+Nodular hidraden -oma:CUI=C4505470:CancerType=OtherBenign
 Nodular hidraden oma:CUI=C4505470:CancerType=OtherBenign
+Nodular hidraden- oma:CUI=C4505470:CancerType=OtherBenign
 Nodular hidraden-oma:CUI=C4505470:CancerType=OtherBenign
 Nodular hidradenoma:CUI=C4505470:CancerType=OtherBenign
 Nodular malignant melanoma:CUI=C0334424:CancerType=OtherCancerous
 Nodular melanoma:CUI=C0334424:CancerType=OtherCancerous
+Non -specific:CancerType=Non -specific
+Non specific:CancerType=Non -specific
+Non specific:CancerType=Non- specific
 Non specific:CancerType=Non-specific
+Non- specific:CancerType=Non- specific
 Non-specific:CancerType=Non-specific
 Nonpigmented naevus:CUI=C0334432:CancerType=OtherBenign
 Nonpigmented nevus:CUI=C0334432:CancerType=OtherBenign
+Nonspecific:CancerType=Non -specific
+Nonspecific:CancerType=Non- specific
 Nonspecific:CancerType=Non-specific
 Papillary hidradenoma:CUI=C0334348:CancerType=OtherBenign
+Papillary intra -lymphatic angio endo methelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intra -lymphatic angio endomethelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intra -lymphatic angioendomethelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intra lymphatic angioendomethelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intra- lymphatic angio endo methelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intra- lymphatic angio endomethelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intra- lymphatic angioendomethelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intra-lymphatic angio endo methelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intra-lymphatic angio endomethelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intra-lymphatic angioendomethelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intralymphatic angio -endo -methelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intralymphatic angio -endomethelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intralymphatic angio- endo- methelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary intralymphatic angio- endomethelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intralymphatic angio-endo-methelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intralymphatic angio-endomethelioma:CUI=C0346087:CancerType=OtherIntermediate
 Papillary intralymphatic angioendomethelioma:CUI=C0346087:CancerType=OtherIntermediate
+Papillary syringaden -oma:CUI=C0406803:CancerType=OtherBenign
 Papillary syringaden oma:CUI=C0406803:CancerType=OtherBenign
+Papillary syringaden- oma:CUI=C0406803:CancerType=OtherBenign
 Papillary syringaden-oma:CUI=C0406803:CancerType=OtherBenign
 Papillary syringadenoma:CUI=C0406803:CancerType=OtherBenign
 Pigmented hairy epidermal naevus:CUI=C0263579:CancerType=OtherBenign
@@ -347,30 +513,44 @@ Pilar cyst:CUI=C2266788:CancerType=OtherBenign
 Pilomatrical carcinoma:CUI=C0585475:CancerType=OtherCancerous
 Pilomatrix carcinoma:CUI=C0585475:CancerType=OtherCancerous
 Pilomatrixoma:CUI=C0585475:CancerType=OtherCancerous
+Plexiform haemangi -oma:CUI=C4317089:CancerType=OtherBenign
 Plexiform haemangi oma:CUI=C4317089:CancerType=OtherBenign
+Plexiform haemangi- oma:CUI=C4317089:CancerType=OtherBenign
 Plexiform haemangi-oma:CUI=C4317089:CancerType=OtherBenign
 Plexiform haemangioma:CUI=C4317089:CancerType=OtherBenign
 Primary cutaneous mucinous carcinoma:CUI=C1879641:CancerType=OtherCancerous
+Pseudomyogenic (epithelioid sarcoma -like) haemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
+Pseudomyogenic (epithelioid sarcoma- like) haemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
 Pseudomyogenic (epithelioid sarcoma-like) haemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
 Pseudomyogenic haemangioendothelioma:CUI=C3840252:CancerType=OtherIntermediate
+Pyogenic granul -oma:CUI=C0085653:CancerType=OtherBenign
 Pyogenic granul oma:CUI=C0085653:CancerType=OtherBenign
+Pyogenic granul- oma:CUI=C0085653:CancerType=OtherBenign
 Pyogenic granul-oma:CUI=C0085653:CancerType=OtherBenign
 Pyogenic granuloma:CUI=C0085653:CancerType=OtherBenign
 Reed cell naevus:CUI=C0206738:CancerType=OtherBenign
 Reed cell nevus:CUI=C0206738:CancerType=OtherBenign
 Reed naevus:CUI=C0206738:CancerType=OtherBenign
 Reed nevus:CUI=C0206738:CancerType=OtherBenign
+Retiform haem -angio -endotheli -oma:CUI=C1304512:CancerType=OtherIntermediate
+Retiform haem -angio -endothelioma:CUI=C1304512:CancerType=OtherIntermediate
 Retiform haem angio endotheli oma:CUI=C1304512:CancerType=OtherIntermediate
 Retiform haem angio endothelioma:CUI=C1304512:CancerType=OtherIntermediate
+Retiform haem- angio- endotheli- oma:CUI=C1304512:CancerType=OtherIntermediate
+Retiform haem- angio- endothelioma:CUI=C1304512:CancerType=OtherIntermediate
 Retiform haem-angio-endotheli-oma:CUI=C1304512:CancerType=OtherIntermediate
 Retiform haem-angio-endothelioma:CUI=C1304512:CancerType=OtherIntermediate
 Retiform haemangioendothelioma:CUI=C1304512:CancerType=OtherIntermediate
 Rodent ulcer:CUI=C0007117:CancerType=BasalCellCarcinoma
+SCC in -situ:CUI=C0006079:Type=OtherInSitu
 SCC in situ:CUI=C0006079:Type=OtherInSitu
+SCC in- situ:CUI=C0006079:Type=OtherInSitu
 SCC in-situ:CUI=C0006079:Type=OtherInSitu
 Schwannoma:CUI=C0027809:CancerType=OtherBenign
 Sclerosing sweat duct carcinoma:CUI=C0346027:CancerType=OtherCancerous
+Sebaceous aden -oma:CUI=C0585469:CancerType=OtherBenign
 Sebaceous aden oma:CUI=C0585469:CancerType=OtherBenign
+Sebaceous aden- oma:CUI=C0585469:CancerType=OtherBenign
 Sebaceous aden-oma:CUI=C0585469:CancerType=OtherBenign
 Sebaceous adenocarcinoma:CUI=C0206684:CancerType=OtherCancerous
 Sebaceous adenoma:CUI=C0585469:CancerType=OtherBenign
@@ -381,7 +561,9 @@ Sebaceous hyperplasia:CUI=C0406484:CancerType=OtherBenign
 Sebaceous naevus:CUI=C3854181:CancerType=OtherBenign
 Sebaceous nevus:CUI=C3854181:CancerType=OtherBenign
 Seborrhoeic keratosis:CUI=C0022603:CancerType=OtherBenign
+Senile angi -oma:CUI=C0343082:CancerType=OtherBenign
 Senile angi oma:CUI=C0343082:CancerType=OtherBenign
+Senile angi- oma:CUI=C0343082:CancerType=OtherBenign
 Senile angi-oma:CUI=C0343082:CancerType=OtherBenign
 Senile angioma:CUI=C0343082:CancerType=OtherBenign
 Skin appendage adenoma:CUI=C0334342:CancerType=OtherBenign
@@ -390,11 +572,17 @@ Small congenital naevus:CUI=C1883045:CancerType=OtherBenign
 Small congenital nevus:CUI=C1883045:CancerType=OtherBenign
 Solar keratosis:CUI=C0022602:CancerType=ActinicKeratosis
 Solar lentigo:CUI=C0036651:CancerType=OtherBenign
+Spindle cell angio -endothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell angio endothelioma:CUI=C1304508:CancerType=OtherIntermediate
+Spindle cell angio- endothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell angio-endothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell angioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
+Spindle cell haem -angioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
+Spindle cell haem- angioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell haem-angioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
+Spindle cell haemangi -oma:CUI=C1304508:CancerType=OtherBenign
 Spindle cell haemangi oma:CUI=C1304508:CancerType=OtherBenign
+Spindle cell haemangi- oma:CUI=C1304508:CancerType=OtherBenign
 Spindle cell haemangi-oma:CUI=C1304508:CancerType=OtherBenign
 Spindle cell haemangioendothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell haemangioma:CUI=C1304508:CancerType=OtherBenign
@@ -404,17 +592,25 @@ Spindle cell naevus:CUI=C0206738:CancerType=OtherBenign
 Spindle cell nevus:CUI=C0206738:CancerType=OtherBenign
 Spitz naevus:CUI=C0206739:CancerType=OtherBenign
 Spitz nevus:CUI=C0206739:CancerType=OtherBenign
+Squamous carcinoma:CUI=C0553723:CancerType=OtherCancerous
+Squamous cell carcinoma in -situ:CUI=C0006079:Type=OtherInSitu
 Squamous cell carcinoma in situ:CUI=C0006079:Type=OtherInSitu
+Squamous cell carcinoma in- situ:CUI=C0006079:Type=OtherInSitu
 Squamous cell carcinoma in-situ:CUI=C0006079:Type=OtherInSitu
 Squamous cell carcinoma:CUI=C0553723:CancerType=OtherCancerous
-Squamous carcinoma:CUI=C0553723:CancerType=OtherCancerous
+Squamous papill -oma:CUI=C0345983:CancerType=OtherBenign
 Squamous papill oma:CUI=C0345983:CancerType=OtherBenign
+Squamous papill- oma:CUI=C0345983:CancerType=OtherBenign
 Squamous papill-oma:CUI=C0345983:CancerType=OtherBenign
 Squamous papilloma:CUI=C0345983:CancerType=OtherBenign
 Strawberry naevus:CUI=C4317089:CancerType=OtherBenign
 Strawberry nevus:CUI=C4317089:CancerType=OtherBenign
+Sub -ungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
+Sub -ungal melanoma:CUI=C0346037:CancerType=OtherCancerous
 Sub ungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Sub ungal melanoma:CUI=C0346037:CancerType=OtherCancerous
+Sub- ungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
+Sub- ungal melanoma:CUI=C0346037:CancerType=OtherCancerous
 Sub-ungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Sub-ungal melanoma:CUI=C0346037:CancerType=OtherCancerous
 Subungal malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
@@ -424,16 +620,28 @@ Superficial spreading melanoma in situ:CUI=C0854696:CancerType=OtherInSitu
 Superficial spreading melanoma:CUI=C0334438:CancerType=OtherCancerous
 Sweat gland adenocarcinoma:CUI=C0334344:CancerType=OtherCancerous
 Sweat gland adenoma:CUI=C0019522:CancerType=OtherBenign
+Syringo -cystadenoma papilliferum:CUI=C0406803:CancerType=OtherBenign
+Syringo -fibroaden -oma:CUI=C1266060:CancerType=OtherBenign
+Syringo -fibroaden oma:CUI=C1266060:CancerType=OtherBenign
+Syringo -fibroadenoma:CUI=C1266060:CancerType=OtherBenign
 Syringo cystadenoma papilliferum:CUI=C0406803:CancerType=OtherBenign
+Syringo fibroaden -oma:CUI=C1266060:CancerType=OtherBenign
 Syringo fibroaden oma:CUI=C1266060:CancerType=OtherBenign
+Syringo fibroaden- oma:CUI=C1266060:CancerType=OtherBenign
 Syringo fibroaden-oma:CUI=C1266060:CancerType=OtherBenign
 Syringo fibroadenoma:CUI=C1266060:CancerType=OtherBenign
+Syringo- cystadenoma papilliferum:CUI=C0406803:CancerType=OtherBenign
+Syringo- fibroaden oma:CUI=C1266060:CancerType=OtherBenign
+Syringo- fibroaden- oma:CUI=C1266060:CancerType=OtherBenign
+Syringo- fibroadenoma:CUI=C1266060:CancerType=OtherBenign
 Syringo-cystadenoma papilliferum:CUI=C0406803:CancerType=OtherBenign
 Syringo-fibroaden oma:CUI=C1266060:CancerType=OtherBenign
 Syringo-fibroaden-oma:CUI=C1266060:CancerType=OtherBenign
 Syringo-fibroadenoma:CUI=C1266060:CancerType=OtherBenign
 Syringocystadenoma papilliferum:CUI=C0406803:CancerType=OtherBenign
+Syringofibroaden -oma:CUI=C1266060:CancerType=OtherBenign
 Syringofibroaden oma:CUI=C1266060:CancerType=OtherBenign
+Syringofibroaden- oma:CUI=C1266060:CancerType=OtherBenign
 Syringofibroaden-oma:CUI=C1266060:CancerType=OtherBenign
 Syringofibroadenoma:CUI=C1266060:CancerType=OtherBenign
 Syringoma:CUI=C0206673:CancerType=OtherBenign
@@ -442,35 +650,53 @@ Syringomatous sweat duct carcinoma:CUI=C0346027:CancerType=OtherCancerous
 Syringomatous tumour:CUI=C3839745:CancerType=OtherBenign
 Trichilemmal cyst:CUI=C2266788:CancerType=OtherBenign
 Trichilemmoma:CUI=C0334263:CancerType=OtherBenign
+Tricho -blastoma:CUI=C1299879:CancerType=OtherBenign
+Tricho -epithelioma:CUI=C0349658:CancerType=OtherBenign
+Tricho -folliculoma:CUI=C0334262:CancerType=OtherBenign
 Tricho blastoma:CUI=C1299879:CancerType=OtherBenign
 Tricho epithelioma:CUI=C0349658:CancerType=OtherBenign
 Tricho folliculoma:CUI=C0334262:CancerType=OtherBenign
+Tricho- blastoma:CUI=C1299879:CancerType=OtherBenign
+Tricho- epithelioma:CUI=C0349658:CancerType=OtherBenign
+Tricho- folliculoma:CUI=C0334262:CancerType=OtherBenign
 Tricho-blastoma:CUI=C1299879:CancerType=OtherBenign
 Tricho-epithelioma:CUI=C0349658:CancerType=OtherBenign
 Tricho-folliculoma:CUI=C0334262:CancerType=OtherBenign
 Trichoblastoma:CUI=C1299879:CancerType=OtherBenign
 Trichoepithelioma:CUI=C0349658:CancerType=OtherBenign
 Trichofolliculoma:CUI=C0334262:CancerType=OtherBenign
+Tufted angi -oma:CUI=C0346073:CancerType=OtherBenign
 Tufted angi oma:CUI=C0346073:CancerType=OtherBenign
+Tufted angi- oma:CUI=C0346073:CancerType=OtherBenign
 Tufted angi-oma:CUI=C0346073:CancerType=OtherBenign
 Tufted angioma:CUI=C0346073:CancerType=OtherBenign
+Tufted haemangi -oma:CUI=C1266161:CancerType=OtherBenign
 Tufted haemangi oma:CUI=C1266161:CancerType=OtherBenign
+Tufted haemangi- oma:CUI=C1266161:CancerType=OtherBenign
 Tufted haemangi-oma:CUI=C1266161:CancerType=OtherBenign
 Tufted haemangioma:CUI=C1266161:CancerType=OtherBenign
 Venous haemangioma:CUI=C0334532:CancerType=OtherBenign
 Verruca:CUI=C0043037:CancerType=OtherBenign
+Verrucous keratotic haemangi -oma:CUI=C0334540:CancerType=OtherBenign
 Verrucous keratotic haemangi oma:CUI=C0334540:CancerType=OtherBenign
+Verrucous keratotic haemangi- oma:CUI=C0334540:CancerType=OtherBenign
 Verrucous keratotic haemangi-oma:CUI=C0334540:CancerType=OtherBenign
 Verrucous keratotic haemangioma:CUI=C0334540:CancerType=OtherBenign
+Verrucous papill -oma:CUI=C0334243:CancerType=OtherBenign
 Verrucous papill oma:CUI=C0334243:CancerType=OtherBenign
+Verrucous papill- oma:CUI=C0334243:CancerType=OtherBenign
 Verrucous papill-oma:CUI=C0334243:CancerType=OtherBenign
 Verrucous papilloma:CUI=C0334243:CancerType=OtherBenign
 Verrucous squamous cell carcinoma:CUI=C0206706:CancerType=OtherCancerous
 Viral wart:CUI=C0043037:CancerType=OtherBenign
+Xanth -oma:CUI=C0302314:CancerType=OtherBenign
 Xanth oma:CUI=C0302314:CancerType=OtherBenign
+Xanth- oma:CUI=C0302314:CancerType=OtherBenign
 Xanth-oma:CUI=C0302314:CancerType=OtherBenign
 Xanthelasma:CUI=C0302314:CancerType=OtherBenign
+Xantho -mata:CUI=C0302314:CancerType=OtherBenign
 Xantho mata:CUI=C0302314:CancerType=OtherBenign
+Xantho- mata:CUI=C0302314:CancerType=OtherBenign
 Xantho-mata:CUI=C0302314:CancerType=OtherBenign
 Xanthoma:CUI=C0302314:CancerType=OtherBenign
 Xanthomata:CUI=C0302314:CancerType=OtherBenign
