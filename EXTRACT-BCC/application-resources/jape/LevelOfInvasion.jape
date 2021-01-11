@@ -1,5 +1,5 @@
 Phase: LevelOfInvasion
-Input: DeepMargin Split Sentence LevelOfInvasionTrigger
+Input: DeepMargin Sentence LevelOfInvasionTrigger
 Options: control=appelt
 
 Rule: LevelOfInvasion1
