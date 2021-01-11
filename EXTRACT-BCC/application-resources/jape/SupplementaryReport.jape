@@ -1,0 +1,69 @@
+Phase: SupplementaryReport
+Input: CancerDiagnosis Split Sentence UlceratedParagraph LVIDetails PNIDetails ExcisionCompletedDetails ResidualDiseaseDetails RecurrentDiseaseDetails OperativeInvasion ClarkInvasion BCCStage SuppDeepExcisionTypeOutcomeDetails SuppPeripheralExcisionTypeOutcomeDetails Frozen_SectionDetails PeripheralClearDetails PeripheralClearButCloseDetails DeepClearDetails DeepClearButCloseDetails Micro_thicknessParagraph DeepClearance PeripheralClearance MaxMicroDiameterParagraph SupplementaryReportDetails
+Options: control=appelt
+
+Rule: SupplementaryReport
+Priority: 100
+
+(
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+({CancerDiagnosis}|{UlceratedParagraph}|{LVIDetails}|{PNIDetails}|{ExcisionCompletedDetails}|{ResidualDiseaseDetails}|{RecurrentDiseaseDetails}|{OperativeInvasion}|{ClarkInvasion}|{BCCStage}|{SuppDeepExcisionTypeOutcomeDetails}|{SuppPeripheralExcisionTypeOutcomeDetails}|{Frozen_SectionDetails}|{PeripheralClearDetails}|{PeripheralClearButCloseDetails}|{DeepClearDetails}|{DeepClearButCloseDetails}|{Micro_thicknessParagraph}|{DeepClearance}|{PeripheralClearance}|{MaxMicroDiameterParagraph}|{SupplementaryReportDetails})?
+):match
+
+-->
+:match.SupplementaryReportPreParagraph = { ruleFinal = SupplementaryReport, 
+SRCancerType = :match.CancerDiagnosis.CancerType,
+SRCancerType2 = :match.CancerDiagnosis.CancerType2,
+SRBCCClass = :match.CancerDiagnosis.BCCClass,
+SRBCCClass2 = :match.CancerDiagnosis.BCCClass2,
+SRBCCClass3 = :match.CancerDiagnosis.BCCClass3,
+SRBCCClass4 = :match.CancerDiagnosis.BCCClass4,
+SRDifferentiation = :match.CancerDiagnosis.Differentiation,
+SRDifferentiation2 = :match.CancerDiagnosis.Differentiation2,
+SRUlcerated = :match.UlceratedParagraph.Ulcerated,
+SRLymphovascularInvasion = :match.LVIDetails.LVI,
+SRPerineuralInvasion = :match.PNIDetails.PNI,
+SRExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionComplete,
+SRRe-excisionOutcome = :match.ResidualDiseaseDetails.ResidualDisease,
+SRRecurrentOutcome = :match.RecurrentDiseaseDetails.RecurrentDisease,
+SRLevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
+SRClarkLevel = :match.ClarkInvasion.ClarkLevel,
+SRStage = :match.BCCStage.BCCStage,
+SRSupplementalPeripheral = :match.SuppPeripheralExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
+SRSupplementalDeep = :match.SuppDeepExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
+SRPeripheralClear = :match.PeripheralClearDetails.PeripheralClear,
+SRPeripheralClearButClose = :match.PeripheralClearButCloseDetails.PeripheralClearButClose,
+SRDeepClear = :match.DeepClearDetails.DeepClear,
+SRDeepClearButClose = :match.DeepClearButCloseDetails.DeepClearButClose,
+SRMeasurementType = :match.Micro_thicknessParagraph.MeasurementType,
+SRMeasurementValue = :match.Micro_thicknessParagraph.MeasurementValue,
+SRMeasurementUnit = :match.Micro_thicknessParagraph.MeasurementUnit,
+SRMeasurementType = :match.DeepClearance.MeasurementType,
+SRMeasurementValue = :match.DeepClearance.MeasurementValue,
+SRMeasurementUnit = :match.DeepClearance.MeasurementUnit,
+SRMeasurementType = :match.PeripheralClearance.MeasurementType,
+SRMeasurementValue = :match.PeripheralClearance.MeasurementValue,
+SRMeasurementUnit = :match.PeripheralClearance.MeasurementUnit,
+SRPeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
+SRPeripheralClockPosition2 = :match.PeripheralClearance.PeripheralClockPosition2,
+SRPeripheralClockPosition3 = :match.PeripheralClearance.PeripheralClockPosition3,
+SRPeripheralClockPosition4 = :match.PeripheralClearance.PeripheralClockPosition4,
+SRDeepClockPosition = :match.DeepClearance.DeepClockPosition,
+SRDeepClockPosition2 = :match.DeepClearance.DeepClockPosition2,
+SRDeepClockPosition3 = :match.DeepClearance.DeepClockPosition3,
+SRDeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
+SRMeasurementType = :match.MaxMicroDiameterParagraph.MeasurementType,
+SRMeasurementValue = :match.MaxMicroDiameterParagraph.MeasurementValue,
+SRMeasurementUnit = :match.MaxMicroDiameterParagraph.MeasurementUnit,
+SRDayDate = :match.SupplementaryReportDetails.DayDate, 
+SRMonthDate = :match.SupplementaryReportDetails.MonthDate,
+SRYearDate = :match.SupplementaryReportDetails.YearDate,
+SRPathologist= :match.SupplementaryReportPathologist.Pathologist
+}
