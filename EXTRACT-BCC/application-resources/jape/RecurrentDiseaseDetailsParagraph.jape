@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: RecurrentDiseaseDetails GroupedParagraph
+Options: control=all
+
+/*
+ * RecurrentDisease is within GroupedParagraph
+*/
+
+Rule: RecurrentDiseaseDetailsParagraph1
+(
+	({RecurrentDiseaseDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.RecurrentDiseaseDetailsParagraph = { rule2 = RecurrentDiseaseDetailsParagraph1,
+rule = :match.RecurrentDiseaseDetails.rule, 
+RecurrentDisease = :match.RecurrentDiseaseDetails.RecurrentDisease,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: RecurrentDiseaseDetailsParagraph2
+(
+	({RecurrentDiseaseDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.RecurrentDiseaseDetailsParagraph = { rule2 = RecurrentDiseaseDetailsParagraph2,
+rule = :match.RecurrentDiseaseDetails.rule, 
+RecurrentDisease = :match.RecurrentDiseaseDetails.RecurrentDisease,
+ParagraphTitle = MacroDescription}
+
+Rule: RecurrentDiseaseDetailsParagraph3
+(
+	({RecurrentDiseaseDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.RecurrentDiseaseDetailsParagraph = { rule2 = RecurrentDiseaseDetailsParagraph3,
+rule = :match.RecurrentDiseaseDetails.rule, 
+RecurrentDisease = :match.RecurrentDiseaseDetails.RecurrentDisease,
+ParagraphTitle = Microscopy}
+
+Rule: RecurrentDiseaseDetailsParagraph4
+(
+	({RecurrentDiseaseDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.RecurrentDiseaseDetailsParagraph = { rule2 = RecurrentDiseaseDetailsParagraph4,
+rule = :match.RecurrentDiseaseDetails.rule, 
+RecurrentDisease = :match.RecurrentDiseaseDetails.RecurrentDisease,
+ParagraphTitle = SupplementaryReport}

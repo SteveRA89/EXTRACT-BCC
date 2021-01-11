@@ -1,0 +1,62 @@
+Phase: TagStartOfSentence
+Input: PNIDetails GroupedParagraph
+Options: control=all
+
+/*
+ * PNI is within GroupedParagraph
+*/
+
+Rule: PNIParagraph1
+(
+	({PNIDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.PNIParagraph = { rule2 = PNIParagraph1,
+rule = :match.PNIDetails.rule, 
+PNI = :match.PNIDetails.PNI,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: PNIParagraph2
+(
+	({PNIDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.PNIParagraph = { rule2 = PNIParagraph2,
+rule = :match.PNIDetails.rule,
+PNI = :match.PNIDetails.PNI,
+ParagraphTitle = MacroDescription}
+
+Rule: PNIParagraph3
+(
+	({PNIDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.PNIParagraph = { rule2 = PNIParagraph3,
+rule = :match.PNI.rule, 
+PNI = :match.PNIDetails.PNI,
+ParagraphTitle = Microscopy}
+
+Rule: PNIParagraph4
+(
+	({PNIDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.PNIParagraph = { rule2 = PNIParagraph4,
+rule = :match.PNI.rule, 
+PNI = :match.PNIDetails.PNI,
+ParagraphTitle = SupplementaryReport}
+

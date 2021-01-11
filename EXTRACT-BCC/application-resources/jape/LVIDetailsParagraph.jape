@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: LVIDetails GroupedParagraph
+Options: control=all
+
+/*
+ * LVI is within GroupedParagraph
+*/
+
+Rule: LVIParagraph1
+(
+	({LVIDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.LVIParagraph = { rule2 = LVIParagraph1,
+rule = :match.LVIDetails.rule, 
+LVI = :match.LVIDetails.LVI,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: LVIParagraph2
+(
+	({LVIDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.LVIParagraph = { rule2 = LVIParagraph2,
+rule = :match.LVIDetails.rule, 
+LVI = :match.LVIDetails.LVI,
+ParagraphTitle = MacroDescription}
+
+Rule: LVIParagraph3
+(
+	({LVIDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.LVIParagraph = { rule2 = LVIParagraph3,
+rule = :match.LVI.rule, 
+LVI = :match.LVIDetails.LVI,
+ParagraphTitle = Microscopy}
+
+Rule: LVIParagraph4
+(
+	({LVIDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.LVIParagraph = { rule2 = LVIParagraph4,
+rule = :match.LVI.rule, 
+LVI = :match.LVIDetails.LVI,
+ParagraphTitle = SupplementaryReport}

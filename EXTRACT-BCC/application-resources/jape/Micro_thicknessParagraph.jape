@@ -53,3 +53,18 @@ MeasurementType = "TumourThickness",
 MeasurementValue = :match.TumourThickness.MeasurementValue, 
 MeasurementUnit = :match.TumourThickness.MeasurementUnit,
 ParagraphTitle = Microscopy}
+
+Rule: Micro_thicknessParagraph4
+(
+	({TumourThickness within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.Micro_thicknessParagraph = { rule2 = Micro_thicknessParagraph4,
+rule = :match.TumourThickness.rule, 
+MeasurementType = "TumourThickness", 
+MeasurementValue = :match.TumourThickness.MeasurementValue, 
+MeasurementUnit = :match.TumourThickness.MeasurementUnit,
+ParagraphTitle = SupplementaryReport}

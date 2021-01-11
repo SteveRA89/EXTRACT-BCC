@@ -71,3 +71,25 @@ CUI2 = :match.CancerDiagnosis.CUI2,
 Differentiation = :match.CancerDiagnosis.Differentiation,
 Differentiation2 = :match.CancerDiagnosis.Differentiation2,
 ParagraphTitle = Microscopy}
+
+Rule: CancerDiagnosisParagraph4
+(
+	({CancerDiagnosis within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.CancerDiagnosisParagraph = { rule2 = CancerDiagnosisParagraph5,
+rule = :match.CancerDiagnosis.rule, 
+BCCClass = :match.CancerDiagnosis.BCCClass,
+BCCClass2 = :match.CancerDiagnosis.BCCClass2,
+BCCClass3 = :match.CancerDiagnosis.BCCClass3,
+BCCClass4 = :match.CancerDiagnosis.BCCClass4,
+CancerType = :match.CancerDiagnosis.CancerType,
+CancerType2 = :match.CancerDiagnosis.CancerType2,
+CUI = :match.CancerDiagnosis.CUI,
+CUI2 = :match.CancerDiagnosis.CUI2,
+Differentiation = :match.CancerDiagnosis.Differentiation,
+Differentiation2 = :match.CancerDiagnosis.Differentiation2,
+ParagraphTitle = SupplementaryReport}

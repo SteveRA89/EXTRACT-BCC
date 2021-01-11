@@ -19,8 +19,6 @@ rule = :match.UlceratedDetails.rule,
 Ulcerated = :match.UlceratedDetails.Ulcerated,
 ParagraphTitle = ClinicalDetails}
 
-
-
 Rule: UlceratedParagraph2
 (
 	({UlceratedDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
@@ -43,6 +41,19 @@ Rule: UlceratedParagraph3
 -->
 
 :match.UlceratedParagraph = { rule2 = UlceratedParagraph3,
-rule = :match.Ulcerated.rule, 
+rule = :match.UlceratedDetails.rule, 
 Ulcerated = :match.UlceratedDetails.Ulcerated,
 ParagraphTitle = Microscopy}
+
+Rule: UlceratedParagraph4
+(
+	({UlceratedDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.UlceratedParagraph = { rule2 = UlceratedParagraph4,
+rule = :match.UlceratedDetails.rule, 
+Ulcerated = :match.UlceratedDetails.Ulcerated,
+ParagraphTitle = SupplementaryReport}

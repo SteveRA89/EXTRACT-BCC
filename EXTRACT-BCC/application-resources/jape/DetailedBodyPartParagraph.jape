@@ -65,3 +65,23 @@ AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
 MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
 ProximalOrDistal = :match.DetailedBodyPart.ProximalOrDistal,
 ParagraphTitle = Microscopy}
+
+Rule: DetailedBodyPartParagraph4
+(
+	({DetailedBodyPart within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.DetailedBodyPartParagraph = { rule2 = DetailedBodyPartParagraph4,
+rule = :match.DetailedBodyPart.rule, 
+BodyPart = :match.DetailedBodyPart.BodyPart,
+BodyPart2 = :match.DetailedBodyPart.BodyPart2,
+Lateralization = :match.DetailedBodyPart.Lateralization, 
+MedialOrLateral = :match.DetailedBodyPart.MedialOrLateral,
+UpperOrLower = :match.DetailedBodyPart.UpperOrLower,
+AnteriorOrPosterior =:match.DetailedBodyPart.AnteriorOrPosterior,
+MultipleScalp = :match.DetailedBodyPart.MultipleScalp,
+ProximalOrDistal = :match.DetailedBodyPart.ProximalOrDistal,
+ParagraphTitle = SupplementaryReport}

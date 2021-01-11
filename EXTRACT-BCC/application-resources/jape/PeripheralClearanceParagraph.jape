@@ -1,0 +1,83 @@
+Phase: TagStartOfSentence
+Input: PeripheralClearance GroupedParagraph
+Options: control=all
+
+/*
+ * PeripheralClearance is within GroupedParagraph
+*/
+
+Rule: PeripheralClearanceParagraph1
+(
+	({PeripheralClearance within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearanceParagraph = { rule2 = PeripheralClearanceParagraph1,
+rule = :match.PeripheralClearance.rule, 
+MeasurementType = :match.PeripheralClearance.MeasurementType,
+MeasurementValue = :match.PeripheralClearance.MeasurementValue,
+MeasurementUnit = :match.PeripheralClearance.MeasurementUnit
+PeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
+PeripheralClockPosition2 = :match.PeripheralClearance.PeripheralClockPosition2,
+PeripheralClockPosition3 = :match.PeripheralClearance.PeripheralClockPosition3,
+PeripheralClockPosition4 = :match.PeripheralClearance.PeripheralClockPosition4,
+ParagraphTitle = ClinicalDetails}
+
+Rule: PeripheralClearanceParagraph2
+(
+	({PeripheralClearance within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearanceParagraph = { rule2 = PeripheralClearanceParagraph2,
+rule = :match.PeripheralClearance.rule, 
+MeasurementType = :match.PeripheralClearance.MeasurementType,
+MeasurementValue = :match.PeripheralClearance.MeasurementValue,
+MeasurementUnit = :match.PeripheralClearance.MeasurementUnit
+PeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
+PeripheralClockPosition2 = :match.PeripheralClearance.PeripheralClockPosition2,
+PeripheralClockPosition3 = :match.PeripheralClearance.PeripheralClockPosition3,
+PeripheralClockPosition4 = :match.PeripheralClearance.PeripheralClockPosition4,
+ParagraphTitle = MacroDescription}
+
+Rule: PeripheralClearanceParagraph3
+(
+	({PeripheralClearance within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearanceParagraph = { rule2 = PeripheralClearanceParagraph3,
+rule = :match.PeripheralClearance.rule, 
+MeasurementType = :match.PeripheralClearance.MeasurementType,
+MeasurementValue = :match.PeripheralClearance.MeasurementValue,
+MeasurementUnit = :match.PeripheralClearance.MeasurementUnit
+PeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
+PeripheralClockPosition2 = :match.PeripheralClearance.PeripheralClockPosition2,
+PeripheralClockPosition3 = :match.PeripheralClearance.PeripheralClockPosition3,
+PeripheralClockPosition4 = :match.PeripheralClearance.PeripheralClockPosition4,
+ParagraphTitle = Microscopy}
+
+Rule: PeripheralClearanceParagraph4
+(
+	({PeripheralClearance within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearanceParagraph = { rule2 = PeripheralClearanceParagraph4,
+rule = :match.PeripheralClearance.rule, 
+MeasurementType = :match.PeripheralClearance.MeasurementType,
+MeasurementValue = :match.PeripheralClearance.MeasurementValue,
+MeasurementUnit = :match.PeripheralClearance.MeasurementUnit
+PeripheralClockPosition = :match.PeripheralClearance.PeripheralClockPosition,
+PeripheralClockPosition2 = :match.PeripheralClearance.PeripheralClockPosition2,
+PeripheralClockPosition3 = :match.PeripheralClearance.PeripheralClockPosition3,
+PeripheralClockPosition4 = :match.PeripheralClearance.PeripheralClockPosition4,
+ParagraphTitle = SupplementaryReport}

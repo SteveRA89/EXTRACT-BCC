@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: BCCStage GroupedParagraph
+Options: control=all
+
+/*
+ * BCCStage is within GroupedParagraph
+*/
+
+Rule: ClarkLevel1
+(
+	({BCCStage within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.BCCStageParagraph = { rule2 = BCCStageParagraph1,
+rule = :match.BCCStage.rule, 
+BCCStage = :match.BCCStage.BCCStage,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: ClarkLevel2
+(
+	({BCCStage within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.BCCStageParagraph = { rule2 = BCCStageParagraph2,
+rule = :match.BCCStage.rule, 
+BCCStage = :match.BCCStage.BCCStage,
+ParagraphTitle = MacroDescription}
+
+Rule: ClarkLevel3
+(
+	({BCCStage within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.BCCStageParagraph = { rule2 = BCCStageParagraph3,
+rule = :match.BCCStage.rule, 
+BCCStage = :match.BCCStage.BCCStage,
+ParagraphTitle = Microscopy}
+
+Rule: ClarkLevel4
+(
+	({BCCStage within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.BCCStageParagraph = { rule2 = BCCStageParagraph3,
+rule = :match.BCCStage.rule, 
+BCCStage = :match.BCCStage.BCCStage,
+ParagraphTitle = SupplementaryReport}

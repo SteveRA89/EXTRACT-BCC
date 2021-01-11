@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: PeripheralClearDetails GroupedParagraph
+Options: control=all
+
+/*
+ * PeripheralClearDetails is within GroupedParagraph
+*/
+
+Rule: PeripheralClearDetailsParagraph1
+(
+	({PeripheralClearDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearDetailsParagraph = { rule2 = PeripheralClearDetailsParagraph1,
+rule = :match.PeripheralClearDetails.rule, 
+PeripheralClearDetails = :match.PeripheralClearDetails.PeripheralClear,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: PeripheralClearDetailsParagraph2
+(
+	({PeripheralClearDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearDetailsParagraph = { rule2 = PeripheralClearDetailsParagraph2,
+rule = :match.PeripheralClearDetails.rule, 
+PeripheralClearDetails = :match.PeripheralClearDetails.PeripheralClear,
+ParagraphTitle = MacroDescription}
+
+Rule: PeripheralClearDetailsParagraph3
+(
+	({PeripheralClearDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearDetailsParagraph = { rule2 = PeripheralClearDetailsParagraph3,
+rule = :match.PeripheralClearDetails.rule, 
+PeripheralClearDetails = :match.PeripheralClearDetails.PeripheralClear,
+ParagraphTitle = Microscopy}
+
+Rule: PeripheralClearDetailsParagraph4
+(
+	({PeripheralClearDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.PeripheralClearDetailsParagraph = { rule2 = PeripheralClearDetailsParagraph4,
+rule = :match.PeripheralClearDetails.rule, 
+PeripheralClearDetails = :match.PeripheralClearDetails.PeripheralClear,
+ParagraphTitle = SupplementaryReport}

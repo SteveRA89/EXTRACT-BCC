@@ -50,3 +50,18 @@ MeasurementType = "Diameter",
 MeasurementValue = :match.MaxMicroDiameter.MeasurementValue, 
 MeasurementUnit = :match.MaxMicroDiameter.MeasurementUnit,
 ParagraphTitle = Microscopy}
+
+Rule: MaxMicroDiameterParagraph4
+(
+	({MaxMicroDiameter within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.MaxMicroDiameterParagraph = { rule2 = MaxMicroDiameterParagraph4,
+rule = :match.MaxMicroDiameter.rule, 
+MeasurementType = "Diameter", 
+MeasurementValue = :match.MaxMicroDiameter.MeasurementValue, 
+MeasurementUnit = :match.MaxMicroDiameter.MeasurementUnit,
+ParagraphTitle = SupplementaryReport}

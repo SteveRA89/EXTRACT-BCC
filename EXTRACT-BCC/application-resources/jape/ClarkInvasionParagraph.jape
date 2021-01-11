@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: ClarkLevel GroupedParagraph
+Options: control=all
+
+/*
+ * ClarkLevel is within GroupedParagraph
+*/
+
+Rule: ClarkLevel1
+(
+	({ClarkLevel within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.ClarkInvasionParagraph = { rule2 = ClarkLevelParagraph1,
+rule = :match.ClarkLevel.rule, 
+ClarkLevel = :match.ClarkLevel.ClarkLevel,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: ClarkLevel2
+(
+	({ClarkLevel within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.ClarkInvasionParagraph = { rule2 = ClarkLevelParagraph2,
+rule = :match.ClarkLevel.rule, 
+ClarkLevel = :match.ClarkLevel.ClarkLevel,
+ParagraphTitle = MacroDescription}
+
+Rule: ClarkLevel3
+(
+	({ClarkLevel within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.ClarkInvasionParagraph = { rule2 = ClarkLevelParagraph3,
+rule = :match.ClarkLevel.rule, 
+ClarkLevel = :match.ClarkLevel.ClarkLevel,
+ParagraphTitle = Microscopy}
+
+Rule: ClarkLevel4
+(
+	({ClarkLevel within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.ClarkInvasionParagraph = { rule2 = ClarkLevelParagraph4,
+rule = :match.ClarkLevel.rule, 
+ClarkLevel = :match.ClarkLevel.ClarkLevel,
+ParagraphTitle = SupplementaryReport}

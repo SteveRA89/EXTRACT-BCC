@@ -1,0 +1,85 @@
+Phase: TagStartOfSentence
+Input: DeepClearance GroupedParagraph
+Options: control=all
+
+/*
+ * DeepClearance is within GroupedParagraph
+*/
+
+Rule: DeepClearanceParagraph1
+(
+	({DeepClearance within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.DeepClearanceParagraph = { rule2 = DeepClearanceParagraph1,
+rule = :match.DeepClearance.rule, 
+MeasurementType = :match.DeepClearance.MeasurementType,
+MeasurementValue = :match.DeepClearance.MeasurementValue,
+MeasurementUnit = :match.DeepClearance.MeasurementUnit,
+DeepClockPosition = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition2 = :match.DeepClearance.DeepClockPosition2,
+DeepClockPosition3 = :match.DeepClearance.DeepClockPosition3,
+DeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: DeepClearanceParagraph2
+(
+	({DeepClearance within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.DeepClearanceParagraph = { rule2 = DeepClearanceParagraph2,
+rule = :match.DeepClearance.rule, 
+MeasurementType = :match.DeepClearance.MeasurementType,
+MeasurementValue = :match.DeepClearance.MeasurementValue,
+MeasurementUnit = :match.DeepClearance.MeasurementUnit,
+DeepClockPosition = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition2 = :match.DeepClearance.DeepClockPosition2,
+DeepClockPosition3 = :match.DeepClearance.DeepClockPosition3,
+DeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
+ParagraphTitle = MacroDescription}
+
+Rule: DeepClearanceParagraph3
+(
+	({DeepClearance within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.DeepClearanceParagraph = { rule2 = DeepClearanceParagraph3,
+rule = :match.DeepClearance.rule, 
+MeasurementType = :match.DeepClearance.MeasurementType,
+MeasurementValue = :match.DeepClearance.MeasurementValue,
+MeasurementUnit = :match.DeepClearance.MeasurementUnit,
+DeepClockPosition = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition2 = :match.DeepClearance.DeepClockPosition2,
+DeepClockPosition3 = :match.DeepClearance.DeepClockPosition3,
+DeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
+ParagraphTitle = Microscopy}
+
+Rule: DeepClearanceParagraph4
+(
+	({DeepClearance within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.DeepClearanceParagraph = { rule2 = DeepClearanceParagraph4,
+rule = :match.DeepClearance.rule, 
+MeasurementType = :match.DeepClearance.MeasurementType,
+MeasurementValue = :match.DeepClearance.MeasurementValue,
+MeasurementUnit = :match.DeepClearance.MeasurementUnit,
+DeepClockPosition = :match.DeepClearance.DeepClockPosition,
+DeepClockPosition2 = :match.DeepClearance.DeepClockPosition2,
+DeepClockPosition3 = :match.DeepClearance.DeepClockPosition3,
+DeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
+ParagraphTitle = SupplementaryReport}

@@ -1,0 +1,63 @@
+Phase: TagStartOfSentence
+Input: SuppDeepExcisionTypeOutcomeDetails GroupedParagraph
+Options: control=all
+
+/*
+ * SuppDeepExcisionTypeOutcomeDetails is within GroupedParagraph
+*/
+
+Rule: SuppDeepExcisionTypeOutcomeDetailsParagraph1
+(
+	({SuppDeepExcisionTypeOutcomeDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.SuppDeepExcisionTypeOutcomeDetailsParagraph = { rule2 = SuppDeepExcisionTypeOutcomeDetailsParagraph1,
+rule = :match.SuppDeepExcisionTypeOutcomeDetails.rule, 
+ExcisionType = :match.SuppDeepExcisionTypeOutcomeDetails.ExcisionType,
+SupplementalExcisionTypeOutcome = :match.SuppDeepExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome, //I think this might not be correct for format of 
+ParagraphTitle = ClinicalDetails}
+
+Rule: SuppDeepExcisionTypeOutcomeDetailsParagraph2
+(
+	({SuppDeepExcisionTypeOutcomeDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.SuppDeepExcisionTypeOutcomeDetailsParagraph = { rule2 = SuppDeepExcisionTypeOutcomeDetailsParagraph2,
+rule = :match.SuppDeepExcisionTypeOutcomeDetails.rule, 
+ExcisionType = :match.SuppDeepExcisionTypeOutcomeDetails.ExcisionType,
+SupplementalExcisionTypeOutcome = :match.SuppDeepExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
+ParagraphTitle = MacroDescription}
+
+Rule: SuppDeepExcisionTypeOutcomeDetailsParagraph3
+(
+	({SuppDeepExcisionTypeOutcomeDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.SuppDeepExcisionTypeOutcomeDetailsParagraph = { rule2 = SuppDeepExcisionTypeOutcomeDetailsParagraph3,
+rule = :match.SuppDeepExcisionTypeOutcomeDetails.rule, 
+ExcisionType = :match.SuppDeepExcisionTypeOutcomeDetails.ExcisionType,
+SupplementalExcisionTypeOutcome = :match.SuppDeepExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
+ParagraphTitle = Microscopy}
+
+Rule: SuppDeepExcisionTypeOutcomeDetailsParagraph4
+(
+	({SuppDeepExcisionTypeOutcomeDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.SuppDeepExcisionTypeOutcomeDetailsParagraph = { rule2 = SuppDeepExcisionTypeOutcomeDetailsParagraph4,
+rule = :match.SuppDeepExcisionTypeOutcomeDetails.rule, 
+ExcisionType = :match.SuppDeepExcisionTypeOutcomeDetails.ExcisionType,
+SupplementalExcisionTypeOutcome = :match.SuppDeepExcisionTypeOutcomeDetails.SupplementalExcisionTypeOutcome,
+ParagraphTitle = SupplementaryReport}

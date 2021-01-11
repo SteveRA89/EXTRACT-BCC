@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: ExcisionCompletedDetails GroupedParagraph
+Options: control=all
+
+/*
+ * ExcisionCompletedDetails is within GroupedParagraph
+*/
+
+Rule: ExcisionCompletedParagraph1
+(
+	({ExcisionCompletedDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.ExcisionCompletedDetailsParagraph = { rule2 = ExcisionCompletedParagraph1,
+rule = :match.ExcisionCompletedDetails.rule, 
+ExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionComplete,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: ExcisionCompletedParagraph2
+(
+	({ExcisionCompletedDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.ExcisionCompletedDetailsParagraph = { rule2 = ExcisionCompletedParagraph2,
+rule = :match.ExcisionCompletedDetails.rule, 
+ExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionComplete,
+ParagraphTitle = MacroDescription}
+
+Rule: ExcisionCompletedParagraph3
+(
+	({ExcisionCompletedDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.ExcisionCompletedDetailsParagraph = { rule2 = ExcisionCompletedParagraph3,
+rule = :match.ExcisionCompletedDetails.rule, 
+ExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionComplete,
+ParagraphTitle = Microscopy}
+
+Rule: ExcisionCompletedParagraph4
+(
+	({ExcisionCompletedDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.ExcisionCompletedDetailsParagraph = { rule2 = ExcisionCompletedParagraph4,
+rule = :match.ExcisionCompletedDetails.rule, 
+ExcisionCompleted = :match.ExcisionCompletedDetails.ExcisionComplete,
+ParagraphTitle = SupplementaryReport}

@@ -47,3 +47,18 @@ rule = :match.ExcisionType.rule,
 ExcisionType = :match.ExcisionType.ExcisionType,
 ExcisionType2 = :match.ExcisionType.ExcisionType2,
 ParagraphTitle = Microscopy}
+
+Rule: ExcisionTypeParagraph4
+(
+	({ExcisionType within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.ExcisionTypeParagraph = { rule2 = ExcisionTypeParagraph4,
+rule = :match.ExcisionType.rule, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+ExcisionType2 = :match.ExcisionType.ExcisionType2,
+ParagraphTitle = SupplementaryReport}
+

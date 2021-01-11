@@ -1,0 +1,61 @@
+Phase: TagStartOfSentence
+Input: OperativeInvasion GroupedParagraph
+Options: control=all
+
+/*
+ * OperativeInvasion is within GroupedParagraph
+*/
+
+Rule: OperativeInvasionParagraph1
+(
+	({OperativeInvasion within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.OperativeInvasionParagraph = { rule2 = OperativeInvasionParagraph1,
+rule = :match.OperativeInvasion.rule, 
+LevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
+ParagraphTitle = ClinicalDetails}
+
+
+
+Rule: OperativeInvasionParagraph2
+(
+	({OperativeInvasion within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.OperativeInvasionParagraph = { rule2 = OperativeInvasionParagraph2,
+rule = :match.OperativeInvasion.rule, 
+LevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
+ParagraphTitle = MacroDescription}
+
+Rule: OperativeInvasionParagraph3
+(
+	({OperativeInvasion within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.OperativeInvasionParagraph = { rule2 = OperativeInvasionParagraph3,
+rule = :match.OperativeInvasion.rule, 
+LevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
+ParagraphTitle = Microscopy}
+
+Rule: OperativeInvasionParagraph4
+(
+	({OperativeInvasion within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.OperativeInvasionParagraph = { rule2 = OperativeInvasionParagraph4,
+rule = :match.OperativeInvasion.rule, 
+LevelOfInvasion = :match.OperativeInvasion.LevelOfInvasion,
+ParagraphTitle = SupplementaryReport}
