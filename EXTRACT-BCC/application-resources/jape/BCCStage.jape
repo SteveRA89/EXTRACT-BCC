@@ -1,5 +1,5 @@
 Phase: BCCStage
-Input: BCCStage Split Sentence StageTrigger
+Input: BCCStage Sentence StageTrigger
 Options: control=appelt
 
 Rule: BCCStage
@@ -10,5 +10,5 @@ Priority: 99
         
 ):match
 -->
-:match.Staging = {rule = BCCStage, 
+:match.BCCStage = {rule = BCCStage, 
 BCCStage = :match.BCCStage.BCCStage}
