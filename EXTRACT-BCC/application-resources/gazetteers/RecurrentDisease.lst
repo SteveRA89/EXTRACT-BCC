@@ -4,6 +4,7 @@ Recurrent Disease Present:Negatives=true
 Presence of Recurrent disease:Negatives=true
 Recurrent component:Negatives=true
 Recurrent Disease absent:Negatives=false
+Recurrent disease is not Present:Negatives=false
 Recurrent disease not Present:Negatives=false
 Evidence of Recurrent tumour:Negatives=true
 Recurrent tumour Evident:Negatives=true
