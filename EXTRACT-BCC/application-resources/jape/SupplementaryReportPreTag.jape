@@ -1,0 +1,27 @@
+Phase: SupplementaryReportPreParagraph
+Input: SupplementaryReportPreParagraph GroupedParagraph
+Options: control=all
+
+/*
+ * SupplementaryReport is within GroupedParagraph
+*/
+
+Rule: SupplementaryReportPreParagraph
+(
+	({SupplementaryReportPreParagraph within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+):match
+
+-->
+
+:match {
+	Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+	FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+	preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+	Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+	Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+	preTagFM.put("tokenStart", tokenStart);//add start as a feature
+	preTagFM.put("tokenEnd", tokenEnd);// add end as a feature - Both these deleted in SupplementaryReportWithTag.jape - when Goes into SupplementaryReport
+	preTagFM.put("ruleFinal", "SupplementaryReportPreTag");//add rule name
+	AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+	gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "SupplementaryReportPreTag", preTagFM);//create annotation
+}
