@@ -1,0 +1,17 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanUpReportedSupplementryTriggers
+Input: ParagraphTitles Reported_triggers
+Options: control=all
+
+
+Rule: CleanUpReportedSupplementryTriggers
+Priority: 100
+//Remove 'Reported and authorised' as a trigger when after Supplementary Report
+(
+	({ParagraphTitles.type == SupplementaryReport})
+    ({Reported_triggers}):match1
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}

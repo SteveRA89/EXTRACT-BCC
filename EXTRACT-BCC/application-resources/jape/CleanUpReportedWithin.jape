@@ -1,0 +1,16 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanUpReportedWithin
+Input: Reported_triggers
+Options: control=all
+
+
+Rule: CleanUpReportedWithin
+Priority: 100
+//Reported and authorised - removes authorised as a trigger
+(
+    ({Reported_triggers.Within == True, Reported_triggers within Reported_triggers.Within == False}):match1
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
