@@ -1,19 +1,24 @@
 Phase: SupplementaryReportDetails
-Input: SupplementaryReport_trigger DateBio ReportDetails
+Input: SupplementaryReport_trigger DateBio ReportDetails Diagnosis Dimension 
 Options: control=appelt
 
-Rule: SupplementaryReportDetails
+// Diagnosis and dimension added in as blocks for the rule to stop running over rest of paragraph
+
+Rule: SupplementaryReportDetails1
 Priority: 100
 (
 
     ({SupplementaryReport_trigger})
-    (({DateBio})?
-    ({ReportDetails})
+    ({DateBio})?
+    ({ReportDetails})?
 
 ):match
 -->
-:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails,
+:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails1,
 DayDate = :match.DateBio.DayDate, 
 MonthDate = :match.DateBio.MonthDate,
 YearDate = :match.DateBio.YearDate,
+DayDate = :match.ReportDetails.DayDate, 
+MonthDate = :match.ReportDetails.MonthDate,
+YearDate = :match.ReportDetails.YearDate,
 Pathologist = :match.ReportDetails.Pathologist}

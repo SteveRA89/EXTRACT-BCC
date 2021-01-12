@@ -1,0 +1,23 @@
+Phase: SupplementaryReportDetails
+Input: SupplementaryReport_trigger DateBio ReportDetails SupplementaryReportDetails
+Options: control=appelt
+
+Rule: SupplementaryReportDetails2
+Priority: 100
+(
+
+    ({SupplementaryReportDetails})
+    (({ReportDetails})):match2
+
+):match
+-->
+:match2.SupplementaryReportDetails = {rule = SupplementaryReportDetails2,
+DayDate = :match.ReportDetails.DayDate, 
+MonthDate = :match.ReportDetails.MonthDate,
+YearDate = :match.ReportDetails.YearDate,
+Pathologist = :match.ReportDetails.Pathologist
+},
+
+:match2 { 
+  inputAS.removeAll(match2Annots);//This deletes the match2 annotation 
+}

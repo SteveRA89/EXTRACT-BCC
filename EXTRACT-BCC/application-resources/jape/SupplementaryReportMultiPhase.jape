@@ -1,5 +1,9 @@
 MultiPhase: SupplementaryReportMultiPhase
 Phases:
+SupplementaryReportCleanUp
+SupplementaryReportDetails
+SupplementaryReportDetails2
 SupplementaryReport
+SupplementaryReport2
 SupplementaryReportPreTag
 SupplementaryReportWithTag
