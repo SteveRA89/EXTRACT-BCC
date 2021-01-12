@@ -1,7 +1,7 @@
 Imports: {import static gate.Utils.*; }
 
 Phase: NegationReversal
-Input: Ulcerated Split Sentence Specimen Lesion Trigger LevelOfInvasionTrigger Clear Micro_deep_margin 
+Input: Ulcerated Split Sentence Specimen Lesion Trigger LevelOfInvasionTrigger Micro_deep_margin 
 Options: control=appelt
 
 //Without ... ellipise of skin ... ulcerated nodule 
@@ -31,19 +31,4 @@ Rule: LevelOfInvasionCleanUp
 :umls {
 umlsAnnots.iterator().next().getFeatures().put("Negation","Affirmed");
 umlsAnnots.iterator().next().getFeatures().put("rule","removenon-asnegation");
-}
-
-//Need to apply to peripheral
-
-Rule: ClearDetailsCleanUp
-
-(
-
-({Clear contains Token@string=="clear"}):umls
-
-):match
--->
-:umls {
-umlsAnnots.iterator().next().getFeatures().put("Negation","Negated");
-umlsAnnots.iterator().next().getFeatures().put("rule","AffirmedReversal");
 }
