@@ -3,6 +3,7 @@ Recurrent Disease Evident:Negatives=true
 Recurrent Disease Present:Negatives=true
 Presence of Recurrent disease:Negatives=true
 Recurrent component:Negatives=true
+Recurrent Disease is absent:Negatives=false
 Recurrent Disease absent:Negatives=false
 Recurrent disease is not Present:Negatives=false
 Recurrent disease not Present:Negatives=false

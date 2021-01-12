@@ -1,7 +1,7 @@
-Clear:Negatives=false
-Clear of the:Negatives=false
+Clear:Negatives=true
+Clear of the:Negatives=true
 Negative:Negatives=true
-Involved:Negatives=true
-Involves:Negatives=true
-Involving:Negatives=true
-Positive:Negatives=true
+Involved:Negatives=false
+Involves:Negatives=false
+Involving:Negatives=false
+Positive:Negatives=false
