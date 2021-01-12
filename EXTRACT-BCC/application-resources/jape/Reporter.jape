@@ -1,5 +1,5 @@
 Phase: Reporter
-Input:   Reported_triggers VIP DateBio
+Input:   Reported_triggers VIP DateBio SupplementaryReport_trigger
 Options: control=appelt
 
 
