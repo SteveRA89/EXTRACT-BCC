@@ -1,8 +1,8 @@
 Phase: PeripheralClearButClose
-Input: ClearButClose Micro_peripheral_margin Split Sentence Token
+Input: ClearButClose Micro_peripheral_margin Split Sentence Dimension
 Options: control=appelt
 
-Rule: PeripheralClearButClose
+Rule: PeripheralClearButCloseYes
 Priority: 100
 
 (
@@ -10,7 +10,7 @@ Priority: 100
 	{ClearButClose.Negation == Affirmed}
 ):match
 -->
-:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseNo, PeripheralClearButClose = "No"}
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseYes, PeripheralClearButClose = "Yes"}
 
 Rule: PeripheralClearButCloseNo
 Priority: 100
@@ -20,4 +20,4 @@ Priority: 100
 	{ClearButClose.Negation == Negated}
 ):match
 -->
-:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseYes, PeripheralClearButClose = "Yes"}
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseNo, PeripheralClearButClose = "No"}
