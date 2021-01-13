@@ -1,0 +1,32 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: NegationReversal
+Input: Split Sentence Ulcerated 
+Options: control=appelt
+
+Rule: UlceratedCleanUp1
+//Non-ulcerated changed from affirmed to negated
+// Similar to ClearNegation.jape
+(
+
+({Ulcerated.Negatives == false, Ulcerated.Negation == Affirmed}):umls
+
+):match
+-->
+:umls {
+umlsAnnots.iterator().next().getFeatures().put("Negation","Negated");
+umlsAnnots.iterator().next().getFeatures().put("rule","NegationReversal");
+}
+
+Rule: UlceratedCleanUp2
+
+(
+
+({Ulcerated.Negatives == false, Ulcerated.Negation == Negated}):umls
+
+):match
+-->
+:umls {
+umlsAnnots.iterator().next().getFeatures().put("Negation","Affirmed");
+umlsAnnots.iterator().next().getFeatures().put("rule","NegationReversal");
+}
