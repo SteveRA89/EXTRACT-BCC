@@ -1,12 +1,11 @@
 Phase: ParagraphTitles
-Input: ParagraphTitles Reported_triggers NewLine
+Input: ParagraphTitles Reported_triggers NewLine lastNode
 Options: control=all
 
 
-Rule: TagLetters1
+Rule: ParagraphTitles1
 Priority: 100
-//Tag text that is under a certain paragraph title. Typo in Doc1 so misses Technical.
-//Doesn't work when final paragraph runs to the end (Doc21). (JAVA RULE TO ANNOTATE FINAL INDEX IN DOCUMENT?)
+//Picks up when one paragraph ends and another starts
 (
 	(({ParagraphTitles})
     ({NewLine})+):Tag
@@ -14,3 +13,16 @@ Priority: 100
 ):match
 -->
 :Tag.GroupedParagraph = { rule = GroupedParagraph, ParagraphTitle = :Tag.ParagraphTitles.type}
+
+
+Rule: ParagraphTitles2
+Priority: 100
+//Picks up when last paragraph to end of document
+(
+	(({ParagraphTitles})
+    ({NewLine})+):Tag
+    ({Reported_triggers})?
+    ({lastNode})
+):match
+-->
+:match.GroupedParagraph = { rule = GroupedParagraph, ParagraphTitle = :Tag.ParagraphTitles.type}

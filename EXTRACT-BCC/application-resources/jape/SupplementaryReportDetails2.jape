@@ -16,7 +16,8 @@ DayDate = :match.ReportDetails.DayDate,
 MonthDate = :match.ReportDetails.MonthDate,
 YearDate = :match.ReportDetails.YearDate,
 Pathologist = :match.ReportDetails.Pathologist
-},
+}
+,
 
 :match2 { 
   inputAS.removeAll(match2Annots);//This deletes the match2 annotation 
