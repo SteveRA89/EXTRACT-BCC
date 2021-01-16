@@ -665,6 +665,7 @@ Tricho-folliculoma:CUI=C0334262:CancerType=OtherBenign
 Trichoblastoma:CUI=C1299879:CancerType=OtherBenign
 Trichoepithelioma:CUI=C0349658:CancerType=OtherBenign
 Trichofolliculoma:CUI=C0334262:CancerType=OtherBenign
+Trichoepitheliomatous:CUI=C0334262:CancerType=OtherBenign
 Tufted angi -oma:CUI=C0346073:CancerType=OtherBenign
 Tufted angi oma:CUI=C0346073:CancerType=OtherBenign
 Tufted angi- oma:CUI=C0346073:CancerType=OtherBenign
