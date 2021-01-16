@@ -1,0 +1,17 @@
+Phase: CleanUpFrozenSection
+Input: Frozen_Section Trigger
+Options: control=all
+
+Rule: CleanUpFrozenSection
+
+(
+
+    ({Trigger within Frozen_Section.Negatives==false})
+
+):match
+
+-->
+
+:match { 
+  inputAS.removeAll(matchAnnots);//This deletes the match1 annotation 
+}
