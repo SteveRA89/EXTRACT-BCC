@@ -12,7 +12,7 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPart, BodyPart = :match.BodyParts.bodypart}
+:match.DetailedBodyPart = { rule = BodyPart, BodyPart = :match.BodyParts.BodyPart, BodyPart2 = :match.BodyParts.BodyPart2}
 
 
 //BodyPart and one localisation term - order 1
@@ -27,8 +27,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartOneTerm1, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartOneTerm1, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation,
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -48,8 +48,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartOneTerm2, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartOneTerm2, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -71,8 +71,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartTwoTerms1, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartTwoTerms1, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -93,8 +93,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartTwoTerms2, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartTwoTerms2, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -115,8 +115,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartTwoTerms3, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartTwoTerms3, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -139,8 +139,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartThreeTerms1, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartThreeTerms1, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -163,8 +163,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartThreeTerms2, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartThreeTerms2, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -187,8 +187,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartThreeTerms3, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartThreeTerms3, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -211,8 +211,8 @@ Priority: 100
 
 ):match
 -->
-:match.DetailedBodyPart = { rule = BodyPartThreeTerms4, BodyPart = :match.BodyParts.bodypart,
-BodyPart2 = :match.BodyParts.bodypart2,
+:match.DetailedBodyPart = { rule = BodyPartThreeTerms4, BodyPart = :match.BodyParts.BodyPart,
+BodyPart2 = :match.BodyParts.BodyPart2,
 Lateralization = :match.Lookup2.lateralisation, 
 MedialOrLateral = :match.MedialOrLateral.MedialOrLateral,
 UpperOrLower = :match.UpperOrLower.UpperOrLower,
@@ -268,7 +268,7 @@ Priority: 100
 :match.DetailedBodyPart = { rule = BodyPartLaterality1, BodyPart = :match.BodyParts.bodypart,
 Lateralization = :match.Lookup2.lateralisation}
 
-/Laterality and bodyPart1/bodypart2 
+/Laterality and bodyPart1/BodyPart2 
 
 Rule: TwoBodyPartLaterality1
 Priority: 100

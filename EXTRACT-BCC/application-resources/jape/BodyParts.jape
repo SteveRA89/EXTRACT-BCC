@@ -12,5 +12,5 @@ Priority: 100
 
 ):match
 -->
-:match.BodyParts = { rule = BodyPart, bodypart = :BP1.BodyParts.bodypart,
-bodypart2 = :BP2.BodyParts.bodypart}
+:match.BodyParts = { rule = BodyPart, BodyPart = :BP1.BodyParts.BodyPart,
+BodyPart2 = :BP2.BodyParts.BodyPart}
