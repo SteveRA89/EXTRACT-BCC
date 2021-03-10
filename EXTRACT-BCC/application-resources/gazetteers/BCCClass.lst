@@ -32,7 +32,6 @@ Fibroepithelioma of pinkus:BCCClass=Fibroepithelial
 Infiltrative (high risk):BCCClass=Infiltrative
 Infiltrative (high-risk):BCCClass=Infiltrative
 Infiltrative:BCCClass=Infiltrative
-Infiltrating:BCCClass=Infiltrative
 Micro nodular:BCCClass=Micronodular
 Micro - nodular:BCCClass=Micronodular
 Micro- nodular:BCCClass=Micronodular
