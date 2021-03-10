@@ -1,0 +1,18 @@
+Phase: FrozenSectionSentence
+Input: Frozen_Section Frozen_Section_Triggers CancerType Split Sentence Diagnosis
+Options: control=appelt
+
+
+// Frozen section skin contaiing a BCC
+
+Rule: FrozenSectionSentence1
+Priority: 100
+
+(
+	({Frozen_Section})
+	({Frozen_Section_Triggers})
+	({Diagnosis})
+):match
+-->
+:match.Frozen_SectionDetails = { rule = FrozenSectionSentence1, 
+FrozenSectionOutcome = :match.Diagnosis.CancerType}

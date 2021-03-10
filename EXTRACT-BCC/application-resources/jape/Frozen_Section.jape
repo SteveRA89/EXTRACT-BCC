@@ -1,22 +1,28 @@
 Phase: Frozen_Section
-Input: Frozen_Section Split Sentence
+Input: Frozen_Section Frozen_Section_Triggers Clear Split Sentence
 Options: control=appelt
 
+//Frozen section is positive
 
 Rule: Frozen_SectionYes
 Priority: 100
 
 (
-	{Frozen_Section.Negation == Affirmed}
+	({Frozen_Section})
+	{Clear.Negation == Negated}
+
 ):match
 -->
-:match.Frozen_SectionDetails = { rule = Frozen_Section, Frozen_Section = "Yes"}
+:match.Frozen_SectionDetails = { rule = Frozen_SectionPositive, Frozen_Section = "Positive"}
+
+//Frozen section is neagtive
 
 Rule: Frozen_SectionNo
 Priority: 100
 
 (
-	{Frozen_Section.Negation == Negated}
+	({Frozen_Section})
+	{Clear.Negation == Affirmed}
 ):match
 -->
-:match.Frozen_SectionDetails = { rule = Frozen_Section, Frozen_Section = "No"}
+:match.Frozen_SectionDetails = { rule = Frozen_SectionNegative, Frozen_Section = "Negative"}

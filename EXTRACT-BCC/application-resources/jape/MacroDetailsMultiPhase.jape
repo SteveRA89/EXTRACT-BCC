@@ -1,5 +1,6 @@
 MultiPhase: MacroDetailsMultiPhase
 Phases:
+FrozenSectionSentence
 MacroDetails
 MacroDetailsPreTag
 MacroDetailsWithTag

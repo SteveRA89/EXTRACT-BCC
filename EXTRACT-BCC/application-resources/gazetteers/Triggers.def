@@ -19,6 +19,7 @@ LVI.lst::::LVI
 PNI.lst::::PNI
 ExcisionCompleted.lst::::ExcisionCompleted
 Frozen_Section.lst::::Frozen_Section
+Frozen_Section_Triggers.lst::::Frozen_Section_Triggers
 Clear.lst::::Clear
 ClearButClose.lst::::ClearButClose
 LVIorPNI.lst::::LVIorPNI
