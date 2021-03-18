@@ -182,3 +182,45 @@ N2 = :n2.DetailedDimension.N1,
 units = :n2.DetailedDimension.units, 
 NumberOfMeasurements = :match.Dimension.NumberOfMeasurements,
 LongestDistance = :match.Dimension.LongestDistance}
+
+//DimensionSpecimenWordsCombo1
+
+Rule: DimensionSpecimenWordsCombo1
+Priority:100
+(
+    ({Specimen})
+    ({ExcisionType})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})?
+    (({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})
+    ({Dimension}):n2
+    ):match1
+
+):match
+
+-->
+:match1.DimensionSpecimen = { rule = DimensionSpecimenWordsCombo1, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.Dimension.N1, 
+units = :n2.Dimension.units}
+
+//DimensionSpecimenWordsCombo2
+
+Rule: DimensionSpecimenWordsCombo1
+Priority:100
+(
+    ({ExcisionType})
+    ({Specimen})?
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})?
+    (({DetailedDimension}):n1
+    ({Token.string == "x"} | {Token.string == "by"} | {Token.string == "X"} | {Token.kind == punctuation, Token.string == ";"}|{Token.kind == punctuation, Token.string == ","})
+    ({Dimension}):n2
+    ):match1
+
+):match
+
+-->
+:match1.DimensionSpecimen = { rule = DimensionSpecimenWordsCombo2, 
+N1 = :n1.DetailedDimension.N1, 
+N2 = :n2.Dimension.N1, 
+units = :n2.Dimension.units}

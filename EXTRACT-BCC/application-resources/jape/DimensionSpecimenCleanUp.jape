@@ -1,0 +1,17 @@
+Imports: {import static gate.Utils.*; }
+Phase: DimensionSpecimenCleanUp
+Input: DimensionSpecimen
+Options: control=all
+
+Rule: DimensionSpecimenCleanUp
+
+//Remove a second DimensionSpecimen so that only one DimensionSpecimen is extracted. Fix for letter 36.
+(
+	  ({DimensionSpecimen})
+    ({DimensionSpecimen}):match1
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
