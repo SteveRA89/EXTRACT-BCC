@@ -1,0 +1,17 @@
+
+Phase: DiagnosisContainsBCCClass
+Input: CancerDiagnosis BCCClass
+Options: control=appelt
+
+Rule: DiagnosisContainsBCCClass
+Priority: 100
+
+(
+	({CancerDiagnosis contains BCCClass.BCCClass == Basosquamous}):body
+
+):match
+-->
+:body{
+bodyAnnots.iterator().next().getFeatures().put("BCCClass","Basosquamous");
+bodyAnnots.iterator().next().getFeatures().put("rule","DiagnosisContainsBCCClass");
+}
