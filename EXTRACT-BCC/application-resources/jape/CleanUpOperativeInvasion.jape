@@ -1,0 +1,17 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanUpOperativeInvasion
+Input: OperativeInvasion 
+Options: control=all
+
+Rule: CleanUpOperativeInvasion
+
+//Remove a second OperativeInvasion so that only one OperativeInvasion is extracted. Fix for letter 29b.
+(
+    ({OperativeInvasion}):match1
+    ({OperativeInvasion})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
