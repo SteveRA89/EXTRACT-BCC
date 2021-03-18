@@ -1,0 +1,16 @@
+Imports: {import static gate.Utils.*; }
+Phase: ResidualDiseaseCleanUp
+Input: ResidualDiseaseDetails
+Options: control=all
+
+Rule: ResidualDiseaseCleanUp
+
+//Remove a second ResidualDiseaseDetails so that only one ResidualDiseaseDetails is extracted. Fix for letter 18.
+(
+	  ({ResidualDiseaseDetails})
+    ({ResidualDiseaseDetails}):match1
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}

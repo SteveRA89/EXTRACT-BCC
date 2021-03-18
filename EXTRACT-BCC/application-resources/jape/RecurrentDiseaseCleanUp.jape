@@ -1,0 +1,16 @@
+Imports: {import static gate.Utils.*; }
+Phase: RecurrentDiseaseCleanUp
+Input: RecurrentDiseaseDetails
+Options: control=all
+
+Rule: RecurrentDiseaseCleanUp
+
+//Remove a second RecurrentDiseaseDetails so that only one RecurrentDiseaseDetails is extracted
+(
+	  ({RecurrentDiseaseDetails})
+    ({RecurrentDiseaseDetails}):match1
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}

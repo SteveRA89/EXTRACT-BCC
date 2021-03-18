@@ -1,3 +1,4 @@
+Recurrent:Negatives=true
 Evidence of Recurrent Disease:Negatives=true
 Recurrent Disease Evident:Negatives=true
 Recurrent Disease Present:Negatives=true

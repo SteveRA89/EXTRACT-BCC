@@ -1,39 +1,43 @@
 Phase: RecurrentDisease
-Input: RecurrentDisease Split Sentence
+Input: RecurrentDisease Split Sentence Diagnosis
 Options: control=appelt
 
 Rule: RecurrentDiseaseYes1
 Priority: 100
 
 (
-	{RecurrentDisease.Negation == Affirmed}
+	(({RecurrentDisease.Negation == Affirmed})):match1
+	({Diagnosis.CancerType == BasalCellCarcinoma})
 ):match
 -->
-:match.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "RecurrentDiseasePresent"}
+:match1.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "RecurrentDiseasePresent"}
 
 Rule: RecurrentDiseaseNo1
 Priority: 100
 
 (
-	{RecurrentDisease.Negation == Negated}
+	(({RecurrentDisease.Negation == Negated})):match1
+	({Diagnosis.CancerType == BasalCellCarcinoma})
 ):match
 -->
-:match.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "NoRecurrentDiseasePresent"}
+:match1.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "NoRecurrentDiseasePresent"}
 
 Rule: RecurrentDiseaseYes2
 Priority: 100
 
 (
-	{RecurrentDisease.Negation == Negated, RecurrentDisease.Negatives == false}
+	(({RecurrentDisease.Negation == Negated, RecurrentDisease.Negatives == false})):match1
+	({Diagnosis.CancerType == BasalCellCarcinoma})
 ):match
 -->
-:match.RecurrentDiseaseDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "RecurrentDiseasePresent"}
+:match1.RecurrentDiseaseDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "RecurrentDiseasePresent"}
 
 Rule: RecurrentDiseaseNo2
 Priority: 100
 
 (
-	{RecurrentDisease.Negation == Affirmed, RecurrentDisease.Negatives == false}
+	(({RecurrentDisease.Negation == Affirmed, RecurrentDisease.Negatives == false})):match1
+	({Diagnosis.CancerType == BasalCellCarcinoma})
 ):match
 -->
-:match.RecurrentDiseaseDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "NoRecurrentDiseasePresent"}
+:match1.RecurrentDiseaseDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "NoRecurrentDiseasePresent"}

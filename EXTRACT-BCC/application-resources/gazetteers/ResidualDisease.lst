@@ -1,3 +1,4 @@
+Residual:Negatives=true
 Evidence of Residual Disease:Negatives=true
 Residual Disease Evident:Negatives=true
 Residual Disease Present:Negatives=true
