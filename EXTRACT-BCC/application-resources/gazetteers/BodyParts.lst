@@ -215,7 +215,6 @@ FDP:BodyPart=Arm
 FDS:BodyPart=Arm
 FPL:BodyPart=Arm
 FPB:BodyPart=Arm
-PL:BodyPart=Arm
 Foot:BodyPart=Foot
 Fore head:BodyPart=Forehead
 Forearm:BodyPart=Arm
