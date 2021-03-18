@@ -1,7 +1,7 @@
 Acquired tufted haemangioma:CUI=C1266161:CancerType=OtherBenign
 Acral malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Acral melanoma:CUI=C0346037:CancerType=OtherCancerous
-Actinic keratosis:CUI=C0022602:CancerType=ActinicKeratosis
+Actinic keratosis:CUI=C0006079:Type=OtherInSitu
 Adenoid cystic carcinoma:CUI=C0346017:CancerType=OtherCancerous
 Adenoid cystic eccrine carcinoma:CUI=C0346017:CancerType=OtherCancerous
 Amelanotic malignant melanoma:CUI=C0206735:CancerType=OtherCancerous
@@ -27,25 +27,40 @@ Balloon cell naevus:CUI=C0334425:CancerType=OtherBenign
 Balloon cell naevus:CUI=C0346097:CancerType=OtherBenign
 Balloon cell nevus:CUI=C0334425:CancerType=OtherBenign
 Balloon cell nevus:CUI=C0346097:CancerType=OtherBenign
-Basal -squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
-Basal squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basal- squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal- squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basal-squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal-squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basal/ squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basal/squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basal/squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basalsquamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basalsquamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
-Basil -oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basil- oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basil-oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basill -oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basill- oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basill-oma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basilloma:CUI=C0007117:BCC=BasalCellCarcinoma
-Basiloma:CUI=C0007117:BCC=BasalCellCarcinoma
+Basi - squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basi -squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basi squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basi- squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basi-squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basil -oma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basil- oma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basil-oma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basill -oma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basill- oma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basill-oma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basilloma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basiloma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basisquamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Baso - squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
+Baso -squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Baso -squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Baso squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Baso squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Baso- squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Baso- squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Baso-squamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Baso-squamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
+Basosquamous:CUI=C0007117:CancerType=BasalCellCarcinoma
 Basosquamous cell carcinoma:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCC:CUI=C0007117:CancerType=BasalCellCarcinoma
 BCCV:CUI=C0007117:CancerType=BasalCellCarcinoma
@@ -570,7 +585,7 @@ Skin appendage adenoma:CUI=C0334342:CancerType=OtherBenign
 Skin tag:CUI=C0037293:CancerType=OtherBenign
 Small congenital naevus:CUI=C1883045:CancerType=OtherBenign
 Small congenital nevus:CUI=C1883045:CancerType=OtherBenign
-Solar keratosis:CUI=C0022602:CancerType=ActinicKeratosis
+Solar keratosis:CUI=C0006079:Type=OtherInSitu
 Solar lentigo:CUI=C0036651:CancerType=OtherBenign
 Spindle cell angio -endothelioma:CUI=C1304508:CancerType=OtherIntermediate
 Spindle cell angio endothelioma:CUI=C1304508:CancerType=OtherIntermediate
