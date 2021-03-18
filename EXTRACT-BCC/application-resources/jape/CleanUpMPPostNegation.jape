@@ -1,4 +1,4 @@
-MultiPhase: CleanUpMultiPhasePostNegation
+MultiPhase: CleanUpMPPostNegation
 Phases:
 ClearNegation
 UlceratedNegated

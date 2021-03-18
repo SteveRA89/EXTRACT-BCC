@@ -5,6 +5,7 @@ Narrow margin excision:ExcisionType=ExcisionBiopsy
 Wide Local Excision:ExcisionType=WideLocalExcision
 Wide Excision:ExcisionType=WideLocalExcision
 WLE:ExcisionType=WideLocalExcision
+WL:ExcisionType=WideLocalExcision
 Re-excision:ExcisionType=Re-excision
 Re excision:ExcisionType=Re-excision
 Wider Excision:ExcisionType=Re-excision
