@@ -2,7 +2,6 @@ Phase: LVI
 Input: LVI Split Sentence
 Options: control=appelt
 
-
 Rule: LVIYes
 Priority: 100
 

@@ -1,0 +1,30 @@
+Phase: PNISemiColon
+Input: PNI Token Lookup Sentence LVI
+Options: control=appelt
+
+Rule: PNIYesSemiColon
+Priority: 100
+
+(
+	({PNI})
+    ({Token.kind == punctuation, Token.string == ":"})
+    ({Lookup.Certainty == " "})?
+ 	({Token.string =~"[Yy]es"})
+	
+):match
+-->
+:match.PNIDetails = { rule = PNIYesSemiColon, PNI = "Yes"}
+
+Rule: PNINoSemiColon
+Priority: 100
+
+(
+	({PNI})
+    ({Token.kind == punctuation, Token.string == ":"})
+    ({Lookup.Certainty == " "})?
+ 	({Token.string =~"[Nn]o"})
+
+):match
+
+-->
+:match.PNIDetails = { rule = PNINoSemiColon, PNI = "No"}

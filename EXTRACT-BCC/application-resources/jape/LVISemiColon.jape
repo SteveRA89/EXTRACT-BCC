@@ -1,0 +1,30 @@
+Phase: LVISemiColon
+Input: LVI Token Lookup Sentence PNI
+Options: control=appelt
+
+Rule: LVIYesSemiColon
+Priority: 100
+
+(
+	({LVI})
+    ({Token.kind == punctuation, Token.string == ":"})
+    ({Lookup.Certainty == " "})?
+ 	({Token.string =~"[Yy]es"})
+	
+):match
+-->
+:match.LVIDetails = { rule = LVIYesSemiColon, LVI = "Yes"}
+
+Rule: LVINoSemiColon
+Priority: 100
+
+(
+	({LVI})
+    ({Token.kind == punctuation, Token.string == ":"})
+    ({Lookup.Certainty == " "})?
+ 	({Token.string =~"[Nn]o"})
+
+):match
+
+-->
+:match.LVIDetails = { rule = LVINoSemiColon, LVI = "No"}
