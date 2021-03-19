@@ -1,0 +1,24 @@
+Phase: ExcisionCompletedCleanUp 
+Input: ExcisionCompleted Token
+Options: control=appelt
+
+Rule: ExcisionCompletedCleanUpAtoN
+Priority: 99
+(   
+    ({ExcisionCompleted.Negatives == "false", ExcisionCompleted.Negation == "Affirmed"})
+):match
+-->
+:match {
+  matchAnnots.iterator().next().getFeatures().put("Negation", "Negated");
+  matchAnnots.iterator().next().getFeatures().put("rule", "SwitchNegationAtoN");
+}
+Rule: ExcisionCompletedCleanUpNtoA
+Priority: 99
+(   
+    ({ExcisionCompleted.Negatives == "false", ExcisionCompleted.Negation == "Negated"})
+):match
+-->
+:match {
+  matchAnnots.iterator().next().getFeatures().put("Negation", "Affirmed");
+  matchAnnots.iterator().next().getFeatures().put("rule", "SwitchNegationNtoA");
+}
