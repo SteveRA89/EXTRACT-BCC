@@ -9,41 +9,6 @@
       <gate.creole.Plugin-Maven>
         <group>uk.ac.gate.plugins</group>
         <artifact>groovy</artifact>
-        <version>8.5</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>format-brat</artifact>
-        <version>1.0-SNAPSHOT</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>annie</artifact>
-        <version>8.5</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>jape-plus</artifact>
-        <version>8.5</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>tagger-numbers</artifact>
-        <version>8.5</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>annie</artifact>
-        <version>8.5-SNAPSHOT</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>tools</artifact>
-        <version>8.5</version>
-      </gate.creole.Plugin-Maven>
-      <gate.creole.Plugin-Maven>
-        <group>uk.ac.gate.plugins</group>
-        <artifact>groovy</artifact>
         <version>8.6</version>
       </gate.creole.Plugin-Maven>
       <gate.creole.Plugin-Maven>
@@ -59,43 +24,35 @@
         <artifact>document-normalizer</artifact>
         <version>8.5</version>
       </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>annie</artifact>
+        <version>9.0</version>
+      </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>tools</artifact>
+        <version>9.0</version>
+      </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>annie</artifact>
+        <version>8.6</version>
+      </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>jape-plus</artifact>
+        <version>8.6</version>
+      </gate.creole.Plugin-Maven>
+      <gate.creole.Plugin-Maven>
+        <group>uk.ac.gate.plugins</group>
+        <artifact>tagger-numbers</artifact>
+        <version>8.6</version>
+      </gate.creole.Plugin-Maven>
     </localList>
     <collectionType>java.util.ArrayList</collectionType>
   </urlList>
   <application class="gate.util.persistence.ConditionalSerialAnalyserControllerPersistence">
-    <corpus class="gate.util.persistence.CorpusPersistence">
-      <docList>
-        <gate.util.persistence.LRPersistence>
-          <resourceType>gate.corpora.DocumentImpl</resourceType>
-          <resourceName>27.txt_0003A</resourceName>
-          <initParams class="gate.util.persistence.MapPersistence">
-            <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-            <localMap>
-              <entry>
-                <string>sourceUrl</string>
-                <gate.util.persistence.PersistenceManager-URLHolder>
-                  <urlString>$relpath$../../Pathology%20reports/Steve-path-training-set-40%20-%20March%202020/27.txt</urlString>
-                </gate.util.persistence.PersistenceManager-URLHolder>
-              </entry>
-              <entry>
-                <string>stringContent</string>
-                <string></string>
-              </entry>
-              <entry>
-                <string>mimeType</string>
-                <string>text/x-brat</string>
-              </entry>
-            </localMap>
-          </initParams>
-        </gate.util.persistence.LRPersistence>
-      </docList>
-      <resourceType>gate.corpora.CorpusImpl</resourceType>
-      <resourceName>Corpus for 27.txt_0003A</resourceName>
-      <initParams class="gate.util.persistence.MapPersistence">
-        <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-        <localMap/>
-      </initParams>
-    </corpus>
     <strategiesList class="gate.util.persistence.CollectionPersistence">
       <localList>
         <gate.util.persistence.AnalyserRunningStrategyPersistence>
@@ -243,10 +200,15 @@
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
             <runtimeParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-              <localMap/>
+              <localMap>
+                <entry>
+                  <string>allowWithinWords</string>
+                  <boolean>true</boolean>
+                </entry>
+              </localMap>
             </runtimeParams>
-            <resourceType>gate.creole.ANNIETransducer</resourceType>
-            <resourceName>ANNIE NE Transducer</resourceName>
+            <resourceType>gate.creole.numbers.NumbersTagger</resourceType>
+            <resourceName>Numbers Tagger</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
@@ -264,19 +226,10 @@
           <pr class="gate.util.persistence.LanguageAnalyserPersistence">
             <runtimeParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
-              <localMap>
-                <entry>
-                  <string>annotationSetName</string>
-                  <string></string>
-                </entry>
-                <entry>
-                  <string>allowWithinWords</string>
-                  <boolean>true</boolean>
-                </entry>
-              </localMap>
+              <localMap/>
             </runtimeParams>
-            <resourceType>gate.creole.numbers.NumbersTagger</resourceType>
-            <resourceName>Numbers Tagger</resourceName>
+            <resourceType>gate.creole.ANNIETransducer</resourceType>
+            <resourceName>ANNIE NE Transducer</resourceName>
             <initParams class="gate.util.persistence.MapPersistence">
               <mapType>gate.util.SimpleFeatureMapImpl</mapType>
               <localMap/>
