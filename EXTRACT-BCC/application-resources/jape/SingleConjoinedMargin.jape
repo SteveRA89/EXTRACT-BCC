@@ -1,0 +1,47 @@
+Phase: SingleConjoinedMargin
+Input: Dimension ClockFace ExcisionCompleted SingleMargin
+Options: control=all
+
+//The tumour is completely excised being 3mm from the nearest resection margin
+
+Rule: SingleConjoinedMargins1
+Priority:100
+(
+
+({ExcisionCompleted})
+({Dimension})
+({SingleMargin})
+):match
+
+-->
+
+:match.PeripheralClearance = { rule = Clearance, 
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1,
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = :match.Dimension.units
+PeipheralClockPosition = :match.ClockFace.time,
+PeipheralClockPosition2 = :match.ClockFace.time2,
+PeipheralClockPosition3 = :match.ClockFace.time3,
+PeipheralClockPosition4 = :match.ClockFace.time4}
+
+Rule: SingleConjoinedMargins2
+Priority:100
+(
+
+({ExcisionCompleted})
+({Dimension})
+({SingleMargin})
+):match
+
+-->
+
+:match.DeepClearance = { rule = Clearance, 
+MeasurementType = "DeepClearance", 
+MeasurementValue = :match.Dimension.N1,
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = :match.Dimension.units
+DeepClockPosition = :match.ClockFace.time,
+DeepClockPosition2 = :match.ClockFace.time2,
+DeepClockPosition3 = :match.ClockFace.time3,
+DeepClockPosition4 = :match.ClockFace.time4}
