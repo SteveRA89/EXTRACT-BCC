@@ -1,0 +1,18 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanUpTumourThickness
+Input: TumourThickness
+Options: control=all
+
+//Fix for letter 32 where tumour thickness running over onto peripheral involved
+
+Rule: CleanUpTumourThickness1
+
+(
+    ({TumourThickness})
+    ({TumourThickness}):match1
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
