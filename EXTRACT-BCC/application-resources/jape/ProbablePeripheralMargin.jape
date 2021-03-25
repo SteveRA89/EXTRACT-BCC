@@ -1,0 +1,24 @@
+Phase: ProbablePeripheralMargin
+Input: Dimension ClockFace Clear Micro_deep_margin_maybe MarginWordDistances
+Options: control=appelt
+
+Rule: ProbablePeripheralMargin
+Priority:100
+(
+    (({Dimension})|({MarginWordDistances})
+    ({ClockFace})):match1
+    ({Clear})
+    ({Micro_deep_margin_maybe})
+
+):match
+-->
+:match1.Clearance = { rule = ProbablePeripheralMargin,
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.Dimension.N1,
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
+MeasurementUnit = :match.Dimension.units,
+ClockPosition = :match.ClockFace.time,
+PeipheralClockPosition2 = :match.ClockFace.time2,
+PeipheralClockPosition3 = :match.ClockFace.time3,
+PeipheralClockPosition4 = :match.ClockFace.time4}

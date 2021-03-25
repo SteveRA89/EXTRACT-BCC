@@ -12,6 +12,7 @@ Frozen_Section
 PeripheralClear
 PeripheralClearButClose
 DeepClear
+ProbableDeepClear
 DeepClearButClose
 ResidualDisease
 RecurrentDisease

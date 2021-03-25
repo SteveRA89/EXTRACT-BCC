@@ -1,0 +1,27 @@
+Phase: ProbableDeepClear
+Input: Dimension ClockFace Clear Micro_deep_margin_maybe MarginWordDistances
+Options: control=appelt
+
+Rule: ProbableDeepClearYes
+Priority: 100
+
+(
+    ({Dimension})|({MarginWordDistances})
+    ({ClockFace})
+	(({Clear.Negation == Affirmed})
+    ({Micro_deep_margin_maybe})):match1
+):match
+-->
+:match1.DeepClearDetails = { rule = ProbableDeepClearYes, DeepClear = "Yes"}
+
+Rule: ProbableDeepClearNo
+Priority: 100
+
+(
+    ({Dimension})|({MarginWordDistances})
+    ({ClockFace})
+	(({Clear.Negation == Negated})
+    ({Micro_deep_margin_maybe})):match1
+):match
+-->
+:match1.DeepClearDetails = { rule = ProbableDeepClearNo, DeepClear = "No"}
