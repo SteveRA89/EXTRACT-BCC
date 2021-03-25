@@ -1,5 +1,5 @@
 Phase: ThirdMultiplePeripheral
-Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator
+Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator MarginWordDistances
 Options: control=appelt
 
 //Distance to 12 o'clock   > 2mm.
@@ -14,7 +14,7 @@ Options: control=appelt
 //Distance to 6 o'clock = 8mm
 
 Rule: ThirdMultiplePeripheral
-Priority:100
+Priority:99
 (
     ({DeepClearance.MeasurementType == DeepClearance})
     ({Separator})?
@@ -43,7 +43,7 @@ MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
 
 Rule: ThirdMultiplePeripheral2
-Priority:100
+Priority:99
 (
     ({Distance_to})?
     ({ClockFace})
@@ -72,7 +72,7 @@ MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
 
 Rule: ThirdMultiplePeripheral3
-Priority:100
+Priority:99
 (
     ({PeripheralClearance})
     ({Separator})?
@@ -90,7 +90,7 @@ MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
 
 Rule: ThirdMultiplePeripheral4
-Priority:100
+Priority:99
 (
     ({PeripheralClearance})
     ({Separator})?
@@ -102,7 +102,26 @@ Priority:100
 
 ):match1
 -->
-:match.PeripheralClearance = { rule = ThirdMultiplePeripheral4 MeasurementType = "PeripheralClearance", 
+:match.PeripheralClearance = { rule = ThirdMultiplePeripheral4, MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
+PeripheralClockPosition = :match.ClockFace.time}
+
+Rule: ThirdMultiplePeripheral5
+Priority:100
+(
+    ({PeripheralClearance})
+    ({Separator})?
+    ({Dimension})
+    ({ClockFace})
+    ({Separator})?
+    ({DeepClearance})
+    (({MarginWordDistances})
+    ({ClockFace})):match
+
+):match1
+-->
+:match.PeripheralClearance = { rule = ThirdMultiplePeripheral4, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
 PeripheralClockPosition = :match.ClockFace.time}
