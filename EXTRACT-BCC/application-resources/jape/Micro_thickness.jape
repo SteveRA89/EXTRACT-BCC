@@ -1,5 +1,5 @@
 Phase: Micro_thickness
-Input: Dimension Micro_thickness Sentence Separator Micro_deep_margin Micro_peripheral_margin Token ClockFace Micro_thickness_block
+Input: Dimension Micro_thickness Sentence Separator Micro_deep_margin Micro_peripheral_margin Token ClockFace Micro_thickness_block LevelOfInvasionTrigger
 Options: control=appelt
 
 
