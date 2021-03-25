@@ -2,7 +2,7 @@ Phase: DeepClearButClose
 Input: ClearButClose Micro_deep_margin Split Sentence Dimension
 Options: control=appelt
 
-Rule: DeepClearButCloseYes
+Rule: DeepClearButCloseYes1
 Priority: 100
 
 (
@@ -10,9 +10,19 @@ Priority: 100
 	{ClearButClose.Negation == Affirmed}
 ):match
 -->
-:match.DeepClearButCloseDetails = { rule = DeepClearButCloseYes, DeepClearButClose = "Yes"}
+:match.DeepClearButCloseDetails = { rule = DeepClearButCloseYes1, DeepClearButClose = "Yes"}
 
-Rule: PeripheralClearButCloseNo
+Rule: DeepClearButCloseYes2
+Priority: 100
+
+(
+	{ClearButClose.Negation == Affirmed}
+    {Micro_deep_margin}
+):match
+-->
+:match.DeepClearButCloseDetails = { rule = DeepClearButCloseYes2, DeepClearButClose = "Yes"}
+
+Rule: PeripheralClearButCloseNo1
 Priority: 100
 
 (
@@ -20,4 +30,14 @@ Priority: 100
 	{ClearButClose.Negation == Negated}
 ):match
 -->
-:match.DeepClearButCloseDetails = { rule = PeripheralClearButCloseNo, DeepClearButClose = "No"}
+:match.DeepClearButCloseDetails = { rule = PeripheralClearButCloseNo1, DeepClearButClose = "No"}
+
+Rule: PeripheralClearButCloseNo2
+Priority: 100
+
+(
+	{ClearButClose.Negation == Negated}
+    {Micro_deep_margin}
+):match
+-->
+:match.DeepClearButCloseDetails = { rule = PeripheralClearButCloseNo2, DeepClearButClose = "No"}
