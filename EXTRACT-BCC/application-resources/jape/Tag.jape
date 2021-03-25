@@ -1,91 +1,79 @@
 Phase: Tag
 Input: Split SplitToken Numeric InterchangeableWordsTag CancerDiagnosis Diagnosis Token Lesion Ulcerated 
 Options: control=appelt
-
 Rule: TagLetters1
 Priority: 100
 //A) or B) not a) or b)
 (
-	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.orth == upperInitial, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == ")"})
 ):match
 -->
 :match.Tag = { rule = TagLetters1, value = :match@string, Tag = :Tag.Token.string}
-
 Rule: TagLetters2
 Priority: 100
 //A. or B.  not a. or b.
 (
-	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.orth == upperInitial, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == "."})
 ):match
 -->
 :match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
-
 Rule: TagLetters3
 Priority: 100
 //A: or B:  not a: or b:
 (
-	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.orth == upperInitial, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == ":"})
 ):match
 -->
 :match.Tag = { rule = TagLetters3, value = :match@string, Tag = :Tag.Token.string}
-
 Rule: TagLetters4
 Priority: 100
 //A). or B).  not a). or b).
 (
-	({Token.orth == upperInitial, Token.length == 1}):Tag
+    ({Token.orth == upperInitial, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == ")"})
     ({Token.kind == punctuation, Token.string == "."})
-
 ):match
 -->
 :match.Tag = { rule = TagLetters4, value = :match@string, Tag = :Tag.Token.string}
-
 Rule: TagNumber1
 Priority: 100
 //1) or 2)
 (
-	({Token.kind == number, Token.length == 1}):Tag
+    ({Token.kind == number, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == ")"})
 ):match
 -->
 :match.Tag = { rule = TagNumber1, value = :match@string, Tag = :Tag.Token.string}
-
 Rule: TagNumber2
 Priority: 100
 //1. or 2.
 (
-	({Token.kind == number, Token.length == 1}):Tag
+    ({Token.kind == number, Token.length == 1}):Tag
     ({Token.kind == punctuation, Token.string == "."})
 ):match
 -->
 :match.Tag = { rule = TagLetters2, value = :match@string, Tag = :Tag.Token.string}
-
 Rule: TagInterchangeableWords1
 Priority: 90
-
 //Superior or Inferior
 (
     ({Diagnosis})
-	({InterchangeableWordsTag}):Tag
+    ({InterchangeableWordsTag}):Tag
 ):match
 -->
 :Tag.Tag = { rule = InterchangeablewordsTag1, 
 value = :Tag.InterchangeableWordsTag@string,
 Tag = :Tag.InterchangeableWordsTag.InterchangeableTag,
 SentenceStart = False} 
-
 Rule: TagInterchangeableWords2
 Priority: 90
-
 //Superior or Inferior
 (
-	({InterchangeableWordsTag}):Tag
-    ({Lesion}|{Ulcerated})?
-
+    ({InterchangeableWordsTag}):Tag
+    ({Lesion}|{Ulcerated})
 ):match
 -->
 :Tag.Tag = { rule = InterchangeablewordsTag2, 
