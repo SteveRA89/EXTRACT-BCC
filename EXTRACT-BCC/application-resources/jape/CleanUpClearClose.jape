@@ -1,0 +1,84 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanUpClearClose
+Input: Dimension DeepCloseDetails DeepClearDetails DeepClearButCloseDetails PeipheralCloseDetails PeipheralClearDetails PeripheralClearButCloseDetails Micro_peripheral_margin Micro_deep_margin Sentence Split
+Options: control=all
+
+//The lesion is 1.5mm from the deep margin and is seen very close to the 10 o'clock peripheral margin. Letter 29b fix. Also formatted for remaining similar clear and clear but close examples
+
+Rule: CleanUpClose1
+
+(
+    ({Dimension})
+    ({DeepCloseDetails}):match1
+    ({Micro_peripheral_margin})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+Rule: CleanUpClose2
+
+(
+    ({Dimension})
+    ({PeipheralCloseDetails}):match1
+    ({Micro_deep_margin})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+Rule: CleanUpClear1
+
+(
+    ({Dimension})
+    ({DeepClearDetails}):match1
+    ({Micro_peripheral_margin})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+Rule: CleanUpClear2
+
+(
+    ({Dimension})
+    ({PeipheralClearDetails}):match1
+    ({Micro_deep_margin})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+Rule: CleanUpClearButClose1
+
+(
+    ({Dimension})
+    ({DeepClearButCloseDetails}):match1
+    ({Micro_peripheral_margin})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+Rule: CleanUpClearButClose2
+
+(
+    ({Dimension})
+    ({PeipheralClearButCloseDetails}):match1
+    ({Micro_deep_margin})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
