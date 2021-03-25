@@ -11,11 +11,14 @@ ExcisionCompleted
 Frozen_Section
 PeripheralClear
 PeripheralClearButClose
+PeripheralClose
 DeepClear
 ProbableDeepClear
 DeepClearButClose
+DeepClose
 ResidualDisease
 RecurrentDisease
 BiopsyProven
 ResidualDiseaseCleanUp
 RecurrentDiseaseCleanUp
+CleanUpClearClose
