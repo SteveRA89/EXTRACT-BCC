@@ -9,4 +9,5 @@ Rule: Sentence
 ):match
 -->
 :match { 
-  inputAS.removeAll(matchAnnots);
+inputAS.removeAll(matchAnnots);
+}
