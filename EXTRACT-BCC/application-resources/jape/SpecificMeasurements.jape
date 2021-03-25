@@ -4,6 +4,7 @@ Phases:
 ProbablePeripheralMargin
 Margins
 ConjoinedMargin //Contains micro thickness
+CleanUpTumourThickness
 SingleConjoinedMargin
 MatrixConjoinedMargins
 ClockFaceContainsClearance
