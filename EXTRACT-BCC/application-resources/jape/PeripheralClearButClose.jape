@@ -2,7 +2,7 @@ Phase: PeripheralClearButClose
 Input: ClearButClose Micro_peripheral_margin Split Sentence Dimension
 Options: control=appelt
 
-Rule: PeripheralClearButCloseYes
+Rule: PeripheralClearButCloseYes1
 Priority: 100
 
 (
@@ -10,14 +10,33 @@ Priority: 100
 	{ClearButClose.Negation == Affirmed}
 ):match
 -->
-:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseYes, PeripheralClearButClose = "Yes"}
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseYes1, PeripheralClearButClose = "Yes"}
 
-Rule: PeripheralClearButCloseNo
+Rule: PeripheralClearButCloseYes2
 Priority: 100
 
 (
+	{ClearButClose.Negation == Affirmed}
     {Micro_peripheral_margin}
+):match
+-->
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseYes2, PeripheralClearButClose = "Yes"}
+
+Rule: PeripheralClearButCloseNo1
+Priority: 100
+
+(
+	{ClearButClose.Negation == Negated}
+    {Micro_peripheral_margin}
+):match
+-->
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseNo1, PeripheralClearButClose = "No"}
+
+Rule: PeripheralClearButCloseNo2
+Priority: 100
+
+(   {Micro_peripheral_margin}
 	{ClearButClose.Negation == Negated}
 ):match
 -->
-:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseNo, PeripheralClearButClose = "No"}
+:match.PeripheralClearButCloseDetails = { rule = PeripheralClearButCloseNo2, PeripheralClearButClose = "No"}
