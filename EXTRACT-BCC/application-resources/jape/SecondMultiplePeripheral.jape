@@ -1,5 +1,5 @@
 Phase: SecondMultiplePeripheral
-Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator
+Input: Distance_to Dimension DeepClearance PeripheralClearance ClockFace NewLine Separator MarginWordDistances
 Options: control=appelt
 
 //Deep margin 3mm
@@ -23,16 +23,20 @@ Priority:99
     ({NewLine})?
     ({Distance_to})?
     ({ClockFace})
-    ({Dimension}) 
+    ({Separator})?
+    ({Dimension}|{MarginWordDistances})
     ({Separator})?
     ({NewLine})?
     ({Distance_to})?
     (({ClockFace})
-    ({Dimension})):match
+    ({Separator})?
+    ({Dimension}|{MarginWordDistances})):match
 
 ):match1
 -->
 :match.PeripheralClearance = { rule = SecondMultiplePeripheral, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
@@ -42,12 +46,13 @@ Priority:99
 (
     ({Distance_to})?
     ({ClockFace})
-    ({Dimension})
+    ({Dimension}|{MarginWordDistances})
     ({Separator})?
     ({NewLine})?
     ({Distance_to})?
     (({ClockFace})
-    ({Dimension})):match
+    ({Separator})?
+    ({Dimension}|{MarginWordDistances})):match
     ({Separator})?
     ({NewLine})?
     ({Separator})?
@@ -57,6 +62,8 @@ Priority:99
 ):match1
 -->
 :match.PeripheralClearance = { rule = SecondMultiplePeripheral2, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
@@ -67,11 +74,14 @@ Priority:99
     ({PeripheralClearance})
     ({Separator})?
     (({ClockFace})
-    ({Dimension})):match
+    ({Separator})?
+    ({Dimension}|{MarginWordDistances})):match
 
 ):match1
 -->
 :match.PeripheralClearance = { rule = SecondMultiplePeripheral3, MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
@@ -81,12 +91,15 @@ Priority:99
 (
     ({PeripheralClearance})
     ({Separator})?
-    (({Dimension})
+    (({Dimension}|{MarginWordDistances})
     ({ClockFace})):match
+    ({Separator})?
 
 ):match1
 -->
 :match.PeripheralClearance = { rule = SecondMultiplePeripheral4 MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
 MeasurementValue = :match.Dimension.N1, 
 MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
@@ -99,10 +112,13 @@ Priority:100
     ({DeepClearance})
     (({MarginWordDistances})
     ({ClockFace})):match
+    ({Separator})?
 
 ):match1
 -->
 :match.PeripheralClearance = { rule = SecondMultiplePeripheral5, MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.MarginWordDistances.Value,
 MeasurementUnit = "mm",
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
