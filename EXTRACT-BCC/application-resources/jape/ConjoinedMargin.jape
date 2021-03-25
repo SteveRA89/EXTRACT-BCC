@@ -1,5 +1,5 @@
 Phase: ConjoinedMargins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator Micro_thickness TumourThickness Clearance Dimensions NewLine ClinicalDetailMargin ExcisionCompleted SingleMargin
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator Micro_thickness TumourThickness Clearance Dimensions NewLine ClinicalDetailMargin ExcisionCompleted SingleMargin LevelOfInvasionTrigger
 Options: control=appelt
 
 //10mm deep and 15mm peripheral clearance
@@ -107,7 +107,7 @@ PeipheralClockPosition4 = :match.ClockFace.time4}
 Rule: Micro_thickness1
 Priority:99
 (
-    (({Micro_thickness.Position != Post}) //Deep
+    (({Micro_thickness.Position != Post}|{LevelOfInvasionTrigger.Position != Post}) //Deep
     ({Dimension})):match //10mm 
 
 ):match1
@@ -121,7 +121,7 @@ Priority:99
 (
 
     (({Dimension}) //10mm
-    ({Micro_thickness})):match // Deep 
+    ({Micro_thickness})|{LevelOfInvasionTrigger}):match // Deep 
 
 ):match1
 -->

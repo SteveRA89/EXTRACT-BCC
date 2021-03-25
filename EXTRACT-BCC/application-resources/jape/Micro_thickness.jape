@@ -6,7 +6,7 @@ Options: control=appelt
 Rule: Micro_thickness1
 Priority:100
 (
-    ({Micro_thickness.Position != Post}) //Deep
+    ({Micro_thickness.Position != Post})|({LevelOfInvasionTrigger.Position != Post}) //Deep
     ({Dimension})//10mm 
     ({Micro_thickness_block})?//and, ',' or ';' ...
 
@@ -20,7 +20,7 @@ Rule: Micro_thickness2
 Priority:100
 (
     ({Dimension}) //10mm
-    ({Micro_thickness}) // deep 
+    ({Micro_thickness})|({LevelOfInvasionTrigger) // deep 
     ({Micro_thickness_block})?
 
 ):match

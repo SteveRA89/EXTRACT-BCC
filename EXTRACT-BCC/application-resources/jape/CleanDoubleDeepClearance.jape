@@ -1,0 +1,98 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanDoubleDeepClearance
+Input: Clearance
+Options: control=all
+Rule: CleanDoubleDeepClearance
+
+(
+//Removes first DeepClearance when DeepClearance is followed by PeripheralClearance (fix for letter 26)
+
+    ({Clearance.MeasurementType == DeepClearance}):match1
+    ({Clearance.MeasurementType == DeepClearance})
+    ({Clearance.MeasurementType == PeripheralClearance})
+    
+):match
+
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+/*
+
+Imports: { import static gate.Utils.*;
+            import java.util.*; }
+Phase: CleanDoubleDeepClearance
+Input: MicroMeasurements
+Options: control=all
+
+//Removes smalled DeepClearance when more than one - dc1 and dc2 are not mutually exclusive so above rule used in preference. If going to re-use this then need to insert after micromeasurementsMP and before output 
+
+Rule: Sentence
+(
+    ({MicroMeasurements.MeasurementType == DeepClearance}):dc1
+    ({MicroMeasurements.MeasurementType != DeepClearance})[0,4]//Up to 4 other MicroMeasurments between them (4 because each other measurement type)
+    ({MicroMeasurements.MeasurementType == DeepClearance}):dc2
+):match
+-->
+:dc2 {
+Annotation dc1 = bindings.get("dc1").iterator().next();//get DeepClearance1
+Annotation dc2 = bindings.get("dc2").iterator().next();//get DeepClearance2
+String value1string = dc1.getFeatures().get("MeasurementValue").toString();//get value
+Float value1 = Float.parseFloat(value1string);//convert to float (number with decimal place)
+String value2string = dc2.getFeatures().get("MeasurementValue").toString();
+Float value2 = Float.parseFloat(value2string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();//get tag of dc1
+        String Tag2 = dc2.getFeatures().get("Tag").toString();//get tag of dc2
+        if(Tag1 == Tag2) {//if tag for dc1 is same as tag for dc2
+            if(value1 > value2){
+                inputAS.removeAll(dc2Annots);// delete annotation for dc2 if value1 bigger
+                // System.out.println(value1);
+                // System.out.println("rule1");
+            } else if (value1-value2 == 0){
+                inputAS.removeAll(dc2Annots);// delete annotation for dc2 if same size as dc1
+                // System.out.println(value1);
+                // System.out.println("rule1a");
+            }
+        }
+    }
+    else {
+        if(value1 > value2){
+            inputAS.removeAll(dc2Annots);// delete annotation for dc2 if value1 bigger
+            // System.out.println(value1);
+            // System.out.println("rule1");
+        } else if (value1-value2 == 0){
+            inputAS.removeAll(dc2Annots);// delete annotation for dc2 if same size as dc1
+            // System.out.println(value1);
+            // System.out.println("rule1a");
+        }
+    }
+},
+:dc1 {
+Annotation dc1 = bindings.get("dc1").iterator().next();//get DeepClearance1
+Annotation dc2 = bindings.get("dc2").iterator().next();//get DeepClearance2
+String value1string = dc1.getFeatures().get("MeasurementValue").toString();//get value
+Float value1 = Float.parseFloat(value1string);//convert to float (number with decimal place)
+String value2string = dc2.getFeatures().get("MeasurementValue").toString();
+Float value2 = Float.parseFloat(value2string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();//get tag of dc1
+        String Tag2 = dc2.getFeatures().get("Tag").toString();//get tag of dc2
+        if(Tag1 == Tag2) {//if tag for dc1 is same as tag for dc2
+            if (value2 > value1) {
+                inputAS.removeAll(dc1Annots);// delete annotation for dc1 if value2 bigger
+                // System.out.println(value2);
+                // System.out.println("rule2");
+            }
+        }
+    }
+    else {
+            if (value2 > value1) {
+                inputAS.removeAll(dc1Annots);// delete annotation for dc1 if value2 bigger
+                // System.out.println(value2);
+                // System.out.println("rule2");
+            }
+    }
+
+*/
