@@ -1,0 +1,43 @@
+Phase: DeepClose
+Input: Close Micro_deep_margin Split Sentence Dimension 
+Options: control=appelt
+
+Rule: DeepCloseYes1
+Priority: 99
+
+(
+    {Micro_deep_margin}
+	{Close.Negation == Affirmed}
+):match
+-->
+:match.DeepCloseDetails = { rule = DeepCloseYes1, DeepClose = "Yes"}
+
+Rule: DeepCloseYes2
+Priority: 99
+
+(
+	{Close.Negation == Affirmed}
+    {Micro_deep_margin}
+):match
+-->
+:match.DeepCloseDetails = { rule = DeepCloseYes2, DeepClose = "Yes"}
+
+Rule: PeripheralCloseNo1
+Priority: 99
+
+(
+    {Micro_deep_margin}
+	{Close.Negation == Negated}
+):match
+-->
+:match.DeepCloseDetails = { rule = PeripheralCloseNo1, DeepClose = "No"}
+
+Rule: PeripheralCloseNo2
+Priority: 99
+
+(
+	{Close.Negation == Negated}
+    {Micro_deep_margin}
+):match
+-->
+:match.DeepCloseDetails = { rule = PeripheralCloseNo2, DeepClose = "No"}

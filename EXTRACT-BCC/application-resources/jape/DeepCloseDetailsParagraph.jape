@@ -1,0 +1,60 @@
+Phase: TagStartOfSentence
+Input: DeepCloseDetails GroupedParagraph
+Options: control=all
+
+/*
+ * DeepCloseDetails is within GroupedParagraph
+*/
+
+Rule: DeepCloseDetailsParagraph1
+(
+    ({DeepCloseDetails within GroupedParagraph.ParagraphTitle == ClinicalDetails}):Tag
+
+):match
+
+-->
+
+:match.DeepCloseDetailsParagraph = { rule2 = DeepCloseDetailsParagraph1,
+rule = :match.DeepCloseDetails.rule, 
+DeepCloseDetails = :match.DeepCloseDetails.DeepClearButClose,
+ParagraphTitle = ClinicalDetails}
+
+Rule: DeepCloseDetailsParagraph2
+(
+    ({DeepCloseDetails within GroupedParagraph.ParagraphTitle == MacroDescription}):Tag
+
+):match
+
+-->
+
+:match.DeepCloseDetailsParagraph = { rule2 = DeepCloseDetailsParagraph2,
+rule = :match.DeepCloseDetails.rule, 
+DeepCloseDetails = :match.DeepCloseDetails.DeepClearButClose,
+ParagraphTitle = MacroDescription}
+
+Rule: DeepCloseDetailsParagraph3
+(
+    ({DeepCloseDetails within GroupedParagraph.ParagraphTitle == Microscopy}):Tag
+
+):match
+
+-->
+
+:match.DeepCloseDetailsParagraph = { rule2 = DeepCloseDetailsParagraph3,
+rule = :match.DeepCloseDetails.rule, 
+DeepCloseDetails = :match.DeepCloseDetails.DeepClearButClose,
+ParagraphTitle = Microscopy}
+
+Rule: DeepCloseDetailsParagraph4
+(
+    ({DeepCloseDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport}):Tag
+
+):match
+
+-->
+
+:match.DeepCloseDetailsParagraph = { rule2 = DeepCloseDetailsParagraph4,
+rule = :match.DeepCloseDetails.rule, 
+DeepCloseDetails = :match.DeepCloseDetails.DeepClearButClose,
+ParagraphTitle = SupplementaryReport}
+
