@@ -1,0 +1,43 @@
+Phase: PeripheralClose
+Input: Close Micro_peripheral_margin Split Sentence Dimension Clearance
+Options: control=appelt
+
+Rule: PeripheralCloseYes1
+Priority: 99
+
+(
+    {Micro_peripheral_margin}
+	{Close.Negation == Affirmed}
+):match
+-->
+:match.PeripheralCloseDetails = { rule = PeripheralCloseYes1, PeripheralClose = "Yes"}
+
+Rule: PeripheralCloseYes2
+Priority: 99
+
+(
+	{Close.Negation == Affirmed}
+    {Micro_peripheral_margin}
+):match
+-->
+:match.PeripheralCloseDetails = { rule = PeripheralCloseYes2, PeripheralClose = "Yes"}
+
+Rule: PeripheralCloseNo1
+Priority: 99
+
+(
+	{Close.Negation == Negated}
+    {Micro_peripheral_margin}
+):match
+-->
+:match.PeripheralCloseDetails = { rule = PeripheralCloseNo1, PeripheralClose = "No"}
+
+Rule: PeripheralCloseNo2
+Priority: 99
+
+(
+    {Micro_peripheral_margin}
+    {Close.Negation == Negated}
+):match
+-->
+:match.PeripheralCloseDetails = { rule = PeripheralCloseNo2, PeripheralClose = "No"}
