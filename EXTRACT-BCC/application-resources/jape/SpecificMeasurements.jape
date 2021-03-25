@@ -1,12 +1,14 @@
 MultiPhase: SpecificMeasurements
 Phases:
 
+ProbablePeripheralMargin
 Margins
 ConjoinedMargin //Contains micro thickness
 SingleConjoinedMargin
 MatrixConjoinedMargins
 ClockFaceContainsClearance
 CleanUpClearance
+CleanDoubleDeepClearance
 Clearance
 //Micro_thickness
 Operative_margin
