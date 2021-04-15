@@ -1,0 +1,19 @@
+Imports: {import static gate.Utils.*; }
+Phase: ReporterCleanUp
+Input: ReportDetails
+Options: control=appelt
+
+Rule: ReporterCleanUp1
+Priority: 99
+
+
+(
+    ({ReportDetails}):match1
+    ({ReportDetails})
+
+):match
+
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
