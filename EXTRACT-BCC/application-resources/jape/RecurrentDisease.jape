@@ -7,7 +7,7 @@ Priority: 100
 
 (
 	(({RecurrentDisease.Negation == Affirmed})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "RecurrentDiseasePresent"}
@@ -17,7 +17,7 @@ Priority: 100
 
 (
 	(({RecurrentDisease.Negation == Negated})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "NoRecurrentDiseasePresent"}
@@ -27,7 +27,7 @@ Priority: 100
 
 (
 	(({RecurrentDisease.Negation == Negated, RecurrentDisease.Negatives == false})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.RecurrentDiseaseDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "RecurrentDiseasePresent"}
@@ -37,7 +37,7 @@ Priority: 100
 
 (
 	(({RecurrentDisease.Negation == Affirmed, RecurrentDisease.Negatives == false})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.RecurrentDiseaseDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "NoRecurrentDiseasePresent"}

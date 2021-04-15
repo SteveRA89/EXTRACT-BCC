@@ -8,7 +8,7 @@ Priority: 100
 
 (
 	(({ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == true})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.ResidualDiseaseDetails = { rule = ResidualDiseaseYes1, ResidualDisease = "ResidualDiseasePresent"}
@@ -18,7 +18,7 @@ Priority: 100
 
 (
 	(({ResidualDisease.Negation == Negated, ResidualDisease.Negatives == true})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.ResidualDiseaseDetails = { rule = ResidualDiseaseNo1, ResidualDisease = "NoResidualDiseasePresent"}
@@ -28,7 +28,7 @@ Priority: 100
 
 (
 	(({ResidualDisease.Negation == Negated, ResidualDisease.Negatives == false})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.ResidualDiseaseDetails = { rule = ResidualDiseaseYes2, ResidualDisease = "ResidualDiseasePresent"}
@@ -38,7 +38,7 @@ Priority: 100
 
 (
 	(({ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == false})):match1
-	({Diagnosis.CancerType == BasalCellCarcinoma})
+	({Diagnosis})
 ):match
 -->
 :match1.ResidualDiseaseDetails = { rule = ResidualDiseaseNo2, ResidualDisease = "NoResidualDiseasePresent"}
