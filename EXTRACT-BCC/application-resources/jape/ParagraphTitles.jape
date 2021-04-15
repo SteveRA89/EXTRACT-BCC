@@ -1,25 +1,32 @@
 Phase: ParagraphTitles
 Input: ParagraphTitles Reported_triggers NewLine lastNode
 Options: control=all
-
-
 Rule: ParagraphTitles1
 Priority: 100
 //Picks up when one paragraph ends and another starts
 (
-	(({ParagraphTitles})
+    (({ParagraphTitles.type != SupplementaryReport})
     ({NewLine})+):Tag
     ({ParagraphTitles}|{Reported_triggers})
 ):match
 -->
 :Tag.GroupedParagraph = { rule = GroupedParagraph, ParagraphTitle = :Tag.ParagraphTitles.type}
-
-
 Rule: ParagraphTitles2
 Priority: 100
 //Picks up when last paragraph to end of document
 (
-	(({ParagraphTitles})
+    (({ParagraphTitles.type != SupplementaryReport})
+    ({NewLine})+):Tag
+    ({Reported_triggers})?
+    ({lastNode})
+):match
+-->
+:match.GroupedParagraph = { rule = GroupedParagraph, ParagraphTitle = :Tag.ParagraphTitles.type}
+Rule: ParagraphTitles3
+Priority: 100
+//Picks up when last paragraph to end of document
+(
+    (({ParagraphTitles.type == SupplementaryReport})
     ({NewLine})+):Tag
     ({Reported_triggers})?
     ({lastNode})

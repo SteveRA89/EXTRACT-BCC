@@ -1,5 +1,5 @@
 Phase: SupplementaryReportDetails
-Input: SupplementaryReport_trigger ReportDetails SupplementaryReportDetails
+Input: ReportDetails SupplementaryReportDetails
 Options: control=appelt
 
 Rule: SupplementaryReportDetails2
