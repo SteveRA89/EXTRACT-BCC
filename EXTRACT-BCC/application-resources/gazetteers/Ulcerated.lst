@@ -8,6 +8,9 @@ Ulceration
 Ulcerated
 Ulcer
 Ulcerating
+With ulceration:Negatives=true
+With an ulcerating:Negatives=true
+With a ulcerating:Negatives=true
 Ulceration ?:Negatives=true
 Ulcerated ?:Negatives=true
 Ulcerating ?:Negatives=true

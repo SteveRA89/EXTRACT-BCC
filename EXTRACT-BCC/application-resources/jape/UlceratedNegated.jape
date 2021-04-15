@@ -1,10 +1,12 @@
 Imports: {import static gate.Utils.*; }
 
 Phase: NegationReversal
-Input: Split Sentence Ulcerated 
+Input: Split Sentence Ulcerated UlceratedTrigger Trigger
 Options: control=appelt
 
-Rule: UlceratedCleanUp1
+Rule: UlceratedCleanUp3
+Priority: 99
+
 //Non-ulcerated changed from affirmed to negated
 // Similar to ClearNegation.jape
 (
@@ -18,11 +20,27 @@ umlsAnnots.iterator().next().getFeatures().put("Negation","Negated");
 umlsAnnots.iterator().next().getFeatures().put("rule","NegationReversal");
 }
 
-Rule: UlceratedCleanUp2
+Rule: UlceratedCleanUp4
+Priority: 99
 
 (
 
 ({Ulcerated.Negatives == false, Ulcerated.Negation == Negated}):umls
+
+):match
+-->
+:umls {
+umlsAnnots.iterator().next().getFeatures().put("Negation","Affirmed");
+umlsAnnots.iterator().next().getFeatures().put("rule","NegationReversal");
+}
+
+Rule: UlceratedCleanUp5
+Priority: 100
+
+(
+({Trigger})
+({UlceratedTrigger})
+({Ulcerated.Negatives == true, Ulcerated.Negation == Negated}):umls
 
 ):match
 -->
