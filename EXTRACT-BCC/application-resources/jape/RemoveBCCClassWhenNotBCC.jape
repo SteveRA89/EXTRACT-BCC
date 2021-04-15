@@ -1,0 +1,19 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: RemoveBCCClassWhenNotBCC
+Input: BCCClass Diagnosis Split Sentence
+Options: control=all
+Rule: RemoveBCCClassWhenNotBCC
+ 
+(
+//Removes BCC Class when folowed by a non-BCC diagnosis
+
+  ({BCCClass}):match1
+	({Diagnosis.CancerType == OtherCancerous}|{Diagnosis.CancerType == OtherInSitu}|{Diagnosis.CancerType == OtherIntermediate}|{Diagnosis.CancerType == OtherBenign})
+    
+):match
+
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
