@@ -1,5 +1,5 @@
 Phase: SupplementaryReportDetails
-Input: SupplementaryReport_trigger DateBio ReportDetails Diagnosis Dimension 
+Input: SupplementaryReport_trigger DateBio ReportDetails Diagnosis Dimension VIP GroupedParagraph
 Options: control=appelt
 
 // Diagnosis and dimension added in as blocks for the rule to stop running over rest of paragraph
@@ -15,10 +15,26 @@ Priority: 100
 ):match
 -->
 :match.SupplementaryReportDetails = {rule = SupplementaryReportDetails1,
-DayDate = :match.DateBio.DayDate, 
-MonthDate = :match.DateBio.MonthDate,
-YearDate = :match.DateBio.YearDate,
-DayDate = :match.ReportDetails.DayDate, 
-MonthDate = :match.ReportDetails.MonthDate,
-YearDate = :match.ReportDetails.YearDate,
-Pathologist = :match.ReportDetails.Pathologist}
+SRDayDate = :match.DateBio.DayDate, 
+SRMonthDate = :match.DateBio.MonthDate,
+SRYearDate = :match.DateBio.YearDate,
+SRDayDate = :match.ReportDetails.DayDate, 
+SRMonthDate = :match.ReportDetails.MonthDate,
+SRYearDate = :match.ReportDetails.YearDate,
+SRPathologist = :match.ReportDetails.Pathologist}
+
+Rule: SupplementaryReportDetails3
+Priority: 99
+(
+
+
+    ({VIP.majorType == Person, VIP.minorType == Reporter})
+    ({DateBio within GroupedParagraph.ParagraphTitle == SupplementaryReport})
+
+):match
+-->
+:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails3,
+SRDayDate = :match.DateBio.DayDate, 
+SRMonthDate = :match.DateBio.MonthDate,
+SRYearDate = :match.DateBio.YearDate,
+SRPathologist = :match.VIP.Name}

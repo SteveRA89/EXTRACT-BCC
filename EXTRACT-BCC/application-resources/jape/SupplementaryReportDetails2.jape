@@ -1,5 +1,5 @@
 Phase: SupplementaryReportDetails
-Input: SupplementaryReport_trigger DateBio ReportDetails SupplementaryReportDetails
+Input: SupplementaryReport_trigger ReportDetails SupplementaryReportDetails
 Options: control=appelt
 
 Rule: SupplementaryReportDetails2
@@ -12,10 +12,10 @@ Priority: 100
 ):match
 -->
 :match2.SupplementaryReportDetails = {rule = SupplementaryReportDetails2,
-DayDate = :match.ReportDetails.DayDate, 
-MonthDate = :match.ReportDetails.MonthDate,
-YearDate = :match.ReportDetails.YearDate,
-Pathologist = :match.ReportDetails.Pathologist
+SRDayDate = :match.ReportDetails.DayDate, 
+SRMonthDate = :match.ReportDetails.MonthDate,
+SRYearDate = :match.ReportDetails.YearDate,
+SRPathologist = :match.ReportDetails.Pathologist
 }
 ,
 

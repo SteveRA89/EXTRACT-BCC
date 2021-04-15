@@ -63,8 +63,8 @@ SRDeepClockPosition4 = :match.DeepClearance.DeepClockPosition4,
 SRMeasurementType = :match.MaxMicroDiameterParagraph.MeasurementType,
 SRMeasurementValue = :match.MaxMicroDiameterParagraph.MeasurementValue,
 SRMeasurementUnit = :match.MaxMicroDiameterParagraph.MeasurementUnit,
-SRDayDate = :match.SupplementaryReportDetails.DayDate, 
-SRMonthDate = :match.SupplementaryReportDetails.MonthDate,
-SRYearDate = :match.SupplementaryReportDetails.YearDate,
-SRPathologist= :match.SupplementaryReportDetails.Pathologist
+SRDayDate = :match.SupplementaryReportDetails.SRDayDate, 
+SRMonthDate = :match.SupplementaryReportDetails.SRMonthDate,
+SRYearDate = :match.SupplementaryReportDetails.SRYearDate,
+SRPathologist= :match.SupplementaryReportDetails.SRPathologist
 }
