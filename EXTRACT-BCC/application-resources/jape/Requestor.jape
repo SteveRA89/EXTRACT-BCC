@@ -1,16 +1,48 @@
 Phase: Requestor
-Input:   Requestor_triggers VIP
+Input: Requestor_triggers VIP Titles Token NewLine
 Options: control=appelt
-
-
-
 Rule: Requestor1
-Priority: 99
+Priority: 100
 (
-        {Requestor_triggers}
-         {VIP.majorType == Person, VIP.minorType == Requestor}
-		
-        
+        ({Requestor_triggers})
+        ({Token.kind == punctuation, Token.length == 1, Token.string == ":"})?
+        ({Titles})?
+        ({VIP.majorType == Person, VIP.minorType == Speciality})
 ):match
 -->
-:match.Requestor = {rule = Requestor1, Requestor= :match.VIP.Name}
+:match.Requestor = {rule = Requestor1,
+CliniciansName= :match.VIP.Name,
+Speciality= :match.VIP.Speciality}
+
+Rule: Requestor2
+Priority: 50
+(
+        ({Requestor_triggers})
+        ({Token.kind == punctuation, Token.length == 1, Token.string == ":"})? //":"
+        ({Titles})?
+        (({Token.kind == word}):firstname
+        ({Token.kind == word}):lastname
+        ):name
+):match
+-->
+:match.Requestor = {rule = Requestor2,
+CliniciansName = :name@string
+}
+
+Rule: Requestor3
+Priority: 50
+(
+        ({Requestor_triggers})
+        ({Token.kind == punctuation, Token.length == 1, Token.string == ":"})? //":"
+        ({Titles})?
+        (({Token.kind == word}):firstname
+        (({Token.kind == word}):doublebarrell1
+        ({Token.kind == punctuation, Token.length == 1, Token.string == ":"})? //"-"
+        ({Token.kind == word}):doublebarrell2
+        ):lastname
+        ):name
+):match
+-->
+:match.Requestor = {rule = Requestor3,
+CliniciansName = :name@string
+}
