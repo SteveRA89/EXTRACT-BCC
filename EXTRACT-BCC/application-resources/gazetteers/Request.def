@@ -4,6 +4,5 @@ Reported_triggers.lst::::Reported_triggers
 Requestor_triggers.lst::::Requestor_triggers
 Excisiondate_trigger.lst::::Excisiondate_trigger
 AccessionNumber.lst::::AccessionNumber_trigger
-ParagraphTitles.lst::::ParagraphTitles
 SupplementaryReport_trigger.lst::::SupplementaryReport_trigger
 Titles.lst::::Titles
