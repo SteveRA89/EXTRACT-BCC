@@ -1,0 +1,32 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: MultipleCancerDiagnosisCleanUp1
+Input: CancerDiagnosis GroupedParagraph Tag
+Options: control=appelt
+
+
+Rule: MultipleCancerDiagnosisCleanUp1
+Priority: 100
+
+(
+    ({CancerDiagnosis within GroupedParagraph.ParagraphTitle == Microscopy}):match2
+	({CancerDiagnosis within GroupedParagraph.ParagraphTitle == Microscopy}):match1
+
+):match
+
+-->
+
+:match1 { 
+Annotation match2Ann= bindings.get("match2").iterator().next();//get CancerDiagnosis1
+
+Annotation match1Ann= bindings.get("match1").iterator().next();//get CancerDiagnosis2 
+
+String CancerType1string = match2Ann.getFeatures().get("CancerType").toString();// get CancerType values
+
+String CancerType2string = match1Ann.getFeatures().get("CancerType").toString();// get CancerType values
+
+{ 
+match1Ann.getFeatures().remove("CancerType");// Deleting CancerType
+getOnlyAnn(match1Annots).getFeatures().put("CancerType2", CancerType2string);}//Put CancerType2 
+
+}
