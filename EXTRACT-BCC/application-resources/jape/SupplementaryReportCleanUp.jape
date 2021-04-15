@@ -1,19 +1,19 @@
 Phase: SupplementaryReportCleanUp
-Input: SupplementaryReport_trigger ParagraphTitles 
+Input: SupplementaryReport_trigger AccessionNumber DateBio ParagraphTitles NewLine
 Options: control=appelt
-
-//This rule deletes supplemental report trigger at start of the document
 
 Rule: SupplementaryReportCleanUp
 Priority: 100
 (
+  (({ParagraphTitles.type == SupplementaryReport})
+  ({DateBio})):match1
+  ({NewLine}) [1,10]
+  ({ParagraphTitles.type == AccessionNumber}|{ParagraphTitles.type == SpecimensRecieved}|{ParagraphTitles.type == ClinicalDetails})
 
-    (({SupplementaryReport_trigger, ParagraphTitles.type == SupplementaryReport})+):match
-    ({ParagraphTitles.type == ClinicalDetails})
-
-):match2
+):match
 -->
 
-:match { 
-  inputAS.removeAll(matchAnnots);//This deletes the match annotation 
-}
+:match1.SupplementaryReport = {rule = SupplementaryReportCleanUp1,
+SRDayDate = :match.DateBio.DayDate, 
+SRMonthDate = :match.DateBio.MonthDate,
+SRYearDate = :match.DateBio.YearDate}

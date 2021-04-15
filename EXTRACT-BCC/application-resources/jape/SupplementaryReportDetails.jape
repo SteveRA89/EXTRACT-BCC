@@ -7,11 +7,9 @@ Options: control=appelt
 Rule: SupplementaryReportDetails1
 Priority: 100
 (
-
     ({SupplementaryReport_trigger})
-    ({DateBio})?
+    ({DateBio})
     ({ReportDetails})?
-
 ):match
 -->
 :match.SupplementaryReportDetails = {rule = SupplementaryReportDetails1,
@@ -23,18 +21,27 @@ SRMonthDate = :match.ReportDetails.MonthDate,
 SRYearDate = :match.ReportDetails.YearDate,
 SRPathologist = :match.ReportDetails.Pathologist}
 
+Rule: SupplementaryReportDetails2
+Priority: 100
+(
+    ({ReportDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport})
+):match
+-->
+:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails2,
+SRDayDate = :match.ReportDetails.DayDate, 
+SRMonthDate = :match.ReportDetails.MonthDate,
+SRYearDate = :match.ReportDetails.YearDate,
+SRPathologist = :match.ReportDetails.Pathologist}
+
 Rule: SupplementaryReportDetails3
 Priority: 99
 (
-
-
     ({VIP.majorType == Person, VIP.minorType == Reporter})
     ({DateBio within GroupedParagraph.ParagraphTitle == SupplementaryReport})
-
 ):match
 -->
 :match.SupplementaryReportDetails = {rule = SupplementaryReportDetails3,
 SRDayDate = :match.DateBio.DayDate, 
 SRMonthDate = :match.DateBio.MonthDate,
-SRYearDate = :match.DateBio.YearDate,
-SRPathologist = :match.VIP.Name}
+SRYearDate = :match.DateBio.YearDate
+}
