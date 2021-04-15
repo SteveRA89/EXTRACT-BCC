@@ -12,7 +12,7 @@ Priority: 100
     ({ReportDetails})?
 ):match
 -->
-:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails1,
+:match.SupplementaryReport = {rule = SupplementaryReportDetails1,
 SRDayDate = :match.DateBio.DayDate, 
 SRMonthDate = :match.DateBio.MonthDate,
 SRYearDate = :match.DateBio.YearDate,
@@ -27,7 +27,7 @@ Priority: 100
     ({ReportDetails within GroupedParagraph.ParagraphTitle == SupplementaryReport})
 ):match
 -->
-:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails2,
+:match.SupplementaryReport = {rule = SupplementaryReportDetails2,
 SRDayDate = :match.ReportDetails.DayDate, 
 SRMonthDate = :match.ReportDetails.MonthDate,
 SRYearDate = :match.ReportDetails.YearDate,
@@ -40,7 +40,7 @@ Priority: 99
     ({DateBio within GroupedParagraph.ParagraphTitle == SupplementaryReport})
 ):match
 -->
-:match.SupplementaryReportDetails = {rule = SupplementaryReportDetails3,
+:match.SupplementaryReport = {rule = SupplementaryReportDetails3,
 SRDayDate = :match.DateBio.DayDate, 
 SRMonthDate = :match.DateBio.MonthDate,
 SRYearDate = :match.DateBio.YearDate
