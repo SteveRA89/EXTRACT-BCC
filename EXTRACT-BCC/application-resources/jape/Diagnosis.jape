@@ -3,6 +3,9 @@ Phases:
 
 MultipleCancerType
 BiopsyDiagnosis
+RemoveBCCClassWhenNotBCC
 CancerDiagnosis
 CancerDiagnosisJAVA
 DiagnosisContainsBCCClass
+MultipleCancerDiagnosisCleanUp
+SingleDiagnosisBrackets
