@@ -1,5 +1,5 @@
 Phase: TagSentences
-Input: Tag ParagraphTitles Reported_triggers NewLine
+Input: Tag ParagraphTitles Reported_triggers NewLine DateBio
 Options: control=all
 
 //Make the tag useful for other rules
@@ -9,7 +9,7 @@ Priority: 100
 (
 	(({Tag, !Tag.SentenceStart == "False"})
     ({NewLine})*):Tag
-    ({Tag}|{Reported_triggers}|{ParagraphTitles})
+    ({Tag}|{Reported_triggers}|{ParagraphTitles}|{DateBio})
 ):match
 -->
 :Tag.TagSentence = {rule = TagSentences1, Tag = :Tag.Tag.Tag}
@@ -18,7 +18,7 @@ Rule: TagSentences2
 Priority: 100
 (
 	(({Tag, !Tag.SentenceStart == "False"})
-    ({Tag}|{Reported_triggers}|{ParagraphTitles})*):Tag
+    ({Tag}|{Reported_triggers}|{ParagraphTitles}|{DateBio})*):Tag
 ):match
 -->
 :Tag.TagSentence = {rule = TagSentences2, Tag = :Tag.Tag.Tag}
