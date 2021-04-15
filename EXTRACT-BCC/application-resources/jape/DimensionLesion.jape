@@ -1,5 +1,5 @@
 Phase: DimensionLesion
-Input: Dimension Lesion DimensionSpecimen Ulcerated NewLine
+Input: Dimension Lesion DimensionSpecimen Ulcerated
 Options: control=appelt
 
 //This will only pick up ExcisionTypes directly from the gazetteer, the jape rule is currently after it in the pipeline
