@@ -1,6 +1,6 @@
 Imports: {import static gate.Utils.*; }
 Phase: DimensionSpecimenCleanUp
-Input: DimensionSpecimen
+Input: DimensionSpecimen Tag
 Options: control=all
 
 Rule: DimensionSpecimenCleanUp

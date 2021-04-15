@@ -1,6 +1,6 @@
 Imports: {import static gate.Utils.*; }
 Phase: CleanUpOperativeInvasion
-Input: OperativeInvasion 
+Input: OperativeInvasion Tag
 Options: control=all
 
 Rule: CleanUpOperativeInvasion

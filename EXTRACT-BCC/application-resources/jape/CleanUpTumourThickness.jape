@@ -1,6 +1,6 @@
 Imports: {import static gate.Utils.*; }
 Phase: CleanUpTumourThickness
-Input: TumourThickness
+Input: TumourThickness Tag
 Options: control=all
 
 //Fix for letter 32 where tumour thickness running over onto peripheral involved

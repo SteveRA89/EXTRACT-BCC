@@ -1,6 +1,6 @@
 Imports: {import static gate.Utils.*; }
 Phase: CleanUpClearClose
-Input: Dimension DeepCloseDetails DeepClearDetails DeepClearButCloseDetails PeipheralCloseDetails PeipheralClearDetails PeripheralClearButCloseDetails Micro_peripheral_margin Micro_deep_margin Sentence Split
+Input: Dimension DeepCloseDetails DeepClearDetails DeepClearButCloseDetails PeripheralCloseDetails PeripheralClearDetails PeripheralClearButCloseDetails Micro_peripheral_margin Micro_deep_margin Sentence Split
 Options: control=all
 
 //The lesion is 1.5mm from the deep margin and is seen very close to the 10 o'clock peripheral margin. Letter 29b fix. Also formatted for remaining similar clear and clear but close examples
@@ -22,7 +22,7 @@ Rule: CleanUpClose2
 
 (
     ({Dimension})
-    ({PeipheralCloseDetails}):match1
+    ({PeripheralCloseDetails}):match1
     ({Micro_deep_margin})
 
 ):match
@@ -48,7 +48,7 @@ Rule: CleanUpClear2
 
 (
     ({Dimension})
-    ({PeipheralClearDetails}):match1
+    ({PeripheralClearDetails}):match1
     ({Micro_deep_margin})
 
 ):match
@@ -74,7 +74,7 @@ Rule: CleanUpClearButClose2
 
 (
     ({Dimension})
-    ({PeipheralClearButCloseDetails}):match1
+    ({PeripheralClearButCloseDetails}):match1
     ({Micro_deep_margin})
 
 ):match

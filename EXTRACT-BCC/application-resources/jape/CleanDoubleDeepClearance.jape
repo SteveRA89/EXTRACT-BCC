@@ -1,6 +1,6 @@
 Imports: {import static gate.Utils.*; }
 Phase: CleanDoubleDeepClearance
-Input: Clearance
+Input: Clearance Tag
 Options: control=all
 Rule: CleanDoubleDeepClearance
 
