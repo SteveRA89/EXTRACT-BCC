@@ -11,6 +11,7 @@ Priority:100
     (({Micro_deep_margin})|({Micro_peripheral_margin}))
     (({Dimension})|({MarginWordDistances}))
     ({ClockFace})?
+    ({Separator})?
 
 ):match
 -->
@@ -31,6 +32,7 @@ Priority:100
     (({Dimension})|({MarginWordDistances}))
     (({Micro_deep_margin})|({Micro_peripheral_margin}))
     ({ClockFace})?
+    ({Separator})?
 
 ):match
 -->
@@ -51,6 +53,7 @@ Priority:100
     (({Dimension})|({MarginWordDistances}))
     ({ClockFace})?
     (({Micro_deep_margin})|({Micro_peripheral_margin}))
+    ({Separator})?
 
 ):match
 -->
@@ -71,6 +74,7 @@ Priority:100
     ({ClockFace})?
     (({Dimension})|({MarginWordDistances}))
     (({Micro_deep_margin})|({Micro_peripheral_margin}))
+    ({Separator})?
 
 ):match
 -->
@@ -91,6 +95,7 @@ Priority:100
     ({ClockFace})?
     (({Micro_deep_margin})|({Micro_peripheral_margin}))
     (({Dimension})|({MarginWordDistances}))
+    ({Separator})?
 
 ):match
 -->
@@ -111,6 +116,7 @@ Priority:100
     (({Micro_deep_margin})|({Micro_peripheral_margin}))
     ({ClockFace})?
     (({Dimension})|({MarginWordDistances}))
+    ({Separator})?
 
 ):match
 -->
@@ -135,6 +141,7 @@ Priority:100
     (({Micro_deep_margin})|({Micro_peripheral_margin})) // blue inked
     ({Separator})? // )
     (({Dimension})|({MarginWordDistances}))// 4mm
+    ({Separator})?
 
 ):match
 -->
