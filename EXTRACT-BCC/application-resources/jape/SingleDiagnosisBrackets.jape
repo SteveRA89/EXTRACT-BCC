@@ -1,0 +1,80 @@
+Phase: SingleDiagnosisBrackets
+Input: CancerDiagnosis Token
+Options: control=appelt
+
+//Basal cell carcinoma (BCC)  
+
+Rule: SingleDiagnosisBracketsBCC
+Priority: 100
+
+(
+    ({CancerDiagnosis.CancerType == BasalCellCarcinoma})
+    ({Token.kind == punctuation, Token.string == "("})
+    ({CancerDiagnosis.CancerType2 == BasalCellCarcinoma}):umls
+    ({Token.kind == punctuation, Token.string == ")"})
+
+):match
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: SingleDiagnosisBracketsOtherCancerous
+Priority: 100
+
+(
+    ({CancerDiagnosis.CancerType == OtherCancerous})
+    ({Token.kind == punctuation, Token.string == "("})
+    ({CancerDiagnosis.CancerType2 == OtherCancerous}):umls
+    ({Token.kind == punctuation, Token.string == ")"})
+
+):match
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: SingleDiagnosisBracketsOtherIntermediate
+Priority: 100
+
+(
+    ({CancerDiagnosis.CancerType == OtherIntermediate})
+    ({Token.kind == punctuation, Token.string == "("})
+    ({CancerDiagnosis.CancerType2 == OtherIntermediate}):umls
+    ({Token.kind == punctuation, Token.string == ")"})
+
+):match
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: SingleDiagnosisBracketsOtherBenign
+Priority: 100
+
+(
+    ({CancerDiagnosis.CancerType == OtherBenign})
+    ({Token.kind == punctuation, Token.string == "("})
+    ({CancerDiagnosis.CancerType2 == OtherBenign}):umls
+    ({Token.kind == punctuation, Token.string == ")"})
+
+):match
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
+
+Rule: SingleDiagnosisBracketsOtherInSitu
+Priority: 100
+
+(
+    ({CancerDiagnosis.CancerType == OtherInSitu})
+    ({Token.kind == punctuation, Token.string == "("})
+    ({CancerDiagnosis.CancerType2 == OtherInSitu}):umls
+    ({Token.kind == punctuation, Token.string == ")"})
+
+):match
+-->
+:umls { 
+  inputAS.removeAll(umlsAnnots);
+}
