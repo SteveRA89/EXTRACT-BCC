@@ -15,6 +15,7 @@ o'clock.lst::::Clock
 MarginWordDistances.lst::::MarginWordDistances
 Distance_to.lst::::Distance_to
 Ulcerated.lst::::Ulcerated
+UlceratedTrigger.lst::::UlceratedTrigger
 LVI.lst::::LVI
 PNI.lst::::PNI
 ExcisionCompleted.lst::::ExcisionCompleted
@@ -46,7 +47,7 @@ SupplementalExcisionTypeOutcome.lst::::SupplementalExcisionTypeOutcome
 Diameter.lst::::Diameter
 Specimen.lst::::Specimen
 Lesion.lst::::Lesion
-Micro_peripheral_margin_maybe.lst::::Micro_peripheral_margin_maybe
+Micro_deep_margin_maybe.lst::::Micro_deep_margin_maybe
 StageTrigger.lst::::StageTrigger
 DeepMarginTrigger.lst::::DeepMarginTrigger
 LevelOfInvasionTrigger.lst::::LevelOfInvasionTrigger
@@ -56,4 +57,4 @@ BCCClassLinkTerms.lst::::BCCClassLinkTerms
 Thickness.lst::::Micro_thickness
 Micro deep margin.lst:DeepClearance:::Micro_deep_margin
 SingleMargin.lst::::SingleMargin
-Micro_deep_margin_maybe.lst::::Micro_deep_margin_maybe
+Micro_peripheral_margin_maybe.lst::::Micro_peripheral_margin_maybe

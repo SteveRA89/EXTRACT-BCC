@@ -1,5 +1,9 @@
 Dermis:CUI=C0011646:DeepMargin=Dermis
 Dermal:CUI=C0011646:DeepMargin=Dermis
+Dermal/subcutaneous:DeepMargin=Fat
+Dermal - subcutaneous:DeepMargin=Fat
+Dermal-subcutaneous:DeepMargin=Fat
+Dermal subcutaneous:DeepMargin=Fat
 Fat:CUI=C0222331:DeepMargin=Fat
 Subcutaneous fat:CUI=C0222331:DeepMargin=Fat
 Cuff of fat:CUI=C0222331:DeepMargin=Fat

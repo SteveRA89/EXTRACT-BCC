@@ -1,7 +1,7 @@
 Acquired tufted haemangioma:CUI=C1266161:CancerType=OtherBenign
 Acral malignant melanoma:CUI=C0346037:CancerType=OtherCancerous
 Acral melanoma:CUI=C0346037:CancerType=OtherCancerous
-Actinic keratosis:CUI=C0006079:Type=OtherInSitu
+Actinic keratosis:CUI=C0006079:CancerType=OtherInSitu
 Adenoid cystic carcinoma:CUI=C0346017:CancerType=OtherCancerous
 Adenoid cystic eccrine carcinoma:CUI=C0346017:CancerType=OtherCancerous
 Amelanotic malignant melanoma:CUI=C0206735:CancerType=OtherCancerous
@@ -353,6 +353,8 @@ Histiocytoid haemangi- oma:CUI=C0205788:CancerType=OtherBenign
 Histiocytoid haemangi-oma:CUI=C0205788:CancerType=OtherBenign
 Histiocytoid haemangioma:CUI=C0205788:CancerType=OtherBenign
 Hutchinson's melanotic freckle:CUI=C0149722:CancerType=OtherInSitu
+Pre melanoma:CUI=C0854696:CancerType=OtherInSitu
+Pre-melanoma:CUI=C0854696:CancerType=OtherInSitu
 In -situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
 In -situ melanoma:CUI=C0854696:CancerType=OtherInSitu
 In situ malignant melanoma:CUI=C0854696:CancerType=OtherInSitu
@@ -517,7 +519,6 @@ Pigmented hairy epidermal naevus:CUI=C0263579:CancerType=OtherBenign
 Pigmented hairy epidermal nevus:CUI=C0263579:CancerType=OtherBenign
 Pigmented naevus:CUI=C0027962:CancerType=OtherBenign
 Pigmented nevus:CUI=C0027962:CancerType=OtherBenign
-Pigmented seborrhoeic keratosis:CUI=C0022603:CancerType=OtherBenign
 Pigmented spindle cell naevus of Reed:CUI=C0206738:CancerType=OtherBenign
 Pigmented spindle cell nevus of Reed:CUI=C0206738:CancerType=OtherBenign
 Pigmented, melanocytic naevus:CUI=C0027962:CancerType=OtherBenign
