@@ -17,6 +17,7 @@ MaxMicroDiameter
 DetailedDimension
 DimensionSpecimen
 DimensionSpecimenLargestMeasurement
+DimensionLesionLargestMeasurement
 DimensionLesion
 MultiplePeripheral
 SecondMultiplePeripheral

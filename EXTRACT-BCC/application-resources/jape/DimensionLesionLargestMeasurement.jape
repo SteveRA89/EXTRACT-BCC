@@ -1,0 +1,450 @@
+Imports: {import static gate.Utils.*;
+          import java.util.*;}
+
+Phase: DimensionLesionLargestMeasurement
+Input: DimensionSpecimen Dimension GroupedParagraph Tag
+Options: control=all
+
+/*
+ * Get the LongestMeasurement from the dimension annotation after dimensionSpecimen.
+*/
+
+Rule: DimensionLesionLargestMeasurement4
+(
+
+({DimensionSpecimen})
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc1//10x8mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//1mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc2//5x6mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//12mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc3//1x1mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//1mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc4//5x6mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//1mm
+
+):match
+-->
+
+:dc1 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+Annotation dc4 = bindings.get("dc4").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+String value4string = dc4.getFeatures().get("LongestMeasurement").toString();
+Float value4 = Float.parseFloat(value4string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag") & dc4.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+        String Tag4 = dc4.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3) && Tag1.equals(Tag3)&& Tag1.equals(Tag4))  {
+            if(value1 < value2 || value1 < value3 ||value1 < value4){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc1Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value1 < value2 || value1 < value3 ||value1 < value4){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc1Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    },
+
+:dc2 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+Annotation dc4 = bindings.get("dc4").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+String value4string = dc4.getFeatures().get("LongestMeasurement").toString();
+Float value4 = Float.parseFloat(value4string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag") & dc4.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+        String Tag4 = dc4.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3) && Tag1.equals(Tag3)&& Tag1.equals(Tag4))  {
+            if(value2 < value1 || value2 < value3 ||value2 < value4){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc2Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value2 < value1 || value2 < value3 ||value2 < value4){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc2Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    },
+
+:dc3 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+Annotation dc4 = bindings.get("dc4").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+String value4string = dc4.getFeatures().get("LongestMeasurement").toString();
+Float value4 = Float.parseFloat(value4string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag") & dc4.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+        String Tag4 = dc4.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3) && Tag1.equals(Tag3)&& Tag1.equals(Tag4))  {
+            if(value3 < value1 || value3 < value2 ||value3 < value4){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc3Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value3 < value1 || value3 < value2 ||value3 < value4){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc3Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+},
+
+:dc4 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+Annotation dc4 = bindings.get("dc4").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+String value4string = dc4.getFeatures().get("LongestMeasurement").toString();
+Float value4 = Float.parseFloat(value4string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag") & dc4.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+        String Tag4 = dc4.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3) && Tag1.equals(Tag3)&& Tag1.equals(Tag4))  {
+            if(value4 < value1 || value4 < value2 ||value4 < value3){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc4Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value4 < value1 || value4 < value2 ||value4 < value3){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc4Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+
+Rule: DimensionLesionLargestMeasurement3
+(
+
+({DimensionSpecimen})
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc1//10x8mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})* //1mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc2//5x6mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//1mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc3
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//1mm
+
+):match
+-->
+
+:dc1 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3))  {
+            if(value1 < value2 || value1 < value3){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc1Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value1 < value2 || value1 < value3){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc1Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    },
+
+:dc2 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3))  {
+            if(value2 < value1 || value2 < value3){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc2Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value2 < value1 || value2 < value3){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc2Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    },
+:dc3 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+Annotation dc3 = bindings.get("dc3").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+String value3string = dc3.getFeatures().get("LongestMeasurement").toString();
+Float value3 = Float.parseFloat(value3string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag") & dc3.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+        String Tag3 = dc3.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2) && Tag1.equals(Tag3))  {
+            if(value3 < value1 || value3 < value2){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc3Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value3 < value1 || value3 < value2){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc3Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+
+Rule: DimensionLesionLargestMeasurement2
+(
+
+({DimensionSpecimen})
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc1//10x8mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})* //1mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription}):dc2//5x6mm
+({Dimension within GroupedParagraph.ParagraphTitle == MacroDescription, Dimension.NumberOfMeasurements!=1})*//1mm
+
+):match
+-->
+
+:dc1 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2))  {
+            if(value1 < value2){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc1Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+    else { //Copied as pasted the above without needing to check for Tags
+        if(value1 < value2){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc1Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    },
+
+:dc2 {
+Annotation dc1 = bindings.get("dc1").iterator().next();
+Annotation dc2 = bindings.get("dc2").iterator().next();
+String value1string = dc1.getFeatures().get("LongestMeasurement").toString();
+Float value1 = Float.parseFloat(value1string);
+String value2string = dc2.getFeatures().get("LongestMeasurement").toString();
+Float value2 = Float.parseFloat(value2string);
+    if (dc1.getFeatures().containsKey("Tag") & dc2.getFeatures().containsKey("Tag")) {
+        String Tag1 = dc1.getFeatures().get("Tag").toString();
+        String Tag2 = dc2.getFeatures().get("Tag").toString();
+         if(Tag1.equals(Tag2))  {
+            if(value2 < value1){//if value 1 less than value 2 or value 1 less than value 3
+                inputAS.removeAll(dc2Annots);// delete value 1
+                // System.out.println(value1);
+                // System.out.println("rule1");
+                }
+            // } else if (value1-value2 == 0 & value1-value3 == 0){
+            //     inputAS.removeAll(dc2Annots);
+            //     // System.out.println(value1);
+            //     // System.out.println("rule1a");
+            // } DONT NEED THIS - IF VALUE 1 is same as 2 or 3 then we want to keep it - 
+            // For value 2/3 you will want to delete them if they are the same
+            // You can also use <= in the above to do that without needed the else if part
+        }
+    }
+}
