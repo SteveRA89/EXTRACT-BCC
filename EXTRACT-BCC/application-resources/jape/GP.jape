@@ -1,0 +1,15 @@
+Phase:	Gender
+Input: GP GPTrigger
+Options: control = Once
+
+Rule: GP1
+Priority: 100
+
+
+(
+	({GPTrigger})
+    ({GP})
+
+):match
+-->
+:match.PatientDetails = {rule = GP1, GP = :match.GP.gpPractise}

@@ -1,0 +1,41 @@
+Phase:	Person
+Input: SpaceToken Lookup Lookup2 FullName ParagraphTitles Requestor
+Options: control = once
+
+Rule: TitleNameF
+Priority: 100
+
+(
+    (({Lookup2.majorType == title, Lookup2.minorType == female}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == female})?
+    ({SpaceToken})?
+    {Lookup2.majorType == person, Lookup2.minorType == male})):a
+):match
+-->
+:match.PatientDetails = {rule = TitleNameF, Name = :a@string, Gender = female}
+
+Rule: TitleName
+Priority: 100
+
+(
+    ({Lookup2.majorType == title}
+    {SpaceToken}
+    {FullName})
+):match
+-->
+:match.PatientDetails = {rule = TitleName,  Name = :match.FullName.value}
+
+
+Rule: TitleNameM
+Priority: 100
+
+(
+    (({Lookup2.majorType == title, Lookup2.minorType == male}
+    {SpaceToken}
+    ({Lookup2.majorType == person, Lookup2.minorType == male})?
+    ({SpaceToken})?
+    {Lookup2.majorType == person, Lookup2.minorType == male})):a
+):match
+-->
+:match.PatientDetails = {rule = TitleNameM, Name = :a@string, Gender = male}

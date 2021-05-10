@@ -1,0 +1,22 @@
+MultiPhase: PatientDetails
+Phases:
+
+AlthNum
+PostCode
+DoB
+DOBorDateWithinToken2
+Gender
+GenderInText
+HospNo
+nhs1
+numbers
+Pt_Gender
+PT_GenderFilter
+Pt_PostCode
+removeLookups
+RemoveToken2
+TitleName
+Token2
+Token2toLookup2
+GenderCleanUp
+GP

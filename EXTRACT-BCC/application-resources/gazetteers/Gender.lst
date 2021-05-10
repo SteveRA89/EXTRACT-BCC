@@ -1,0 +1,8 @@
+Sex:Identifier=gender
+Gender:Identifier=gender
+Female:value=Female:Term=gender
+female:value=Female:Term=gender
+F:value=Female:Term=gender
+Male:value=Male:Term=gender
+male:value=Male:Term=gender
+M:value=Male:Term=gender

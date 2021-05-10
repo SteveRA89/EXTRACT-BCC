@@ -1,0 +1,99 @@
+Phase: Hosp_num1
+Input:  Token Lookup2 Numeric AlthNum ParagraphTitles
+Options: control=once
+
+
+
+
+Rule: HospNo1
+Priority: 100
+(
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+        {Token.kind == punctuation}
+        ({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
+		({ParagraphTitles.type == ClinicalDetails})
+
+        
+):match
+-->
+:match.PatientDetails = {rule = HospNo1, HospitalNumber = :match.AlthNum.value}
+
+
+
+Rule: HospNo2
+Priority: 100
+(
+        ({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+        {Token.kind == punctuation}
+        ({Token.category == NN, Token.length == 1})?
+        {Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
+        ({ParagraphTitles.type == ClinicalDetails})
+):match
+-->
+:match.PatientDetails = {rule = HospNo2, HospitalNumber = :a.Numeric.value}
+
+Rule: HospNo3
+Priority: 99
+(
+        (({Token.category == NNP, Token.kind == word, Token.length <5})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+        {Token.category == NNP, Token.kind == word, Token.length <5}
+        {Token.kind == punctuation, Token.string == "/"}
+		({Token.kind == word})?
+        ({Token.kind == punctuation})?
+		({AlthNum.rule == AlthNum1}|{AlthNum.rule == AlthNum2})):a
+        ({ParagraphTitles.type == ClinicalDetails})
+
+):match
+-->
+:match.PatientDetails = {rule = HospNo3, HospitalNumber = :match.AlthNum.value}
+
+Rule: HospNo4
+Priority: 99
+(
+		({Lookup2.majorType == "person", Lookup2.minorType == "health_term"}
+		{Token.kind == punctuation}	
+        {Token.category == NNP, Token.kind == Word}
+        {Token.kind == punctuation}
+		({Token.category == NNP})?
+        ({Token.kind == punctuation})?
+        ({Token.category == NN, Token.length == 1})?
+        {Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
+        ({ParagraphTitles.type == ClinicalDetails})
+
+
+):match
+-->
+:match.PatientDetails = {rule = HospNo4, HospitalNumber = :a.Numeric.value}
+
+Rule: HospNo5
+Priority: 99
+(
+        ({Token.category == NNP, Token.kind == word, Token.length == 2}
+        {Token.kind == punctuation,Token.string == "/"}
+		({Token.kind == word})?
+        ({Token.kind == punctuation, Token.string !="("})
+		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
+        ({ParagraphTitles.type == ClinicalDetails})
+
+
+):match
+-->
+:match.PatientDetails = {rule = HospNo5, HospitalNumber = :a.Numeric.value}
+
+Rule: HospNo6
+Priority: 98
+(
+        (({Token.category == NNP, Token.kind == word, Token.length <5})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+        {Token.category == NNP, Token.kind == word, Token.length <5}
+        {Token.kind == punctuation, Token.string == "/"}
+		({Token.kind == word})?
+        ({Token.kind == punctuation, Token.string == "/"})?
+		{Numeric.rule == Numerals, Numeric.length <=8, Numeric.length >5}):a
+        ({ParagraphTitles.type == ClinicalDetails})
+
+
+):match
+-->
+:match.PatientDetails = {rule = HospNo6, HospitalNumber = :a.Numeric.value}

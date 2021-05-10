@@ -1,0 +1,54 @@
+Phase:	Gender
+Input: Lookup2 SpaceToken 
+Options: control = First
+
+/* 
+  * Patient gender based on name within text together 
+  with health terms
+*/
+
+
+
+Rule: GenderFromTextm
+Priority: 100
+
+
+(
+	({Lookup2.majorType == reference, Lookup2.minorType == health_term})
+	({SpaceToken})?
+	({Lookup2.majorType == person, Lookup2.minorType == male}):a
+):match
+-->
+:match.PatientDetails = {rule = GenderFromTextm, Gender = Male}
+
+
+Rule: GenderFromTextf
+Priority: 100
+
+
+(
+	({Lookup2.majorType == reference, Lookup2.minorType == health_term})
+	({SpaceToken})?
+	({Lookup2.majorType == person, Lookup2.minorType == female}):a
+):match
+-->
+:match.PatientDetails = {rule = GenderFromTextf, Gender = Female}
+
+Rule: GenderFromText
+Priority: 100
+
+
+(
+	({Lookup2.majorType == Gender, Lookup2.minorType == Person, Lookup2.Identifier == gender})
+	({SpaceToken})?
+	({SpaceToken})?
+	({Lookup2.majorType == Gender, Lookup2.minorType == Person, Lookup2.Term == gender}):a
+):match
+-->
+:match.PatientDetails = {rule = GenderFromText, Gender =:a.Lookup2.value}
+
+  
+
+
+
+  

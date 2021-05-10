@@ -1,0 +1,57 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: GenderCleanUp
+Input: PatientDetails
+Options: control=appelt
+
+Rule: GenderCleanUp1
+Priority: 100
+
+
+(
+    ({PatientDetails.Gender == Male}):match2
+    ({PatientDetails.Gender == Male}):match1
+
+):match
+
+-->
+
+:match1 { 
+Annotation match2Ann= bindings.get("match2").iterator().next();//get CancerDiagnosis1
+
+Annotation match1Ann= bindings.get("match1").iterator().next();//get CancerDiagnosis2 
+
+String Gender1string = match2Ann.getFeatures().get("Gender").toString();// get CancerType values
+
+String Gender2string = match1Ann.getFeatures().get("Gender").toString();// get CancerType values
+
+
+{ 
+match2Ann.getFeatures().remove("Gender");}// Deleting CancerType
+}
+
+Rule: GenderCleanUp2
+Priority: 100
+
+
+(
+    ({PatientDetails.Gender == Female}):match2
+    ({PatientDetails.Gender == Female}):match1
+
+):match
+
+-->
+
+:match1 { 
+Annotation match2Ann= bindings.get("match2").iterator().next();//get CancerDiagnosis1
+
+Annotation match1Ann= bindings.get("match1").iterator().next();//get CancerDiagnosis2 
+
+String Gender1string = match2Ann.getFeatures().get("Gender").toString();// get CancerType values
+
+String Gender2string = match1Ann.getFeatures().get("Gender").toString();// get CancerType values
+
+
+{ 
+match2Ann.getFeatures().remove("Gender");}// Deleting CancerType
+}
