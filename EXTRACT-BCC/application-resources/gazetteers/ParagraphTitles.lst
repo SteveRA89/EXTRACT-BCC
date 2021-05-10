@@ -1,3 +1,7 @@
+Specimen received	type=SpecimensReceived
+Specimens received	type=SpecimensReceived
+Accession Number	type=AccessionNumber
+Accession No	type=AccessionNumber
 Clinical Details	type=ClinicalDetails
 Macro Description	type=MacroDescription
 Macroscopy	type=MacroDescription
