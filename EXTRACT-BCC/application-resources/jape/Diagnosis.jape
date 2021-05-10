@@ -1,6 +1,7 @@
 MultiPhase: CancerDiagnosis
 Phases:
 
+FrozenSectionSentence
 MultipleCancerType
 BiopsyDiagnosis
 RemoveBCCClassWhenNotBCC

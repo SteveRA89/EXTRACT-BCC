@@ -1,18 +1,163 @@
 Phase: FrozenSectionSentence
-Input: Frozen_Section Frozen_Section_Triggers CancerType Split Sentence Diagnosis
+Input: Frozen_Section Frozen_Section_Triggers Diagnosis NewLine Tag GroupedParagraph
 Options: control=appelt
 
 
 // Frozen section skin contaiing a BCC
 
-Rule: FrozenSectionSentence1
+Rule: FrozenSectionSentence
 Priority: 100
 
 (
 	({Frozen_Section})
 	({Frozen_Section_Triggers})
-	({Diagnosis})
+	({Diagnosis}):D1
 ):match
 -->
-:match.Frozen_SectionDetails = { rule = FrozenSectionSentence1, 
-FrozenSectionOutcome = :match.Diagnosis.CancerType}
+:D1.Frozen_SectionDetails = { rule = FrozenSectionSentence1, 
+FrozenSectionOutcome = :D1.Diagnosis.CancerType},
+
+:D1 { 
+  inputAS.removeAll(D1Annots);
+}
+
+Rule: FrozenSectionSentence5
+Priority: 100
+
+(
+	({Frozen_Section within GroupedParagraph.ParagraphTitle == Microscopy})
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	({Diagnosis}):D1
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	({Diagnosis}):D2
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	({Diagnosis}):D3
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	(({Diagnosis})):D4
+):match1
+-->
+
+:D1.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D1.Diagnosis.CancerType},
+
+:D1 { 
+  inputAS.removeAll(D1Annots);
+},
+
+:D2.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D2.Diagnosis.CancerType},
+
+:D2 { 
+  inputAS.removeAll(D2Annots);
+},
+
+:D3.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D3.Diagnosis.CancerType},
+
+:D3 { 
+  inputAS.removeAll(D1Annots);
+},
+
+:D4.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D4.Diagnosis.CancerType},
+
+:D4 { 
+  inputAS.removeAll(D4Annots);
+}
+
+Rule: FrozenSectionSentence4
+Priority: 100
+
+(
+	({Frozen_Section within GroupedParagraph.ParagraphTitle == Microscopy})
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	({Diagnosis}):D1
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	({Diagnosis}):D2
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	(({Diagnosis})):D3
+):match1
+-->
+
+:D1.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D1.Diagnosis.CancerType},
+
+:D1 { 
+  inputAS.removeAll(D1Annots);
+},
+
+:D2.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D2.Diagnosis.CancerType},
+
+:D2 { 
+  inputAS.removeAll(D2Annots);
+},
+
+:D3.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D3.Diagnosis.CancerType},
+
+:D3 { 
+  inputAS.removeAll(D1Annots);
+}
+
+Rule: FrozenSectionSentence3
+Priority: 100
+
+(
+	({Frozen_Section within GroupedParagraph.ParagraphTitle == Microscopy})
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	({Diagnosis}):D1
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	(({Diagnosis})):D2
+):match1
+-->
+
+:D1.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D1.Diagnosis.CancerType},
+
+:D1 { 
+  inputAS.removeAll(D1Annots);
+},
+
+:D2.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
+FrozenSectionOutcome = :D2.Diagnosis.CancerType},
+
+:D2 { 
+  inputAS.removeAll(D2Annots);
+}
+
+Rule: FrozenSectionSentence2
+Priority: 100
+
+(
+	({Frozen_Section within GroupedParagraph.ParagraphTitle == Microscopy})
+	({NewLine})?
+	({Tag})
+	({Frozen_Section_Triggers})
+	(({Diagnosis})):D1
+):match1
+-->
+:D1.Frozen_SectionDetails = { rule = FrozenSectionSentence2, 
+FrozenSectionOutcome = :D1.Diagnosis.CancerType},
+
+:D1 { 
+  inputAS.removeAll(D1Annots);
+}
