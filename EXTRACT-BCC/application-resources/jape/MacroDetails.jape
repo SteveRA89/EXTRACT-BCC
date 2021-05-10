@@ -1,5 +1,5 @@
 Phase: MacroDetails
-Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion AdditionalSentenceBreak
+Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion AdditionalSentenceBreak SupplementalPeripheralMarginClockFace SupplementalDeepMarginClockFace
 Options: control=appelt
 
 // Youll have to describe to me what 3D specimen Size 4 is
@@ -8,15 +8,15 @@ Rule: MacroDetails
 Priority: 100
 
 (
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
-	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
+	({CancerDiagnosisParagraph}|{ExcisionNature}|{UlceratedParagraph}|{ExcisionTypeParagraph}|{SupplementalPeripheralMarginClockFace}|{SupplementalDeepMarginClockFace}|{DetailedBodyPartParagraph}|{DimensionSpecimen}|{DimensionLesion})?
 ):match
 -->
 :match.MacroDetailsPreParagraph = { ruleFinal = MacroDetails, 
@@ -29,6 +29,8 @@ Pre-opDiagnosisClass2 = :match.CancerDiagnosisParagraph.BCCClass2,
 Ulcerated = :match.UlceratedParagraph.Ulcerated, 
 ExcisionType = :match.ExcisionTypeParagraph.ExcisionType,
 ExcisionType2 = :match.ExcisionTypeParagraph.ExcisionType2,
+ExcisionType = :match.SupplementalPeripheralMarginClockFace.ExcisionType,
+ExcisionType = :match.SupplementalDeepMarginClockFace.ExcisionType,
 ExcisionNature = :match.ExcisionNatureParagraph.ExcisionType2,
 BodyPart = :match.DetailedBodyPartParagraph.BodyPart,
 BodyPart2 = :match.DetailedBodyPartParagraph.BodyPart2,
