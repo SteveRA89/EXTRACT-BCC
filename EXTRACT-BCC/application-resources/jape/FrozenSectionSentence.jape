@@ -1,5 +1,5 @@
 Phase: FrozenSectionSentence
-Input: Frozen_Section Frozen_Section_Triggers Diagnosis NewLine Tag GroupedParagraph
+Input: Frozen_Section Frozen_Section_Triggers Diagnosis NewLine Tag GroupedParagraph FrozenSectionBlocks
 Options: control=appelt
 
 
@@ -9,9 +9,10 @@ Rule: FrozenSectionSentence
 Priority: 100
 
 (
-	({Frozen_Section})
+	({Frozen_Section within GroupedParagraph.ParagraphTitle == Microscopy})
 	({Frozen_Section_Triggers})
 	({Diagnosis}):D1
+	
 ):match
 -->
 :D1.Frozen_SectionDetails = { rule = FrozenSectionSentence1, 
