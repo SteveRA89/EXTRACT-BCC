@@ -1,5 +1,5 @@
 Phase: MaxMicroDiameter
-Input: Dimension Diameter Sentence
+Input: Dimension Diameter Sentence CancerDiagnosis
 Options: control=appelt
 
 
@@ -20,6 +20,20 @@ Priority:100
 (
     ({Dimension})
     ({Diameter})
+
+):match
+-->
+:match.MaxMicroDiameter = { rule = MaxMicroDiameter2, MeasurementType = "Diameter", 
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units}
+
+//12mm nodular BCC infiltrating the subcutis, 2mm deep
+
+Rule: MaxMicroDiameter3
+Priority:100
+(
+({Dimension})
+({CancerDiagnosis})
 
 ):match
 -->
