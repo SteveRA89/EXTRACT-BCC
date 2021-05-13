@@ -1,0 +1,45 @@
+Phase: TagSeries
+Input: Token
+Options: control=appelt
+
+Rule: TagASeries
+Priority: 90
+//A-C)
+(
+    ({Token.orth == allCaps, Token.length == 3}):match
+    ({Token.kind == punctuation, Token.string == ")"})
+):match1
+-->
+
+:match {
+  	gate.AnnotationSet match = (gate.AnnotationSet)bindings.get("match");
+	gate.Annotation matchAnn = (gate.Annotation)match.iterator().next();
+	gate.FeatureMap matchFeatures = Factory.newFeatureMap();
+	matchFeatures.put("Tag", "A");
+	matchFeatures.put("rule", "TagASeries");
+	matchFeatures.put("value", "A");
+	
+	outputAS.add(match.firstNode(), match.lastNode(), "Tag", matchFeatures);
+},
+
+:match {
+   
+	matchFeatures.put("Tag", "B");
+	matchFeatures.put("rule", "TagBSeries");
+	matchFeatures.put("value", "B");
+	
+	outputAS.add(match.firstNode(), match.lastNode(), "Tag", matchFeatures);
+},
+
+:match {
+  	gate.AnnotationSet match = (gate.AnnotationSet)bindings.get("match");
+	gate.Annotation matchAnn = (gate.Annotation)match.iterator().next();
+	gate.FeatureMap matchFeatures = Factory.newFeatureMap();
+	matchFeatures.put("Tag", "C");
+	matchFeatures.put("rule", "TagCSeries");
+	matchFeatures.put("value", "C");
+	
+	outputAS.add(match.firstNode(), match.lastNode(), "Tag", matchFeatures);
+}
+
+
