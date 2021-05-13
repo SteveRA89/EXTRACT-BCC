@@ -1,0 +1,32 @@
+Imports: {import static gate.Utils.*; }
+Phase: TagStartOfSentence
+Input: Sentence NewLine
+Options: control=all
+
+
+Rule: Sentence
+(
+    ({Sentence}):match1
+    ({Sentence}):match2
+):match
+-->
+:match {
+    Annotation Sentence1 = bindings.get("match1").iterator().next();
+    Long sentenceStart = Sentence1.getStartNode().getOffset();
+    Long sentenceEnd = Sentence1.getEndNode().getOffset();
+    Annotation Sentence2 = bindings.get("match2").iterator().next();
+    Long SentenceEnd2 = Sentence2.getEndNode().getOffset();
+    try {
+        String string = doc.getContent().getContent(sentenceStart, sentenceEnd).toString();
+        if(string.contains(" ?")) {
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");
+        //newAnnFeatures.put("rule", "NewSentence");
+        gate.Utils.addAnn(defaultSet, sentenceStart, SentenceEnd2, "Sentence", newAnnFeatures);
+        }
+        }
+    catch(InvalidOffsetException e) {
+    // not possible
+    throw new LuckyException("Invalid offset from annotation");
+   }
+}

@@ -1,0 +1,41 @@
+Phase: SentenceTwoTags
+Input: TagSentence Sentence
+Options: control=all
+
+
+// Rule: SentenceTwoTags
+// Priority: 100
+// (
+// 	({Sentence contains Token})
+// ):match
+// -->
+// :match {
+//     Annotation matchAnn = matchAnnots.iterator().next();
+//     AnnotationSet tagSentence = gate.Utils.getContainedAnnotations(inputAS, matchAnnots, "Token");
+//     List<Annotation> tagList = gate.Utils.inDocumentOrder(tagSentence);
+//     System.out.println(tagList.size());
+//     }
+
+Rule: SentenceTwoTags
+Priority: 100
+(
+	({Sentence contains TagSentence})
+):match
+-->
+:match {
+    Annotation matchAnn = matchAnnots.iterator().next();
+    AnnotationSet tagSentence = gate.Utils.getContainedAnnotations(inputAS, matchAnnots, "TagSentence");
+    List<Annotation> tagList = gate.Utils.inDocumentOrder(tagSentence);
+    if (tagList.size() == 2) {
+        Annotation firstTag = tagList.get(0); // Zero indexed 
+        Annotation secondTag = tagList.get(1);
+        Long tagStart = firstTag.getStartNode().getOffset();
+        Long tagEnd = secondTag.getEndNode().getOffset();
+        FeatureMap firstTagFeatures = firstTag.getFeatures();//getFeatures from First TagSentence
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+        newAnnFeatures.putAll(firstTagFeatures);//copy from ClinicalDetailsPreTag
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");
+        gate.Utils.addAnn(defaultSet, tagStart, tagEnd, "TagSentence", newAnnFeatures);
+        //tagSentence.remove(firstTag); //Nice idea but doesn't work
+    }
+}

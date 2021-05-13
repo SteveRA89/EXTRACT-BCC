@@ -1,0 +1,25 @@
+Phase: TagSentenceBackOne
+Input: TagSentence
+Options: control=all
+
+
+Rule: SentenceTwoTags
+Priority: 100
+(
+	({TagSentence})
+):match
+-->
+:match {
+    Annotation matchAnn = matchAnnots.iterator().next();
+    Long start = matchAnnots.firstNode().getOffset();
+    Long end = matchAnnots.lastNode().getOffset();
+    FeatureMap features = matchAnn.getFeatures();//getFeatures from First TagSentence
+    FeatureMap newAnnFeatures = Factory.newFeatureMap();//create new feature map
+    newAnnFeatures.putAll(features);//copy from ClinicalDetailsPreTag
+    AnnotationSet defaultSet = doc.getAnnotations("Bio");
+    gate.Utils.addAnn(defaultSet, start, end - 1, "TagSentence", newAnnFeatures);
+},
+
+:match { 
+inputAS.removeAll(matchAnnots);
+}
