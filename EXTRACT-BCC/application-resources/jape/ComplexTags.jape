@@ -1,0 +1,82 @@
+Phase: ComplexTags
+Input: Token Lesion
+Options: control = appelt
+
+Rule: TagA
+// Lesion 1
+Priority: 90
+(
+    {Lesion}
+	{Token.string == "1"}
+):tags
+--> 
+{
+  	gate.AnnotationSet tags = (gate.AnnotationSet)bindings.get("tags");
+	gate.Annotation tagsAnn = (gate.Annotation)tags.iterator().next();
+	gate.FeatureMap tagsFeatures = Factory.newFeatureMap();
+	tagsFeatures.put("Tag", "A");
+	tagsFeatures.put("rule", "TagA");
+	tagsFeatures.put("value", "A");
+	
+	outputAS.add(tags.firstNode(), tags.lastNode(), "Tag", tagsFeatures);
+}
+
+Rule: TagC
+// Lesion 3
+Priority: 90
+(
+    {Lesion}
+	{Token.string == "3"}
+):tags
+--> 
+{
+  	gate.AnnotationSet tags = (gate.AnnotationSet)bindings.get("tags");
+	gate.Annotation tagsAnn = (gate.Annotation)tags.iterator().next();
+	gate.FeatureMap tagsFeatures = Factory.newFeatureMap();
+	tagsFeatures.put("Tag", "C");
+	tagsFeatures.put("rule", "TagB");
+	tagsFeatures.put("value", "C");
+	
+	outputAS.add(tags.firstNode(), tags.lastNode(), "Tag", tagsFeatures);
+}
+
+Rule: TagInferior
+// lower half
+Priority: 90
+(
+	{Token.string == "lower"}
+	{Token.string == "half"}
+):tags
+--> 
+{
+  	gate.AnnotationSet tags = (gate.AnnotationSet)bindings.get("tags");
+	gate.Annotation tagsAnn = (gate.Annotation)tags.iterator().next();
+	gate.FeatureMap tagsFeatures = Factory.newFeatureMap();
+	tagsFeatures.put("Tag", "Inferior");
+	tagsFeatures.put("Keep", "Keep");
+	tagsFeatures.put("rule", "TagInferior");
+	tagsFeatures.put("value", "Inferior");
+	
+	outputAS.add(tags.firstNode(), tags.lastNode(), "Tag", tagsFeatures);
+}
+
+Rule: TagSuperior
+// upper half 
+Priority: 90
+(
+	{Token.string == "upper"}
+	{Token.string == "half"}
+):tags
+--> 
+{
+  	gate.AnnotationSet tags = (gate.AnnotationSet)bindings.get("tags");
+	gate.Annotation tagsAnn = (gate.Annotation)tags.iterator().next();
+	gate.FeatureMap tagsFeatures = Factory.newFeatureMap();
+	tagsFeatures.put("Tag", "Superior");
+	tagsFeatures.put("Keep", "Keep");
+	tagsFeatures.put("rule", "TagInferior");
+	tagsFeatures.put("value", "Superior");
+	
+	outputAS.add(tags.firstNode(), tags.lastNode(), "Tag", tagsFeatures);
+}
+

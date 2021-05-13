@@ -1,0 +1,16 @@
+Phase:	TagB
+Input: Token Tag
+Options: control = appelt
+
+Rule: TagB
+// Lesion 1 and 2
+Priority: 100
+(
+	{Tag.Tag == "A"}
+	{Token.string == "and"}
+	({Token.string == "2"}):tags
+):tags1
+--> 
+
+:tags.Tag = {rule = ComplexTags, value = "B", Tag = "B", Keep = "Keep"}
+
