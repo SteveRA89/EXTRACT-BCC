@@ -2,14 +2,14 @@ Phase: Clearance
 Input: Dimension Split Sentence ClockFace Clearance
 Options: control=appelt
 
-Rule: PeripheralClearance
+Rule: PeripheralClearance1
 Priority:100
 (
     ({Clearance.MeasurementType == "PeripheralClearance"})
 
 ):match
 -->
-:match.PeripheralClearance = { rule = PeripheralClearance, 
+:match.PeripheralClearance = { rule = PeripheralClearance1, 
 MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.Clearance.MeasurementValue, 
 MeasurementUnit = :match.Clearance.MeasurementUnit,

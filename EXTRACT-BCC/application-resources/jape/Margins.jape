@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_deep_margin Micro_peripheral_margin NewLine
+Input: Dimension DeepMargin Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_peripheral_margin NewLine Clear
 Options: control=appelt
 
 // Currently when there are multiple ClockFaces - will only be read when "and" used. If a "separator" is used this will block the next part of the sentence 
@@ -146,6 +146,28 @@ Priority:100
 ):match
 -->
 :match.Clearance = { rule = Margin7, MeasurementType = :match.Micro_peripheral_margin.majorType,
+MeasurementType = :match.Micro_deep_margin.majorType, 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ClockPosition = :match.ClockFace.time,
+ClockPosition2 = :match.ClockFace.time2,
+ClockPosition3 = :match.ClockFace.time3,
+ClockPosition4 = :match.ClockFace.time4}
+
+Rule: Margin8
+Priority:100
+(
+    (({Dimension})|({MarginWordDistances}))
+    ({Clear})
+    (({Micro_deep_margin})|({Micro_peripheral_margin}))
+    ({ClockFace})?
+    ({Separator})?
+
+):match
+-->
+:match.Clearance = { rule = Margin8, MeasurementType = :match.Micro_peripheral_margin.majorType,
 MeasurementType = :match.Micro_deep_margin.majorType, 
 MeasurementValue = :match.MarginWordDistances.Value,
 MeasurementUnit = "mm",

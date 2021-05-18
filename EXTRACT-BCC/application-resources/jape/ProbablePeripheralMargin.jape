@@ -1,5 +1,5 @@
 Phase: ProbablePeripheralMargin
-Input: Dimension ClockFace Clear Micro_deep_margin_maybe MarginWordDistances
+Input: Dimension ClockFace Clear Micro_deep_margin_maybe MarginWordDistances Clear
 Options: control=appelt
 
 Rule: ProbablePeripheralMargin
@@ -22,3 +22,45 @@ ClockPosition = :match.ClockFace.time,
 PeipheralClockPosition2 = :match.ClockFace.time2,
 PeipheralClockPosition3 = :match.ClockFace.time3,
 PeipheralClockPosition4 = :match.ClockFace.time4}
+
+
+Rule: PeripheralClearance2
+Priority:90
+(
+
+    (({Dimension})|({MarginWordDistances}))
+    ({ClockFace})
+
+):match
+-->
+:match.Clearance = { rule = PeripheralClearance2, 
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ClockPosition = :match.ClockFace.time,
+ClockPosition2 = :match.ClockFace.time2,
+ClockPosition3 = :match.ClockFace.time3,
+ClockPosition4 = :match.ClockFace.time4}
+
+Rule: PeripheralClearance3
+Priority:90
+(
+
+    (({Dimension})|({MarginWordDistances}))
+    ({Clear})
+    ({ClockFace})
+
+):match
+-->
+:match.Clearance = { rule = PeripheralClearance3, 
+MeasurementType = "PeripheralClearance", 
+MeasurementValue = :match.MarginWordDistances.Value,
+MeasurementUnit = "mm",
+MeasurementValue = :match.Dimension.N1, 
+MeasurementUnit = :match.Dimension.units,
+ClockPosition = :match.ClockFace.time,
+ClockPosition2 = :match.ClockFace.time2,
+ClockPosition3 = :match.ClockFace.time3,
+ClockPosition4 = :match.ClockFace.time4}
