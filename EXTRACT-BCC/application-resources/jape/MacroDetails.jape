@@ -1,5 +1,5 @@
 Phase: MacroDetails
-Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion AdditionalSentenceBreak SupplementalPeripheralMarginClockFace SupplementalDeepMarginClockFace
+Input: CancerDiagnosisParagraph Split Sentence ExcisionNature UlceratedParagraph ExcisionTypeParagraph DetailedBodyPartParagraph ExcisionNature DimensionSpecimen DimensionLesion AdditionalSentenceBreak SupplementalPeripheralMarginClockFace SupplementalDeepMarginClockFace Tag
 Options: control=appelt
 
 // Youll have to describe to me what 3D specimen Size 4 is
