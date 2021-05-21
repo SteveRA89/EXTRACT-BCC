@@ -1,0 +1,32 @@
+Imports: { import static gate.Utils.*;
+            import java.util.*; }
+
+Phase: TagInTag
+Input: Tag2 TagSentence
+Options: control=all
+
+Rule: TagInTag
+(
+    ({TagSentence contains Tag2}):tag
+):match
+-->
+:match {
+    Annotation matchAnn = matchAnnots.iterator().next();
+    AnnotationSet contAnnots = getContainedAnnotations(inputAS, matchAnnots, "Tag2");
+    List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);
+    int length = contList.size();
+    for (int i = 0; i < length; i++) {
+        Annotation firstTag2 = contList.get(i);
+        FeatureMap fmTag2 = firstTag2.getFeatures();
+        //System.out.println(firstTag2);
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();
+        //System.out.println(newAnnFeatures);
+        newAnnFeatures.putAll(fmTag2);
+        //System.out.println(fmTag2);
+        //newAnnFeatures.putAll(matchAnn.getFeatures());
+        Long tokenStart = matchAnnots.firstNode().getOffset();
+        Long tokenEnd = matchAnnots.lastNode().getOffset();
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "Tag", newAnnFeatures);
+    }
+}

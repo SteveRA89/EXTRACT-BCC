@@ -1,0 +1,53 @@
+Imports: {import static gate.Utils.*; }
+Phase: StringTokenizer
+Input: Token NewLine
+Options: control=all
+
+//Currently only picks up B
+
+Rule: StringTokenizer
+(
+    ({Token}):tag1
+    (({Token.string == ")"})|({Token.string == ":"})|({Token.string == "."}))
+
+):tag
+-->
+:tag1{
+AnnotationSet contAnnots = getContainedAnnotations(inputAS, tag1Annots, "Token");
+List<Annotation> contList = gate.Utils.inDocumentOrder(tag1Annots);
+Long tokenStart = tag1Annots.firstNode().getOffset();
+Long tokenEnd = tag1Annots.lastNode().getOffset();
+int length = contList.size();
+for (int i = 0; i < length; i++) {
+   try {
+    String string = doc.getContent().getContent(tokenStart, tokenEnd).toString();
+        if(string.contains("A")) {
+        getOnlyAnn(tag1Annots).getFeatures().put("string","A");
+        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+        }
+        if(string.contains("-")) {
+        getOnlyAnn(tag1Annots).getFeatures().put("string","-");
+        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+        }
+        if(string.contains("B")) {
+        getOnlyAnn(tag1Annots).getFeatures().put("string", "B");
+        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+        } 
+        if(string.contains("C")) {
+        getOnlyAnn(tag1Annots).getFeatures().put("string", "C");
+        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+        }
+        if(string.contains("D")) {
+        getOnlyAnn(tag1Annots).getFeatures().put("string", "D");
+        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+        }
+        if(string.contains("E")) {
+        getOnlyAnn(tag1Annots).getFeatures().put("string", "E");
+        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+        }
+        }
+   catch(InvalidOffsetException e) {
+    throw new LuckyException("Invalid offset from annotation");
+   }
+}
+}

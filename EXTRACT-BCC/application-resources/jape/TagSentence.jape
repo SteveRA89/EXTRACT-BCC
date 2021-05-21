@@ -29,9 +29,29 @@ Rule: Sentence1
     }
 }
 
-Rule: Sentence1
+Rule: Sentence2
 (
 	({Sentence contains TagB}):Tag
+):match
+-->
+:match {
+    Annotation matchAnn = matchAnnots.iterator().next();
+    Long sentenceStart = matchAnnots.firstNode().getOffset();
+    AnnotationSet tag = gate.Utils.getContainedAnnotations(inputAS, matchAnnots, "Tag");
+    List<Annotation> tagList = gate.Utils.inDocumentOrder(tag);
+    Annotation firstTag = tagList.get(0);
+    Long tagStart = firstTag.getStartNode().getOffset();
+    if (sentenceStart != tagStart) {
+        firstTag.getFeatures().put("remove", "delete");
+        }
+    else {
+        firstTag.getFeatures().put("Keep", "Keep");
+    }
+}
+
+Rule: Sentence3
+(
+	({Sentence contains Tag2}):Tag
 ):match
 -->
 :match {

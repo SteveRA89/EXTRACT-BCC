@@ -1,10 +1,10 @@
 Phase: TagSentences
-Input: Tag ParagraphTitles Reported_triggers NewLine DateBio
+Input: Tag Tag2 ParagraphTitles Reported_triggers NewLine DateBio
 Options: control=all
 
 //Make the tag useful for other rules
 
-Rule: TagSentences1
+Rule: TagSentences1a
 Priority: 100
 (
 	(({Tag, !Tag.SentenceStart == "False"})
@@ -12,7 +12,17 @@ Priority: 100
     ({Tag}|{Reported_triggers}|{ParagraphTitles}|{DateBio})
 ):match
 -->
-:Tag.TagSentence = {rule = TagSentences1, Tag = :Tag.Tag.Tag}
+:Tag.TagSentence = {rule = TagSentences1a, Tag = :Tag.Tag.Tag}
+
+Rule: TagSentences1b
+Priority: 100
+(
+	(({Tag2, !Tag2.SentenceStart == "False"})
+    ({NewLine})*):Tag
+    ({Tag2}|{Reported_triggers}|{ParagraphTitles}|{DateBio})
+):match
+-->
+:Tag.TagSentence = {rule = TagSentences1b, Tag = :Tag.Tag2.Tag}
 
 /*
 Rule: TagSentences2

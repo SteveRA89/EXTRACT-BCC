@@ -8,6 +8,8 @@ AccessionNumber
 AccessionNumberFinal
 ParagraphTitles
 Tag
+Tag2
+TagSeries
 ComplexTags
 TagB
 TagSentence
@@ -17,4 +19,5 @@ TagSentences3
 TagSentences2
 TagSentenceBackOne
 SentenceTwoTags
+TagInTag
 AdditionalSentenceBreak
