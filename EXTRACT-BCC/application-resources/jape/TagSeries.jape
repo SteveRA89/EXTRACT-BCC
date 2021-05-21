@@ -1,5 +1,5 @@
 Phase: TagSeries
-Input: Token NewLine
+Input: Token NewLine SpaceToken
 Options: control=all
 
 //Need to first get StringTokenizer to work
@@ -11,6 +11,7 @@ Priority: 100
     ({Token.string == "-"})
     ({Token.string == "B"})
     ({Token.string == ")"})
+    ({SpaceToken})
 
 ):match
 -->
@@ -23,6 +24,7 @@ Priority: 100
     ({Token.string == "-"}):match1
     ({Token.string == "B"})
     ({Token.string == ")"})
+    ({SpaceToken})
 
 ):match
 -->
@@ -35,6 +37,7 @@ Priority: 100
     ({Token.string == "-"})
     ({Token.string == "B"}):match1
     ({Token.string == ")"})
+    ({SpaceToken})
 
 ):match
 -->
@@ -47,7 +50,21 @@ Priority: 100
     ({Token.string == "-"})
     ({Token.string == "B"})
     ({Token.string == ")"}):match1
+    ({SpaceToken})
 
 ):match
 -->
 :match1.TagSeries = { rule = TagSeriesD, Tag = "D"}
+
+Rule: TagSeriesE
+Priority: 100
+(
+    ({Token.string == "A"})
+    ({Token.string == "-"})
+    ({Token.string == "B"})
+    ({Token.string == ")"})
+    ({SpaceToken}):match1
+
+):match
+-->
+:match1.TagSeries = { rule = TagSeriesE, Tag = "D"}
