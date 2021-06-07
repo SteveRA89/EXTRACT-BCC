@@ -1,53 +1,250 @@
 Imports: {import static gate.Utils.*; }
 Phase: StringTokenizer
-Input: Token NewLine
+Input: doubleTag
 Options: control=all
 
 //Currently only picks up B
 
 Rule: StringTokenizer
 (
-    ({Token}):tag1
-    (({Token.string == ")"})|({Token.string == ":"})|({Token.string == "."}))
-
+    ({doubleTag})
 ):tag
 -->
-:tag1{
-AnnotationSet contAnnots = getContainedAnnotations(inputAS, tag1Annots, "Token");
-List<Annotation> contList = gate.Utils.inDocumentOrder(tag1Annots);
-Long tokenStart = tag1Annots.firstNode().getOffset();
-Long tokenEnd = tag1Annots.lastNode().getOffset();
-int length = contList.size();
-for (int i = 0; i < length; i++) {
-   try {
-    String string = doc.getContent().getContent(tokenStart, tokenEnd).toString();
-        if(string.contains("A")) {
-        getOnlyAnn(tag1Annots).getFeatures().put("string","A");
-        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+:tag{
+    Annotation matchAnn = tagAnnots.iterator().next();
+    String len = matchAnn.getFeatures().get("len").toString();
+    System.out.println(len.getClass().getName());
+    Long startNode = matchAnn.getStartNode().getOffset();// this will be first point
+    Long endNode = matchAnn.getEndNode().getOffset();// this will be last point and 4 higher
+    if (len.equals("2")) {
+        try {
+            String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
+            char firstLetterChar = firstLetter.charAt(0);// get the A
+            System.out.println(startNode);
+            FeatureMap firstAnnFeatures = Factory.newFeatureMap();
+            firstAnnFeatures.put("Keep", "Keep");
+            firstAnnFeatures.put("Tag", firstLetter);
+            firstAnnFeatures.put("value", firstLetter);
+            firstAnnFeatures.put("rule", "FromDoubleTag");        
+            AnnotationSet defaultSet = doc.getAnnotations("Bio");
+            gate.Utils.addAnn(defaultSet, startNode, startNode+1, "Tag", firstAnnFeatures);
+            String secondLetter = String.valueOf( (char) (firstLetterChar + 1));
+            FeatureMap secondAnnFeatures = Factory.newFeatureMap();
+            secondAnnFeatures.put("Keep", "Keep");
+            secondAnnFeatures.put("Tag", secondLetter);
+            secondAnnFeatures.put("value",secondLetter);
+            secondAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", secondAnnFeatures);
         }
-        if(string.contains("-")) {
-        getOnlyAnn(tag1Annots).getFeatures().put("string","-");
-        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+            catch(InvalidOffsetException e) {
+            throw new LuckyException("Invalid offset from annotation");
         }
-        if(string.contains("B")) {
-        getOnlyAnn(tag1Annots).getFeatures().put("string", "B");
-        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
-        } 
-        if(string.contains("C")) {
-        getOnlyAnn(tag1Annots).getFeatures().put("string", "C");
-        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+    }
+    else if (len.equals("3")) {
+        try {
+            String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
+            char firstLetterChar = firstLetter.charAt(0);// get the A
+            System.out.println(startNode);
+            FeatureMap firstAnnFeatures = Factory.newFeatureMap();
+            firstAnnFeatures.put("Keep", "Keep");
+            firstAnnFeatures.put("Tag", firstLetter);
+            firstAnnFeatures.put("value", firstLetter);
+            firstAnnFeatures.put("rule", "FromDoubleTag");        
+            AnnotationSet defaultSet = doc.getAnnotations("Bio");
+            gate.Utils.addAnn(defaultSet, startNode, startNode+1, "Tag", firstAnnFeatures);
+            String secondLetter = String.valueOf( (char) (firstLetterChar + 1));
+            FeatureMap secondAnnFeatures = Factory.newFeatureMap();
+            secondAnnFeatures.put("Keep", "Keep");
+            secondAnnFeatures.put("Tag", secondLetter);
+            secondAnnFeatures.put("value",secondLetter);
+            secondAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
+            FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
+            thirdAnnFeatures.put("Keep", "Keep");
+            thirdAnnFeatures.put("Tag", thirdLetter);
+            thirdAnnFeatures.put("value",thirdLetter);
+            thirdAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
         }
-        if(string.contains("D")) {
-        getOnlyAnn(tag1Annots).getFeatures().put("string", "D");
-        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+            catch(InvalidOffsetException e) {
+            throw new LuckyException("Invalid offset from annotation");
         }
-        if(string.contains("E")) {
-        getOnlyAnn(tag1Annots).getFeatures().put("string", "E");
-        getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+    }  
+    else if (len.equals("4")) {
+        try {
+            String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
+            char firstLetterChar = firstLetter.charAt(0);// get the A
+            System.out.println(startNode);
+            FeatureMap firstAnnFeatures = Factory.newFeatureMap();
+            firstAnnFeatures.put("Keep", "Keep");
+            firstAnnFeatures.put("Tag", firstLetter);
+            firstAnnFeatures.put("value", firstLetter);
+            firstAnnFeatures.put("rule", "FromDoubleTag");        
+            AnnotationSet defaultSet = doc.getAnnotations("Bio");
+            gate.Utils.addAnn(defaultSet, startNode, startNode+1, "Tag", firstAnnFeatures);
+            String secondLetter = String.valueOf( (char) (firstLetterChar + 1));
+            FeatureMap secondAnnFeatures = Factory.newFeatureMap();
+            secondAnnFeatures.put("Keep", "Keep");
+            secondAnnFeatures.put("Tag", secondLetter);
+            secondAnnFeatures.put("value",secondLetter);
+            secondAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
+            FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
+            thirdAnnFeatures.put("Keep", "Keep");
+            thirdAnnFeatures.put("Tag", thirdLetter);
+            thirdAnnFeatures.put("value",thirdLetter);
+            thirdAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            String fourthLetter = String.valueOf( (char) (firstLetterChar + 3));
+            FeatureMap fourthAnnFeatures = Factory.newFeatureMap();
+            fourthAnnFeatures.put("Keep", "Keep");
+            fourthAnnFeatures.put("Tag", fourthLetter);
+            fourthAnnFeatures.put("value",fourthLetter);
+            fourthAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+3, startNode+4, "Tag", fourthAnnFeatures);
         }
+            catch(InvalidOffsetException e) {
+            throw new LuckyException("Invalid offset from annotation");
         }
-   catch(InvalidOffsetException e) {
-    throw new LuckyException("Invalid offset from annotation");
-   }
+    }
+    else if (len.equals("5")) {
+        try {
+            String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
+            char firstLetterChar = firstLetter.charAt(0);// get the A
+            System.out.println(startNode);
+            FeatureMap firstAnnFeatures = Factory.newFeatureMap();
+            firstAnnFeatures.put("Keep", "Keep");
+            firstAnnFeatures.put("Tag", firstLetter);
+            firstAnnFeatures.put("value", firstLetter);
+            firstAnnFeatures.put("rule", "FromDoubleTag");        
+            AnnotationSet defaultSet = doc.getAnnotations("Bio");
+            gate.Utils.addAnn(defaultSet, startNode, startNode+1, "Tag", firstAnnFeatures);
+            String secondLetter = String.valueOf( (char) (firstLetterChar + 1));
+            FeatureMap secondAnnFeatures = Factory.newFeatureMap();
+            secondAnnFeatures.put("Keep", "Keep");
+            secondAnnFeatures.put("Tag", secondLetter);
+            secondAnnFeatures.put("value",secondLetter);
+            secondAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
+            FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
+            thirdAnnFeatures.put("Keep", "Keep");
+            thirdAnnFeatures.put("Tag", thirdLetter);
+            thirdAnnFeatures.put("value",thirdLetter);
+            thirdAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            String fourthLetter = String.valueOf( (char) (firstLetterChar + 3));
+            FeatureMap fourthAnnFeatures = Factory.newFeatureMap();
+            fourthAnnFeatures.put("Keep", "Keep");
+            fourthAnnFeatures.put("Tag", fourthLetter);
+            fourthAnnFeatures.put("value",fourthLetter);
+            fourthAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+3, startNode+4, "Tag", fourthAnnFeatures);
+            String fifthLetter = String.valueOf( (char) (firstLetterChar + 4));
+            FeatureMap fifthAnnFeatures = Factory.newFeatureMap();
+            fifthAnnFeatures.put("Keep", "Keep");
+            fifthAnnFeatures.put("Tag", fifthLetter);
+            fifthAnnFeatures.put("value",fifthLetter);
+            fifthAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+4, startNode+5, "Tag", fifthAnnFeatures);
+        }
+            catch(InvalidOffsetException e) {
+            throw new LuckyException("Invalid offset from annotation");
+        }
+    }
+    else if (len.equals("6")) {
+        try {
+            String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
+            char firstLetterChar = firstLetter.charAt(0);// get the A
+            System.out.println(startNode);
+            FeatureMap firstAnnFeatures = Factory.newFeatureMap();
+            firstAnnFeatures.put("Keep", "Keep");
+            firstAnnFeatures.put("Tag", firstLetter);
+            firstAnnFeatures.put("value", firstLetter);
+            firstAnnFeatures.put("rule", "FromDoubleTag");        
+            AnnotationSet defaultSet = doc.getAnnotations("Bio");
+            gate.Utils.addAnn(defaultSet, startNode, startNode+1, "Tag", firstAnnFeatures);
+            String secondLetter = String.valueOf( (char) (firstLetterChar + 1));
+            FeatureMap secondAnnFeatures = Factory.newFeatureMap();
+            secondAnnFeatures.put("Keep", "Keep");
+            secondAnnFeatures.put("Tag", secondLetter);
+            secondAnnFeatures.put("value",secondLetter);
+            secondAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
+            FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
+            thirdAnnFeatures.put("Keep", "Keep");
+            thirdAnnFeatures.put("Tag", thirdLetter);
+            thirdAnnFeatures.put("value",thirdLetter);
+            thirdAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            String fourthLetter = String.valueOf( (char) (firstLetterChar + 3));
+            FeatureMap fourthAnnFeatures = Factory.newFeatureMap();
+            fourthAnnFeatures.put("Keep", "Keep");
+            fourthAnnFeatures.put("Tag", fourthLetter);
+            fourthAnnFeatures.put("value",fourthLetter);
+            fourthAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+3, startNode+4, "Tag", fourthAnnFeatures);
+            String fifthLetter = String.valueOf( (char) (firstLetterChar + 4));
+            FeatureMap fifthAnnFeatures = Factory.newFeatureMap();
+            fifthAnnFeatures.put("Keep", "Keep");
+            fifthAnnFeatures.put("Tag", fifthLetter);
+            fifthAnnFeatures.put("value",fifthLetter);
+            fifthAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+4, startNode+5, "Tag", fifthAnnFeatures);
+            String sixthLetter = String.valueOf( (char) (firstLetterChar + 5));
+            FeatureMap sixthAnnFeatures = Factory.newFeatureMap();
+            sixthAnnFeatures.put("Keep", "Keep");
+            sixthAnnFeatures.put("Tag", sixthLetter);
+            sixthAnnFeatures.put("value",sixthLetter);
+            sixthAnnFeatures.put("rule", "FromDoubleTag");        
+            gate.Utils.addAnn(defaultSet, startNode+5, startNode+6, "Tag", sixthAnnFeatures);
+        }
+            catch(InvalidOffsetException e) {
+            throw new LuckyException("Invalid offset from annotation");
+        }
+    }
+
 }
-}
+
+// :tag1{
+// AnnotationSet contAnnots = getContainedAnnotations(inputAS, tag1Annots, "Token");
+// List<Annotation> contList = gate.Utils.inDocumentOrder(tag1Annots);
+// Long tokenStart = tag1Annots.firstNode().getOffset();
+// Long tokenEnd = tag1Annots.lastNode().getOffset();
+// int length = contList.size();
+// for (int i = 0; i < length; i++) {
+//    try {
+//     String string = doc.getContent().getContent(tokenStart, tokenEnd).toString();
+//         if(string.contains("A")) {
+//         getOnlyAnn(tag1Annots).getFeatures().put("string","A");
+//         getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+//         }
+//         if(string.contains("-")) {
+//         getOnlyAnn(tag1Annots).getFeatures().put("string","-");
+//         getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+//         }
+//         if(string.contains("B")) {
+//         getOnlyAnn(tag1Annots).getFeatures().put("string", "B");
+//         getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+//         } 
+//         if(string.contains("C")) {
+//         getOnlyAnn(tag1Annots).getFeatures().put("string", "C");
+//         getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+//         }
+//         if(string.contains("D")) {
+//         getOnlyAnn(tag1Annots).getFeatures().put("string", "D");
+//         getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+//         }
+//         if(string.contains("E")) {
+//         getOnlyAnn(tag1Annots).getFeatures().put("string", "E");
+//         getOnlyAnn(tag1Annots).getFeatures().put("length","1");
+//         }
+//         }
+//    catch(InvalidOffsetException e) {
+//     throw new LuckyException("Invalid offset from annotation");
+//    }
+// }
+// }
