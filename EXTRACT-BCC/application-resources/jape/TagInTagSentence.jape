@@ -14,32 +14,41 @@ Rule: TagInTagSentence
     List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);
     int length = contList.size();
     Annotation firstNo1 = contList.get(1);
-    Long firstNo1 = firstNo1.getStartNode().getOffset();
+    Long firstNo1Start = firstNo1.getStartNode().getOffset();
     for (int i = 1; i < length -1; i++) {
-        FeatureMap fmTag = firstNo1loop.getFeatures();
+        Annotation ithAnnotation = contList.get(i);
+        FeatureMap fmTag = ithAnnotation.getFeatures();
         FeatureMap newAnnFeatures = Factory.newFeatureMap();
         newAnnFeatures.putAll(fmTag);
-        Long tokenStart = firstNo1loop.getStartNode().getOffset();
-        Annotation nextNumber = contList.get(i+);
-        Long tokenEnd = nextNumber, tokenStart-1;
+        newAnnFeatures.put("Test", "Test123");
+        Long tokenStart = ithAnnotation.getStartNode().getOffset();
+        Annotation nextNumber = contList.get(i + 1);
+        Long tokenEnd = nextNumber.getStartNode().getOffset();
         AnnotationSet defaultSet = doc.getAnnotations("Bio");
-        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -1, "Tag", newAnnFeatures);
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -1, "TagSentence", newAnnFeatures);
     }
-        lastNo1 = contList.get(length)
-        FeatureMap fmTag = firstNo1.getFeatures();
-        FeatureMap newAnnFeatures = Factory.newFeatureMap();
-        newAnnFeatures.putAll(fmTag);
-        Long tokenStart = firstNo1.getStartNode().getOffset();
-        Annotation nextNumber = contList.get(i+);
-        Long tokenEnd = nextNumber, tokenStart-1;
-        AnnotationSet defaultSet = doc.getAnnotations("Bio");
-        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -1, "Tag", newAnnFeatures);
+    // length - 1 = last item in list?
+    Annotation lastNo1 = contList.get(length - 1);
+    FeatureMap lastNodeFM = lastNo1.getFeatures(); 
+    FeatureMap newAnnFeatures3 = Factory.newFeatureMap();
+    newAnnFeatures3.putAll(lastNodeFM);
+    newAnnFeatures3.put("Test", "Test1234567");
+    Long tokenStart3 = lastNo1.getStartNode().getOffset();
+    Long tokenEnd3 = matchAnn.getEndNode().getOffset();
+    AnnotationSet defaultSet = doc.getAnnotations("Bio");
+    gate.Utils.addAnn(defaultSet, tokenStart3, tokenEnd3, "TagSentence", newAnnFeatures3);
     
-    /*
-        Long tokenStart = TagSentence.getStartNode().getOffset();
-        Long tokenEnd = TagSentence.getEndNode().getOffset();
-        AnnotationSet defaultSet = doc.getAnnotations("Bio");
-        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -firstNo1, "TagSentence", newAnnFeatures);
-
-    */
+    //TODO - CHANGE TAGSENTENCE THATS LOADED IN TO END AT START OF FIRST NEW TAG SENTENCE
+    Long tokenStart2 = matchAnn.getStartNode().getOffset();
+    Long tokenEnd2 = firstNo1Start - 1;
+    AnnotationSet defaultSet2 = doc.getAnnotations("Bio");
+    FeatureMap matchAnnFM = matchAnn.getFeatures();
+    FeatureMap newAnnFeatures2 = Factory.newFeatureMap();
+    newAnnFeatures2.putAll(matchAnnFM);
+    newAnnFeatures2.put("rule", "ShortenedTagSentence");
+    gate.Utils.addAnn(defaultSet2, tokenStart2, tokenEnd2, "TagSentence", newAnnFeatures2);
+}
+,
+:match { 
+  inputAS.removeAll(matchAnnots);//This deletes the match annotation (The original TagSentence)
 }
