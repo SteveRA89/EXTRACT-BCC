@@ -1,0 +1,15 @@
+A-B):len=2
+A-C):len=3
+A-D):len=4
+A-E):len=5
+A-F):len=6
+B-C):len=2
+B-D):len=3
+B-E):len=4
+B-F):len=5
+C-D):len=2
+C-E):len=3
+C-F):len=4
+D-E):len=2
+D-F):len=3
+E-F):len=2
