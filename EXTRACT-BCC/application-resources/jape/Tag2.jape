@@ -12,4 +12,4 @@ Priority: 100
     ({Token.kind == number, Token.length == 1}):Tag
 ):match
 -->
-:match.Tag2 = { rule = TagLetters3, value = :match@string, Tag = :Tag.Token.string}//remmber that this has been changed ?? change back to 
+:match.Tag2 = { rule = TagLetters3, value = :match@string, Tag = :Tag.Token.string, SubTag = Yes}//remmber that this has been changed ?? change back to 

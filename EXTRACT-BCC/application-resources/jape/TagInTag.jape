@@ -12,6 +12,7 @@ Rule: TagInTag
 -->
 :match {
     Annotation matchAnn = matchAnnots.iterator().next();
+    String TagTagSentence = matchAnn.getFeatures().get("Tag").toString();
     AnnotationSet contAnnots = getContainedAnnotations(inputAS, matchAnnots, "Tag2");
     List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);
     int length = contList.size();
@@ -21,11 +22,12 @@ Rule: TagInTag
         //System.out.println(firstTag2);
         FeatureMap newAnnFeatures = Factory.newFeatureMap();
         //System.out.println(newAnnFeatures);
-        newAnnFeatures.putAll(fmTag2);
+        newAnnFeatures.putAll(fmTag2);//change feature of this tag
         //System.out.println(fmTag2);
+        newAnnFeatures.put("Tag", TagTagSentence + "." + fmTag2.get("Tag").toString());//change feature of this tag
         //newAnnFeatures.putAll(matchAnn.getFeatures());
-        Long tokenStart = matchAnnots.firstNode().getOffset();
-        Long tokenEnd = matchAnnots.lastNode().getOffset();
+        Long tokenStart = firstTag2.getStartNode().getOffset();
+        Long tokenEnd = firstTag2.getEndNode().getOffset();
         AnnotationSet defaultSet = doc.getAnnotations("Bio");
         gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "Tag", newAnnFeatures);
     }

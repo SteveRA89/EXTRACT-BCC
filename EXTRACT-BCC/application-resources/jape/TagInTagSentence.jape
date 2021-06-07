@@ -1,0 +1,45 @@
+Imports: { import static gate.Utils.*;
+            import java.util.*; }
+Phase: TagInTagSentence
+Input: Tag TagSentence
+Options: control=all
+Rule: TagInTagSentence
+(
+    ({TagSentence contains Tag.SubTag == "Yes"}):tag
+):match
+-->
+:match {
+    Annotation matchAnn = matchAnnots.iterator().next();
+    AnnotationSet contAnnots = getContainedAnnotations(inputAS, matchAnnots, "Tag");
+    List<Annotation> contList = gate.Utils.inDocumentOrder(contAnnots);
+    int length = contList.size();
+    Annotation firstNo1 = contList.get(1);
+    Long firstNo1 = firstNo1.getStartNode().getOffset();
+    for (int i = 1; i < length -1; i++) {
+        FeatureMap fmTag = firstNo1loop.getFeatures();
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();
+        newAnnFeatures.putAll(fmTag);
+        Long tokenStart = firstNo1loop.getStartNode().getOffset();
+        Annotation nextNumber = contList.get(i+);
+        Long tokenEnd = nextNumber, tokenStart-1;
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -1, "Tag", newAnnFeatures);
+    }
+        lastNo1 = contList.get(length)
+        FeatureMap fmTag = firstNo1.getFeatures();
+        FeatureMap newAnnFeatures = Factory.newFeatureMap();
+        newAnnFeatures.putAll(fmTag);
+        Long tokenStart = firstNo1.getStartNode().getOffset();
+        Annotation nextNumber = contList.get(i+);
+        Long tokenEnd = nextNumber, tokenStart-1;
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -1, "Tag", newAnnFeatures);
+    
+    /*
+        Long tokenStart = TagSentence.getStartNode().getOffset();
+        Long tokenEnd = TagSentence.getEndNode().getOffset();
+        AnnotationSet defaultSet = doc.getAnnotations("Bio");
+        gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd -firstNo1, "TagSentence", newAnnFeatures);
+
+    */
+}

@@ -9,7 +9,6 @@ AccessionNumberFinal
 ParagraphTitles
 Tag
 Tag2
-TagSeries
 ComplexTags
 TagB
 TagSentence
@@ -20,4 +19,5 @@ TagSentences2
 TagSentenceBackOne
 SentenceTwoTags
 TagInTag
+TagInTagSentence
 AdditionalSentenceBreak
