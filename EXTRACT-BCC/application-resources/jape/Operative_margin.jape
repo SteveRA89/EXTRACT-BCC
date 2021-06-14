@@ -1,13 +1,13 @@
 Phase: Operative_margin
-Input: Dimension ClinicalDetailMargin Sentence
+Input: Dimension ClinicalDetailMargin Sentence GroupedParagraph
 Options: control=appelt
 
 
 Rule: Operative_margin
 Priority:100
 (
-    ({Dimension})
-    ({ClinicalDetailMargin})
+    ({Dimension within GroupedParagraph.ParagraphTitle == ClinicalDetails})
+    ({ClinicalDetailMargin within GroupedParagraph.ParagraphTitle == ClinicalDetails})
 
 ):match
 -->
