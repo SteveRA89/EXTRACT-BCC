@@ -3,6 +3,7 @@ Phases:
 
 Requestor
 Reporter
+ReporterCleanUp
 ExcisionDate
 AccessionNumber
 AccessionNumberFinal
