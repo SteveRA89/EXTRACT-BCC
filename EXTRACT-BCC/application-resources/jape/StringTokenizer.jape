@@ -13,14 +13,14 @@ Rule: StringTokenizer
 :tag{
     Annotation matchAnn = tagAnnots.iterator().next();
     String len = matchAnn.getFeatures().get("len").toString();
-    System.out.println(len.getClass().getName());
+    //System.out.println(len.getClass().getName());
     Long startNode = matchAnn.getStartNode().getOffset();// this will be first point
     Long endNode = matchAnn.getEndNode().getOffset();// this will be last point and 4 higher
     if (len.equals("2")) {
         try {
             String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
             char firstLetterChar = firstLetter.charAt(0);// get the A
-            System.out.println(startNode);
+            //System.out.println(startNode);
             FeatureMap firstAnnFeatures = Factory.newFeatureMap();
             firstAnnFeatures.put("Keep", "Keep");
             firstAnnFeatures.put("Tag", firstLetter);
@@ -44,7 +44,7 @@ Rule: StringTokenizer
         try {
             String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
             char firstLetterChar = firstLetter.charAt(0);// get the A
-            System.out.println(startNode);
+            //System.out.println(startNode);
             FeatureMap firstAnnFeatures = Factory.newFeatureMap();
             firstAnnFeatures.put("Keep", "Keep");
             firstAnnFeatures.put("Tag", firstLetter);
@@ -75,7 +75,7 @@ Rule: StringTokenizer
         try {
             String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
             char firstLetterChar = firstLetter.charAt(0);// get the A
-            System.out.println(startNode);
+            //System.out.println(startNode);
             FeatureMap firstAnnFeatures = Factory.newFeatureMap();
             firstAnnFeatures.put("Keep", "Keep");
             firstAnnFeatures.put("Tag", firstLetter);
@@ -113,7 +113,7 @@ Rule: StringTokenizer
         try {
             String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
             char firstLetterChar = firstLetter.charAt(0);// get the A
-            System.out.println(startNode);
+            //System.out.println(startNode);
             FeatureMap firstAnnFeatures = Factory.newFeatureMap();
             firstAnnFeatures.put("Keep", "Keep");
             firstAnnFeatures.put("Tag", firstLetter);
@@ -158,7 +158,7 @@ Rule: StringTokenizer
         try {
             String firstLetter = doc.getContent().getContent(startNode, startNode + 1).toString();// get what the first letter is 
             char firstLetterChar = firstLetter.charAt(0);// get the A
-            System.out.println(startNode);
+            //System.out.println(startNode);
             FeatureMap firstAnnFeatures = Factory.newFeatureMap();
             firstAnnFeatures.put("Keep", "Keep");
             firstAnnFeatures.put("Tag", firstLetter);
