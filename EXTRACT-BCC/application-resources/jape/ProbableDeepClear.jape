@@ -6,7 +6,7 @@ Rule: ProbableDeepClearYes
 Priority: 100
 
 (
-    ({Dimension})|({MarginWordDistances})
+    ({Dimension}|{MarginWordDistances})
     ({ClockFace})
 	(({Clear.Negation == Affirmed})
     ({Micro_deep_margin_maybe})):match1
@@ -18,7 +18,7 @@ Rule: ProbableDeepClearNo
 Priority: 100
 
 (
-    ({Dimension})|({MarginWordDistances})
+    ({Dimension}|{MarginWordDistances})
     ({ClockFace})
 	(({Clear.Negation == Negated})
     ({Micro_deep_margin_maybe})):match1
