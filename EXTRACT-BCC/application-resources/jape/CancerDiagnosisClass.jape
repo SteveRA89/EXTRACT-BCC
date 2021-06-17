@@ -1,0 +1,18 @@
+Phase: CancerDiagnosisClass
+Input: CancerDiagnosis Split BCCClass ParagraphTitles
+Options: control=appelt
+
+//Biopsy proven BCC right nipple. ? morphoeic. 
+
+Rule: CancerDiagnosisClass
+Priority: 100
+
+(
+    ({CancerDiagnosis})
+    ({Split})[0,2]
+    (({BCCClass})):match1
+
+):match
+-->
+:match1.CancerDiagnosis = { rule = CancerDiagnosisClass, 
+BCCClass = :match.BCCClass.BCCClass}
