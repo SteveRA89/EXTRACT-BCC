@@ -4,7 +4,7 @@ Options: control=appelt
 
 //This will only pick up ExcisionTypes directly from the gazetteer, the jape rule is currently after it in the pipeline
 
-Rule: DimensionLesion
+Rule: DimensionLesion1
 Priority:100
 (
     ({DimensionSpecimen})
@@ -13,11 +13,13 @@ Priority:100
     ({Lesion}|{Ulcerated})?
     ({Lesion}|{Ulcerated})?
     ({Lesion}|{Ulcerated})?
+    ({Lesion}|{Ulcerated})?
+    ({Lesion}|{Ulcerated})?
     (({Dimension})):match
 
 ):match1
 -->
-:match.DimensionLesion = { rule = DimensionLesion, 
+:match.DimensionLesion = { rule = DimensionLesion1, 
 N1 = :match.Dimension.N1, 
 N2 = :match.Dimension.N2, 
 N3 = :match.Dimension.N3, 
