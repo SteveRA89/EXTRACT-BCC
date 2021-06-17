@@ -1,5 +1,5 @@
 Phase: CancerDiagnosis
-Input: Diagnosis Split Sentence BCCClass Differentiation Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms LevelOfInvasionTrigger
+Input: Diagnosis Split Sentence BCCClass Differentiation Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms LevelOfInvasionTrigger ParagraphTitles
 Options: control=appelt
 
 //Diagnosis 

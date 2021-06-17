@@ -1,5 +1,5 @@
 Phase: ProbablePeripheralMargin
-Input: Dimension ClockFace Clear Micro_deep_margin_maybe MarginWordDistances Clear ParagraphTitles
+Input: Dimension ClockFace Clear Micro_deep_margin_maybe MarginWordDistances Clear ParagraphTitles Split
 Options: control=appelt
 
 Rule: ProbablePeripheralMargin
