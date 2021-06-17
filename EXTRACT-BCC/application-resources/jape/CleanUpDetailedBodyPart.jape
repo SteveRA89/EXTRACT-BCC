@@ -1,0 +1,19 @@
+Imports: {import static gate.Utils.*; }
+
+Phase: CleanUpDetailedBodyPart
+Input: DetailedBodyPartParagraph Tag DimensionSpecimen
+Options: control=all
+
+Rule: CleanUpDetailedBodyPart
+
+//Fix for letter 31
+(
+    ({DetailedBodyPartParagraph within GroupedParagraph.ParagraphTitle == MacroDescription})
+    ({DetailedBodyPartParagraph within GroupedParagraph.ParagraphTitle == MacroDescription}):match1
+    ({DimensionSpecimen})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
