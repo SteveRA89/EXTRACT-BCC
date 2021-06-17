@@ -1,5 +1,5 @@
 Phase: CancerDiagnosisClass
-Input: CancerDiagnosis Split BCCClass ParagraphTitles
+Input: CancerDiagnosis Split BCCClass ParagraphTitles GroupedParagraph
 Options: control=appelt
 
 //Biopsy proven BCC right nipple. ? morphoeic. 
@@ -8,7 +8,7 @@ Rule: CancerDiagnosisClass
 Priority: 100
 
 (
-    ({CancerDiagnosis})
+    ({CancerDiagnosis within GroupedParagraph.ParagraphTitle == ClinicalDetails})
     ({Split})[0,2]
     (({BCCClass})):match1
 
