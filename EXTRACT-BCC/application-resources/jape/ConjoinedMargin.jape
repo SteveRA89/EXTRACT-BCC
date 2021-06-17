@@ -165,8 +165,8 @@ ClockPosition4 = :match.ClockFace.time4}
 Rule: Micro_thickness1
 Priority:98
 (
-    (({Micro_thickness.Position != Post}|{LevelOfInvasionTrigger.Position != Post}) //Deep
-    ({Micro_thickness.Position != Post}|{LevelOfInvasionTrigger.Position != Post})?
+    ((({Micro_thickness.Position != Post}|{LevelOfInvasionTrigger.Position != Post})) //Deep
+    (({Micro_thickness.Position != Post}|{LevelOfInvasionTrigger.Position != Post}))?
     ({Separator})?
     ({Dimension})):match //10mm 
 
@@ -181,7 +181,7 @@ Priority:98
 (
 
     (({Dimension}) //10mm
-    ({Micro_thickness})|{LevelOfInvasionTrigger}):match // Deep 
+    ({Micro_thickness}|{LevelOfInvasionTrigger})):match // Deep 
 
 ):match1
 -->
