@@ -7,7 +7,7 @@ Rule: TagLetters1
 Priority: 100 
 //Pick up ',' ';', ':', '(', ')' 
 ( 
-	({Token.kind == punctuation, Token.length == 1, Token.string == "("}|{Token.kind == punctuation, Token.length == 1, Token.string == ")"}|{Token.kind == punctuation, Token.length == 1, Token.string == ","}|{Token.kind == punctuation, Token.length == 1, Token.string == ";"}|{Token.kind == punctuation, Token.length == 1, Token.string == ":"}|{Token.string == and, Token.length ==3}):Tag 
+	({Token.kind == punctuation, Token.length == 1, Token.string == "("}|{Token.kind == punctuation, Token.length == 1, Token.string == ")"}|{Token.kind == punctuation, Token.length == 1, Token.string == ";"}|{Token.kind == punctuation, Token.length == 1, Token.string == ":"}):Tag 
 ):match 
 --> 
 :match.Separator = { rule = Separator1, value = :match@string, string = :Tag.Token.string}
