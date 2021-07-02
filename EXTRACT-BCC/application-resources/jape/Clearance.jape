@@ -1,10 +1,11 @@
 Phase: Clearance
-Input: Dimension Split Sentence ClockFace Clearance
+Input: Dimension Split Sentence ClockFace Clearance Close Clear
 Options: control=appelt
 
 Rule: PeripheralClearance1
 Priority:100
 (
+    ({Close})
     ({Clearance.MeasurementType == "PeripheralClearance"})
 
 ):match
@@ -21,6 +22,7 @@ PeripheralClockPosition4 = :match.Clearance.ClockPosition4}
 Rule: DeepClearance
 Priority:100
 (
+    ({Close})
     ({Clearance.MeasurementType == "DeepClearance"})
 
 ):match

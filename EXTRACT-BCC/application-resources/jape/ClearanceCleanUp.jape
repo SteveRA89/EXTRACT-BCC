@@ -1,0 +1,15 @@
+Imports: {import static gate.Utils.*; }
+Phase: ClearanceCleanUp
+Input: Clearance Close Tag
+Options: control=all
+
+Rule: ClearanceCleanUp
+
+//Tumour islands are present less than 1mm from the deep margin. Fix for letter 22.
+(
+    ({Clearance contains Close}):match1
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
