@@ -1,5 +1,5 @@
 Phase: Margins
-Input: Dimension DeepMargin Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_peripheral_margin NewLine Clear
+Input: Dimension DeepMargin Sentence MarginWordDistances ClockFace Separator Micro_deep_margin Micro_peripheral_margin NewLine Clear Close Diameter Micro_thickness
 Options: control=appelt
 
 // Currently when there are multiple ClockFaces - will only be read when "and" used. If a "separator" is used this will block the next part of the sentence 
