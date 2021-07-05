@@ -1,5 +1,5 @@
 Phase: SupplementalExcisionTypeOutcome
-Input: ExcisionType SupplementalExcisionTypeOutcome ClockFace NewLine
+Input: ExcisionType SupplementalExcisionTypeOutcome ClockFace NewLine DeepMargin
 Options: control=appelt
 
 Rule: ExcisionTypePositiveDeepClock1a
@@ -103,6 +103,30 @@ Priority: 100
 ):match
 -->
 :match.SuppPeripheralExcisionTypeOutcomeDetails = { rule = SupplementalExcisionTypeOutcome2b, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+SupplementalExcisionTypeOutcome = "Negative"}
+
+Rule: ExcisionTypePositiveDeepClock3a
+Priority: 100
+
+(
+	({DeepMargin})
+	({SupplementalExcisionTypeOutcome.Negation == Affirmed})
+):match
+-->
+:match.SuppDeepExcisionTypeOutcomeDetails = { rule = ExcisionTypePositiveDeepClock3a, 
+ExcisionType = :match.ExcisionType.ExcisionType,
+SupplementalExcisionTypeOutcome = "Positive"}
+
+Rule: ExcisionTypeNegativeDeepClock3b
+Priority: 100
+
+(
+	({DeepMargin})
+	({SupplementalExcisionTypeOutcome.Negation == Negated})
+):match
+-->
+:match.SuppDeepExcisionTypeOutcomeDetails = { rule = ExcisionTypeNegativeDeepClock3b, 
 ExcisionType = :match.ExcisionType.ExcisionType,
 SupplementalExcisionTypeOutcome = "Negative"}
 
