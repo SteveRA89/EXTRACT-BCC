@@ -1,5 +1,5 @@
 Phase: ResidualDisease
-Input: ResidualDisease Split Sentence Diagnosis
+Input: ResidualDisease Split Sentence Diagnosis CancerSynonyms
 Options: control=appelt
 
 
@@ -7,38 +7,38 @@ Rule: ResidualDiseaseYes1
 Priority: 100
 
 (
-	(({ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == true})):match1
-	({Diagnosis})
+	({ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == true})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.ResidualDiseaseDetails = { rule = ResidualDiseaseYes1, ResidualDisease = "ResidualDiseasePresent"}
+:match.ResidualDiseaseDetails = { rule = ResidualDiseaseYes1, ResidualDisease = "ResidualDiseasePresent"}
 
 Rule: ResidualDiseaseNo1
 Priority: 100
 
 (
-	(({ResidualDisease.Negation == Negated, ResidualDisease.Negatives == true})):match1
-	({Diagnosis})
+	({ResidualDisease.Negation == Negated, ResidualDisease.Negatives == true})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.ResidualDiseaseDetails = { rule = ResidualDiseaseNo1, ResidualDisease = "NoResidualDiseasePresent"}
+:match.ResidualDiseaseDetails = { rule = ResidualDiseaseNo1, ResidualDisease = "NoResidualDiseasePresent"}
 
 Rule: ResidualDiseaseYes2
 Priority: 100
 
 (
-	(({ResidualDisease.Negation == Negated, ResidualDisease.Negatives == false})):match1
-	({Diagnosis})
+	({ResidualDisease.Negation == Negated, ResidualDisease.Negatives == false})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.ResidualDiseaseDetails = { rule = ResidualDiseaseYes2, ResidualDisease = "ResidualDiseasePresent"}
+:match.ResidualDiseaseDetails = { rule = ResidualDiseaseYes2, ResidualDisease = "ResidualDiseasePresent"}
 
 Rule: ResidualDiseaseNo2
 Priority: 100
 
 (
-	(({ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == false})):match1
-	({Diagnosis})
+	({ResidualDisease.Negation == Affirmed, ResidualDisease.Negatives == false})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.ResidualDiseaseDetails = { rule = ResidualDiseaseNo2, ResidualDisease = "NoResidualDiseasePresent"}
+:match.ResidualDiseaseDetails = { rule = ResidualDiseaseNo2, ResidualDisease = "NoResidualDiseasePresent"}

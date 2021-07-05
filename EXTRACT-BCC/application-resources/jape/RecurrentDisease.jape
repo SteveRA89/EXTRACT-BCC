@@ -1,43 +1,43 @@
 Phase: RecurrentDisease
-Input: RecurrentDisease Split Sentence Diagnosis
+Input: RecurrentDisease Split Sentence Diagnosis CancerSynonyms
 Options: control=appelt
 
 Rule: RecurrentDiseaseYes1
 Priority: 100
 
 (
-	(({RecurrentDisease.Negation == Affirmed})):match1
-	({Diagnosis})
+	({RecurrentDisease.Negation == Affirmed})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "RecurrentDiseasePresent"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "RecurrentDiseasePresent"}
 
 Rule: RecurrentDiseaseNo1
 Priority: 100
 
 (
-	(({RecurrentDisease.Negation == Negated})):match1
-	({Diagnosis})
+	({RecurrentDisease.Negation == Negated})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "NoRecurrentDiseasePresent"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDisease, RecurrentDisease = "NoRecurrentDiseasePresent"}
 
 Rule: RecurrentDiseaseYes2
 Priority: 100
 
 (
-	(({RecurrentDisease.Negation == Negated, RecurrentDisease.Negatives == false})):match1
-	({Diagnosis})
+	({RecurrentDisease.Negation == Negated, RecurrentDisease.Negatives == false})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.RecurrentDiseaseDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "RecurrentDiseasePresent"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDiseaseYes2, RecurrentDisease = "RecurrentDiseasePresent"}
 
 Rule: RecurrentDiseaseNo2
 Priority: 100
 
 (
-	(({RecurrentDisease.Negation == Affirmed, RecurrentDisease.Negatives == false})):match1
-	({Diagnosis})
+	({RecurrentDisease.Negation == Affirmed, RecurrentDisease.Negatives == false})
+	({Diagnosis}|{CancerSynonyms})
 ):match
 -->
-:match1.RecurrentDiseaseDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "NoRecurrentDiseasePresent"}
+:match.RecurrentDiseaseDetails = { rule = RecurrentDiseaseNo2, RecurrentDisease = "NoRecurrentDiseasePresent"}
