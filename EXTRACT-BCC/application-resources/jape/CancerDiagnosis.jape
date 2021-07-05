@@ -1,5 +1,5 @@
 Phase: CancerDiagnosis
-Input: Diagnosis Split Sentence BCCClass Differentiation Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms LevelOfInvasionTrigger ParagraphTitles
+Input: Diagnosis Split Sentence BCCClass Differentiation Lookup2 BodyParts MedialOrLateral UpperOrLower AnteriorOrPosterior MultipleScalp ProximalOrDistal BCCClassLinkTerms LevelOfInvasionTrigger ParagraphTitles Subtype NewLine
 Options: control=appelt
 
 //Diagnosis 
@@ -1009,3 +1009,26 @@ Differentiation2 = :T5.Differentiation.Differentiation,
 Differentiation2 = :T4.Differentiation.Differentiation,
 Differentiation2 = :T3.Differentiation.Differentiation,
 Differentiation2 = :T2.Differentiation.Differentiation}
+
+///BCC
+
+//Subtype: Nodular
+
+Rule: CancerDiagnosis7
+Priority: 100
+
+(
+    ({Diagnosis})
+    ({Split})?
+    ({NewLine})[0,2]
+    ({Subtype})
+    ({BCCClass})
+
+):match
+-->
+:match.CancerDiagnosis = { rule = CancerDiagnosis7, 
+BCCClass = :match.BCCClass.BCCClass,
+CancerType = :match.Diagnosis.CancerType,
+CancerType2 = :match.Diagnosis.CancerType2,
+CUI = :match.Diagnosis.CUI,
+CUI2 = :match.Diagnosis.CUI2}
