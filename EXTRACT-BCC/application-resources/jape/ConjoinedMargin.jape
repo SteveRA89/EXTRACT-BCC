@@ -1,5 +1,5 @@
 Phase: ConjoinedMargins
-Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator Micro_thickness TumourThickness Clearance Dimensions NewLine ClinicalDetailMargin ExcisionCompleted SingleMargin LevelOfInvasionTrigger
+Input: Dimension Micro_deep_margin Micro_peripheral_margin Micro_peripheral_margin_maybe Sentence MarginWordDistances ClockFace Separator Micro_thickness Clearance Dimensions NewLine ClinicalDetailMargin ExcisionCompleted SingleMargin LevelOfInvasionTrigger Comma
 Options: control=appelt
 
 //10mm deep and 15mm peripheral clearance
