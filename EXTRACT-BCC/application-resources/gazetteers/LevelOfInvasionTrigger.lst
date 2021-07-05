@@ -27,4 +27,4 @@ Abutts but not invading:Negatives=false
 Within:Negatives=true
 Confined:Negatives=true
 Penetrates:Negatives=true
-
+Depth into:Negatives=true

@@ -61,3 +61,6 @@ Micro_peripheral_margin_maybe.lst::::Micro_peripheral_margin_maybe
 GP.lst::::GP
 GPTrigger.lst::::GPTrigger
 doubleTag.lst::::doubleTag
+Subtype.lst::::Subtype
+CancerSynonyms.lst::::CancerSynonyms
+Comma.lst::::Comma

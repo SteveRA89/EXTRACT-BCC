@@ -29,4 +29,5 @@ Presence of malignant disease:Negatives=true
 Residual malignancy:Negatives=true
 Residual malignancy absent:Negatives=false
 Residual malignancy not Present:Negatives=false
-Residual/recurrent tumour:Negatives=true
+Residual/recurrent:Negatives=true
+Evidence of dysplasia or recurrence:Negatives=true

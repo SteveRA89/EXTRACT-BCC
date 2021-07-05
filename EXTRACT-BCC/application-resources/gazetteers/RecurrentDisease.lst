@@ -29,4 +29,4 @@ Presence of malignant disease:Negatives=true
 Recurrent malignancy:Negatives=true
 Recurrent malignancy absent:Negatives=false
 Recurrent malignancy not Present:Negatives=false
-Recurrent/residual tumour:Negatives=true
+Recurrent/residual:Negatives=true
