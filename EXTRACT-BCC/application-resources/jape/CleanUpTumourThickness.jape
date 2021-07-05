@@ -1,6 +1,6 @@
 Imports: {import static gate.Utils.*; }
 Phase: CleanUpTumourThickness
-Input: TumourThickness Tag
+Input: TumourThickness Tag GroupedParagraph ParagraphTitles
 Options: control=all
 
 //Fix for letter 32 where tumour thickness running over onto peripheral involved
@@ -8,11 +8,11 @@ Options: control=all
 Rule: CleanUpTumourThickness1
 
 (
-    ({TumourThickness})
-    ({TumourThickness}):match1
+    ({TumourThickness within GroupedParagraph.ParagraphTitle == Microscopy})
+    ({TumourThickness within GroupedParagraph.ParagraphTitle == Microscopy}):match1
 
 ):match
 -->
-:match1 { 
+:match1 {
   inputAS.removeAll(match1Annots);
 }

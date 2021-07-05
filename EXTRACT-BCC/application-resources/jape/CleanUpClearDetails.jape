@@ -1,0 +1,29 @@
+Imports: {import static gate.Utils.*; }
+Phase: CleanUpClearDetails
+Input: PeripheralClearDetails DeepClearDetails Dimension Tag
+Options: control=all
+
+Rule: PeripheralClearanceCleanUp
+
+//Clear of the lateral margins by a minimum of 2mm. Fix for letter 25.
+(
+    ({PeripheralClearDetails}):match1
+    ({Dimension})
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
+
+Rule: DeepClearanceCleanUp
+
+//Clear of the lateral margins by a minimum of 2mm. Fix for letter 25.
+(
+    ({DeepClearDetails}):match1
+    ({Dimension})
+
+):match
+-->
+:match1 { 
+  inputAS.removeAll(match1Annots);
+}
