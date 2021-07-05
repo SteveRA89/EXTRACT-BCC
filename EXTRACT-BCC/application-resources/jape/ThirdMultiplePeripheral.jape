@@ -14,7 +14,7 @@ Options: control=appelt
 //Distance to 6 o'clock = 8mm
 
 Rule: ThirdMultiplePeripheral
-Priority:99
+Priority:98
 (
     ({DeepClearance.MeasurementType == DeepClearance})
     ({Separator})?
@@ -48,7 +48,7 @@ MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
 
 Rule: ThirdMultiplePeripheral2
-Priority:99
+Priority:98
 (
     ({Distance_to})?
     ({ClockFace})
@@ -82,7 +82,7 @@ MeasurementUnit = :match.Dimension.units,
 PeripheralClockPosition = :match.ClockFace.time}
 
 Rule: ThirdMultiplePeripheral3
-Priority:99
+Priority:98
 (
     ({PeripheralClearance})
     ({Separator})?
@@ -97,51 +97,6 @@ Priority:99
 ):match1
 -->
 :match.PeripheralClearance = { rule = ThirdMultiplePeripheral3, MeasurementType = "PeripheralClearance", 
-MeasurementValue = :match.MarginWordDistances.Value,
-MeasurementUnit = "mm",
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
-PeripheralClockPosition = :match.ClockFace.time}
-
-Rule: ThirdMultiplePeripheral4
-Priority:99
-(
-    ({PeripheralClearance})
-    ({Separator})?
-    ({Dimension}|{MarginWordDistances})
-    ({ClockFace})
-    ({Separator})?
-    ({Separator})?
-    (({Dimension}|{MarginWordDistances})
-    ({ClockFace})
-    ({Separator})?):match
-
-):match1
--->
-:match.PeripheralClearance = { rule = ThirdMultiplePeripheral4, MeasurementType = "PeripheralClearance", 
-MeasurementValue = :match.MarginWordDistances.Value,
-MeasurementUnit = "mm",
-MeasurementValue = :match.Dimension.N1, 
-MeasurementUnit = :match.Dimension.units,
-PeripheralClockPosition = :match.ClockFace.time}
-
-Rule: ThirdMultiplePeripheral5
-Priority:100
-(
-    ({PeripheralClearance})
-    ({Separator})?
-    ({Dimension}|{MarginWordDistances})
-    ({ClockFace})
-    ({Separator})?
-    ({Separator})?
-    ({DeepClearance})
-    (({MarginWordDistances})
-    ({ClockFace})
-    ({Separator})?):match
-
-):match1
--->
-:match.PeripheralClearance = { rule = ThirdMultiplePeripheral4, MeasurementType = "PeripheralClearance", 
 MeasurementValue = :match.MarginWordDistances.Value,
 MeasurementUnit = "mm",
 MeasurementValue = :match.Dimension.N1, 
