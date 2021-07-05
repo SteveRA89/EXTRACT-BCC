@@ -2,6 +2,8 @@ Phase: AccessionNumber
 Input: Token SpaceToken
 Options: control=appelt
 
+// do you still need stuff like year, site... from this?
+
 Rule: AccessionNum1
 Priority: 100
 (

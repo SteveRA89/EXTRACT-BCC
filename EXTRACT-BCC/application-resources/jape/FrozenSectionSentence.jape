@@ -94,7 +94,7 @@ FrozenSectionOutcome = :D2.Diagnosis.CancerType},
 FrozenSectionOutcome = :D3.Diagnosis.CancerType},
 
 :D3 { 
-  inputAS.removeAll(D1Annots);
+  inputAS.removeAll(D3Annots);
 },
 :D3{
   Annotation matchAnn = D3Annots.iterator().next();//Get Annotations
@@ -182,7 +182,7 @@ FrozenSectionOutcome = :D2.Diagnosis.CancerType},
 FrozenSectionOutcome = :D3.Diagnosis.CancerType},
 
 :D3 { 
-  inputAS.removeAll(D1Annots);
+  inputAS.removeAll(D3Annots);
 },
 :D3{
   Annotation matchAnn = D3Annots.iterator().next();//Get Annotations

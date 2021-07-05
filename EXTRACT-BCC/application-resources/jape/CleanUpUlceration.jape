@@ -1,7 +1,7 @@
 Phase: CleanUpUlceration
 Input: Ulcerated Trigger
 Options: control=all
-
+// Why doubled up?
 Rule: CleanUpUlceration1
 (
     ({Trigger within Ulcerated.Negatives==false})

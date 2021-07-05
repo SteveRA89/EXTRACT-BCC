@@ -5,10 +5,9 @@ Phase: DimensionLesionLargestMeasurement
 Input: DimensionSpecimen Dimension GroupedParagraph Tag
 Options: control=all
 
-/*
- * Get the LongestMeasurement from the dimension annotation after dimensionSpecimen.
-*/
-
+// Get the LongestMeasurement from the dimension annotation after dimensionSpecimen.
+// Haven't created new annotations for the deleted ones here - Will do if needed some other time
+// Will have to think about it with all the If statments
 Rule: DimensionLesionLargestMeasurement4
 (
 

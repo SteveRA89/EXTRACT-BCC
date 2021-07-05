@@ -3,7 +3,7 @@ Imports: {import static gate.Utils.*; }
 Phase: Organisations
 Input:Lookup Address
 Options: control=appelt
-
+// RULE CAN BE DELETED - DONT HAVE LOOKUP IN THIS PIPELINE
 /*
  * Deal with diseases that are part of URLs
  * e.g. www.diabetes-uk.org

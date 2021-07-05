@@ -2,7 +2,7 @@ Phase: RemoveTimePeriodFromAge
 Input:  TimeSince Lookup2
 Options: control=all
 
-
+// DONT have lookup2 in this pipeline i think
 Rule: RemoveLookup2FromTimeSince
 (   
     ({Lookup2 within TimeSince}):umls

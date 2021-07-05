@@ -2,7 +2,7 @@ Phase: removeUselessLookups
 Input:  Lookup 
 Options: control=all
 
-
+// Delete me
 Rule: removeUselessLookups
 
 (

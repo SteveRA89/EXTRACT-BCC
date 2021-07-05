@@ -5,7 +5,7 @@ Input: DetailedBodyPartParagraph Tag DimensionSpecimen
 Options: control=all
 
 Rule: CleanUpDetailedBodyPart
-
+// Do you need to other ParagraphTitles also?
 //Fix for letter 31
 (
     ({DetailedBodyPartParagraph within GroupedParagraph.ParagraphTitle == MacroDescription})

@@ -6,7 +6,7 @@ Options: control=appelt
 
 Rule: BiopsyDiagnosis1
 Priority: 100
-
+// Not sure what is going on here, diagnosis created then deleted
 (
 	({Diagnosis}):D1
 	({ExcisionType.ExcisionType == "PunchBiopsy"}|{ExcisionType.ExcisionType == "IncisionBiopsy"}|{ExcisionType.ExcisionType == "ShaveBiopsy"}|{ExcisionType.ExcisionType == "Curettage"})
