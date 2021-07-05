@@ -10,7 +10,7 @@ Priority: 100
 (
 	({Diagnosis}):D1
 	({ExcisionType.ExcisionType == "PunchBiopsy"}|{ExcisionType.ExcisionType == "IncisionBiopsy"}|{ExcisionType.ExcisionType == "ShaveBiopsy"}|{ExcisionType.ExcisionType == "Curettage"})
-    ({Diagnosis}):D2
+  ({Diagnosis}):D2
 
 ):match
 -->
@@ -20,7 +20,18 @@ CUI2 = :D2.Diagnosis.CUI},
 
 :D2 { 
   inputAS.removeAll(D2Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:D2{
+  Annotation matchAnn = D2Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D2Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D2Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "BiopsyDiagnosis1");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }
+
 
 Rule: BiopsyDiagnosis2
 Priority: 100
@@ -39,4 +50,14 @@ CUI2 = :D2.Diagnosis.CUI},
 
 :D2 { 
   inputAS.removeAll(D2Annots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:D2{
+  Annotation matchAnn = D2Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D2Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D2Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "BiopsyDiagnosis2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }

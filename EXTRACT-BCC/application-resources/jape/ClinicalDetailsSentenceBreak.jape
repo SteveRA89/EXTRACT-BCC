@@ -76,8 +76,28 @@ Tag = :match.ClinicalDetails.Tag
 :match1 { 
   inputAS.removeAll(match1Annots);//This deletes the match1 annotation. So would remove the annotation for first ClinicalDetails
 },
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "ClinicalDetailsSentenceBreak");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetailsDeleted", preTagFM);//create annotation
+},
 
 :match { 
   inputAS.removeAll(matchAnnots);//This deletes the match1 annotation. So would remove the annotation for second ClinicalDetails
 
+},
+:match{
+  Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "ClinicalDetailsSentenceBreak");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ClinicalDetailsDeleted", preTagFM);//create annotation
 }

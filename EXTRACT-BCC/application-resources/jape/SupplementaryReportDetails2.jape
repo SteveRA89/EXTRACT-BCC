@@ -16,9 +16,18 @@ SRDayDate = :match.ReportDetails.DayDate,
 SRMonthDate = :match.ReportDetails.MonthDate,
 SRYearDate = :match.ReportDetails.YearDate,
 SRPathologist = :match.ReportDetails.Pathologist
-}
-,
+},
 
 :match2 { 
   inputAS.removeAll(match2Annots);//This deletes the match2 annotation 
+},
+:match2{
+  Annotation matchAnn = match2Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match2Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match2Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SupplementaryReportDetails2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ReportDetailsDeleted", preTagFM);//create annotation
 }

@@ -17,6 +17,16 @@ Priority: 100
 -->
 :umls { 
   inputAS.removeAll(umlsAnnots);
+},
+:umls{
+  Annotation matchAnn = umlsAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = umlsAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = umlsAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SingleDiagnosisBracketsBCC");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "CancerDiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: SingleDiagnosisBracketsOtherCancerous
@@ -32,6 +42,16 @@ Priority: 100
 -->
 :umls { 
   inputAS.removeAll(umlsAnnots);
+},
+:umls{
+  Annotation matchAnn = umlsAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = umlsAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = umlsAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SingleDiagnosisBracketsOtherCancerous");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "CancerDiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: SingleDiagnosisBracketsOtherIntermediate
@@ -47,6 +67,16 @@ Priority: 100
 -->
 :umls { 
   inputAS.removeAll(umlsAnnots);
+},
+:umls{
+  Annotation matchAnn = umlsAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = umlsAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = umlsAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SingleDiagnosisBracketsOtherIntermediate");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "CancerDiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: SingleDiagnosisBracketsOtherBenign
@@ -62,6 +92,16 @@ Priority: 100
 -->
 :umls { 
   inputAS.removeAll(umlsAnnots);
+},
+:umls{
+  Annotation matchAnn = umlsAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = umlsAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = umlsAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SingleDiagnosisBracketsOtherBenign");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "CancerDiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: SingleDiagnosisBracketsOtherInSitu
@@ -77,4 +117,14 @@ Priority: 100
 -->
 :umls { 
   inputAS.removeAll(umlsAnnots);
+},
+:umls{
+  Annotation matchAnn = umlsAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = umlsAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = umlsAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SingleDiagnosisBracketsOtherInSitu");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "CancerDiagnosisDeleted", preTagFM);//create annotation
 }

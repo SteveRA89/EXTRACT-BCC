@@ -18,6 +18,16 @@ time = :match.ClockFace.time},
 
 :ET { 
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:ET{
+  Annotation matchAnn = ETAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = ETAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = ETAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SupplementalDeepMarginClock");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ExcisionTypeDeleted", preTagFM);//create annotation
 }
 
 Rule: SupplementalDeepMarginClock2
@@ -41,6 +51,16 @@ time2 = :T2.Numeric.value},
 
 :ET { 
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:ET{
+  Annotation matchAnn = ETAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = ETAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = ETAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SupplementalDeepMarginClock2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ExcisionTypeDeleted", preTagFM);//create annotation
 }
 
 Rule: SupplementalPeripheralMarginClock
@@ -57,6 +77,16 @@ time = :match.ClockFace.time},
 
 :ET { 
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:ET{
+  Annotation matchAnn = ETAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = ETAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = ETAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SupplementalPeripheralMarginClock");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ExcisionTypeDeleted", preTagFM);//create annotation
 }
 
 Rule: SupplementalPeripheralMarginClock2
@@ -80,6 +110,16 @@ time2 = :T2.Numeric.value},
 
 :ET { 
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:ET{
+  Annotation matchAnn = ETAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = ETAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = ETAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SupplementalPeripheralMarginClock2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ExcisionTypeDeleted", preTagFM);//create annotation
 }
 
 Rule: SupplementalPeripheralMarginClock3
@@ -116,4 +156,14 @@ time2 = :match.ClockFace.time2},
 
 :ET { 
   inputAS.removeAll(ETAnnots);//This deletes the match1 annotation. So would remove the annotation for excision
+},
+:ET{
+  Annotation matchAnn = ETAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = ETAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = ETAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "SupplementalPeripheralMarginClock4");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "ExcisionTypeDeleted", preTagFM);//create annotation
 }

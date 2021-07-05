@@ -3,57 +3,79 @@ Input: Ulcerated Trigger
 Options: control=all
 
 Rule: CleanUpUlceration1
-
 (
-
     ({Trigger within Ulcerated.Negatives==false})
-
 ):match
-
 -->
-
 :match { 
   inputAS.removeAll(matchAnnots);//This deletes the match1 annotation 
+},
+:match{
+  Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpUlceration1");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "TriggerDeleted", preTagFM);//create annotation
 }
 
 Rule: CleanUpUlceration2
-
 (
-
     ({Trigger within Ulcerated.Negatives==true})
-
 ):match
-
 -->
-
 :match { 
   inputAS.removeAll(matchAnnots);//This deletes the match1 annotation 
+},
+:match{
+  Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpUlceration2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "TriggerDeleted", preTagFM);//create annotation
 }
 
 Rule: CleanUpUlceration1
-
 (
-
     ({Trigger within Ulcerated.Negatives==false})
-
 ):match
-
 -->
-
 :match { 
   inputAS.removeAll(matchAnnots);//This deletes the match1 annotation 
+},
+:match{
+  Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpUlceration1");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "TriggerDeleted", preTagFM);//create annotation
 }
 
 Rule: CleanUpUlceration2
-
 (
 
     ({Trigger within Ulcerated.Negatives==true})
 
 ):match
-
 -->
-
 :match { 
   inputAS.removeAll(matchAnnots);//This deletes the match1 annotation 
+},
+:match{
+  Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpUlceration2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "TriggerDeleted", preTagFM);//create annotation
 }

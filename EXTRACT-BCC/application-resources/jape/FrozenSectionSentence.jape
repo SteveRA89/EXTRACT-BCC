@@ -20,6 +20,16 @@ FrozenSectionOutcome = :D1.Diagnosis.CancerType},
 
 :D1 { 
   inputAS.removeAll(D1Annots);
+},
+:D1{
+  Annotation matchAnn = D1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: FrozenSectionSentence5
@@ -52,12 +62,32 @@ FrozenSectionOutcome = :D1.Diagnosis.CancerType},
 :D1 { 
   inputAS.removeAll(D1Annots);
 },
+:D1{
+  Annotation matchAnn = D1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence5");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
+},
 
 :D2.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
 FrozenSectionOutcome = :D2.Diagnosis.CancerType},
 
 :D2 { 
   inputAS.removeAll(D2Annots);
+},
+:D2{
+  Annotation matchAnn = D2Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D2Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D2Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence5");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 },
 
 :D3.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
@@ -66,12 +96,32 @@ FrozenSectionOutcome = :D3.Diagnosis.CancerType},
 :D3 { 
   inputAS.removeAll(D1Annots);
 },
+:D3{
+  Annotation matchAnn = D3Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D3Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D3Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence5");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
+},
 
 :D4.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
 FrozenSectionOutcome = :D4.Diagnosis.CancerType},
 
 :D4 { 
   inputAS.removeAll(D4Annots);
+},
+:D4{
+  Annotation matchAnn = D4Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D4Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D4Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence5");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: FrozenSectionSentence4
@@ -100,6 +150,16 @@ FrozenSectionOutcome = :D1.Diagnosis.CancerType},
 :D1 { 
   inputAS.removeAll(D1Annots);
 },
+:D1{
+  Annotation matchAnn = D1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence4");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
+},
 
 :D2.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
 FrozenSectionOutcome = :D2.Diagnosis.CancerType},
@@ -107,12 +167,32 @@ FrozenSectionOutcome = :D2.Diagnosis.CancerType},
 :D2 { 
   inputAS.removeAll(D2Annots);
 },
+:D2{
+  Annotation matchAnn = D2Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D2Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D2Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence4");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
+},
 
 :D3.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
 FrozenSectionOutcome = :D3.Diagnosis.CancerType},
 
 :D3 { 
   inputAS.removeAll(D1Annots);
+},
+:D3{
+  Annotation matchAnn = D3Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D3Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D3Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence4");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: FrozenSectionSentence3
@@ -137,12 +217,32 @@ FrozenSectionOutcome = :D1.Diagnosis.CancerType},
 :D1 { 
   inputAS.removeAll(D1Annots);
 },
+:D1{
+  Annotation matchAnn = D1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence3");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
+},
 
 :D2.Frozen_SectionDetails = { rule = FrozenSectionSentence3, 
 FrozenSectionOutcome = :D2.Diagnosis.CancerType},
 
 :D2 { 
   inputAS.removeAll(D2Annots);
+},
+:D2{
+  Annotation matchAnn = D2Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D2Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D2Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence3");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }
 
 Rule: FrozenSectionSentence2
@@ -161,4 +261,14 @@ FrozenSectionOutcome = :D1.Diagnosis.CancerType},
 
 :D1 { 
   inputAS.removeAll(D1Annots);
+},
+:D1{
+  Annotation matchAnn = D1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = D1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = D1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "FrozenSectionSentence2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DiagnosisDeleted", preTagFM);//create annotation
 }

@@ -3,11 +3,21 @@ Phase: TagStartOfSentence
 Input: Tag
 Options: control=all
 //Remove Tags when not at start of sentence
-Rule: Sentence
+Rule: TagNotSentenceStart
 (
     ({Tag.Keep != Keep, Tag.SentenceStart != False}):Tag
 ):match
 -->
 :match { 
 inputAS.removeAll(matchAnnots);
+},
+:match{
+  Annotation matchAnn = matchAnnots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = matchAnnots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = matchAnnots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "TagNotSentenceStart");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "TagDeleted", preTagFM);//create annotation
 }

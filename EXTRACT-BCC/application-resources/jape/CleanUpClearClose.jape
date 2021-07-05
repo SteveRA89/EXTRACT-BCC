@@ -16,7 +16,18 @@ Rule: CleanUpClose1
 -->
 :match1 { 
   inputAS.removeAll(match1Annots);
+},
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpClose1");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DeepCloseDetailsDeleted", preTagFM);//create annotation
 }
+
 
 Rule: CleanUpClose2
 
@@ -29,7 +40,18 @@ Rule: CleanUpClose2
 -->
 :match1 { 
   inputAS.removeAll(match1Annots);
+},
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpClose2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "PeripheralCloseDetailsDeleted", preTagFM);//create annotation
 }
+
 
 Rule: CleanUpClear1
 
@@ -42,7 +64,18 @@ Rule: CleanUpClear1
 -->
 :match1 { 
   inputAS.removeAll(match1Annots);
+},
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpClear1");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DeepClearDetailsDeleted", preTagFM);//create annotation
 }
+
 
 Rule: CleanUpClear2
 
@@ -55,7 +88,18 @@ Rule: CleanUpClear2
 -->
 :match1 { 
   inputAS.removeAll(match1Annots);
+},
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpClear2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "PeripheralClearDetailsDeleted", preTagFM);//create annotation
 }
+
 
 Rule: CleanUpClearButClose1
 
@@ -68,7 +112,18 @@ Rule: CleanUpClearButClose1
 -->
 :match1 { 
   inputAS.removeAll(match1Annots);
+},
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpClearButClose1");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "DeepClearButCloseDetailsDeleted", preTagFM);//create annotation
 }
+
 
 Rule: CleanUpClearButClose2
 
@@ -81,4 +136,14 @@ Rule: CleanUpClearButClose2
 -->
 :match1 { 
   inputAS.removeAll(match1Annots);
+},
+:match1{
+  Annotation matchAnn = match1Annots.iterator().next();//Get Annotations
+  FeatureMap preTagFM = Factory.newFeatureMap();//create new featuremap
+  preTagFM.putAll(matchAnn.getFeatures());//copy all of the features from annotation
+  Long tokenStart = match1Annots.firstNode().getOffset();//get start of annotation
+  Long tokenEnd = match1Annots.lastNode().getOffset();// get end of annotation
+  preTagFM.put("ruleDelete", "CleanUpClearButClose2");//add rule name
+  AnnotationSet defaultSet = doc.getAnnotations("Bio");// select annotation set
+  gate.Utils.addAnn(defaultSet, tokenStart, tokenEnd, "PeripheralClearButCloseDetailsDeleted", preTagFM);//create annotation
 }
