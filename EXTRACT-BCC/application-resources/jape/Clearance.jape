@@ -5,7 +5,7 @@ Options: control=appelt
 Rule: PeripheralClearance1
 Priority:100
 (
-    ({Close})
+    ({Close}|{Clear})?
     ({Clearance.MeasurementType == "PeripheralClearance"})
 
 ):match
@@ -22,7 +22,7 @@ PeripheralClockPosition4 = :match.Clearance.ClockPosition4}
 Rule: DeepClearance
 Priority:100
 (
-    ({Close})
+    ({Close}|{Clear})?
     ({Clearance.MeasurementType == "DeepClearance"})
 
 ):match
