@@ -2,8 +2,6 @@ Phase: AccessionNumber
 Input: Token SpaceToken
 Options: control=appelt
 
-// do you still need stuff like year, site... from this?
-
 Rule: AccessionNum1
 Priority: 100
 (
@@ -15,8 +13,5 @@ Priority: 100
 ):match
 	
 -->
-:match.AccessionNumber1 = { rule = AccessionNumber1, value = :match@string, year = :year@string, 
-location = :site@string, 
-discipline = :discipline@string,
-suffix = :suffix@string}
+:match.AccessionNumber1 = { rule = AccessionNumber1, value = :match@string}
 

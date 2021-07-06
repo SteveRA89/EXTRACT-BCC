@@ -139,8 +139,6 @@ ExcisionType = "SupplementalPeripheralMarginSpecimen",
 time = :match.ClockFace.time,
 time2 = :match.ClockFace.time2}
 
-// NO deleteing on this rule - just double check that is correct
-
 Rule: SupplementalPeripheralMarginClock4
 (
     ({ExcisionType.ExcisionType == "SupplementalPeripheralMarginSpecimen"}):ET

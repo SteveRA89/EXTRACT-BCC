@@ -3,8 +3,6 @@ Phase: CleanUpTumourThickness
 Input: TumourThickness Tag GroupedParagraph ParagraphTitles
 Options: control=all
 
-//Fix for letter 32 where tumour thickness running over onto peripheral involved
-// What about other ParagraphTitles?
 Rule: CleanUpTumourThickness1
 
 (

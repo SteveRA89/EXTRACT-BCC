@@ -12,8 +12,4 @@ Priority: 100
         
 ):match
 -->
-:match.AccessionNumber = {rule = AccessionNumFinal, AccessionNumber= :match.AccessionNumber1.value, 
-location = :match.AccessionNumber1.location,
-site = :match.AccessionNumber1.site,
-year = :match.AccessionNumber1.year,
-suffix = :match.AccessionNumber1.suffix}
+:match.AccessionNumber = {rule = AccessionNumFinal, AccessionNumber= :match.AccessionNumber1.value}

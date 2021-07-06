@@ -4,7 +4,6 @@ Input: PeripheralClearDetails DeepClearDetails Dimension Tag
 Options: control=all
 
 Rule: PeripheralClearanceCleanUp
-// Do you need more of these like CleanUpClearClose.jape ?
 //Clear of the lateral margins by a minimum of 2mm. Fix for letter 25.
 (
     ({PeripheralClearDetails}):match1
