@@ -34,7 +34,7 @@ Rule: StringTokenizer
             secondAnnFeatures.put("Tag", secondLetter);
             secondAnnFeatures.put("value",secondLetter);
             secondAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", secondAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+3, "Tag", secondAnnFeatures);
         }
             catch(InvalidOffsetException e) {
             throw new LuckyException("Invalid offset from annotation");
@@ -58,14 +58,14 @@ Rule: StringTokenizer
             secondAnnFeatures.put("Tag", secondLetter);
             secondAnnFeatures.put("value",secondLetter);
             secondAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+2, "Tag", secondAnnFeatures);
             String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
             FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
             thirdAnnFeatures.put("Keep", "Keep");
             thirdAnnFeatures.put("Tag", thirdLetter);
             thirdAnnFeatures.put("value",thirdLetter);
             thirdAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+3, "Tag", thirdAnnFeatures);
         }
             catch(InvalidOffsetException e) {
             throw new LuckyException("Invalid offset from annotation");
@@ -89,21 +89,21 @@ Rule: StringTokenizer
             secondAnnFeatures.put("Tag", secondLetter);
             secondAnnFeatures.put("value",secondLetter);
             secondAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+2, "Tag", secondAnnFeatures);
             String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
             FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
             thirdAnnFeatures.put("Keep", "Keep");
             thirdAnnFeatures.put("Tag", thirdLetter);
             thirdAnnFeatures.put("value",thirdLetter);
             thirdAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+3, "Tag", thirdAnnFeatures);
             String fourthLetter = String.valueOf( (char) (firstLetterChar + 3));
             FeatureMap fourthAnnFeatures = Factory.newFeatureMap();
             fourthAnnFeatures.put("Keep", "Keep");
             fourthAnnFeatures.put("Tag", fourthLetter);
             fourthAnnFeatures.put("value",fourthLetter);
             fourthAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+3, startNode+4, "Tag", fourthAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+4, "Tag", fourthAnnFeatures);
         }
             catch(InvalidOffsetException e) {
             throw new LuckyException("Invalid offset from annotation");
@@ -127,28 +127,28 @@ Rule: StringTokenizer
             secondAnnFeatures.put("Tag", secondLetter);
             secondAnnFeatures.put("value",secondLetter);
             secondAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+2, "Tag", secondAnnFeatures);
             String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
             FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
             thirdAnnFeatures.put("Keep", "Keep");
             thirdAnnFeatures.put("Tag", thirdLetter);
             thirdAnnFeatures.put("value",thirdLetter);
             thirdAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+3, "Tag", thirdAnnFeatures);
             String fourthLetter = String.valueOf( (char) (firstLetterChar + 3));
             FeatureMap fourthAnnFeatures = Factory.newFeatureMap();
             fourthAnnFeatures.put("Keep", "Keep");
             fourthAnnFeatures.put("Tag", fourthLetter);
             fourthAnnFeatures.put("value",fourthLetter);
             fourthAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+3, startNode+4, "Tag", fourthAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+4, "Tag", fourthAnnFeatures);
             String fifthLetter = String.valueOf( (char) (firstLetterChar + 4));
             FeatureMap fifthAnnFeatures = Factory.newFeatureMap();
             fifthAnnFeatures.put("Keep", "Keep");
             fifthAnnFeatures.put("Tag", fifthLetter);
             fifthAnnFeatures.put("value",fifthLetter);
             fifthAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+4, startNode+5, "Tag", fifthAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+5, "Tag", fifthAnnFeatures);
         }
             catch(InvalidOffsetException e) {
             throw new LuckyException("Invalid offset from annotation");
@@ -172,35 +172,35 @@ Rule: StringTokenizer
             secondAnnFeatures.put("Tag", secondLetter);
             secondAnnFeatures.put("value",secondLetter);
             secondAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+1, startNode+2, "Tag", secondAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+2, "Tag", secondAnnFeatures);
             String thirdLetter = String.valueOf( (char) (firstLetterChar + 2));
             FeatureMap thirdAnnFeatures = Factory.newFeatureMap();
             thirdAnnFeatures.put("Keep", "Keep");
             thirdAnnFeatures.put("Tag", thirdLetter);
             thirdAnnFeatures.put("value",thirdLetter);
             thirdAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+2, startNode+3, "Tag", thirdAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+3, "Tag", thirdAnnFeatures);
             String fourthLetter = String.valueOf( (char) (firstLetterChar + 3));
             FeatureMap fourthAnnFeatures = Factory.newFeatureMap();
             fourthAnnFeatures.put("Keep", "Keep");
             fourthAnnFeatures.put("Tag", fourthLetter);
             fourthAnnFeatures.put("value",fourthLetter);
             fourthAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+3, startNode+4, "Tag", fourthAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+4, "Tag", fourthAnnFeatures);
             String fifthLetter = String.valueOf( (char) (firstLetterChar + 4));
             FeatureMap fifthAnnFeatures = Factory.newFeatureMap();
             fifthAnnFeatures.put("Keep", "Keep");
             fifthAnnFeatures.put("Tag", fifthLetter);
             fifthAnnFeatures.put("value",fifthLetter);
             fifthAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+4, startNode+5, "Tag", fifthAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+5, "Tag", fifthAnnFeatures);
             String sixthLetter = String.valueOf( (char) (firstLetterChar + 5));
             FeatureMap sixthAnnFeatures = Factory.newFeatureMap();
             sixthAnnFeatures.put("Keep", "Keep");
             sixthAnnFeatures.put("Tag", sixthLetter);
             sixthAnnFeatures.put("value",sixthLetter);
             sixthAnnFeatures.put("rule", "FromDoubleTag");        
-            gate.Utils.addAnn(defaultSet, startNode+5, startNode+6, "Tag", sixthAnnFeatures);
+            gate.Utils.addAnn(defaultSet, startNode, startNode+6, "Tag", sixthAnnFeatures);
         }
             catch(InvalidOffsetException e) {
             throw new LuckyException("Invalid offset from annotation");
