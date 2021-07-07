@@ -9,6 +9,14 @@ Subcutaneous fat:CUI=C0222331:DeepMargin=Fat
 Cuff of fat:CUI=C0222331:DeepMargin=Fat
 Cuff fat:CUI=C0222331:DeepMargin=Fat
 Subcut fat:CUI=C0222331:DeepMargin=Fat
+Adipose:CUI=C0222331:DeepMargin=Fat
+Fibrofatty:CUI=C0222331:DeepMargin=Fat
+Fibro-fatty:CUI=C0222331:DeepMargin=Fat
+Fibro fatty:CUI=C0222331:DeepMargin=Fat
+Fibroadipose:CUI=C0222331:DeepMargin=Fat
+Fibro-adipose:CUI=C0222331:DeepMargin=Fat
+Fibro adipose:CUI=C0222331:DeepMargin=Fat
+Subcut fat:CUI=C0222331:DeepMargin=Fat
 Subcutaneous adipose tissue:CUI=C0222331:DeepMargin=Fat
 Fascia:CUI=C0015641:DeepMargin=Fascia
 Fascial:CUI=C0015641:DeepMargin=Fascia
@@ -20,6 +28,7 @@ Hypodermis:DeepMargin=SuperficialFascia
 Hypodermal:DeepMargin=SuperficialFascia
 Scarpa's fascia:DeepMargin=SuperficialFascia
 Scarpas fascia:DeepMargin=SuperficialFascia
+Subcutis:DeepMargin=SuperficialFascia
 Camper's fascia:DeepMargin=SuperficialFascia
 Camper fascia:DeepMargin=SuperficialFascia
 Superficial investing layer:DeepMargin=SuperficialFascia

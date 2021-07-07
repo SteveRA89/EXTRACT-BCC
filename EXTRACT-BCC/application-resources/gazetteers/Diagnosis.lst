@@ -69,17 +69,9 @@ Becker naevus:CUI=C0263579:CancerType=OtherBenign
 Becker nevus:CUI=C0263579:CancerType=OtherBenign
 Becker's naevus:CUI=C0263579:CancerType=OtherBenign
 Becker's nevus:CUI=C0263579:CancerType=OtherBenign
-Benign haem -angio -pericyt -oma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem -angio -pericytoma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem angio pericyt oma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem angio pericytoma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem- angio- pericyt- oma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem- angio- pericytoma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem-angio-pericyt-oma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haem-angio-pericytoma:CUI=C0334541:CancerType=OtherIntermediate
-Benign haemangiopericytoma:CUI=C0334541:CancerType=OtherIntermediate
-Benign melanocytic naevus:CUI=C0027962:CancerType=OtherBenign
-Benign melanocytic nevus:CUI=C0027962:CancerType=OtherBenign
+Benign:CancerType=OtherBenign
+Melanocytic naevus:CUI=C0027962:CancerType=OtherBenign
+Melanocytic nevus:CUI=C0027962:CancerType=OtherBenign
 Blue naevus:CUI=C0206736:CancerType=OtherBenign
 Blue nevus:CUI=C0206736:CancerType=OtherBenign
 Bowen's disease:CUI=C0006079:Type=OtherInSitu
@@ -445,6 +437,9 @@ Lymphangioma:CUI=C0024221:CancerType=OtherCancerous
 Lymphangiomyoma:CUI=C0024223:CancerType=OtherCancerous
 Lymphangiomyomatosis:CUI=C0751674:CancerType=OtherIntermediate
 Lymphangiosarcoma:CUI=C0346082:CancerType=OtherCancerous
+Marjolin's ulcer:CUI=C3164283:CancerType=OtherCancerous
+Marjolins ulcer:CUI=C3164283:CancerType=OtherCancerous
+Marjolin:CUI=C3164283:CancerType=OtherCancerous
 Malignant desmoplastic melanoma:CUI=C0334439:CancerType=OtherCancerous
 Malignant eccrine spiradenoma:CUI=C1266063:CancerType=OtherCancerous
 Malignant haemangiopericytoma:CUI=C0334542:CancerType=OtherCancerous
