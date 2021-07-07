@@ -16,14 +16,10 @@ Token2Verbs
 partialDate
 longestTimePeriod
 pastTense
-DrugPointInTime
 YearToMonths
 Age
-RemoveTimePeriodFromAge
 TimeSince
 DateSince
-RemoveLookup2FromTimeSince
-RemoveTimeSinceFromAge
 DateBio
 Separator
 LastNode
